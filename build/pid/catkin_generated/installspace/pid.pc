@@ -1,0 +1,8 @@
+prefix=/home/mfikih15/Documents/AMV/install
+
+Name: pid
+Description: Description of pid
+Version: 0.0.0
+Cflags: -I/home/mfikih15/Documents/AMV/install/include
+Libs: -L/home/mfikih15/Documents/AMV/install/lib 
+Requires: roscpp std_msgs message_runtime

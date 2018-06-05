@@ -1,0 +1,8 @@
+prefix=/home/mfikih15/Documents/AMV/devel
+
+Name: whatever
+Description: Description of whatever
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/mfikih15/Documents/AMV/devel/lib 
+Requires: 
