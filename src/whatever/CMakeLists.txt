@@ -165,6 +165,12 @@ target_link_libraries(motor_controller
 ${catkin_LIBRARIES}
 )
 
+add_executable(image_front src/image/image_front.cpp )
+target_link_libraries(image_front
+${catkin_LIBRARIES}
+${OpenCV_LIBRARIES}
+)
+
 #############
 ## Install ##
 #############

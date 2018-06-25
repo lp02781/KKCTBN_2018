@@ -1,6 +1,4 @@
-
 #include "ros/ros.h"
-
 #include "mavros_msgs/OverrideRCIn.h"
 #include "mavros_msgs/RCIn.h"
 #include "std_msgs/Bool.h"
@@ -9,7 +7,10 @@
 #include <iostream>
 #include <stdlib.h>
 #include <unistd.h>
-#define OVERRIDE_PIN 4
+
+#define SIMPLE_PIN 4
+#define RECORD_PIN 5
+#define PATH_PIN   6
 
 using namespace std;
 
@@ -71,5 +72,4 @@ void rcinReceiver(const mavros_msgs::RCIn& rc_in_data){
 		rc_failsafe_override_flag = 0;
 		ROS_WARN_STREAM( "[OM] Drone is now taking over") ;
 	}
-
 }

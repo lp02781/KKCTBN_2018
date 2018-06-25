@@ -9,7 +9,7 @@ Mat image;
 
 int main(int argc, char** argv)
 {
-	ros::init(argc, argv, "videoFront");
+	ros::init(argc, argv, "image_front");
 	ros::NodeHandle nh;
 	image_transport::ImageTransport it(nh);
 	image_transport::Publisher pub = it.advertise("/kkctbn/image/camera", 1, true);

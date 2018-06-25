@@ -1,3 +1,5 @@
 <launch>
 	<node name="motor_controller" pkg="whatever" output="screen" type="motor_controller" />
+	
+	<node name="image_front" pkg="whatever" output="screen" type="image_front" />
 </launch>

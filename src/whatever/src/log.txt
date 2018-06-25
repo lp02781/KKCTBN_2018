@@ -1,0 +1,8 @@
+selesai
+- motor_controller.cpp
+- image_front.cpp
+
+selanjutnya
+- image_receiver.cpp + processing
+- remote_monitor.cpp
+- test topic codingan yang udah selesai

@@ -4,12 +4,12 @@
 #include "whatever/node_master.h"
 #include <iostream>
 
-#define STEERING 		0
-#define THROTTLE 		2
-#define MAX_THROTTLE 	1920
-#define MIN_THROTTLE 	1120
-#define MAX_STEERING 	1920
-#define MIN_STEERING 	1120
+#define STEERING 	 0
+#define THROTTLE 	 2
+#define MAX_THROTTLE 1920
+#define MIN_THROTTLE 1120
+#define MAX_STEERING 1920
+#define MIN_STEERING 1120
 
 bool override_status = false;
 bool last_override_status = true;
