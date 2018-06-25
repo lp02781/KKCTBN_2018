@@ -241,6 +241,21 @@ _whatever_generate_messages_check_deps_override_motor/fast:
 .PHONY : _whatever_generate_messages_check_deps_override_motor/fast
 
 # Convenience name for target.
+whatever/CMakeFiles/_whatever_generate_messages_check_deps_node_master.dir/rule:
+	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/_whatever_generate_messages_check_deps_node_master.dir/rule
+.PHONY : whatever/CMakeFiles/_whatever_generate_messages_check_deps_node_master.dir/rule
+
+# Convenience name for target.
+_whatever_generate_messages_check_deps_node_master: whatever/CMakeFiles/_whatever_generate_messages_check_deps_node_master.dir/rule
+
+.PHONY : _whatever_generate_messages_check_deps_node_master
+
+# fast build rule for target.
+_whatever_generate_messages_check_deps_node_master/fast:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/_whatever_generate_messages_check_deps_node_master.dir/build.make whatever/CMakeFiles/_whatever_generate_messages_check_deps_node_master.dir/build
+.PHONY : _whatever_generate_messages_check_deps_node_master/fast
+
+# Convenience name for target.
 whatever/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule:
 	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
 .PHONY : whatever/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
@@ -777,6 +792,7 @@ help:
 	@echo "... whatever_generate_messages_lisp"
 	@echo "... whatever_generate_messages_cpp"
 	@echo "... _whatever_generate_messages_check_deps_override_motor"
+	@echo "... _whatever_generate_messages_check_deps_node_master"
 	@echo "... edit_cache"
 	@echo "... uuid_msgs_generate_messages_py"
 	@echo "... uuid_msgs_generate_messages_lisp"

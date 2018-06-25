@@ -53,20 +53,27 @@ CMAKE_BINARY_DIR = /home/amvui/AMV/build
 # Include the progress variables for this target.
 include whatever/CMakeFiles/whatever_generate_messages_eus.dir/progress.make
 
+whatever/CMakeFiles/whatever_generate_messages_eus: /home/amvui/AMV/devel/share/roseus/ros/whatever/msg/node_master.l
 whatever/CMakeFiles/whatever_generate_messages_eus: /home/amvui/AMV/devel/share/roseus/ros/whatever/msg/override_motor.l
 whatever/CMakeFiles/whatever_generate_messages_eus: /home/amvui/AMV/devel/share/roseus/ros/whatever/manifest.l
 
 
+/home/amvui/AMV/devel/share/roseus/ros/whatever/msg/node_master.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/amvui/AMV/devel/share/roseus/ros/whatever/msg/node_master.l: /home/amvui/AMV/src/whatever/msg/node_master.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from whatever/node_master.msg"
+	cd /home/amvui/AMV/build/whatever && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/amvui/AMV/src/whatever/msg/node_master.msg -Iwhatever:/home/amvui/AMV/src/whatever/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p whatever -o /home/amvui/AMV/devel/share/roseus/ros/whatever/msg
+
 /home/amvui/AMV/devel/share/roseus/ros/whatever/msg/override_motor.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/amvui/AMV/devel/share/roseus/ros/whatever/msg/override_motor.l: /home/amvui/AMV/src/whatever/msg/override_motor.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from whatever/override_motor.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from whatever/override_motor.msg"
 	cd /home/amvui/AMV/build/whatever && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/amvui/AMV/src/whatever/msg/override_motor.msg -Iwhatever:/home/amvui/AMV/src/whatever/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p whatever -o /home/amvui/AMV/devel/share/roseus/ros/whatever/msg
 
 /home/amvui/AMV/devel/share/roseus/ros/whatever/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for whatever"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp manifest code for whatever"
 	cd /home/amvui/AMV/build/whatever && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/amvui/AMV/devel/share/roseus/ros/whatever whatever mavros_msgs std_msgs sensor_msgs
 
 whatever_generate_messages_eus: whatever/CMakeFiles/whatever_generate_messages_eus
+whatever_generate_messages_eus: /home/amvui/AMV/devel/share/roseus/ros/whatever/msg/node_master.l
 whatever_generate_messages_eus: /home/amvui/AMV/devel/share/roseus/ros/whatever/msg/override_motor.l
 whatever_generate_messages_eus: /home/amvui/AMV/devel/share/roseus/ros/whatever/manifest.l
 whatever_generate_messages_eus: whatever/CMakeFiles/whatever_generate_messages_eus.dir/build.make

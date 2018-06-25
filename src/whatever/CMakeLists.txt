@@ -56,6 +56,7 @@ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++0x")
 add_message_files(
 	FILES
 	override_motor.msg
+	node_master.msg
 )
 
 ## Generate services in the 'srv' folder

@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/whatever_generate_messages_cpp"
+  "/home/amvui/AMV/devel/include/whatever/node_master.h"
   "/home/amvui/AMV/devel/include/whatever/override_motor.h"
 )
 

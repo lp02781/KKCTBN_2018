@@ -53,15 +53,22 @@ CMAKE_BINARY_DIR = /home/amvui/AMV/build
 # Include the progress variables for this target.
 include whatever/CMakeFiles/whatever_generate_messages_lisp.dir/progress.make
 
+whatever/CMakeFiles/whatever_generate_messages_lisp: /home/amvui/AMV/devel/share/common-lisp/ros/whatever/msg/node_master.lisp
 whatever/CMakeFiles/whatever_generate_messages_lisp: /home/amvui/AMV/devel/share/common-lisp/ros/whatever/msg/override_motor.lisp
 
 
+/home/amvui/AMV/devel/share/common-lisp/ros/whatever/msg/node_master.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
+/home/amvui/AMV/devel/share/common-lisp/ros/whatever/msg/node_master.lisp: /home/amvui/AMV/src/whatever/msg/node_master.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from whatever/node_master.msg"
+	cd /home/amvui/AMV/build/whatever && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/amvui/AMV/src/whatever/msg/node_master.msg -Iwhatever:/home/amvui/AMV/src/whatever/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p whatever -o /home/amvui/AMV/devel/share/common-lisp/ros/whatever/msg
+
 /home/amvui/AMV/devel/share/common-lisp/ros/whatever/msg/override_motor.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
 /home/amvui/AMV/devel/share/common-lisp/ros/whatever/msg/override_motor.lisp: /home/amvui/AMV/src/whatever/msg/override_motor.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from whatever/override_motor.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from whatever/override_motor.msg"
 	cd /home/amvui/AMV/build/whatever && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/amvui/AMV/src/whatever/msg/override_motor.msg -Iwhatever:/home/amvui/AMV/src/whatever/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p whatever -o /home/amvui/AMV/devel/share/common-lisp/ros/whatever/msg
 
 whatever_generate_messages_lisp: whatever/CMakeFiles/whatever_generate_messages_lisp
+whatever_generate_messages_lisp: /home/amvui/AMV/devel/share/common-lisp/ros/whatever/msg/node_master.lisp
 whatever_generate_messages_lisp: /home/amvui/AMV/devel/share/common-lisp/ros/whatever/msg/override_motor.lisp
 whatever_generate_messages_lisp: whatever/CMakeFiles/whatever_generate_messages_lisp.dir/build.make
 

@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/amvui/AMV/src/whatever/msg/override_motor.msg"
+messages_str = "/home/amvui/AMV/src/whatever/msg/override_motor.msg;/home/amvui/AMV/src/whatever/msg/node_master.msg"
 services_str = ""
 pkg_name = "whatever"
 dependencies_str = "mavros_msgs;std_msgs;sensor_msgs"

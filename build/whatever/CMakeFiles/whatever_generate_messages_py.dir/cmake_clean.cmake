@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/whatever_generate_messages_py"
+  "/home/amvui/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_node_master.py"
   "/home/amvui/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_override_motor.py"
   "/home/amvui/AMV/devel/lib/python2.7/dist-packages/whatever/msg/__init__.py"
 )

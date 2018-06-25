@@ -738,6 +738,19 @@ _whatever_generate_messages_check_deps_override_motor/fast:
 .PHONY : _whatever_generate_messages_check_deps_override_motor/fast
 
 #=============================================================================
+# Target rules for targets named _whatever_generate_messages_check_deps_node_master
+
+# Build rule for target.
+_whatever_generate_messages_check_deps_node_master: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _whatever_generate_messages_check_deps_node_master
+.PHONY : _whatever_generate_messages_check_deps_node_master
+
+# fast build rule for target.
+_whatever_generate_messages_check_deps_node_master/fast:
+	$(MAKE) -f whatever/CMakeFiles/_whatever_generate_messages_check_deps_node_master.dir/build.make whatever/CMakeFiles/_whatever_generate_messages_check_deps_node_master.dir/build
+.PHONY : _whatever_generate_messages_check_deps_node_master/fast
+
+#=============================================================================
 # Target rules for targets named uuid_msgs_generate_messages_py
 
 # Build rule for target.
@@ -1223,6 +1236,7 @@ help:
 	@echo "... whatever_generate_messages_lisp"
 	@echo "... whatever_generate_messages_cpp"
 	@echo "... _whatever_generate_messages_check_deps_override_motor"
+	@echo "... _whatever_generate_messages_check_deps_node_master"
 	@echo "... uuid_msgs_generate_messages_py"
 	@echo "... uuid_msgs_generate_messages_lisp"
 	@echo "... uuid_msgs_generate_messages_nodejs"
