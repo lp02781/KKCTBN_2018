@@ -7,6 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PKG_CONFIG_PATH="/home/mfikih15/Documents/AMV/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PWD="/home/mfikih15/Documents/AMV/build"
-export PYTHONPATH="/home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages:$PYTHONPATH"
+export PWD="/home/amvui/AMV/build"
