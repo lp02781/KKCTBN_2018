@@ -1,8 +1,13 @@
 selesai
 - motor_controller.cpp
 - image_front.cpp
+- remote_monitor.cpp
+- hough_red_buoy.cpp (contoh receiver)
 
 selanjutnya
-- image_receiver.cpp + processing
-- remote_monitor.cpp
-- test topic codingan yang udah selesai
+- image processing
+- node_controller.cpp
+- flight_mode
+- debug_makara.cpp
+- pid_controller (gk pake kp,kd,ki dulu aja)
+

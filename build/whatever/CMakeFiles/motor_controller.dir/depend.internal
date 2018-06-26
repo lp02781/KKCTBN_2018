@@ -4,6 +4,7 @@
 whatever/CMakeFiles/motor_controller.dir/src/main/motor_controller.cpp.o
  /home/amvui/AMV/devel/include/whatever/node_master.h
  /home/amvui/AMV/devel/include/whatever/override_motor.h
+ /home/amvui/AMV/src/whatever/include/whatever/haha.hpp
  /home/amvui/AMV/src/whatever/src/main/motor_controller.cpp
  /opt/ros/kinetic/include/mavros_msgs/OverrideRCIn.h
  /opt/ros/kinetic/include/ros/advertise_options.h

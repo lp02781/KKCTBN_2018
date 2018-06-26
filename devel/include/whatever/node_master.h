@@ -24,10 +24,12 @@ struct node_master_
   typedef node_master_<ContainerAllocator> Type;
 
   node_master_()
-    : override_status(false)  {
+    : override_status(false)
+    , rc_flag(0)  {
     }
   node_master_(const ContainerAllocator& _alloc)
-    : override_status(false)  {
+    : override_status(false)
+    , rc_flag(0)  {
   (void)_alloc;
     }
 
@@ -35,6 +37,9 @@ struct node_master_
 
    typedef uint8_t _override_status_type;
   _override_status_type override_status;
+
+   typedef int16_t _rc_flag_type;
+  _rc_flag_type rc_flag;
 
 
 
@@ -114,12 +119,12 @@ struct MD5Sum< ::whatever::node_master_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "4dd85ad23193e9f5e96775d4f377d490";
+    return "2e6fced663cb3e5fee5dab7b6365bb07";
   }
 
   static const char* value(const ::whatever::node_master_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x4dd85ad23193e9f5ULL;
-  static const uint64_t static_value2 = 0xe96775d4f377d490ULL;
+  static const uint64_t static_value1 = 0x2e6fced663cb3e5fULL;
+  static const uint64_t static_value2 = 0xee5dab7b6365bb07ULL;
 };
 
 template<class ContainerAllocator>
@@ -139,6 +144,7 @@ struct Definition< ::whatever::node_master_<ContainerAllocator> >
   static const char* value()
   {
     return "bool override_status\n\
+int16 rc_flag\n\
 ";
   }
 
@@ -158,6 +164,7 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.override_status);
+      stream.next(m.rc_flag);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -178,6 +185,8 @@ struct Printer< ::whatever::node_master_<ContainerAllocator> >
   {
     s << indent << "override_status: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.override_status);
+    s << indent << "rc_flag: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.rc_flag);
   }
 };
 

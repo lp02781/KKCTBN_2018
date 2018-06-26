@@ -725,6 +725,19 @@ whatever_geneus/fast:
 .PHONY : whatever_geneus/fast
 
 #=============================================================================
+# Target rules for targets named node_controller
+
+# Build rule for target.
+node_controller: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 node_controller
+.PHONY : node_controller
+
+# fast build rule for target.
+node_controller/fast:
+	$(MAKE) -f whatever/CMakeFiles/node_controller.dir/build.make whatever/CMakeFiles/node_controller.dir/build
+.PHONY : node_controller/fast
+
+#=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -998,6 +1011,19 @@ mavros_msgs_generate_messages_nodejs/fast:
 .PHONY : mavros_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
+# Target rules for targets named remote_monitor
+
+# Build rule for target.
+remote_monitor: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 remote_monitor
+.PHONY : remote_monitor
+
+# fast build rule for target.
+remote_monitor/fast:
+	$(MAKE) -f whatever/CMakeFiles/remote_monitor.dir/build.make whatever/CMakeFiles/remote_monitor.dir/build
+.PHONY : remote_monitor/fast
+
+#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -1035,6 +1061,19 @@ geometry_msgs_generate_messages_lisp: cmake_check_build_system
 geometry_msgs_generate_messages_lisp/fast:
 	$(MAKE) -f whatever/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make whatever/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
 .PHONY : geometry_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named hough_red_buoy
+
+# Build rule for target.
+hough_red_buoy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hough_red_buoy
+.PHONY : hough_red_buoy
+
+# fast build rule for target.
+hough_red_buoy/fast:
+	$(MAKE) -f whatever/CMakeFiles/hough_red_buoy.dir/build.make whatever/CMakeFiles/hough_red_buoy.dir/build
+.PHONY : hough_red_buoy/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_nodejs
@@ -1248,6 +1287,7 @@ help:
 	@echo "... mavros_msgs_generate_messages_eus"
 	@echo "... whatever_generate_messages_eus"
 	@echo "... whatever_geneus"
+	@echo "... node_controller"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... whatever_generate_messages_py"
 	@echo "... geographic_msgs_generate_messages_eus"
@@ -1269,9 +1309,11 @@ help:
 	@echo "... whatever_generate_messages_nodejs"
 	@echo "... geographic_msgs_generate_messages_lisp"
 	@echo "... mavros_msgs_generate_messages_nodejs"
+	@echo "... remote_monitor"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... uuid_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... hough_red_buoy"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... uuid_msgs_generate_messages_nodejs"
 	@echo "... uuid_msgs_generate_messages_lisp"

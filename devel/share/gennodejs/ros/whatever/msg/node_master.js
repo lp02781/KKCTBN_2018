@@ -19,6 +19,7 @@ class node_master {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.override_status = null;
+      this.rc_flag = null;
     }
     else {
       if (initObj.hasOwnProperty('override_status')) {
@@ -27,6 +28,12 @@ class node_master {
       else {
         this.override_status = false;
       }
+      if (initObj.hasOwnProperty('rc_flag')) {
+        this.rc_flag = initObj.rc_flag
+      }
+      else {
+        this.rc_flag = 0;
+      }
     }
   }
 
@@ -34,6 +41,8 @@ class node_master {
     // Serializes a message object of type node_master
     // Serialize message field [override_status]
     bufferOffset = _serializer.bool(obj.override_status, buffer, bufferOffset);
+    // Serialize message field [rc_flag]
+    bufferOffset = _serializer.int16(obj.rc_flag, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -43,11 +52,13 @@ class node_master {
     let data = new node_master(null);
     // Deserialize message field [override_status]
     data.override_status = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [rc_flag]
+    data.rc_flag = _deserializer.int16(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 1;
+    return 3;
   }
 
   static datatype() {
@@ -57,13 +68,14 @@ class node_master {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '4dd85ad23193e9f5e96775d4f377d490';
+    return '2e6fced663cb3e5fee5dab7b6365bb07';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     bool override_status
+    int16 rc_flag
     
     `;
   }
@@ -79,6 +91,13 @@ class node_master {
     }
     else {
       resolved.override_status = false
+    }
+
+    if (msg.rc_flag !== undefined) {
+      resolved.rc_flag = msg.rc_flag;
+    }
+    else {
+      resolved.rc_flag = 0
     }
 
     return resolved;

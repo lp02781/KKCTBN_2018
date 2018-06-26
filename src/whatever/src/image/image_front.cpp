@@ -1,3 +1,4 @@
+#include "../../include/whatever/haha.hpp"
 #include <ros/ros.h>
 #include <image_transport/image_transport.h>
 #include <opencv2/highgui/highgui.hpp>
@@ -14,7 +15,7 @@ int main(int argc, char** argv)
 	image_transport::ImageTransport it(nh);
 	image_transport::Publisher pub = it.advertise("/kkctbn/image/camera", 1, true);
 
-	VideoCapture cap(0); 
+	VideoCapture cap(number_camera); 
 	if(!cap.isOpened()){
 		ROS_ERROR ("Error opening camera.");	  
 		return 1;

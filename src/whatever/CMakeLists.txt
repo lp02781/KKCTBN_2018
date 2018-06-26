@@ -165,8 +165,24 @@ target_link_libraries(motor_controller
 ${catkin_LIBRARIES}
 )
 
+add_executable(node_controller src/main/node_controller.cpp )
+target_link_libraries(node_controller
+${catkin_LIBRARIES}
+)
+
+add_executable(remote_monitor src/main/remote_monitor.cpp )
+target_link_libraries(remote_monitor
+${catkin_LIBRARIES}
+)
+
 add_executable(image_front src/image/image_front.cpp )
 target_link_libraries(image_front
+${catkin_LIBRARIES}
+${OpenCV_LIBRARIES}
+)
+
+add_executable(hough_red_buoy src/image/hough_red_buoy.cpp )
+target_link_libraries(hough_red_buoy
 ${catkin_LIBRARIES}
 ${OpenCV_LIBRARIES}
 )
@@ -195,7 +211,7 @@ ${OpenCV_LIBRARIES}
 ## Mark cpp header files for installation
 install(DIRECTORY include/${PROJECT_NAME}/
    DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-   FILES_MATCHING PATTERN "*.h"
+   FILES_MATCHING PATTERN "*.hpp"
    PATTERN ".svn" EXCLUDE
 )
 ## Mark other files for installation (e.g. launch and bag files, etc.)

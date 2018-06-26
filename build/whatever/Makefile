@@ -66,17 +66,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -99,6 +88,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -224,6 +224,21 @@ whatever_geneus: whatever/CMakeFiles/whatever_geneus.dir/rule
 whatever_geneus/fast:
 	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/whatever_geneus.dir/build.make whatever/CMakeFiles/whatever_geneus.dir/build
 .PHONY : whatever_geneus/fast
+
+# Convenience name for target.
+whatever/CMakeFiles/node_controller.dir/rule:
+	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/node_controller.dir/rule
+.PHONY : whatever/CMakeFiles/node_controller.dir/rule
+
+# Convenience name for target.
+node_controller: whatever/CMakeFiles/node_controller.dir/rule
+
+.PHONY : node_controller
+
+# fast build rule for target.
+node_controller/fast:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/node_controller.dir/build.make whatever/CMakeFiles/node_controller.dir/build
+.PHONY : node_controller/fast
 
 # Convenience name for target.
 whatever/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
@@ -541,6 +556,21 @@ mavros_msgs_generate_messages_nodejs/fast:
 .PHONY : mavros_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
+whatever/CMakeFiles/remote_monitor.dir/rule:
+	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/remote_monitor.dir/rule
+.PHONY : whatever/CMakeFiles/remote_monitor.dir/rule
+
+# Convenience name for target.
+remote_monitor: whatever/CMakeFiles/remote_monitor.dir/rule
+
+.PHONY : remote_monitor
+
+# fast build rule for target.
+remote_monitor/fast:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/remote_monitor.dir/build.make whatever/CMakeFiles/remote_monitor.dir/build
+.PHONY : remote_monitor/fast
+
+# Convenience name for target.
 whatever/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
 	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
 .PHONY : whatever/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
@@ -584,6 +614,21 @@ geometry_msgs_generate_messages_lisp: whatever/CMakeFiles/geometry_msgs_generate
 geometry_msgs_generate_messages_lisp/fast:
 	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make whatever/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
 .PHONY : geometry_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+whatever/CMakeFiles/hough_red_buoy.dir/rule:
+	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/hough_red_buoy.dir/rule
+.PHONY : whatever/CMakeFiles/hough_red_buoy.dir/rule
+
+# Convenience name for target.
+hough_red_buoy: whatever/CMakeFiles/hough_red_buoy.dir/rule
+
+.PHONY : hough_red_buoy
+
+# fast build rule for target.
+hough_red_buoy/fast:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/hough_red_buoy.dir/build.make whatever/CMakeFiles/hough_red_buoy.dir/build
+.PHONY : hough_red_buoy/fast
 
 # Convenience name for target.
 whatever/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
@@ -765,6 +810,33 @@ geometry_msgs_generate_messages_cpp/fast:
 	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make whatever/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
 .PHONY : geometry_msgs_generate_messages_cpp/fast
 
+src/image/hough_red_buoy.o: src/image/hough_red_buoy.cpp.o
+
+.PHONY : src/image/hough_red_buoy.o
+
+# target to build an object file
+src/image/hough_red_buoy.cpp.o:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/hough_red_buoy.dir/build.make whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o
+.PHONY : src/image/hough_red_buoy.cpp.o
+
+src/image/hough_red_buoy.i: src/image/hough_red_buoy.cpp.i
+
+.PHONY : src/image/hough_red_buoy.i
+
+# target to preprocess a source file
+src/image/hough_red_buoy.cpp.i:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/hough_red_buoy.dir/build.make whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.i
+.PHONY : src/image/hough_red_buoy.cpp.i
+
+src/image/hough_red_buoy.s: src/image/hough_red_buoy.cpp.s
+
+.PHONY : src/image/hough_red_buoy.s
+
+# target to generate assembly for a file
+src/image/hough_red_buoy.cpp.s:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/hough_red_buoy.dir/build.make whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.s
+.PHONY : src/image/hough_red_buoy.cpp.s
+
 src/image/image_front.o: src/image/image_front.cpp.o
 
 .PHONY : src/image/image_front.o
@@ -819,6 +891,60 @@ src/main/motor_controller.cpp.s:
 	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/motor_controller.dir/build.make whatever/CMakeFiles/motor_controller.dir/src/main/motor_controller.cpp.s
 .PHONY : src/main/motor_controller.cpp.s
 
+src/main/node_controller.o: src/main/node_controller.cpp.o
+
+.PHONY : src/main/node_controller.o
+
+# target to build an object file
+src/main/node_controller.cpp.o:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/node_controller.dir/build.make whatever/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o
+.PHONY : src/main/node_controller.cpp.o
+
+src/main/node_controller.i: src/main/node_controller.cpp.i
+
+.PHONY : src/main/node_controller.i
+
+# target to preprocess a source file
+src/main/node_controller.cpp.i:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/node_controller.dir/build.make whatever/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.i
+.PHONY : src/main/node_controller.cpp.i
+
+src/main/node_controller.s: src/main/node_controller.cpp.s
+
+.PHONY : src/main/node_controller.s
+
+# target to generate assembly for a file
+src/main/node_controller.cpp.s:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/node_controller.dir/build.make whatever/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.s
+.PHONY : src/main/node_controller.cpp.s
+
+src/main/remote_monitor.o: src/main/remote_monitor.cpp.o
+
+.PHONY : src/main/remote_monitor.o
+
+# target to build an object file
+src/main/remote_monitor.cpp.o:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/remote_monitor.dir/build.make whatever/CMakeFiles/remote_monitor.dir/src/main/remote_monitor.cpp.o
+.PHONY : src/main/remote_monitor.cpp.o
+
+src/main/remote_monitor.i: src/main/remote_monitor.cpp.i
+
+.PHONY : src/main/remote_monitor.i
+
+# target to preprocess a source file
+src/main/remote_monitor.cpp.i:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/remote_monitor.dir/build.make whatever/CMakeFiles/remote_monitor.dir/src/main/remote_monitor.cpp.i
+.PHONY : src/main/remote_monitor.cpp.i
+
+src/main/remote_monitor.s: src/main/remote_monitor.cpp.s
+
+.PHONY : src/main/remote_monitor.s
+
+# target to generate assembly for a file
+src/main/remote_monitor.cpp.s:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/remote_monitor.dir/build.make whatever/CMakeFiles/remote_monitor.dir/src/main/remote_monitor.cpp.s
+.PHONY : src/main/remote_monitor.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -826,10 +952,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... list_install_components"
+	@echo "... install"
+	@echo "... rebuild_cache"
+	@echo "... edit_cache"
 	@echo "... mavros_msgs_generate_messages_py"
 	@echo "... mavros_msgs_generate_messages_eus"
 	@echo "... whatever_generate_messages_eus"
 	@echo "... whatever_geneus"
+	@echo "... node_controller"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... whatever_generate_messages_py"
 	@echo "... geographic_msgs_generate_messages_eus"
@@ -851,33 +981,41 @@ help:
 	@echo "... whatever_generate_messages_nodejs"
 	@echo "... geographic_msgs_generate_messages_lisp"
 	@echo "... mavros_msgs_generate_messages_nodejs"
+	@echo "... remote_monitor"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... uuid_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... hough_red_buoy"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... uuid_msgs_generate_messages_nodejs"
 	@echo "... uuid_msgs_generate_messages_lisp"
 	@echo "... uuid_msgs_generate_messages_py"
-	@echo "... edit_cache"
 	@echo "... _whatever_generate_messages_check_deps_node_master"
 	@echo "... _whatever_generate_messages_check_deps_override_motor"
 	@echo "... whatever_generate_messages_cpp"
 	@echo "... whatever_generate_messages_lisp"
-	@echo "... install"
 	@echo "... whatever_genlisp"
 	@echo "... whatever_genpy"
-	@echo "... rebuild_cache"
 	@echo "... install/strip"
 	@echo "... image_front"
 	@echo "... install/local"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... test"
+	@echo "... src/image/hough_red_buoy.o"
+	@echo "... src/image/hough_red_buoy.i"
+	@echo "... src/image/hough_red_buoy.s"
 	@echo "... src/image/image_front.o"
 	@echo "... src/image/image_front.i"
 	@echo "... src/image/image_front.s"
 	@echo "... src/main/motor_controller.o"
 	@echo "... src/main/motor_controller.i"
 	@echo "... src/main/motor_controller.s"
+	@echo "... src/main/node_controller.o"
+	@echo "... src/main/node_controller.i"
+	@echo "... src/main/node_controller.s"
+	@echo "... src/main/remote_monitor.o"
+	@echo "... src/main/remote_monitor.i"
+	@echo "... src/main/remote_monitor.s"
 .PHONY : help
 
 

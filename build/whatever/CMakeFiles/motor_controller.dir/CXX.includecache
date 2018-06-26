@@ -38,7 +38,11 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
+/home/amvui/AMV/src/whatever/include/whatever/haha.hpp
+
 /home/amvui/AMV/src/whatever/src/main/motor_controller.cpp
+../../include/whatever/haha.hpp
+/home/amvui/AMV/src/whatever/include/whatever/haha.hpp
 ros/ros.h
 /home/amvui/AMV/src/whatever/src/main/ros/ros.h
 mavros_msgs/OverrideRCIn.h

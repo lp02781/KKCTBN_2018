@@ -7,13 +7,14 @@ import struct
 
 
 class node_master(genpy.Message):
-  _md5sum = "4dd85ad23193e9f5e96775d4f377d490"
+  _md5sum = "2e6fced663cb3e5fee5dab7b6365bb07"
   _type = "whatever/node_master"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """bool override_status
+int16 rc_flag
 """
-  __slots__ = ['override_status']
-  _slot_types = ['bool']
+  __slots__ = ['override_status','rc_flag']
+  _slot_types = ['bool','int16']
 
   def __init__(self, *args, **kwds):
     """
@@ -23,7 +24,7 @@ class node_master(genpy.Message):
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       override_status
+       override_status,rc_flag
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -34,8 +35,11 @@ class node_master(genpy.Message):
       #message fields cannot be None, assign default values for those that are
       if self.override_status is None:
         self.override_status = False
+      if self.rc_flag is None:
+        self.rc_flag = 0
     else:
       self.override_status = False
+      self.rc_flag = 0
 
   def _get_types(self):
     """
@@ -49,7 +53,8 @@ class node_master(genpy.Message):
     :param buff: buffer, ``StringIO``
     """
     try:
-      buff.write(_get_struct_B().pack(self.override_status))
+      _x = self
+      buff.write(_get_struct_Bh().pack(_x.override_status, _x.rc_flag))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -60,9 +65,10 @@ class node_master(genpy.Message):
     """
     try:
       end = 0
+      _x = self
       start = end
-      end += 1
-      (self.override_status,) = _get_struct_B().unpack(str[start:end])
+      end += 3
+      (_x.override_status, _x.rc_flag,) = _get_struct_Bh().unpack(str[start:end])
       self.override_status = bool(self.override_status)
       return self
     except struct.error as e:
@@ -76,7 +82,8 @@ class node_master(genpy.Message):
     :param numpy: numpy python module
     """
     try:
-      buff.write(_get_struct_B().pack(self.override_status))
+      _x = self
+      buff.write(_get_struct_Bh().pack(_x.override_status, _x.rc_flag))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -88,9 +95,10 @@ class node_master(genpy.Message):
     """
     try:
       end = 0
+      _x = self
       start = end
-      end += 1
-      (self.override_status,) = _get_struct_B().unpack(str[start:end])
+      end += 3
+      (_x.override_status, _x.rc_flag,) = _get_struct_Bh().unpack(str[start:end])
       self.override_status = bool(self.override_status)
       return self
     except struct.error as e:
@@ -100,9 +108,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_B = None
-def _get_struct_B():
-    global _struct_B
-    if _struct_B is None:
-        _struct_B = struct.Struct("<B")
-    return _struct_B
+_struct_Bh = None
+def _get_struct_Bh():
+    global _struct_Bh
+    if _struct_Bh is None:
+        _struct_Bh = struct.Struct("<Bh")
+    return _struct_Bh
