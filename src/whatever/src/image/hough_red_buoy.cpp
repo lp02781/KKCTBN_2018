@@ -33,6 +33,9 @@ int main(int argc, char **argv){
 	cv::startWindowThread();
 	
 	ros::Subscriber sub = nh.subscribe("/kkctbn/image/camera", 1, imageCallback);
+	
+	ROS_WARN("NC : hough_red_buoy.cpp active");
+	
 	ros::spin();
 }
 

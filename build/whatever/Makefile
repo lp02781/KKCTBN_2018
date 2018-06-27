@@ -100,6 +100,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -121,17 +132,6 @@ install/strip: preinstall
 install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -224,21 +224,6 @@ whatever_geneus: whatever/CMakeFiles/whatever_geneus.dir/rule
 whatever_geneus/fast:
 	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/whatever_geneus.dir/build.make whatever/CMakeFiles/whatever_geneus.dir/build
 .PHONY : whatever_geneus/fast
-
-# Convenience name for target.
-whatever/CMakeFiles/pid_controller.dir/rule:
-	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/pid_controller.dir/rule
-.PHONY : whatever/CMakeFiles/pid_controller.dir/rule
-
-# Convenience name for target.
-pid_controller: whatever/CMakeFiles/pid_controller.dir/rule
-
-.PHONY : pid_controller
-
-# fast build rule for target.
-pid_controller/fast:
-	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/pid_controller.dir/build.make whatever/CMakeFiles/pid_controller.dir/build
-.PHONY : pid_controller/fast
 
 # Convenience name for target.
 whatever/CMakeFiles/node_controller.dir/rule:
@@ -601,6 +586,36 @@ remote_monitor/fast:
 .PHONY : remote_monitor/fast
 
 # Convenience name for target.
+whatever/CMakeFiles/pid_controller.dir/rule:
+	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/pid_controller.dir/rule
+.PHONY : whatever/CMakeFiles/pid_controller.dir/rule
+
+# Convenience name for target.
+pid_controller: whatever/CMakeFiles/pid_controller.dir/rule
+
+.PHONY : pid_controller
+
+# fast build rule for target.
+pid_controller/fast:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/pid_controller.dir/build.make whatever/CMakeFiles/pid_controller.dir/build
+.PHONY : pid_controller/fast
+
+# Convenience name for target.
+whatever/CMakeFiles/debug_makara.dir/rule:
+	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/debug_makara.dir/rule
+.PHONY : whatever/CMakeFiles/debug_makara.dir/rule
+
+# Convenience name for target.
+debug_makara: whatever/CMakeFiles/debug_makara.dir/rule
+
+.PHONY : debug_makara
+
+# fast build rule for target.
+debug_makara/fast:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/debug_makara.dir/build.make whatever/CMakeFiles/debug_makara.dir/build
+.PHONY : debug_makara/fast
+
+# Convenience name for target.
 whatever/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
 	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
 .PHONY : whatever/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
@@ -879,6 +894,33 @@ src/image/image_front.cpp.s:
 	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/image_front.dir/build.make whatever/CMakeFiles/image_front.dir/src/image/image_front.cpp.s
 .PHONY : src/image/image_front.cpp.s
 
+src/main/debug_makara.o: src/main/debug_makara.cpp.o
+
+.PHONY : src/main/debug_makara.o
+
+# target to build an object file
+src/main/debug_makara.cpp.o:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/debug_makara.dir/build.make whatever/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o
+.PHONY : src/main/debug_makara.cpp.o
+
+src/main/debug_makara.i: src/main/debug_makara.cpp.i
+
+.PHONY : src/main/debug_makara.i
+
+# target to preprocess a source file
+src/main/debug_makara.cpp.i:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/debug_makara.dir/build.make whatever/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.i
+.PHONY : src/main/debug_makara.cpp.i
+
+src/main/debug_makara.s: src/main/debug_makara.cpp.s
+
+.PHONY : src/main/debug_makara.s
+
+# target to generate assembly for a file
+src/main/debug_makara.cpp.s:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/debug_makara.dir/build.make whatever/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.s
+.PHONY : src/main/debug_makara.cpp.s
+
 src/main/motor_controller.o: src/main/motor_controller.cpp.o
 
 .PHONY : src/main/motor_controller.o
@@ -997,11 +1039,11 @@ help:
 	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... install/local"
 	@echo "... mavros_msgs_generate_messages_py"
 	@echo "... mavros_msgs_generate_messages_eus"
 	@echo "... whatever_generate_messages_eus"
 	@echo "... whatever_geneus"
-	@echo "... pid_controller"
 	@echo "... node_controller"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... test"
@@ -1027,6 +1069,8 @@ help:
 	@echo "... geographic_msgs_generate_messages_lisp"
 	@echo "... mavros_msgs_generate_messages_nodejs"
 	@echo "... remote_monitor"
+	@echo "... pid_controller"
+	@echo "... debug_makara"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... uuid_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
@@ -1043,13 +1087,15 @@ help:
 	@echo "... whatever_genpy"
 	@echo "... install/strip"
 	@echo "... image_front"
-	@echo "... install/local"
 	@echo "... src/image/hough_red_buoy.o"
 	@echo "... src/image/hough_red_buoy.i"
 	@echo "... src/image/hough_red_buoy.s"
 	@echo "... src/image/image_front.o"
 	@echo "... src/image/image_front.i"
 	@echo "... src/image/image_front.s"
+	@echo "... src/main/debug_makara.o"
+	@echo "... src/main/debug_makara.i"
+	@echo "... src/main/debug_makara.s"
 	@echo "... src/main/motor_controller.o"
 	@echo "... src/main/motor_controller.i"
 	@echo "... src/main/motor_controller.s"

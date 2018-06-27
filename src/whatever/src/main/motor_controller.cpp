@@ -25,6 +25,8 @@ int main(int argc, char **argv)
   ros::Subscriber sub_override_motor = n.subscribe("/kkctbn/override/motor", 1, override_input_cb);
   ros::Subscriber sub_override_status = n.subscribe("/kkctbn/node/master", 1, override_status_cb);
   
+  ROS_WARN("NC : motor_controller.cpp active");
+  
   ros::spin();
   return 0;
 }

@@ -2,4 +2,4 @@
 source_root_dir = "/home/amvui/AMV/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/home/amvui/AMV/devel;/home/amvui/lala/devel;/opt/ros/kinetic".split(';') if "/home/amvui/AMV/devel;/home/amvui/lala/devel;/opt/ros/kinetic" != "" else []
+underlay_workspaces = "/home/amvui/AMV/devel;/opt/ros/kinetic".split(';') if "/home/amvui/AMV/devel;/opt/ros/kinetic" != "" else []

@@ -6,9 +6,11 @@ selesai
 - flight mode
 - node_controller.cpp
 - pid_controller.cpp (gk pake kp,kd,ki dulu aja)
+- debug_makara.cpp 
 
 selanjutnya
-- image processing
-- debug_makara.cpp
+- image_processing
+
+
 
 

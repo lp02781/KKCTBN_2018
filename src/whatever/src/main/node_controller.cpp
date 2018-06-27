@@ -26,6 +26,8 @@ int main(int argc, char **argv)
 	ros::Subscriber sub_node_master = nh.subscribe("/kkctbn/node/master", 10, node_master_cb);
 	client_set_flightmode = nh.serviceClient<mavros_msgs::SetMode>("/mavros/set_mode");
 	
+	ROS_WARN("NC : node_controller.cpp active");
+	
 	ros::spin();
 }
 

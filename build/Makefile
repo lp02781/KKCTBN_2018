@@ -725,19 +725,6 @@ whatever_geneus/fast:
 .PHONY : whatever_geneus/fast
 
 #=============================================================================
-# Target rules for targets named pid_controller
-
-# Build rule for target.
-pid_controller: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 pid_controller
-.PHONY : pid_controller
-
-# fast build rule for target.
-pid_controller/fast:
-	$(MAKE) -f whatever/CMakeFiles/pid_controller.dir/build.make whatever/CMakeFiles/pid_controller.dir/build
-.PHONY : pid_controller/fast
-
-#=============================================================================
 # Target rules for targets named node_controller
 
 # Build rule for target.
@@ -1050,6 +1037,32 @@ remote_monitor/fast:
 .PHONY : remote_monitor/fast
 
 #=============================================================================
+# Target rules for targets named pid_controller
+
+# Build rule for target.
+pid_controller: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pid_controller
+.PHONY : pid_controller
+
+# fast build rule for target.
+pid_controller/fast:
+	$(MAKE) -f whatever/CMakeFiles/pid_controller.dir/build.make whatever/CMakeFiles/pid_controller.dir/build
+.PHONY : pid_controller/fast
+
+#=============================================================================
+# Target rules for targets named debug_makara
+
+# Build rule for target.
+debug_makara: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 debug_makara
+.PHONY : debug_makara
+
+# fast build rule for target.
+debug_makara/fast:
+	$(MAKE) -f whatever/CMakeFiles/debug_makara.dir/build.make whatever/CMakeFiles/debug_makara.dir/build
+.PHONY : debug_makara/fast
+
+#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -1300,7 +1313,6 @@ help:
 	@echo "... mavros_msgs_generate_messages_eus"
 	@echo "... whatever_generate_messages_eus"
 	@echo "... whatever_geneus"
-	@echo "... pid_controller"
 	@echo "... node_controller"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_cpp"
@@ -1325,6 +1337,8 @@ help:
 	@echo "... geographic_msgs_generate_messages_lisp"
 	@echo "... mavros_msgs_generate_messages_nodejs"
 	@echo "... remote_monitor"
+	@echo "... pid_controller"
+	@echo "... debug_makara"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... uuid_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"

@@ -27,6 +27,8 @@ int main(int argc, char **argv)
   ros::Subscriber sub_pid_motor 	= n.subscribe("/kkctbn/override/motor", 1, pid_input_cb);
   ros::Subscriber sub_pid_status 	= n.subscribe("/kkctbn/node/master", 1, pid_status_cb);
   
+  ROS_WARN("NC : pid_controller.cpp active");
+  
   ros::spin();
   return 0;
 }

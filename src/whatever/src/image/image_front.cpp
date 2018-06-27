@@ -27,7 +27,9 @@ int main(int argc, char** argv)
 	image_transport::Publisher pub = it.advertise("/kkctbn/image/camera", 1, true);
 	
 	pub_camera_setpoint = nh.advertise<whatever::override_motor>("/kkctbn/override/motor", 1, true);
-
+	
+	ROS_WARN("NC : image_front.cpp active");
+	
 	VideoCapture cap(number_camera); 
 	if(!cap.isOpened()){
 		ROS_ERROR ("Error opening camera.");	  

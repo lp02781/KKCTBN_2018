@@ -25,7 +25,9 @@ int main(int argc, char **argv){
 	ros::NodeHandle ovrd_mon;
 	pub_rc_flag 				= ovrd_mon.advertise<whatever::node_master>("/kkctbn/node/master", 1,true);
 	ros::Subscriber rc_in_sub 	= ovrd_mon.subscribe("/mavros/rc/in", 1, rcinReceiver);
-	ROS_INFO("Starting Override Monitor.");
+	
+	ROS_WARN("NC : remote_monitor.cpp active");
+	
 	ros::spin();
 	return 0;
 }

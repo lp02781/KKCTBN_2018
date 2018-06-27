@@ -180,6 +180,11 @@ target_link_libraries(pid_controller
 ${catkin_LIBRARIES}
 )
 
+add_executable(debug_makara src/main/debug_makara.cpp )
+target_link_libraries(debug_makara
+${catkin_LIBRARIES}
+)
+
 add_executable(image_front src/image/image_front.cpp )
 target_link_libraries(image_front
 ${catkin_LIBRARIES}
