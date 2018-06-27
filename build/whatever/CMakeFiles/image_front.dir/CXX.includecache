@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/amvui/AMV/devel/include/whatever/override_motor.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/amvui/AMV/src/whatever/include/whatever/haha.hpp
 
 /home/amvui/AMV/src/whatever/src/image/image_front.cpp
@@ -19,6 +35,10 @@ opencv2/highgui/highgui.hpp
 -
 cv_bridge/cv_bridge.h
 -
+iostream
+-
+whatever/override_motor.h
+/home/amvui/AMV/src/whatever/src/image/whatever/override_motor.h
 
 /opt/ros/kinetic/include/cv_bridge/cv_bridge.h
 sensor_msgs/Image.h

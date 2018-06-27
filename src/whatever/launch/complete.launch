@@ -1,5 +1,10 @@
 <launch>
 	<node name="motor_controller" pkg="whatever" output="screen" type="motor_controller" />
+	<node name="node_controller" pkg="whatever" output="screen" type="node_controller" />
+	<node name="remote_monitor" pkg="whatever" output="screen" type="remote_monitor" />
+	
+	<node name="pid_controller" pkg="whatever" output="screen" type="pid_controller" />
 	
 	<node name="image_front" pkg="whatever" output="screen" type="image_front" />
+	<node name="hough_red_buoy" pkg="whatever" output="screen" type="hough_red_buoy" />
 </launch>

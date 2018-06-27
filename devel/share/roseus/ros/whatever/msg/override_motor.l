@@ -14,18 +14,28 @@
 
 (defclass whatever::override_motor
   :super ros::object
-  :slots (_steering _throttle ))
+  :slots (_state _setpoint _steering _throttle ))
 
 (defmethod whatever::override_motor
   (:init
    (&key
+    ((:state __state) 0)
+    ((:setpoint __setpoint) 0)
     ((:steering __steering) 0)
     ((:throttle __throttle) 0)
     )
    (send-super :init)
+   (setq _state (round __state))
+   (setq _setpoint (round __setpoint))
    (setq _steering (round __steering))
    (setq _throttle (round __throttle))
    self)
+  (:state
+   (&optional __state)
+   (if __state (setq _state __state)) _state)
+  (:setpoint
+   (&optional __setpoint)
+   (if __setpoint (setq _setpoint __setpoint)) _setpoint)
   (:steering
    (&optional __steering)
    (if __steering (setq _steering __steering)) _steering)
@@ -35,6 +45,10 @@
   (:serialization-length
    ()
    (+
+    ;; int16 _state
+    2
+    ;; int16 _setpoint
+    2
     ;; int16 _steering
     2
     ;; int16 _throttle
@@ -44,6 +58,10 @@
    (&optional strm)
    (let ((s (if strm strm
               (make-string-output-stream (send self :serialization-length)))))
+     ;; int16 _state
+       (write-word _state s)
+     ;; int16 _setpoint
+       (write-word _setpoint s)
      ;; int16 _steering
        (write-word _steering s)
      ;; int16 _throttle
@@ -52,6 +70,10 @@
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
+   ;; int16 _state
+     (setq _state (sys::peek buf ptr- :short)) (incf ptr- 2)
+   ;; int16 _setpoint
+     (setq _setpoint (sys::peek buf ptr- :short)) (incf ptr- 2)
    ;; int16 _steering
      (setq _steering (sys::peek buf ptr- :short)) (incf ptr- 2)
    ;; int16 _throttle
@@ -60,16 +82,18 @@
    self)
   )
 
-(setf (get whatever::override_motor :md5sum-) "c4dd5817de7802d91e66008f92eca79e")
+(setf (get whatever::override_motor :md5sum-) "a869452c0c09cdbbd8802ed4974ea464")
 (setf (get whatever::override_motor :datatype-) "whatever/override_motor")
 (setf (get whatever::override_motor :definition-)
-      "int16 steering
+      "int16 state
+int16 setpoint
+int16 steering
 int16 throttle
 
 ")
 
 
 
-(provide :whatever/override_motor "c4dd5817de7802d91e66008f92eca79e")
+(provide :whatever/override_motor "a869452c0c09cdbbd8802ed4974ea464")
 
 

@@ -8,16 +8,16 @@
 
 using namespace cv;
 
-ros::Publisher pub_camera_setpoint;
-whatever::override_motor camera_point;
+//ros::Publisher pub_camera_setpoint;
+//whatever::override_motor camera_point;
 
 Mat image;
 
 int image_width;
 int image_height;
-int setpoint;
+int set_point;
 
-void get_setpoint();
+//void get_setpoint();
 
 int main(int argc, char** argv)
 {
@@ -36,7 +36,7 @@ int main(int argc, char** argv)
 	while (nh.ok()) {
 		cap.read(image);
 		
-		get_setpoint();
+		//get_setpoint();
 		
 		if(!image.empty()){	
 			sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", image).toImageMsg();
@@ -45,18 +45,18 @@ int main(int argc, char** argv)
 		ros::spinOnce();
 	}
 }
-
+/*
 void get_setpoint(){
 	Size sz = image.size();
 		
 	image_width = sz.width;
 	image_height = sz.height;
 	
-	setpoint = sz.width/3;
+	set_point = sz.width/3;
 		
-	camera_point.setpoint = setpoint;
+	camera_point.set_point = set_point;
 	
 	pub_camera_setpoint.publish(camera_point);
 }
-
+*/
 	

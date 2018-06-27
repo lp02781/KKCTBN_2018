@@ -175,6 +175,11 @@ target_link_libraries(remote_monitor
 ${catkin_LIBRARIES}
 )
 
+add_executable(pid_controller src/main/pid_controller.cpp )
+target_link_libraries(pid_controller
+${catkin_LIBRARIES}
+)
+
 add_executable(image_front src/image/image_front.cpp )
 target_link_libraries(image_front
 ${catkin_LIBRARIES}

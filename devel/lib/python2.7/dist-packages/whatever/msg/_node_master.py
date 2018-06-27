@@ -7,14 +7,16 @@ import struct
 
 
 class node_master(genpy.Message):
-  _md5sum = "2e6fced663cb3e5fee5dab7b6365bb07"
+  _md5sum = "f3f7dc0ea99172671bd9b94d6ee68422"
   _type = "whatever/node_master"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """bool override_status
+bool pid_status
 int16 rc_flag
+string flight_mode
 """
-  __slots__ = ['override_status','rc_flag']
-  _slot_types = ['bool','int16']
+  __slots__ = ['override_status','pid_status','rc_flag','flight_mode']
+  _slot_types = ['bool','bool','int16','string']
 
   def __init__(self, *args, **kwds):
     """
@@ -24,7 +26,7 @@ int16 rc_flag
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       override_status,rc_flag
+       override_status,pid_status,rc_flag,flight_mode
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -35,11 +37,17 @@ int16 rc_flag
       #message fields cannot be None, assign default values for those that are
       if self.override_status is None:
         self.override_status = False
+      if self.pid_status is None:
+        self.pid_status = False
       if self.rc_flag is None:
         self.rc_flag = 0
+      if self.flight_mode is None:
+        self.flight_mode = ''
     else:
       self.override_status = False
+      self.pid_status = False
       self.rc_flag = 0
+      self.flight_mode = ''
 
   def _get_types(self):
     """
@@ -54,7 +62,13 @@ int16 rc_flag
     """
     try:
       _x = self
-      buff.write(_get_struct_Bh().pack(_x.override_status, _x.rc_flag))
+      buff.write(_get_struct_2Bh().pack(_x.override_status, _x.pid_status, _x.rc_flag))
+      _x = self.flight_mode
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.pack('<I%ss'%length, length, _x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -67,9 +81,19 @@ int16 rc_flag
       end = 0
       _x = self
       start = end
-      end += 3
-      (_x.override_status, _x.rc_flag,) = _get_struct_Bh().unpack(str[start:end])
+      end += 4
+      (_x.override_status, _x.pid_status, _x.rc_flag,) = _get_struct_2Bh().unpack(str[start:end])
       self.override_status = bool(self.override_status)
+      self.pid_status = bool(self.pid_status)
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.flight_mode = str[start:end].decode('utf-8')
+      else:
+        self.flight_mode = str[start:end]
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -83,7 +107,13 @@ int16 rc_flag
     """
     try:
       _x = self
-      buff.write(_get_struct_Bh().pack(_x.override_status, _x.rc_flag))
+      buff.write(_get_struct_2Bh().pack(_x.override_status, _x.pid_status, _x.rc_flag))
+      _x = self.flight_mode
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.pack('<I%ss'%length, length, _x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -97,9 +127,19 @@ int16 rc_flag
       end = 0
       _x = self
       start = end
-      end += 3
-      (_x.override_status, _x.rc_flag,) = _get_struct_Bh().unpack(str[start:end])
+      end += 4
+      (_x.override_status, _x.pid_status, _x.rc_flag,) = _get_struct_2Bh().unpack(str[start:end])
       self.override_status = bool(self.override_status)
+      self.pid_status = bool(self.pid_status)
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.flight_mode = str[start:end].decode('utf-8')
+      else:
+        self.flight_mode = str[start:end]
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -108,9 +148,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_Bh = None
-def _get_struct_Bh():
-    global _struct_Bh
-    if _struct_Bh is None:
-        _struct_Bh = struct.Struct("<Bh")
-    return _struct_Bh
+_struct_2Bh = None
+def _get_struct_2Bh():
+    global _struct_2Bh
+    if _struct_2Bh is None:
+        _struct_2Bh = struct.Struct("<2Bh")
+    return _struct_2Bh

@@ -25,11 +25,15 @@ struct node_master_
 
   node_master_()
     : override_status(false)
-    , rc_flag(0)  {
+    , pid_status(false)
+    , rc_flag(0)
+    , flight_mode()  {
     }
   node_master_(const ContainerAllocator& _alloc)
     : override_status(false)
-    , rc_flag(0)  {
+    , pid_status(false)
+    , rc_flag(0)
+    , flight_mode(_alloc)  {
   (void)_alloc;
     }
 
@@ -38,8 +42,14 @@ struct node_master_
    typedef uint8_t _override_status_type;
   _override_status_type override_status;
 
+   typedef uint8_t _pid_status_type;
+  _pid_status_type pid_status;
+
    typedef int16_t _rc_flag_type;
   _rc_flag_type rc_flag;
+
+   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _flight_mode_type;
+  _flight_mode_type flight_mode;
 
 
 
@@ -75,7 +85,7 @@ namespace message_traits
 
 
 
-// BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
+// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
 // {'geographic_msgs': ['/opt/ros/kinetic/share/geographic_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'mavros_msgs': ['/opt/ros/kinetic/share/mavros_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'whatever': ['/home/amvui/AMV/src/whatever/msg'], 'uuid_msgs': ['/opt/ros/kinetic/share/uuid_msgs/cmake/../msg']}
 
 // !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
@@ -85,12 +95,12 @@ namespace message_traits
 
 template <class ContainerAllocator>
 struct IsFixedSize< ::whatever::node_master_<ContainerAllocator> >
-  : TrueType
+  : FalseType
   { };
 
 template <class ContainerAllocator>
 struct IsFixedSize< ::whatever::node_master_<ContainerAllocator> const>
-  : TrueType
+  : FalseType
   { };
 
 template <class ContainerAllocator>
@@ -119,12 +129,12 @@ struct MD5Sum< ::whatever::node_master_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "2e6fced663cb3e5fee5dab7b6365bb07";
+    return "f3f7dc0ea99172671bd9b94d6ee68422";
   }
 
   static const char* value(const ::whatever::node_master_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x2e6fced663cb3e5fULL;
-  static const uint64_t static_value2 = 0xee5dab7b6365bb07ULL;
+  static const uint64_t static_value1 = 0xf3f7dc0ea9917267ULL;
+  static const uint64_t static_value2 = 0x1bd9b94d6ee68422ULL;
 };
 
 template<class ContainerAllocator>
@@ -144,7 +154,9 @@ struct Definition< ::whatever::node_master_<ContainerAllocator> >
   static const char* value()
   {
     return "bool override_status\n\
+bool pid_status\n\
 int16 rc_flag\n\
+string flight_mode\n\
 ";
   }
 
@@ -164,7 +176,9 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.override_status);
+      stream.next(m.pid_status);
       stream.next(m.rc_flag);
+      stream.next(m.flight_mode);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -185,8 +199,12 @@ struct Printer< ::whatever::node_master_<ContainerAllocator> >
   {
     s << indent << "override_status: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.override_status);
+    s << indent << "pid_status: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.pid_status);
     s << indent << "rc_flag: ";
     Printer<int16_t>::stream(s, indent + "  ", v.rc_flag);
+    s << indent << "flight_mode: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.flight_mode);
   }
 };
 

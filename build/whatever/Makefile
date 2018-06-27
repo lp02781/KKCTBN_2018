@@ -100,6 +100,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
@@ -121,17 +132,6 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -226,6 +226,21 @@ whatever_geneus/fast:
 .PHONY : whatever_geneus/fast
 
 # Convenience name for target.
+whatever/CMakeFiles/pid_controller.dir/rule:
+	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/pid_controller.dir/rule
+.PHONY : whatever/CMakeFiles/pid_controller.dir/rule
+
+# Convenience name for target.
+pid_controller: whatever/CMakeFiles/pid_controller.dir/rule
+
+.PHONY : pid_controller
+
+# fast build rule for target.
+pid_controller/fast:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/pid_controller.dir/build.make whatever/CMakeFiles/pid_controller.dir/build
+.PHONY : pid_controller/fast
+
+# Convenience name for target.
 whatever/CMakeFiles/node_controller.dir/rule:
 	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/node_controller.dir/rule
 .PHONY : whatever/CMakeFiles/node_controller.dir/rule
@@ -254,6 +269,21 @@ sensor_msgs_generate_messages_nodejs: whatever/CMakeFiles/sensor_msgs_generate_m
 sensor_msgs_generate_messages_nodejs/fast:
 	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make whatever/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
 .PHONY : sensor_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+whatever/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
+	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : whatever/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_cpp: whatever/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make whatever/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 whatever/CMakeFiles/whatever_generate_messages_py.dir/rule:
@@ -795,21 +825,6 @@ image_front/fast:
 	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/image_front.dir/build.make whatever/CMakeFiles/image_front.dir/build
 .PHONY : image_front/fast
 
-# Convenience name for target.
-whatever/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : whatever/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_cpp: whatever/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make whatever/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
 src/image/hough_red_buoy.o: src/image/hough_red_buoy.cpp.o
 
 .PHONY : src/image/hough_red_buoy.o
@@ -918,6 +933,33 @@ src/main/node_controller.cpp.s:
 	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/node_controller.dir/build.make whatever/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.s
 .PHONY : src/main/node_controller.cpp.s
 
+src/main/pid_controller.o: src/main/pid_controller.cpp.o
+
+.PHONY : src/main/pid_controller.o
+
+# target to build an object file
+src/main/pid_controller.cpp.o:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/pid_controller.dir/build.make whatever/CMakeFiles/pid_controller.dir/src/main/pid_controller.cpp.o
+.PHONY : src/main/pid_controller.cpp.o
+
+src/main/pid_controller.i: src/main/pid_controller.cpp.i
+
+.PHONY : src/main/pid_controller.i
+
+# target to preprocess a source file
+src/main/pid_controller.cpp.i:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/pid_controller.dir/build.make whatever/CMakeFiles/pid_controller.dir/src/main/pid_controller.cpp.i
+.PHONY : src/main/pid_controller.cpp.i
+
+src/main/pid_controller.s: src/main/pid_controller.cpp.s
+
+.PHONY : src/main/pid_controller.s
+
+# target to generate assembly for a file
+src/main/pid_controller.cpp.s:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/pid_controller.dir/build.make whatever/CMakeFiles/pid_controller.dir/src/main/pid_controller.cpp.s
+.PHONY : src/main/pid_controller.cpp.s
+
 src/main/remote_monitor.o: src/main/remote_monitor.cpp.o
 
 .PHONY : src/main/remote_monitor.o
@@ -959,8 +1001,11 @@ help:
 	@echo "... mavros_msgs_generate_messages_eus"
 	@echo "... whatever_generate_messages_eus"
 	@echo "... whatever_geneus"
+	@echo "... pid_controller"
 	@echo "... node_controller"
 	@echo "... sensor_msgs_generate_messages_nodejs"
+	@echo "... test"
+	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... whatever_generate_messages_py"
 	@echo "... geographic_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_eus"
@@ -999,8 +1044,6 @@ help:
 	@echo "... install/strip"
 	@echo "... image_front"
 	@echo "... install/local"
-	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... test"
 	@echo "... src/image/hough_red_buoy.o"
 	@echo "... src/image/hough_red_buoy.i"
 	@echo "... src/image/hough_red_buoy.s"
@@ -1013,6 +1056,9 @@ help:
 	@echo "... src/main/node_controller.o"
 	@echo "... src/main/node_controller.i"
 	@echo "... src/main/node_controller.s"
+	@echo "... src/main/pid_controller.o"
+	@echo "... src/main/pid_controller.i"
+	@echo "... src/main/pid_controller.s"
 	@echo "... src/main/remote_monitor.o"
 	@echo "... src/main/remote_monitor.i"
 	@echo "... src/main/remote_monitor.s"

@@ -725,6 +725,19 @@ whatever_geneus/fast:
 .PHONY : whatever_geneus/fast
 
 #=============================================================================
+# Target rules for targets named pid_controller
+
+# Build rule for target.
+pid_controller: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pid_controller
+.PHONY : pid_controller
+
+# fast build rule for target.
+pid_controller/fast:
+	$(MAKE) -f whatever/CMakeFiles/pid_controller.dir/build.make whatever/CMakeFiles/pid_controller.dir/build
+.PHONY : pid_controller/fast
+
+#=============================================================================
 # Target rules for targets named node_controller
 
 # Build rule for target.
@@ -749,6 +762,19 @@ sensor_msgs_generate_messages_nodejs: cmake_check_build_system
 sensor_msgs_generate_messages_nodejs/fast:
 	$(MAKE) -f whatever/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make whatever/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
 .PHONY : sensor_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_cpp
+
+# Build rule for target.
+geometry_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_cpp
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f whatever/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make whatever/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
 
 #=============================================================================
 # Target rules for targets named whatever_generate_messages_py
@@ -1218,19 +1244,6 @@ image_front/fast:
 	$(MAKE) -f whatever/CMakeFiles/image_front.dir/build.make whatever/CMakeFiles/image_front.dir/build
 .PHONY : image_front/fast
 
-#=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_cpp
-
-# Build rule for target.
-geometry_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_cpp
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f whatever/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make whatever/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1287,8 +1300,10 @@ help:
 	@echo "... mavros_msgs_generate_messages_eus"
 	@echo "... whatever_generate_messages_eus"
 	@echo "... whatever_geneus"
+	@echo "... pid_controller"
 	@echo "... node_controller"
 	@echo "... sensor_msgs_generate_messages_nodejs"
+	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... whatever_generate_messages_py"
 	@echo "... geographic_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_eus"
@@ -1325,7 +1340,6 @@ help:
 	@echo "... whatever_genlisp"
 	@echo "... whatever_genpy"
 	@echo "... image_front"
-	@echo "... geometry_msgs_generate_messages_cpp"
 .PHONY : help
 
 

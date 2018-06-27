@@ -18,10 +18,24 @@ class override_motor {
   constructor(initObj={}) {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
+      this.state = null;
+      this.setpoint = null;
       this.steering = null;
       this.throttle = null;
     }
     else {
+      if (initObj.hasOwnProperty('state')) {
+        this.state = initObj.state
+      }
+      else {
+        this.state = 0;
+      }
+      if (initObj.hasOwnProperty('setpoint')) {
+        this.setpoint = initObj.setpoint
+      }
+      else {
+        this.setpoint = 0;
+      }
       if (initObj.hasOwnProperty('steering')) {
         this.steering = initObj.steering
       }
@@ -39,6 +53,10 @@ class override_motor {
 
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type override_motor
+    // Serialize message field [state]
+    bufferOffset = _serializer.int16(obj.state, buffer, bufferOffset);
+    // Serialize message field [setpoint]
+    bufferOffset = _serializer.int16(obj.setpoint, buffer, bufferOffset);
     // Serialize message field [steering]
     bufferOffset = _serializer.int16(obj.steering, buffer, bufferOffset);
     // Serialize message field [throttle]
@@ -50,6 +68,10 @@ class override_motor {
     //deserializes a message object of type override_motor
     let len;
     let data = new override_motor(null);
+    // Deserialize message field [state]
+    data.state = _deserializer.int16(buffer, bufferOffset);
+    // Deserialize message field [setpoint]
+    data.setpoint = _deserializer.int16(buffer, bufferOffset);
     // Deserialize message field [steering]
     data.steering = _deserializer.int16(buffer, bufferOffset);
     // Deserialize message field [throttle]
@@ -58,7 +80,7 @@ class override_motor {
   }
 
   static getMessageSize(object) {
-    return 4;
+    return 8;
   }
 
   static datatype() {
@@ -68,12 +90,14 @@ class override_motor {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'c4dd5817de7802d91e66008f92eca79e';
+    return 'a869452c0c09cdbbd8802ed4974ea464';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
+    int16 state
+    int16 setpoint
     int16 steering
     int16 throttle
     
@@ -86,6 +110,20 @@ class override_motor {
       msg = {};
     }
     const resolved = new override_motor(null);
+    if (msg.state !== undefined) {
+      resolved.state = msg.state;
+    }
+    else {
+      resolved.state = 0
+    }
+
+    if (msg.setpoint !== undefined) {
+      resolved.setpoint = msg.setpoint;
+    }
+    else {
+      resolved.setpoint = 0
+    }
+
     if (msg.steering !== undefined) {
       resolved.steering = msg.steering;
     }

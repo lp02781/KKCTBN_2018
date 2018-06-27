@@ -3,11 +3,12 @@ selesai
 - image_front.cpp
 - remote_monitor.cpp
 - hough_red_buoy.cpp (contoh receiver)
+- flight mode
+- node_controller.cpp
+- pid_controller.cpp (gk pake kp,kd,ki dulu aja)
 
 selanjutnya
 - image processing
-- node_controller.cpp
-- flight_mode
 - debug_makara.cpp
-- pid_controller (gk pake kp,kd,ki dulu aja)
+
 

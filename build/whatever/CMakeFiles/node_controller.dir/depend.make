@@ -4,6 +4,10 @@
 whatever/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /home/amvui/AMV/devel/include/whatever/node_master.h
 whatever/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /home/amvui/AMV/src/whatever/include/whatever/haha.hpp
 whatever/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /home/amvui/AMV/src/whatever/src/main/node_controller.cpp
+whatever/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /opt/ros/kinetic/include/mavros_msgs/SetMode.h
+whatever/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /opt/ros/kinetic/include/mavros_msgs/SetModeRequest.h
+whatever/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /opt/ros/kinetic/include/mavros_msgs/SetModeResponse.h
+whatever/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /opt/ros/kinetic/include/mavros_msgs/State.h
 whatever/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /opt/ros/kinetic/include/ros/advertise_options.h
 whatever/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /opt/ros/kinetic/include/ros/advertise_service_options.h
 whatever/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /opt/ros/kinetic/include/ros/assert.h
@@ -60,6 +64,7 @@ whatever/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /opt/ros
 whatever/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /opt/ros/kinetic/include/ros/wall_timer.h
 whatever/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 whatever/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
+whatever/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
 whatever/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 whatever/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 

@@ -19,7 +19,9 @@ class node_master {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.override_status = null;
+      this.pid_status = null;
       this.rc_flag = null;
+      this.flight_mode = null;
     }
     else {
       if (initObj.hasOwnProperty('override_status')) {
@@ -28,11 +30,23 @@ class node_master {
       else {
         this.override_status = false;
       }
+      if (initObj.hasOwnProperty('pid_status')) {
+        this.pid_status = initObj.pid_status
+      }
+      else {
+        this.pid_status = false;
+      }
       if (initObj.hasOwnProperty('rc_flag')) {
         this.rc_flag = initObj.rc_flag
       }
       else {
         this.rc_flag = 0;
+      }
+      if (initObj.hasOwnProperty('flight_mode')) {
+        this.flight_mode = initObj.flight_mode
+      }
+      else {
+        this.flight_mode = '';
       }
     }
   }
@@ -41,8 +55,12 @@ class node_master {
     // Serializes a message object of type node_master
     // Serialize message field [override_status]
     bufferOffset = _serializer.bool(obj.override_status, buffer, bufferOffset);
+    // Serialize message field [pid_status]
+    bufferOffset = _serializer.bool(obj.pid_status, buffer, bufferOffset);
     // Serialize message field [rc_flag]
     bufferOffset = _serializer.int16(obj.rc_flag, buffer, bufferOffset);
+    // Serialize message field [flight_mode]
+    bufferOffset = _serializer.string(obj.flight_mode, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -52,13 +70,19 @@ class node_master {
     let data = new node_master(null);
     // Deserialize message field [override_status]
     data.override_status = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [pid_status]
+    data.pid_status = _deserializer.bool(buffer, bufferOffset);
     // Deserialize message field [rc_flag]
     data.rc_flag = _deserializer.int16(buffer, bufferOffset);
+    // Deserialize message field [flight_mode]
+    data.flight_mode = _deserializer.string(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 3;
+    let length = 0;
+    length += object.flight_mode.length;
+    return length + 8;
   }
 
   static datatype() {
@@ -68,14 +92,16 @@ class node_master {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '2e6fced663cb3e5fee5dab7b6365bb07';
+    return 'f3f7dc0ea99172671bd9b94d6ee68422';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     bool override_status
+    bool pid_status
     int16 rc_flag
+    string flight_mode
     
     `;
   }
@@ -93,11 +119,25 @@ class node_master {
       resolved.override_status = false
     }
 
+    if (msg.pid_status !== undefined) {
+      resolved.pid_status = msg.pid_status;
+    }
+    else {
+      resolved.pid_status = false
+    }
+
     if (msg.rc_flag !== undefined) {
       resolved.rc_flag = msg.rc_flag;
     }
     else {
       resolved.rc_flag = 0
+    }
+
+    if (msg.flight_mode !== undefined) {
+      resolved.flight_mode = msg.flight_mode;
+    }
+    else {
+      resolved.flight_mode = ''
     }
 
     return resolved;

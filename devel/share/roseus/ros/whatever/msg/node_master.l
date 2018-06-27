@@ -14,31 +14,45 @@
 
 (defclass whatever::node_master
   :super ros::object
-  :slots (_override_status _rc_flag ))
+  :slots (_override_status _pid_status _rc_flag _flight_mode ))
 
 (defmethod whatever::node_master
   (:init
    (&key
     ((:override_status __override_status) nil)
+    ((:pid_status __pid_status) nil)
     ((:rc_flag __rc_flag) 0)
+    ((:flight_mode __flight_mode) "")
     )
    (send-super :init)
    (setq _override_status __override_status)
+   (setq _pid_status __pid_status)
    (setq _rc_flag (round __rc_flag))
+   (setq _flight_mode (string __flight_mode))
    self)
   (:override_status
    (&optional __override_status)
    (if __override_status (setq _override_status __override_status)) _override_status)
+  (:pid_status
+   (&optional __pid_status)
+   (if __pid_status (setq _pid_status __pid_status)) _pid_status)
   (:rc_flag
    (&optional __rc_flag)
    (if __rc_flag (setq _rc_flag __rc_flag)) _rc_flag)
+  (:flight_mode
+   (&optional __flight_mode)
+   (if __flight_mode (setq _flight_mode __flight_mode)) _flight_mode)
   (:serialization-length
    ()
    (+
     ;; bool _override_status
     1
+    ;; bool _pid_status
+    1
     ;; int16 _rc_flag
     2
+    ;; string _flight_mode
+    4 (length _flight_mode)
     ))
   (:serialize
    (&optional strm)
@@ -46,30 +60,40 @@
               (make-string-output-stream (send self :serialization-length)))))
      ;; bool _override_status
        (if _override_status (write-byte -1 s) (write-byte 0 s))
+     ;; bool _pid_status
+       (if _pid_status (write-byte -1 s) (write-byte 0 s))
      ;; int16 _rc_flag
        (write-word _rc_flag s)
+     ;; string _flight_mode
+       (write-long (length _flight_mode) s) (princ _flight_mode s)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
    ;; bool _override_status
      (setq _override_status (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
+   ;; bool _pid_status
+     (setq _pid_status (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
    ;; int16 _rc_flag
      (setq _rc_flag (sys::peek buf ptr- :short)) (incf ptr- 2)
+   ;; string _flight_mode
+     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _flight_mode (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
    ;;
    self)
   )
 
-(setf (get whatever::node_master :md5sum-) "2e6fced663cb3e5fee5dab7b6365bb07")
+(setf (get whatever::node_master :md5sum-) "f3f7dc0ea99172671bd9b94d6ee68422")
 (setf (get whatever::node_master :datatype-) "whatever/node_master")
 (setf (get whatever::node_master :definition-)
       "bool override_status
+bool pid_status
 int16 rc_flag
+string flight_mode
 
 ")
 
 
 
-(provide :whatever/node_master "2e6fced663cb3e5fee5dab7b6365bb07")
+(provide :whatever/node_master "f3f7dc0ea99172671bd9b94d6ee68422")
 
 

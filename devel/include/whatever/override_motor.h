@@ -24,16 +24,26 @@ struct override_motor_
   typedef override_motor_<ContainerAllocator> Type;
 
   override_motor_()
-    : steering(0)
+    : state(0)
+    , setpoint(0)
+    , steering(0)
     , throttle(0)  {
     }
   override_motor_(const ContainerAllocator& _alloc)
-    : steering(0)
+    : state(0)
+    , setpoint(0)
+    , steering(0)
     , throttle(0)  {
   (void)_alloc;
     }
 
 
+
+   typedef int16_t _state_type;
+  _state_type state;
+
+   typedef int16_t _setpoint_type;
+  _setpoint_type setpoint;
 
    typedef int16_t _steering_type;
   _steering_type steering;
@@ -119,12 +129,12 @@ struct MD5Sum< ::whatever::override_motor_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "c4dd5817de7802d91e66008f92eca79e";
+    return "a869452c0c09cdbbd8802ed4974ea464";
   }
 
   static const char* value(const ::whatever::override_motor_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xc4dd5817de7802d9ULL;
-  static const uint64_t static_value2 = 0x1e66008f92eca79eULL;
+  static const uint64_t static_value1 = 0xa869452c0c09cdbbULL;
+  static const uint64_t static_value2 = 0xd8802ed4974ea464ULL;
 };
 
 template<class ContainerAllocator>
@@ -143,7 +153,9 @@ struct Definition< ::whatever::override_motor_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "int16 steering\n\
+    return "int16 state\n\
+int16 setpoint\n\
+int16 steering\n\
 int16 throttle\n\
 ";
   }
@@ -163,6 +175,8 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
+      stream.next(m.state);
+      stream.next(m.setpoint);
       stream.next(m.steering);
       stream.next(m.throttle);
     }
@@ -183,6 +197,10 @@ struct Printer< ::whatever::override_motor_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::whatever::override_motor_<ContainerAllocator>& v)
   {
+    s << indent << "state: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.state);
+    s << indent << "setpoint: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.setpoint);
     s << indent << "steering: ";
     Printer<int16_t>::stream(s, indent + "  ", v.steering);
     s << indent << "throttle: ";

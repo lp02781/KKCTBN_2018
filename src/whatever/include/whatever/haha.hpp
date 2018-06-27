@@ -11,6 +11,10 @@
 #define MAX_PWM 1920
 #define MIN_PWM 1120
 
+#define MIDDLE_PWM 1520
+#define CHANGE_STEER 200
+#define CHANGE_THROTTLE 200
+
 int number_camera = 0;
 
 int zero_flag 		= 0;
@@ -20,3 +24,4 @@ int record_manuver 	= 3;
 int record_speed 	= 4;
 int path_manuver 	= 5;
 int path_speed 		= 6;
+
