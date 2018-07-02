@@ -47,45 +47,17 @@ int main(int argc, char **argv)
 	while( ros::ok() ){	
 		ros::spinOnce();
 		ROS_WARN("NC : topic master");
-		ROS_INFO("override_status: %s", override_status.c_str());
-		ROS_INFO("pid_status: %s", override_status.c_str()); 
-		ROS_INFO("rc_flag: %d", rc_flag);
-		ROS_INFO("flight_mode: %s", flight_mode.c_str());
-		sleep(1);
-		
+		ROS_INFO("override:%s pid:%s rc:%d flight: %s", override_status.c_str(), pid_status.c_str(), rc_flag, flight_mode.c_str());		
 		ROS_WARN("NC : topic override");
-		ROS_INFO("state : %d", state);
-		ROS_INFO("setpoint : %d", setpoint);
-		ROS_INFO("steering : %d", steering);
-		ROS_INFO("throttle : %d", throttle);
-		sleep(1);
-		
+		ROS_INFO("state:%d setpoint:%d steering:%d throttle:%d", state, setpoint, steering, throttle);
 		ROS_WARN("NC : topic rc");
-		ROS_INFO("out 1 : %d", in_channel[0]); 
-		ROS_INFO("out 2 : %d", in_channel[1]); 
-		ROS_INFO("out 3 : %d", in_channel[2]); 
-		ROS_INFO("out 4 : %d", in_channel[3]); 
-		ROS_INFO("out 5 : %d", in_channel[4]); 
-		ROS_INFO("out 6 : %d", in_channel[5]); 
-		ROS_INFO("out 7 : %d", in_channel[6]); 
-		ROS_INFO("out 8 : %d", in_channel[7]);
-		sleep(1);
-		
+		ROS_INFO("%d, %d, %d, %d, %d, %d, %d, %d", in_channel[0], in_channel[1], in_channel[2], in_channel[3], in_channel[4], in_channel[5], in_channel[6], in_channel[7]);		
 		ROS_WARN("NC : topic motor");
-		ROS_INFO("out 1 : %d", out_channel[0]); 
-		ROS_INFO("out 2 : %d", out_channel[1]); 
-		ROS_INFO("out 3 : %d", out_channel[2]); 
-		ROS_INFO("out 4 : %d", out_channel[3]); 
-		ROS_INFO("out 5 : %d", out_channel[4]); 
-		ROS_INFO("out 6 : %d", out_channel[5]); 
-		ROS_INFO("out 7 : %d", out_channel[6]); 
-		ROS_INFO("out 8 : %d", out_channel[7]); 
-		sleep(1);
-		
+		ROS_INFO("%d, %d, %d, %d, %d, %d, %d, %d", out_channel[0], out_channel[1], out_channel[2], out_channel[3], out_channel[4], out_channel[5], out_channel[6], out_channel[7]);		
 		ROS_WARN("NC : topic state");
-		ROS_INFO("armed : %s", armed.c_str());
-		ROS_INFO("mode : %s", mode.c_str());
+		ROS_INFO("armed:%s mode:%s", armed.c_str(), mode.c_str());
 		sleep(1);
+		system("clear");
 	}
 }
 

@@ -191,8 +191,8 @@ ${catkin_LIBRARIES}
 ${OpenCV_LIBRARIES}
 )
 
-add_executable(hough_red_buoy src/image/hough_red_buoy.cpp )
-target_link_libraries(hough_red_buoy
+add_executable(listen src/image/listen.cpp )
+target_link_libraries(listen
 ${catkin_LIBRARIES}
 ${OpenCV_LIBRARIES}
 )

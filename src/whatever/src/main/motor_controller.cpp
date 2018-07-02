@@ -62,7 +62,6 @@ void override_input_cb(const whatever::override_motor& override_recv){
 		last_override_status = override_status;
 	}
 	else if(!override_status && last_override_status){
-		ROS_WARN_STREAM("[MC] Override Off") ;
 		last_override_status = override_status;
 	}
 }

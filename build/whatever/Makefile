@@ -301,21 +301,6 @@ geographic_msgs_generate_messages_eus/fast:
 .PHONY : geographic_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-whatever/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
-	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-.PHONY : whatever/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_eus: whatever/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_eus
-
-# fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make whatever/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
 whatever/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/rule:
 	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/rule
 .PHONY : whatever/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/rule
@@ -479,6 +464,36 @@ motor_controller: whatever/CMakeFiles/motor_controller.dir/rule
 motor_controller/fast:
 	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/motor_controller.dir/build.make whatever/CMakeFiles/motor_controller.dir/build
 .PHONY : motor_controller/fast
+
+# Convenience name for target.
+whatever/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
+	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+.PHONY : whatever/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_eus: whatever/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_eus
+
+# fast build rule for target.
+sensor_msgs_generate_messages_eus/fast:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make whatever/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+whatever/CMakeFiles/listen.dir/rule:
+	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/listen.dir/rule
+.PHONY : whatever/CMakeFiles/listen.dir/rule
+
+# Convenience name for target.
+listen: whatever/CMakeFiles/listen.dir/rule
+
+.PHONY : listen
+
+# fast build rule for target.
+listen/fast:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/listen.dir/build.make whatever/CMakeFiles/listen.dir/build
+.PHONY : listen/fast
 
 # Convenience name for target.
 whatever/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule:
@@ -661,21 +676,6 @@ geometry_msgs_generate_messages_lisp/fast:
 .PHONY : geometry_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-whatever/CMakeFiles/hough_red_buoy.dir/rule:
-	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/hough_red_buoy.dir/rule
-.PHONY : whatever/CMakeFiles/hough_red_buoy.dir/rule
-
-# Convenience name for target.
-hough_red_buoy: whatever/CMakeFiles/hough_red_buoy.dir/rule
-
-.PHONY : hough_red_buoy
-
-# fast build rule for target.
-hough_red_buoy/fast:
-	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/hough_red_buoy.dir/build.make whatever/CMakeFiles/hough_red_buoy.dir/build
-.PHONY : hough_red_buoy/fast
-
-# Convenience name for target.
 whatever/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
 .PHONY : whatever/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
@@ -840,33 +840,6 @@ image_front/fast:
 	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/image_front.dir/build.make whatever/CMakeFiles/image_front.dir/build
 .PHONY : image_front/fast
 
-src/image/hough_red_buoy.o: src/image/hough_red_buoy.cpp.o
-
-.PHONY : src/image/hough_red_buoy.o
-
-# target to build an object file
-src/image/hough_red_buoy.cpp.o:
-	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/hough_red_buoy.dir/build.make whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o
-.PHONY : src/image/hough_red_buoy.cpp.o
-
-src/image/hough_red_buoy.i: src/image/hough_red_buoy.cpp.i
-
-.PHONY : src/image/hough_red_buoy.i
-
-# target to preprocess a source file
-src/image/hough_red_buoy.cpp.i:
-	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/hough_red_buoy.dir/build.make whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.i
-.PHONY : src/image/hough_red_buoy.cpp.i
-
-src/image/hough_red_buoy.s: src/image/hough_red_buoy.cpp.s
-
-.PHONY : src/image/hough_red_buoy.s
-
-# target to generate assembly for a file
-src/image/hough_red_buoy.cpp.s:
-	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/hough_red_buoy.dir/build.make whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.s
-.PHONY : src/image/hough_red_buoy.cpp.s
-
 src/image/image_front.o: src/image/image_front.cpp.o
 
 .PHONY : src/image/image_front.o
@@ -893,6 +866,33 @@ src/image/image_front.s: src/image/image_front.cpp.s
 src/image/image_front.cpp.s:
 	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/image_front.dir/build.make whatever/CMakeFiles/image_front.dir/src/image/image_front.cpp.s
 .PHONY : src/image/image_front.cpp.s
+
+src/image/listen.o: src/image/listen.cpp.o
+
+.PHONY : src/image/listen.o
+
+# target to build an object file
+src/image/listen.cpp.o:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/listen.dir/build.make whatever/CMakeFiles/listen.dir/src/image/listen.cpp.o
+.PHONY : src/image/listen.cpp.o
+
+src/image/listen.i: src/image/listen.cpp.i
+
+.PHONY : src/image/listen.i
+
+# target to preprocess a source file
+src/image/listen.cpp.i:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/listen.dir/build.make whatever/CMakeFiles/listen.dir/src/image/listen.cpp.i
+.PHONY : src/image/listen.cpp.i
+
+src/image/listen.s: src/image/listen.cpp.s
+
+.PHONY : src/image/listen.s
+
+# target to generate assembly for a file
+src/image/listen.cpp.s:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/listen.dir/build.make whatever/CMakeFiles/listen.dir/src/image/listen.cpp.s
+.PHONY : src/image/listen.cpp.s
 
 src/main/debug_makara.o: src/main/debug_makara.cpp.o
 
@@ -1050,7 +1050,6 @@ help:
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... whatever_generate_messages_py"
 	@echo "... geographic_msgs_generate_messages_eus"
-	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... mavros_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... whatever_generate_messages"
@@ -1062,6 +1061,8 @@ help:
 	@echo "... whatever_gennodejs"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... motor_controller"
+	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... listen"
 	@echo "... geographic_msgs_generate_messages_cpp"
 	@echo "... geographic_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_py"
@@ -1074,7 +1075,6 @@ help:
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... uuid_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... hough_red_buoy"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... uuid_msgs_generate_messages_nodejs"
 	@echo "... uuid_msgs_generate_messages_lisp"
@@ -1087,12 +1087,12 @@ help:
 	@echo "... whatever_genpy"
 	@echo "... install/strip"
 	@echo "... image_front"
-	@echo "... src/image/hough_red_buoy.o"
-	@echo "... src/image/hough_red_buoy.i"
-	@echo "... src/image/hough_red_buoy.s"
 	@echo "... src/image/image_front.o"
 	@echo "... src/image/image_front.i"
 	@echo "... src/image/image_front.s"
+	@echo "... src/image/listen.o"
+	@echo "... src/image/listen.i"
+	@echo "... src/image/listen.s"
 	@echo "... src/main/debug_makara.o"
 	@echo "... src/main/debug_makara.i"
 	@echo "... src/main/debug_makara.s"

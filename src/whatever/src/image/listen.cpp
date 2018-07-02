@@ -17,9 +17,10 @@ void imageCallback(const sensor_msgs::CompressedImageConstPtr& msg)
 {
   try
   {
-    Original = cv::imdecode(cv::Mat(msg->data),1);//convert compressed image data to cv::Mat
+    Mat image = cv::imdecode(cv::Mat(msg->data),1);//convert compressed image data to cv::Mat
+    imshow("view", image);
+
     waitKey(10);
-    imageProcessing();
   }
   catch (cv_bridge::Exception& e)
   {
@@ -27,18 +28,13 @@ void imageCallback(const sensor_msgs::CompressedImageConstPtr& msg)
   }
 }
 
-int main(int argc, char **argv){
-	ros::init(argc, argv, "videoRec");
-	ros::NodeHandle nh;
-	cv::startWindowThread();
-	
-	ros::Subscriber sub = nh.subscribe("/camera/image", 1, imageCallback);
-	
-	ROS_WARN("NC : hough_red_buoy.cpp active");
-	
-	ros::spin();
-}
-
-void imageProcessing(){
-	imshow("Original", Original); 
+int main(int argc, char **argv)
+{
+  ros::init(argc, argv, "image_listener");
+  ros::NodeHandle nh;
+  namedWindow("view");
+  startWindowThread();
+  ros::Subscriber sub = nh.subscribe("/camera/image/compressed", 1, imageCallback);
+  ros::spin();
+  ROS_WARN("NC : hough_red_buoy.cpp active");
 }
