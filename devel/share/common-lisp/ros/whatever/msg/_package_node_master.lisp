@@ -3,8 +3,8 @@
           OVERRIDE_STATUS
           PID_STATUS-VAL
           PID_STATUS
-          RC_FLAG-VAL
-          RC_FLAG
+          RC_NUMBER-VAL
+          RC_NUMBER
           FLIGHT_MODE-VAL
           FLIGHT_MODE
 ))

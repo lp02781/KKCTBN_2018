@@ -43,14 +43,17 @@ void pid_input_cb(const whatever::override_motor& rc){
 	if(pid_status){
 		
 		if(state < setpoint){
+			controller.header = left_header;
 			steer_pwm = MIDDLE_PWM + CHANGE_STEER;
 			throttle_pwm = MIDDLE_PWM + CHANGE_THROTTLE;
 		}
 		else if(state > setpoint){
+			controller.header = right_header;
 			steer_pwm = MIDDLE_PWM - CHANGE_STEER;
 			throttle_pwm = MIDDLE_PWM + CHANGE_THROTTLE;
 		}
 		else{
+			controller.header = center_header;
 			steer_pwm = MIDDLE_PWM;
 			throttle_pwm = MIDDLE_PWM;
 		}

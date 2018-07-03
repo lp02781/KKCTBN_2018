@@ -22,6 +22,7 @@ class override_motor {
       this.setpoint = null;
       this.steering = null;
       this.throttle = null;
+      this.header = null;
     }
     else {
       if (initObj.hasOwnProperty('state')) {
@@ -48,6 +49,12 @@ class override_motor {
       else {
         this.throttle = 0;
       }
+      if (initObj.hasOwnProperty('header')) {
+        this.header = initObj.header
+      }
+      else {
+        this.header = 0;
+      }
     }
   }
 
@@ -61,6 +68,8 @@ class override_motor {
     bufferOffset = _serializer.int16(obj.steering, buffer, bufferOffset);
     // Serialize message field [throttle]
     bufferOffset = _serializer.int16(obj.throttle, buffer, bufferOffset);
+    // Serialize message field [header]
+    bufferOffset = _serializer.int16(obj.header, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -76,11 +85,13 @@ class override_motor {
     data.steering = _deserializer.int16(buffer, bufferOffset);
     // Deserialize message field [throttle]
     data.throttle = _deserializer.int16(buffer, bufferOffset);
+    // Deserialize message field [header]
+    data.header = _deserializer.int16(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 8;
+    return 10;
   }
 
   static datatype() {
@@ -90,7 +101,7 @@ class override_motor {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'a869452c0c09cdbbd8802ed4974ea464';
+    return '376bcc9dcf6eae1af3cfb5ce0f3af536';
   }
 
   static messageDefinition() {
@@ -100,6 +111,7 @@ class override_motor {
     int16 setpoint
     int16 steering
     int16 throttle
+    int16 header
     
     `;
   }
@@ -136,6 +148,13 @@ class override_motor {
     }
     else {
       resolved.throttle = 0
+    }
+
+    if (msg.header !== undefined) {
+      resolved.header = msg.header;
+    }
+    else {
+      resolved.header = 0
     }
 
     return resolved;

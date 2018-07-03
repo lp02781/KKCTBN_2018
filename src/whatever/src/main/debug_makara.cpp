@@ -1,3 +1,4 @@
+#include "../../include/whatever/haha.hpp"
 #include <iostream>
 #include <stdio.h>
 #include <ros/ros.h>
@@ -18,6 +19,8 @@ int state;
 int setpoint;
 int steering;
 int throttle;
+int num_header;
+string header;
 
 int out_channel[8];
 int in_channel[8];
@@ -46,10 +49,15 @@ int main(int argc, char **argv)
 
 	while( ros::ok() ){	
 		ros::spinOnce();
+		
+		if(num_header = left_header){header = "left";}
+		else if(num_header = right_header){header = "right";}
+		else if(num_header = center_header){header = "center";}
+		
 		ROS_WARN("NC : topic master");
 		ROS_INFO("override:%s pid:%s rc:%d flight: %s", override_status.c_str(), pid_status.c_str(), rc_flag, flight_mode.c_str());		
 		ROS_WARN("NC : topic override");
-		ROS_INFO("state:%d setpoint:%d steering:%d throttle:%d", state, setpoint, steering, throttle);
+		ROS_INFO("state:%d setpoint:%d steering:%d throttle:%d header:%s", state, setpoint, steering, throttle, header.c_str());
 		ROS_WARN("NC : topic rc");
 		ROS_INFO("%d, %d, %d, %d, %d, %d, %d, %d", in_channel[0], in_channel[1], in_channel[2], in_channel[3], in_channel[4], in_channel[5], in_channel[6], in_channel[7]);		
 		ROS_WARN("NC : topic motor");
@@ -66,15 +74,16 @@ void node_master_cb	(const whatever::node_master& master){
 	else{override_status = "false";}
 	if(master.pid_status == true){pid_status = "true";}
 	else{pid_status = "false";}
-	rc_flag 		= master.rc_flag;
+	rc_flag 		= master.rc_number;
 	flight_mode 	= master.flight_mode;
 }
 
 void override_rc_cb	(const whatever::override_motor& rc){
-	state	 = rc.state;
-	setpoint = rc.setpoint;
-	steering = rc.steering;
-	throttle = rc.throttle;
+	state	 	= rc.state;
+	setpoint 	= rc.setpoint;
+	steering	= rc.steering;
+	throttle 	= rc.throttle;
+	num_header 	= rc.header;
 }
 
 void override_motor_cb (const mavros_msgs::OverrideRCIn& motor){

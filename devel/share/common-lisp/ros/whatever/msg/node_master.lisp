@@ -17,9 +17,9 @@
     :initarg :pid_status
     :type cl:boolean
     :initform cl:nil)
-   (rc_flag
-    :reader rc_flag
-    :initarg :rc_flag
+   (rc_number
+    :reader rc_number
+    :initarg :rc_number
     :type cl:fixnum
     :initform 0)
    (flight_mode
@@ -47,10 +47,10 @@
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader whatever-msg:pid_status-val is deprecated.  Use whatever-msg:pid_status instead.")
   (pid_status m))
 
-(cl:ensure-generic-function 'rc_flag-val :lambda-list '(m))
-(cl:defmethod rc_flag-val ((m <node_master>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader whatever-msg:rc_flag-val is deprecated.  Use whatever-msg:rc_flag instead.")
-  (rc_flag m))
+(cl:ensure-generic-function 'rc_number-val :lambda-list '(m))
+(cl:defmethod rc_number-val ((m <node_master>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader whatever-msg:rc_number-val is deprecated.  Use whatever-msg:rc_number instead.")
+  (rc_number m))
 
 (cl:ensure-generic-function 'flight_mode-val :lambda-list '(m))
 (cl:defmethod flight_mode-val ((m <node_master>))
@@ -60,7 +60,7 @@
   "Serializes a message object of type '<node_master>"
   (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'override_status) 1 0)) ostream)
   (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'pid_status) 1 0)) ostream)
-  (cl:let* ((signed (cl:slot-value msg 'rc_flag)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 65536) signed)))
+  (cl:let* ((signed (cl:slot-value msg 'rc_number)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 65536) signed)))
     (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
     )
@@ -78,7 +78,7 @@
     (cl:let ((unsigned 0))
       (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'rc_flag) (cl:if (cl:< unsigned 32768) unsigned (cl:- unsigned 65536))))
+      (cl:setf (cl:slot-value msg 'rc_number) (cl:if (cl:< unsigned 32768) unsigned (cl:- unsigned 65536))))
     (cl:let ((__ros_str_len 0))
       (cl:setf (cl:ldb (cl:byte 8 0) __ros_str_len) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) __ros_str_len) (cl:read-byte istream))
@@ -97,16 +97,16 @@
   "whatever/node_master")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<node_master>)))
   "Returns md5sum for a message object of type '<node_master>"
-  "f3f7dc0ea99172671bd9b94d6ee68422")
+  "3f3657994b0c8ed8f1919100c99067da")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'node_master)))
   "Returns md5sum for a message object of type 'node_master"
-  "f3f7dc0ea99172671bd9b94d6ee68422")
+  "3f3657994b0c8ed8f1919100c99067da")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<node_master>)))
   "Returns full string definition for message of type '<node_master>"
-  (cl:format cl:nil "bool override_status~%bool pid_status~%int16 rc_flag~%string flight_mode~%~%~%"))
+  (cl:format cl:nil "bool override_status~%bool pid_status~%int16 rc_number~%string flight_mode~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'node_master)))
   "Returns full string definition for message of type 'node_master"
-  (cl:format cl:nil "bool override_status~%bool pid_status~%int16 rc_flag~%string flight_mode~%~%~%"))
+  (cl:format cl:nil "bool override_status~%bool pid_status~%int16 rc_number~%string flight_mode~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <node_master>))
   (cl:+ 0
      1
@@ -119,6 +119,6 @@
   (cl:list 'node_master
     (cl:cons ':override_status (override_status msg))
     (cl:cons ':pid_status (pid_status msg))
-    (cl:cons ':rc_flag (rc_flag msg))
+    (cl:cons ':rc_number (rc_number msg))
     (cl:cons ':flight_mode (flight_mode msg))
 ))

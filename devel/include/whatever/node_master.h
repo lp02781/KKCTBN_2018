@@ -26,13 +26,13 @@ struct node_master_
   node_master_()
     : override_status(false)
     , pid_status(false)
-    , rc_flag(0)
+    , rc_number(0)
     , flight_mode()  {
     }
   node_master_(const ContainerAllocator& _alloc)
     : override_status(false)
     , pid_status(false)
-    , rc_flag(0)
+    , rc_number(0)
     , flight_mode(_alloc)  {
   (void)_alloc;
     }
@@ -45,8 +45,8 @@ struct node_master_
    typedef uint8_t _pid_status_type;
   _pid_status_type pid_status;
 
-   typedef int16_t _rc_flag_type;
-  _rc_flag_type rc_flag;
+   typedef int16_t _rc_number_type;
+  _rc_number_type rc_number;
 
    typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _flight_mode_type;
   _flight_mode_type flight_mode;
@@ -129,12 +129,12 @@ struct MD5Sum< ::whatever::node_master_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "f3f7dc0ea99172671bd9b94d6ee68422";
+    return "3f3657994b0c8ed8f1919100c99067da";
   }
 
   static const char* value(const ::whatever::node_master_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xf3f7dc0ea9917267ULL;
-  static const uint64_t static_value2 = 0x1bd9b94d6ee68422ULL;
+  static const uint64_t static_value1 = 0x3f3657994b0c8ed8ULL;
+  static const uint64_t static_value2 = 0xf1919100c99067daULL;
 };
 
 template<class ContainerAllocator>
@@ -155,7 +155,7 @@ struct Definition< ::whatever::node_master_<ContainerAllocator> >
   {
     return "bool override_status\n\
 bool pid_status\n\
-int16 rc_flag\n\
+int16 rc_number\n\
 string flight_mode\n\
 ";
   }
@@ -177,7 +177,7 @@ namespace serialization
     {
       stream.next(m.override_status);
       stream.next(m.pid_status);
-      stream.next(m.rc_flag);
+      stream.next(m.rc_number);
       stream.next(m.flight_mode);
     }
 
@@ -201,8 +201,8 @@ struct Printer< ::whatever::node_master_<ContainerAllocator> >
     Printer<uint8_t>::stream(s, indent + "  ", v.override_status);
     s << indent << "pid_status: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.pid_status);
-    s << indent << "rc_flag: ";
-    Printer<int16_t>::stream(s, indent + "  ", v.rc_flag);
+    s << indent << "rc_number: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.rc_number);
     s << indent << "flight_mode: ";
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.flight_mode);
   }

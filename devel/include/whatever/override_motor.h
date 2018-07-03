@@ -27,13 +27,15 @@ struct override_motor_
     : state(0)
     , setpoint(0)
     , steering(0)
-    , throttle(0)  {
+    , throttle(0)
+    , header(0)  {
     }
   override_motor_(const ContainerAllocator& _alloc)
     : state(0)
     , setpoint(0)
     , steering(0)
-    , throttle(0)  {
+    , throttle(0)
+    , header(0)  {
   (void)_alloc;
     }
 
@@ -50,6 +52,9 @@ struct override_motor_
 
    typedef int16_t _throttle_type;
   _throttle_type throttle;
+
+   typedef int16_t _header_type;
+  _header_type header;
 
 
 
@@ -129,12 +134,12 @@ struct MD5Sum< ::whatever::override_motor_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "a869452c0c09cdbbd8802ed4974ea464";
+    return "376bcc9dcf6eae1af3cfb5ce0f3af536";
   }
 
   static const char* value(const ::whatever::override_motor_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xa869452c0c09cdbbULL;
-  static const uint64_t static_value2 = 0xd8802ed4974ea464ULL;
+  static const uint64_t static_value1 = 0x376bcc9dcf6eae1aULL;
+  static const uint64_t static_value2 = 0xf3cfb5ce0f3af536ULL;
 };
 
 template<class ContainerAllocator>
@@ -157,6 +162,7 @@ struct Definition< ::whatever::override_motor_<ContainerAllocator> >
 int16 setpoint\n\
 int16 steering\n\
 int16 throttle\n\
+int16 header\n\
 ";
   }
 
@@ -179,6 +185,7 @@ namespace serialization
       stream.next(m.setpoint);
       stream.next(m.steering);
       stream.next(m.throttle);
+      stream.next(m.header);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -205,6 +212,8 @@ struct Printer< ::whatever::override_motor_<ContainerAllocator> >
     Printer<int16_t>::stream(s, indent + "  ", v.steering);
     s << indent << "throttle: ";
     Printer<int16_t>::stream(s, indent + "  ", v.throttle);
+    s << indent << "header: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.header);
   }
 };
 

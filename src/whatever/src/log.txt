@@ -12,6 +12,8 @@ selanjutnya
 - image_processing
 - pid bermasalah
 - remote monitor bermasalah
+- topic pada node master bermasalah
+
 
 
 

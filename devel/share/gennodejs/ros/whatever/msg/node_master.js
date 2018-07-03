@@ -20,7 +20,7 @@ class node_master {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.override_status = null;
       this.pid_status = null;
-      this.rc_flag = null;
+      this.rc_number = null;
       this.flight_mode = null;
     }
     else {
@@ -36,11 +36,11 @@ class node_master {
       else {
         this.pid_status = false;
       }
-      if (initObj.hasOwnProperty('rc_flag')) {
-        this.rc_flag = initObj.rc_flag
+      if (initObj.hasOwnProperty('rc_number')) {
+        this.rc_number = initObj.rc_number
       }
       else {
-        this.rc_flag = 0;
+        this.rc_number = 0;
       }
       if (initObj.hasOwnProperty('flight_mode')) {
         this.flight_mode = initObj.flight_mode
@@ -57,8 +57,8 @@ class node_master {
     bufferOffset = _serializer.bool(obj.override_status, buffer, bufferOffset);
     // Serialize message field [pid_status]
     bufferOffset = _serializer.bool(obj.pid_status, buffer, bufferOffset);
-    // Serialize message field [rc_flag]
-    bufferOffset = _serializer.int16(obj.rc_flag, buffer, bufferOffset);
+    // Serialize message field [rc_number]
+    bufferOffset = _serializer.int16(obj.rc_number, buffer, bufferOffset);
     // Serialize message field [flight_mode]
     bufferOffset = _serializer.string(obj.flight_mode, buffer, bufferOffset);
     return bufferOffset;
@@ -72,8 +72,8 @@ class node_master {
     data.override_status = _deserializer.bool(buffer, bufferOffset);
     // Deserialize message field [pid_status]
     data.pid_status = _deserializer.bool(buffer, bufferOffset);
-    // Deserialize message field [rc_flag]
-    data.rc_flag = _deserializer.int16(buffer, bufferOffset);
+    // Deserialize message field [rc_number]
+    data.rc_number = _deserializer.int16(buffer, bufferOffset);
     // Deserialize message field [flight_mode]
     data.flight_mode = _deserializer.string(buffer, bufferOffset);
     return data;
@@ -92,7 +92,7 @@ class node_master {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'f3f7dc0ea99172671bd9b94d6ee68422';
+    return '3f3657994b0c8ed8f1919100c99067da';
   }
 
   static messageDefinition() {
@@ -100,7 +100,7 @@ class node_master {
     return `
     bool override_status
     bool pid_status
-    int16 rc_flag
+    int16 rc_number
     string flight_mode
     
     `;
@@ -126,11 +126,11 @@ class node_master {
       resolved.pid_status = false
     }
 
-    if (msg.rc_flag !== undefined) {
-      resolved.rc_flag = msg.rc_flag;
+    if (msg.rc_number !== undefined) {
+      resolved.rc_number = msg.rc_number;
     }
     else {
-      resolved.rc_flag = 0
+      resolved.rc_number = 0
     }
 
     if (msg.flight_mode !== undefined) {

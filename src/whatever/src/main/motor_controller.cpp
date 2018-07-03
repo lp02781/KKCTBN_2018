@@ -27,8 +27,9 @@ int main(int argc, char **argv)
   
   ROS_WARN("NC : motor_controller.cpp active");
   
-  ros::spin();
-  return 0;
+	while(ros::ok()){
+		ros::spin();
+	}
 }
 
 void override_status_cb(const whatever::node_master& override_status_recv){
@@ -57,11 +58,10 @@ void override_input_cb(const whatever::override_motor& override_recv){
 		else {
 			override_out.channels[STEERING] = override_recv.steering;
 		}
-		
-		pub_override_rc.publish(override_out);
-		last_override_status = override_status;
 	}
-	else if(!override_status && last_override_status){
-		last_override_status = override_status;
+	else{
+		override_out.channels[THROTTLE] = MIDDLE_PWM;
+		override_out.channels[STEERING] = MIDDLE_PWM;
 	}
+	pub_override_rc.publish(override_out);
 }

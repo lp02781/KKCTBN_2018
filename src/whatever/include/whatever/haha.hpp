@@ -25,3 +25,7 @@ int record_speed 	= 4;
 int path_manuver 	= 5;
 int path_speed 		= 6;
 
+int left_header = 1;
+int right_header = 2;
+int center_header = 0;
+

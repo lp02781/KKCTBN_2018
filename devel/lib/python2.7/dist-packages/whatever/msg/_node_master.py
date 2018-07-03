@@ -7,15 +7,15 @@ import struct
 
 
 class node_master(genpy.Message):
-  _md5sum = "f3f7dc0ea99172671bd9b94d6ee68422"
+  _md5sum = "3f3657994b0c8ed8f1919100c99067da"
   _type = "whatever/node_master"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """bool override_status
 bool pid_status
-int16 rc_flag
+int16 rc_number
 string flight_mode
 """
-  __slots__ = ['override_status','pid_status','rc_flag','flight_mode']
+  __slots__ = ['override_status','pid_status','rc_number','flight_mode']
   _slot_types = ['bool','bool','int16','string']
 
   def __init__(self, *args, **kwds):
@@ -26,7 +26,7 @@ string flight_mode
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       override_status,pid_status,rc_flag,flight_mode
+       override_status,pid_status,rc_number,flight_mode
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -39,14 +39,14 @@ string flight_mode
         self.override_status = False
       if self.pid_status is None:
         self.pid_status = False
-      if self.rc_flag is None:
-        self.rc_flag = 0
+      if self.rc_number is None:
+        self.rc_number = 0
       if self.flight_mode is None:
         self.flight_mode = ''
     else:
       self.override_status = False
       self.pid_status = False
-      self.rc_flag = 0
+      self.rc_number = 0
       self.flight_mode = ''
 
   def _get_types(self):
@@ -62,7 +62,7 @@ string flight_mode
     """
     try:
       _x = self
-      buff.write(_get_struct_2Bh().pack(_x.override_status, _x.pid_status, _x.rc_flag))
+      buff.write(_get_struct_2Bh().pack(_x.override_status, _x.pid_status, _x.rc_number))
       _x = self.flight_mode
       length = len(_x)
       if python3 or type(_x) == unicode:
@@ -82,7 +82,7 @@ string flight_mode
       _x = self
       start = end
       end += 4
-      (_x.override_status, _x.pid_status, _x.rc_flag,) = _get_struct_2Bh().unpack(str[start:end])
+      (_x.override_status, _x.pid_status, _x.rc_number,) = _get_struct_2Bh().unpack(str[start:end])
       self.override_status = bool(self.override_status)
       self.pid_status = bool(self.pid_status)
       start = end
@@ -107,7 +107,7 @@ string flight_mode
     """
     try:
       _x = self
-      buff.write(_get_struct_2Bh().pack(_x.override_status, _x.pid_status, _x.rc_flag))
+      buff.write(_get_struct_2Bh().pack(_x.override_status, _x.pid_status, _x.rc_number))
       _x = self.flight_mode
       length = len(_x)
       if python3 or type(_x) == unicode:
@@ -128,7 +128,7 @@ string flight_mode
       _x = self
       start = end
       end += 4
-      (_x.override_status, _x.pid_status, _x.rc_flag,) = _get_struct_2Bh().unpack(str[start:end])
+      (_x.override_status, _x.pid_status, _x.rc_number,) = _get_struct_2Bh().unpack(str[start:end])
       self.override_status = bool(self.override_status)
       self.pid_status = bool(self.pid_status)
       start = end
