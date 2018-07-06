@@ -37,8 +37,8 @@ void imageCallback(const sensor_msgs::CompressedImageConstPtr& msg)
 {
   try
   {
-    Mat image = cv::imdecode(cv::Mat(msg->data),1);//convert compressed image data to cv::Mat
-	imageProcessing();
+    Original = cv::imdecode(cv::Mat(msg->data),1);//convert compressed image data to cv::Mat
+    imageProcessing();
   }
   catch (cv_bridge::Exception& e)
   {
@@ -46,27 +46,26 @@ void imageCallback(const sensor_msgs::CompressedImageConstPtr& msg)
   }
 }
 
-int main(int argc, char **argv)
-{
-  ros::init(argc, argv, "image_listener");
-  ros::NodeHandle nh;
-  namedWindow("view");
-  startWindowThread();
-  ros::Subscriber sub = nh.subscribe("/camera/image/compressed", 1, imageCallback);
-  
-  ROS_WARN("NC : hough_red_buoy.cpp active");
-  
-  namedWindow("panel", CV_WINDOW_AUTOSIZE);
+int main(int argc, char **argv){
+	ros::init(argc, argv, "videoRec");
+	ros::NodeHandle nh;
+	cv::startWindowThread();
 	
-  createTrackbar("LowH", "panel", &LowH, 255);
-  createTrackbar("HighH", "panel", &HighH, 255);
-  createTrackbar("LowS", "panel", &LowS, 255); 
-  createTrackbar("HighS", "panel", &HighS, 255);
-  createTrackbar("LowV", "panel", &LowV, 255);
-  createTrackbar("HighV", "panel", &HighV, 255);
-  createTrackbar("noise", "panel", &Noise, 255);
-  
-  ros::spin();
+	ros::Subscriber sub = nh.subscribe("/camera/image", 1, imageCallback);
+	
+	ROS_WARN("NC : hough_red_buoy.cpp active");
+	
+	namedWindow("panel", CV_WINDOW_AUTOSIZE);
+	
+	createTrackbar("LowH", "panel", &LowH, 255);
+	createTrackbar("HighH", "panel", &HighH, 255);
+	createTrackbar("LowS", "panel", &LowS, 255); 
+	createTrackbar("HighS", "panel", &HighS, 255);
+	createTrackbar("LowV", "panel", &LowV, 255);
+	createTrackbar("HighV", "panel", &HighV, 255);
+	createTrackbar("noise", "panel", &Noise, 255);
+	
+	ros::spin();	
 }
 
 void imageProcessing(){

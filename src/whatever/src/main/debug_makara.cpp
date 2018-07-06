@@ -50,9 +50,7 @@ int main(int argc, char **argv)
 	while( ros::ok() ){	
 		ros::spinOnce();
 		
-		if(num_header = left_header){header = "left";}
-		else if(num_header = right_header){header = "right";}
-		else if(num_header = center_header){header = "center";}
+		
 		
 		ROS_WARN("NC : topic master");
 		ROS_INFO("override:%s pid:%s rc:%d flight: %s", override_status.c_str(), pid_status.c_str(), rc_flag, flight_mode.c_str());		
@@ -84,6 +82,9 @@ void override_rc_cb	(const whatever::override_motor& rc){
 	steering	= rc.steering;
 	throttle 	= rc.throttle;
 	num_header 	= rc.header;
+	if(num_header = left_header){header = "left";}
+	else if(num_header = right_header){header = "right";}
+	else if(num_header = center_header){header = "center";}
 }
 
 void override_motor_cb (const mavros_msgs::OverrideRCIn& motor){

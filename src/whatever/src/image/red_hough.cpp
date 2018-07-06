@@ -5,12 +5,11 @@
 #include <cv_bridge/cv_bridge.h>
 #include <iostream>
 #include <stdio.h>
+#include "../../include/whatever/haha.hpp"
+#include "whatever/override_motor.h"
 
 using namespace std;
 using namespace cv;
-
-Mat Original;
-Mat imgOriginal, imgHSV, imgThresholded, imgErode, imgDilate;
 
 namespace patch{
     template<typename T> std::string to_string(const T& n){
@@ -19,6 +18,9 @@ namespace patch{
         return stm.str() ;
     }
 }
+
+Mat Original;
+Mat imgOriginal, imgHSV, imgThresholded, imgErode, imgDilate;
 
 int LowH 	= 170;
 int HighH 	= 179;
@@ -30,15 +32,21 @@ int Noise 	= 5;
 
 int sum_x;
 int sum_y;
+int count_circle;
+int state;
 
 void imageProcessing();
+
+whatever::override_motor image;
+ros::Publisher pub_state_camera;
 
 void imageCallback(const sensor_msgs::CompressedImageConstPtr& msg)
 {
   try
   {
-    Mat image = cv::imdecode(cv::Mat(msg->data),1);//convert compressed image data to cv::Mat
-	imageProcessing();
+    Original = cv::imdecode(cv::Mat(msg->data),1);//convert compressed image data to cv::Mat
+    waitKey(10);
+    imageProcessing();
   }
   catch (cv_bridge::Exception& e)
   {
@@ -46,32 +54,35 @@ void imageCallback(const sensor_msgs::CompressedImageConstPtr& msg)
   }
 }
 
-int main(int argc, char **argv)
-{
-  ros::init(argc, argv, "image_listener");
-  ros::NodeHandle nh;
-  namedWindow("view");
-  startWindowThread();
-  ros::Subscriber sub = nh.subscribe("/camera/image/compressed", 1, imageCallback);
-  
-  ROS_WARN("NC : hough_red_buoy.cpp active");
-  
-  namedWindow("panel", CV_WINDOW_AUTOSIZE);
+int main(int argc, char **argv){
+	ros::init(argc, argv, "videoRec");
+	ros::NodeHandle nh;
+	cv::startWindowThread();
 	
-  createTrackbar("LowH", "panel", &LowH, 255);
-  createTrackbar("HighH", "panel", &HighH, 255);
-  createTrackbar("LowS", "panel", &LowS, 255); 
-  createTrackbar("HighS", "panel", &HighS, 255);
-  createTrackbar("LowV", "panel", &LowV, 255);
-  createTrackbar("HighV", "panel", &HighV, 255);
-  createTrackbar("noise", "panel", &Noise, 255);
-  
-  ros::spin();
+	image_transport::ImageTransport it(nh);
+	
+	pub_state_camera 	= nh.advertise<whatever::override_motor>("/kkctbn/override/motor", 1);
+	ros::Subscriber sub = nh.subscribe("camera/image/compressed", 1, imageCallback);
+
+	namedWindow("panel", CV_WINDOW_AUTOSIZE);
+	
+	createTrackbar("LowH", "panel", &LowH, 255);
+	createTrackbar("HighH", "panel", &HighH, 255);
+	createTrackbar("LowS", "panel", &LowS, 255); 
+	createTrackbar("HighS", "panel", &HighS, 255);
+	createTrackbar("LowV", "panel", &LowV, 255);
+	createTrackbar("HighV", "panel", &HighV, 255);
+	createTrackbar("noise", "panel", &Noise, 255);
+	
+	while (ros::ok()) {
+		ros::spinOnce();
+	}
 }
 
 void imageProcessing(){
 	sum_x = 0;
 	sum_y = 0;
+	count_circle = 0;
 		
 	imgOriginal = Original.clone();
 	medianBlur(imgOriginal, imgOriginal, 5);
@@ -104,10 +115,18 @@ void imageProcessing(){
 				FONT_HERSHEY_SIMPLEX, 0.3, Scalar(50, 255, 100), 1);
 		sum_x = sum_x + x;
 		sum_y = sum_y + y;
+		count_circle++;
 	}
-		
-	//cout<<sum_x<<endl;
-		
+	cout<<count_circle<<endl;
+	if(count_circle > 0){
+		state = sum_x/count_circle;
+	}
+	else{
+		state = 0;
+	}
+	image.state = state;
+	pub_state_camera.publish(image);
+	
 	imshow("Threshold", imgThresholded);
 	imshow("Original", Original); 
 }

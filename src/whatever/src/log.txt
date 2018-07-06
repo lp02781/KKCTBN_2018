@@ -9,7 +9,6 @@ selesai
 - debug_makara.cpp 
 
 selanjutnya
-- image_processing
 - pid bermasalah
 - remote monitor bermasalah
 - topic pada node master bermasalah

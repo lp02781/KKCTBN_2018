@@ -6,7 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/home/amvui/AMV/src/whatever/src/image/hough_red_buoy.cpp
+/home/amvui/AMV/devel/include/whatever/override_motor.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
+/home/amvui/AMV/src/whatever/include/whatever/haha.hpp
+
+/home/amvui/AMV/src/whatever/src/image/red_hough.cpp
 ros/ros.h
 -
 image_transport/image_transport.h
@@ -21,6 +39,10 @@ iostream
 -
 stdio.h
 -
+../../include/whatever/haha.hpp
+/home/amvui/AMV/src/whatever/include/whatever/haha.hpp
+whatever/override_motor.h
+/home/amvui/AMV/src/whatever/src/image/whatever/override_motor.h
 
 /opt/ros/kinetic/include/cv_bridge/cv_bridge.h
 sensor_msgs/Image.h

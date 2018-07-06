@@ -191,8 +191,8 @@ ${catkin_LIBRARIES}
 ${OpenCV_LIBRARIES}
 )
 
-add_executable(listen src/image/listen.cpp )
-target_link_libraries(listen
+add_executable(red_hough src/image/red_hough.cpp )
+target_link_libraries(red_hough
 ${catkin_LIBRARIES}
 ${OpenCV_LIBRARIES}
 )

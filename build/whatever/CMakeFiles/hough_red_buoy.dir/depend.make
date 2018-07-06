@@ -3,6 +3,15 @@
 
 whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /home/amvui/AMV/src/whatever/src/image/hough_red_buoy.cpp
 whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/cv_bridge/cv_bridge.h
+whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/image_transport/camera_publisher.h
+whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/image_transport/camera_subscriber.h
+whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/image_transport/exception.h
+whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/image_transport/image_transport.h
+whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/image_transport/loader_fwds.h
+whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/image_transport/publisher.h
+whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/image_transport/single_subscriber_publisher.h
+whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/image_transport/subscriber.h
+whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/image_transport/transport_hints.h
 whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv/cxcore.h
 whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/calib3d.hpp
 whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/calib3d/calib3d_c.h
@@ -192,8 +201,10 @@ whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/
 whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/ros/wall_timer.h
 whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
+whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/sensor_msgs/CameraInfo.h
 whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/sensor_msgs/CompressedImage.h
 whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/sensor_msgs/Image.h
+whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/sensor_msgs/RegionOfInterest.h
 whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/sensor_msgs/image_encodings.h
 whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
 whatever/CMakeFiles/hough_red_buoy.dir/src/image/hough_red_buoy.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
