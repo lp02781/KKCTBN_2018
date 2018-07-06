@@ -9,9 +9,13 @@ selesai
 - debug_makara.cpp 
 
 selanjutnya
+- hough min/max radius
+- blob detection
+- menentukan state
 - pid bermasalah
 - remote monitor bermasalah
 - topic pada node master bermasalah
+- mencoba real motor
 
 
 
