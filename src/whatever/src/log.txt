@@ -10,10 +10,9 @@ selesai
 - hough circle (setpoint)
 
 selanjutnya
-- receiver bermasalah
 - blob detection
 - mencoba real motor
-- banyak topic bermasalah
+- banyak topic bermasalah (pecah message, ubah queue, sleep)
 
 
 
