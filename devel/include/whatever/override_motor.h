@@ -24,27 +24,34 @@ struct override_motor_
   typedef override_motor_<ContainerAllocator> Type;
 
   override_motor_()
-    : state(0)
+    : state_red(0)
+    , state_green(0)
     , setpoint(0)
     , steering(0)
     , throttle(0)
     , header(0)
-    , count(0)  {
+    , count_red(0)
+    , count_green(0)  {
     }
   override_motor_(const ContainerAllocator& _alloc)
-    : state(0)
+    : state_red(0)
+    , state_green(0)
     , setpoint(0)
     , steering(0)
     , throttle(0)
     , header(0)
-    , count(0)  {
+    , count_red(0)
+    , count_green(0)  {
   (void)_alloc;
     }
 
 
 
-   typedef int16_t _state_type;
-  _state_type state;
+   typedef int16_t _state_red_type;
+  _state_red_type state_red;
+
+   typedef int16_t _state_green_type;
+  _state_green_type state_green;
 
    typedef int16_t _setpoint_type;
   _setpoint_type setpoint;
@@ -58,8 +65,11 @@ struct override_motor_
    typedef int16_t _header_type;
   _header_type header;
 
-   typedef int16_t _count_type;
-  _count_type count;
+   typedef int16_t _count_red_type;
+  _count_red_type count_red;
+
+   typedef int16_t _count_green_type;
+  _count_green_type count_green;
 
 
 
@@ -139,12 +149,12 @@ struct MD5Sum< ::whatever::override_motor_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "b9d66efdf70064beeaccaf1b68723dba";
+    return "c61324fa2e040eda100a19f37f751190";
   }
 
   static const char* value(const ::whatever::override_motor_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xb9d66efdf70064beULL;
-  static const uint64_t static_value2 = 0xeaccaf1b68723dbaULL;
+  static const uint64_t static_value1 = 0xc61324fa2e040edaULL;
+  static const uint64_t static_value2 = 0x100a19f37f751190ULL;
 };
 
 template<class ContainerAllocator>
@@ -163,12 +173,14 @@ struct Definition< ::whatever::override_motor_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "int16 state\n\
+    return "int16 state_red\n\
+int16 state_green\n\
 int16 setpoint\n\
 int16 steering\n\
 int16 throttle\n\
 int16 header\n\
-int16 count\n\
+int16 count_red\n\
+int16 count_green\n\
 ";
   }
 
@@ -187,12 +199,14 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.state);
+      stream.next(m.state_red);
+      stream.next(m.state_green);
       stream.next(m.setpoint);
       stream.next(m.steering);
       stream.next(m.throttle);
       stream.next(m.header);
-      stream.next(m.count);
+      stream.next(m.count_red);
+      stream.next(m.count_green);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -211,8 +225,10 @@ struct Printer< ::whatever::override_motor_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::whatever::override_motor_<ContainerAllocator>& v)
   {
-    s << indent << "state: ";
-    Printer<int16_t>::stream(s, indent + "  ", v.state);
+    s << indent << "state_red: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.state_red);
+    s << indent << "state_green: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.state_green);
     s << indent << "setpoint: ";
     Printer<int16_t>::stream(s, indent + "  ", v.setpoint);
     s << indent << "steering: ";
@@ -221,8 +237,10 @@ struct Printer< ::whatever::override_motor_<ContainerAllocator> >
     Printer<int16_t>::stream(s, indent + "  ", v.throttle);
     s << indent << "header: ";
     Printer<int16_t>::stream(s, indent + "  ", v.header);
-    s << indent << "count: ";
-    Printer<int16_t>::stream(s, indent + "  ", v.count);
+    s << indent << "count_red: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.count_red);
+    s << indent << "count_green: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.count_green);
   }
 };
 

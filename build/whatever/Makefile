@@ -781,21 +781,6 @@ whatever_generate_messages_cpp/fast:
 .PHONY : whatever_generate_messages_cpp/fast
 
 # Convenience name for target.
-whatever/CMakeFiles/whatever_generate_messages_lisp.dir/rule:
-	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/whatever_generate_messages_lisp.dir/rule
-.PHONY : whatever/CMakeFiles/whatever_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-whatever_generate_messages_lisp: whatever/CMakeFiles/whatever_generate_messages_lisp.dir/rule
-
-.PHONY : whatever_generate_messages_lisp
-
-# fast build rule for target.
-whatever_generate_messages_lisp/fast:
-	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/whatever_generate_messages_lisp.dir/build.make whatever/CMakeFiles/whatever_generate_messages_lisp.dir/build
-.PHONY : whatever_generate_messages_lisp/fast
-
-# Convenience name for target.
 whatever/CMakeFiles/whatever_genlisp.dir/rule:
 	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/whatever_genlisp.dir/rule
 .PHONY : whatever/CMakeFiles/whatever_genlisp.dir/rule
@@ -839,6 +824,63 @@ image_front: whatever/CMakeFiles/image_front.dir/rule
 image_front/fast:
 	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/image_front.dir/build.make whatever/CMakeFiles/image_front.dir/build
 .PHONY : image_front/fast
+
+# Convenience name for target.
+whatever/CMakeFiles/whatever_generate_messages_lisp.dir/rule:
+	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/whatever_generate_messages_lisp.dir/rule
+.PHONY : whatever/CMakeFiles/whatever_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+whatever_generate_messages_lisp: whatever/CMakeFiles/whatever_generate_messages_lisp.dir/rule
+
+.PHONY : whatever_generate_messages_lisp
+
+# fast build rule for target.
+whatever_generate_messages_lisp/fast:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/whatever_generate_messages_lisp.dir/build.make whatever/CMakeFiles/whatever_generate_messages_lisp.dir/build
+.PHONY : whatever_generate_messages_lisp/fast
+
+# Convenience name for target.
+whatever/CMakeFiles/green_hough.dir/rule:
+	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/green_hough.dir/rule
+.PHONY : whatever/CMakeFiles/green_hough.dir/rule
+
+# Convenience name for target.
+green_hough: whatever/CMakeFiles/green_hough.dir/rule
+
+.PHONY : green_hough
+
+# fast build rule for target.
+green_hough/fast:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/green_hough.dir/build.make whatever/CMakeFiles/green_hough.dir/build
+.PHONY : green_hough/fast
+
+src/image/green_hough.o: src/image/green_hough.cpp.o
+
+.PHONY : src/image/green_hough.o
+
+# target to build an object file
+src/image/green_hough.cpp.o:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/green_hough.dir/build.make whatever/CMakeFiles/green_hough.dir/src/image/green_hough.cpp.o
+.PHONY : src/image/green_hough.cpp.o
+
+src/image/green_hough.i: src/image/green_hough.cpp.i
+
+.PHONY : src/image/green_hough.i
+
+# target to preprocess a source file
+src/image/green_hough.cpp.i:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/green_hough.dir/build.make whatever/CMakeFiles/green_hough.dir/src/image/green_hough.cpp.i
+.PHONY : src/image/green_hough.cpp.i
+
+src/image/green_hough.s: src/image/green_hough.cpp.s
+
+.PHONY : src/image/green_hough.s
+
+# target to generate assembly for a file
+src/image/green_hough.cpp.s:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/green_hough.dir/build.make whatever/CMakeFiles/green_hough.dir/src/image/green_hough.cpp.s
+.PHONY : src/image/green_hough.cpp.s
 
 src/image/image_front.o: src/image/image_front.cpp.o
 
@@ -1082,11 +1124,15 @@ help:
 	@echo "... _whatever_generate_messages_check_deps_node_master"
 	@echo "... _whatever_generate_messages_check_deps_override_motor"
 	@echo "... whatever_generate_messages_cpp"
-	@echo "... whatever_generate_messages_lisp"
 	@echo "... whatever_genlisp"
 	@echo "... whatever_genpy"
 	@echo "... install/strip"
 	@echo "... image_front"
+	@echo "... whatever_generate_messages_lisp"
+	@echo "... green_hough"
+	@echo "... src/image/green_hough.o"
+	@echo "... src/image/green_hough.i"
+	@echo "... src/image/green_hough.s"
 	@echo "... src/image/image_front.o"
 	@echo "... src/image/image_front.i"
 	@echo "... src/image/image_front.s"

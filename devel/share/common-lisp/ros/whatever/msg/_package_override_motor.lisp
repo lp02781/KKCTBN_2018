@@ -1,6 +1,8 @@
 (cl:in-package whatever-msg)
-(cl:export '(STATE-VAL
-          STATE
+(cl:export '(STATE_RED-VAL
+          STATE_RED
+          STATE_GREEN-VAL
+          STATE_GREEN
           SETPOINT-VAL
           SETPOINT
           STEERING-VAL
@@ -9,6 +11,8 @@
           THROTTLE
           HEADER-VAL
           HEADER
-          COUNT-VAL
-          COUNT
+          COUNT_RED-VAL
+          COUNT_RED
+          COUNT_GREEN-VAL
+          COUNT_GREEN
 ))

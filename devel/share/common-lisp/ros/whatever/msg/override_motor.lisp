@@ -7,9 +7,14 @@
 ;//! \htmlinclude override_motor.msg.html
 
 (cl:defclass <override_motor> (roslisp-msg-protocol:ros-message)
-  ((state
-    :reader state
-    :initarg :state
+  ((state_red
+    :reader state_red
+    :initarg :state_red
+    :type cl:fixnum
+    :initform 0)
+   (state_green
+    :reader state_green
+    :initarg :state_green
     :type cl:fixnum
     :initform 0)
    (setpoint
@@ -32,9 +37,14 @@
     :initarg :header
     :type cl:fixnum
     :initform 0)
-   (count
-    :reader count
-    :initarg :count
+   (count_red
+    :reader count_red
+    :initarg :count_red
+    :type cl:fixnum
+    :initform 0)
+   (count_green
+    :reader count_green
+    :initarg :count_green
     :type cl:fixnum
     :initform 0))
 )
@@ -47,10 +57,15 @@
   (cl:unless (cl:typep m 'override_motor)
     (roslisp-msg-protocol:msg-deprecation-warning "using old message class name whatever-msg:<override_motor> is deprecated: use whatever-msg:override_motor instead.")))
 
-(cl:ensure-generic-function 'state-val :lambda-list '(m))
-(cl:defmethod state-val ((m <override_motor>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader whatever-msg:state-val is deprecated.  Use whatever-msg:state instead.")
-  (state m))
+(cl:ensure-generic-function 'state_red-val :lambda-list '(m))
+(cl:defmethod state_red-val ((m <override_motor>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader whatever-msg:state_red-val is deprecated.  Use whatever-msg:state_red instead.")
+  (state_red m))
+
+(cl:ensure-generic-function 'state_green-val :lambda-list '(m))
+(cl:defmethod state_green-val ((m <override_motor>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader whatever-msg:state_green-val is deprecated.  Use whatever-msg:state_green instead.")
+  (state_green m))
 
 (cl:ensure-generic-function 'setpoint-val :lambda-list '(m))
 (cl:defmethod setpoint-val ((m <override_motor>))
@@ -72,13 +87,22 @@
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader whatever-msg:header-val is deprecated.  Use whatever-msg:header instead.")
   (header m))
 
-(cl:ensure-generic-function 'count-val :lambda-list '(m))
-(cl:defmethod count-val ((m <override_motor>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader whatever-msg:count-val is deprecated.  Use whatever-msg:count instead.")
-  (count m))
+(cl:ensure-generic-function 'count_red-val :lambda-list '(m))
+(cl:defmethod count_red-val ((m <override_motor>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader whatever-msg:count_red-val is deprecated.  Use whatever-msg:count_red instead.")
+  (count_red m))
+
+(cl:ensure-generic-function 'count_green-val :lambda-list '(m))
+(cl:defmethod count_green-val ((m <override_motor>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader whatever-msg:count_green-val is deprecated.  Use whatever-msg:count_green instead.")
+  (count_green m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <override_motor>) ostream)
   "Serializes a message object of type '<override_motor>"
-  (cl:let* ((signed (cl:slot-value msg 'state)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 65536) signed)))
+  (cl:let* ((signed (cl:slot-value msg 'state_red)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 65536) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'state_green)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 65536) signed)))
     (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
     )
@@ -98,7 +122,11 @@
     (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
     )
-  (cl:let* ((signed (cl:slot-value msg 'count)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 65536) signed)))
+  (cl:let* ((signed (cl:slot-value msg 'count_red)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 65536) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'count_green)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 65536) signed)))
     (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
     )
@@ -108,7 +136,11 @@
     (cl:let ((unsigned 0))
       (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'state) (cl:if (cl:< unsigned 32768) unsigned (cl:- unsigned 65536))))
+      (cl:setf (cl:slot-value msg 'state_red) (cl:if (cl:< unsigned 32768) unsigned (cl:- unsigned 65536))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'state_green) (cl:if (cl:< unsigned 32768) unsigned (cl:- unsigned 65536))))
     (cl:let ((unsigned 0))
       (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
@@ -128,7 +160,11 @@
     (cl:let ((unsigned 0))
       (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'count) (cl:if (cl:< unsigned 32768) unsigned (cl:- unsigned 65536))))
+      (cl:setf (cl:slot-value msg 'count_red) (cl:if (cl:< unsigned 32768) unsigned (cl:- unsigned 65536))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'count_green) (cl:if (cl:< unsigned 32768) unsigned (cl:- unsigned 65536))))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<override_motor>)))
@@ -139,18 +175,20 @@
   "whatever/override_motor")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<override_motor>)))
   "Returns md5sum for a message object of type '<override_motor>"
-  "b9d66efdf70064beeaccaf1b68723dba")
+  "c61324fa2e040eda100a19f37f751190")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'override_motor)))
   "Returns md5sum for a message object of type 'override_motor"
-  "b9d66efdf70064beeaccaf1b68723dba")
+  "c61324fa2e040eda100a19f37f751190")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<override_motor>)))
   "Returns full string definition for message of type '<override_motor>"
-  (cl:format cl:nil "int16 state~%int16 setpoint~%int16 steering~%int16 throttle~%int16 header~%int16 count~%~%~%"))
+  (cl:format cl:nil "int16 state_red~%int16 state_green~%int16 setpoint~%int16 steering~%int16 throttle~%int16 header~%int16 count_red~%int16 count_green~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'override_motor)))
   "Returns full string definition for message of type 'override_motor"
-  (cl:format cl:nil "int16 state~%int16 setpoint~%int16 steering~%int16 throttle~%int16 header~%int16 count~%~%~%"))
+  (cl:format cl:nil "int16 state_red~%int16 state_green~%int16 setpoint~%int16 steering~%int16 throttle~%int16 header~%int16 count_red~%int16 count_green~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <override_motor>))
   (cl:+ 0
+     2
+     2
      2
      2
      2
@@ -161,10 +199,12 @@
 (cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <override_motor>))
   "Converts a ROS message object to a list"
   (cl:list 'override_motor
-    (cl:cons ':state (state msg))
+    (cl:cons ':state_red (state_red msg))
+    (cl:cons ':state_green (state_green msg))
     (cl:cons ':setpoint (setpoint msg))
     (cl:cons ':steering (steering msg))
     (cl:cons ':throttle (throttle msg))
     (cl:cons ':header (header msg))
-    (cl:cons ':count (count msg))
+    (cl:cons ':count_red (count_red msg))
+    (cl:cons ':count_green (count_green msg))
 ))

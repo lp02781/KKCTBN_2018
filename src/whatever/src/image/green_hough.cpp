@@ -56,17 +56,17 @@ int main(int argc, char **argv){
 	pub_state_camera 	= nh.advertise<whatever::override_motor>("/kkctbn/override/motor", 1);
 	ros::Subscriber sub = nh.subscribe("camera/image/compressed", 1, imageCallback);
 
-	namedWindow("panel_red", CV_WINDOW_AUTOSIZE);
+	namedWindow("panel_green", CV_WINDOW_AUTOSIZE);
 	
-	createTrackbar("LowH", "panel_red", &LowH_red, 255);
-	createTrackbar("HighH", "panel_red", &HighH_red, 255);
-	createTrackbar("LowS", "panel_red", &LowS_red, 255); 
-	createTrackbar("HighS", "panel_red", &HighS_red, 255);
-	createTrackbar("LowV", "panel_red", &LowV_red, 255);
-	createTrackbar("HighV", "panel_red", &HighV_red, 255);
-	createTrackbar("MaxRadius", "panel_red", &max_radius_red, 1000);
-	createTrackbar("MinRadius", "panel_red", &min_radius_red, 1000);
-	createTrackbar("noise", "panel_red", &Noise_red, 255);
+	createTrackbar("LowH", "panel_green", &LowH_green, 255);
+	createTrackbar("HighH", "panel_green", &HighH_green, 255);
+	createTrackbar("LowS", "panel_green", &LowS_green, 255); 
+	createTrackbar("HighS", "panel_green", &HighS_green, 255);
+	createTrackbar("LowV", "panel_green", &LowV_green, 255);
+	createTrackbar("HighV", "panel_green", &HighV_green, 255);
+	createTrackbar("MaxRadius", "panel_green", &max_radius_green, 1000);
+	createTrackbar("MinRadius", "panel_green", &min_radius_green, 1000);
+	createTrackbar("noise", "panel_green", &Noise_green, 255);
 	
 	while (ros::ok()) {
 		ros::spinOnce();
@@ -82,20 +82,20 @@ void imageProcessing(){
 	medianBlur(imgOriginal, imgOriginal, 5);
 		
 	cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV);
-	inRange(imgHSV, Scalar(LowH_red, LowS_red, LowV_red), Scalar(HighH_red, HighS_red, HighV_red), imgThresholded);//range threshold
+	inRange(imgHSV, Scalar(LowH_green, LowS_green, LowV_green), Scalar(HighH_green, HighS_green, HighV_green), imgThresholded);//range threshold
 		
-	erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(Noise_red, Noise_red)) );
-	dilate( imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(Noise_red, Noise_red)) ); 
+	erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(Noise_green, Noise_green)) );
+	dilate( imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(Noise_green, Noise_green)) ); 
 		
-	dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(Noise_red, Noise_red)) ); 
-	erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(Noise_red, Noise_red)) ); 
+	dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(Noise_green, Noise_green)) ); 
+	erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(Noise_green, Noise_green)) ); 
 		
 	GaussianBlur(imgThresholded, imgThresholded, Size(9, 9), 2, 2);
 		
 	vector<Vec3f> circles;
 	HoughCircles(imgThresholded, circles, HOUGH_GRADIENT, 1,
 		imgThresholded.rows/16, 
-		100, 30, min_radius_red, max_radius_red);
+		100, 30, min_radius_green, max_radius_green);
 		
 	for (size_t i = 0; i < circles.size(); i++ ){
 		int x = round(circles[i][0]);
@@ -118,10 +118,10 @@ void imageProcessing(){
 	else{
 		state = 0;
 	}
-	image.state_red = state;
-	image.count_red = count_circle;
+	image.state_green = state;
+	image.count_green = count_circle;
 	pub_state_camera.publish(image);
 	
-	imshow("Threshold_Red", imgThresholded);
-	imshow("Original_Red", Original); 
+	imshow("Threshold_Green", imgThresholded);
+	imshow("Original_Green", Original); 
 }

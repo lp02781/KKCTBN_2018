@@ -11,8 +11,8 @@
 #define MAX_PWM 1920
 #define MIN_PWM 1120
 
-#define MIDDLE_PWM 1520
-#define CHANGE_STEER 200
+#define MIDDLE_PWM 		1520
+#define CHANGE_STEER 	200
 #define CHANGE_THROTTLE 200
 
 int number_camera = 0;
@@ -25,7 +25,27 @@ int record_speed 	= 4;
 int path_manuver 	= 5;
 int path_speed 		= 6;
 
-int left_header = 1;
-int right_header = 2;
-int center_header = 0;
+int left_header 	= 1;
+int right_header 	= 2;
+int center_header 	= 0;
+
+int LowH_red 	= 170;
+int HighH_red 	= 179;
+int LowS_red 	= 150; 
+int HighS_red 	= 255;
+int LowV_red 	= 60;
+int HighV_red 	= 255;
+int max_radius_red 	= 1000;
+int min_radius_red 	= 1;
+int Noise_red 	= 5;
+
+int LowH_green	= 14;
+int HighH_green = 81;
+int LowS_green 	= 121; 
+int HighS_green = 210;
+int LowV_green 	= 105;
+int HighV_green = 164;
+int max_radius_green = 1000;
+int min_radius_green = 1;
+int Noise_green = 5;
 

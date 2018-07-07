@@ -39,7 +39,7 @@ void pid_status_cb(const whatever::node_master& pid_status_recv){
 
 void pid_input_cb(const whatever::override_motor& rc){
 	setpoint = rc.setpoint;
-	state = rc.state;
+	state = rc.state_red;
 	if(pid_status){
 		
 		if(state < setpoint){

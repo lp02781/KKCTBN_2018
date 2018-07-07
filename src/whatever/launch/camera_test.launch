@@ -1,4 +1,6 @@
 <launch>
 	<node name="image_front" pkg="whatever" output="screen" type="image_front" />
-	<node name="red_hough" pkg="whatever" output="screen" type="red_hough" />
+	<!-- node name="red_hough" pkg="whatever" output="screen" type="red_hough" -->
+	<node name="green_hough" pkg="whatever" output="screen" type="green_hough" />
+	<node name="debug_makara" pkg="whatever" output="screen" type="debug_makara" />
 </launch>

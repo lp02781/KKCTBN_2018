@@ -7,6 +7,7 @@ selesai
 - node_controller.cpp
 - pid_controller.cpp (gk pake kp,kd,ki dulu aja)
 - debug_makara.cpp 
+- hough circle (setpoint)
 
 selanjutnya
 - receiver bermasalah

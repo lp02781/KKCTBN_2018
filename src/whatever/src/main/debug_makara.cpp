@@ -15,12 +15,14 @@ string pid_status;
 int rc_flag;
 string flight_mode;
 
-int state;
+int state_red;
+int count_red;
+int state_green;
+int	count_green;
 int setpoint;
 int steering;
 int throttle;
 int num_header;
-int count_buoy;
 string header;
 
 int out_channel[8];
@@ -56,7 +58,7 @@ int main(int argc, char **argv)
 		ROS_WARN("NC : topic master");
 		ROS_INFO("override:%s pid:%s rc:%d flight: %s", override_status.c_str(), pid_status.c_str(), rc_flag, flight_mode.c_str());		
 		ROS_WARN("NC : topic override");
-		ROS_INFO("state:%d setpoint:%d count:%d steering:%d throttle:%d header:%s", state, setpoint, count_buoy, steering, throttle, header.c_str());
+		ROS_INFO("state_red:%d count_red:%d state_green:%d count_green:%d setpoint:%d steering:%d throttle:%d header:%s", state_red, count_red, state_green, count_green, setpoint, steering, throttle, header.c_str());
 		ROS_WARN("NC : topic rc");
 		ROS_INFO("%d, %d, %d, %d, %d, %d, %d, %d", in_channel[0], in_channel[1], in_channel[2], in_channel[3], in_channel[4], in_channel[5], in_channel[6], in_channel[7]);		
 		ROS_WARN("NC : topic motor");
@@ -78,12 +80,15 @@ void node_master_cb	(const whatever::node_master& master){
 }
 
 void override_rc_cb	(const whatever::override_motor& rc){
-	state	 	= rc.state;
+	state_red	 = rc.state_red;
+	count_red	= rc.count_red;
+	state_green	 = rc.state_green;
+	count_green	= rc.count_green;
 	setpoint 	= rc.setpoint;
 	steering	= rc.steering;
 	throttle 	= rc.throttle;
 	num_header 	= rc.header;
-	count_buoy	= rc.count;
+	
 	if(num_header = left_header){header = "left";}
 	else if(num_header = right_header){header = "right";}
 	else if(num_header = center_header){header = "center";}
