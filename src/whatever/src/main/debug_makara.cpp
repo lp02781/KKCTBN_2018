@@ -20,6 +20,7 @@ int setpoint;
 int steering;
 int throttle;
 int num_header;
+int count_buoy;
 string header;
 
 int out_channel[8];
@@ -55,7 +56,7 @@ int main(int argc, char **argv)
 		ROS_WARN("NC : topic master");
 		ROS_INFO("override:%s pid:%s rc:%d flight: %s", override_status.c_str(), pid_status.c_str(), rc_flag, flight_mode.c_str());		
 		ROS_WARN("NC : topic override");
-		ROS_INFO("state:%d setpoint:%d steering:%d throttle:%d header:%s", state, setpoint, steering, throttle, header.c_str());
+		ROS_INFO("state:%d setpoint:%d count:%d steering:%d throttle:%d header:%s", state, setpoint, count_buoy, steering, throttle, header.c_str());
 		ROS_WARN("NC : topic rc");
 		ROS_INFO("%d, %d, %d, %d, %d, %d, %d, %d", in_channel[0], in_channel[1], in_channel[2], in_channel[3], in_channel[4], in_channel[5], in_channel[6], in_channel[7]);		
 		ROS_WARN("NC : topic motor");
@@ -82,6 +83,7 @@ void override_rc_cb	(const whatever::override_motor& rc){
 	steering	= rc.steering;
 	throttle 	= rc.throttle;
 	num_header 	= rc.header;
+	count_buoy	= rc.count;
 	if(num_header = left_header){header = "left";}
 	else if(num_header = right_header){header = "right";}
 	else if(num_header = center_header){header = "center";}

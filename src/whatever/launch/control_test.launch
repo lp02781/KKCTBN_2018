@@ -4,7 +4,4 @@
 	<node name="remote_monitor" pkg="whatever" output="screen" type="remote_monitor" />
 	<node name="debug_makara" pkg="whatever" output="screen" type="debug_makara" />
 	<node name="pid_controller" pkg="whatever" output="screen" type="pid_controller" />
-	
-	<node name="image_front" pkg="whatever" output="screen" type="image_front" />
-	<node name="red_hough" pkg="whatever" output="screen" type="red_hough" />
 </launch>

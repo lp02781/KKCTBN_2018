@@ -9,4 +9,6 @@
           THROTTLE
           HEADER-VAL
           HEADER
+          COUNT-VAL
+          COUNT
 ))

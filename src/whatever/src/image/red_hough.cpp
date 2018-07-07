@@ -28,6 +28,8 @@ int LowS 	= 150;
 int HighS 	= 255;
 int LowV 	= 60;
 int HighV 	= 255;
+int max_radius 	= 1000;
+int min_radius 	= 1;
 int Noise 	= 5;
 
 int sum_x;
@@ -72,6 +74,8 @@ int main(int argc, char **argv){
 	createTrackbar("HighS", "panel", &HighS, 255);
 	createTrackbar("LowV", "panel", &LowV, 255);
 	createTrackbar("HighV", "panel", &HighV, 255);
+	createTrackbar("MaxRadius", "panel", &max_radius, 1000);
+	createTrackbar("MinRadius", "panel", &min_radius, 1000);
 	createTrackbar("noise", "panel", &Noise, 255);
 	
 	while (ros::ok()) {
@@ -101,7 +105,7 @@ void imageProcessing(){
 	vector<Vec3f> circles;
 	HoughCircles(imgThresholded, circles, HOUGH_GRADIENT, 1,
 		imgThresholded.rows/16, 
-		100, 30, 1, 1000);
+		100, 30, min_radius, max_radius);
 		
 	for (size_t i = 0; i < circles.size(); i++ ){
 		int x = round(circles[i][0]);
@@ -117,7 +121,7 @@ void imageProcessing(){
 		sum_y = sum_y + y;
 		count_circle++;
 	}
-	cout<<count_circle<<endl;
+	//cout<<count_circle<<endl;
 	if(count_circle > 0){
 		state = sum_x/count_circle;
 	}
@@ -125,6 +129,7 @@ void imageProcessing(){
 		state = 0;
 	}
 	image.state = state;
+	image.count = count_circle;
 	pub_state_camera.publish(image);
 	
 	imshow("Threshold", imgThresholded);
