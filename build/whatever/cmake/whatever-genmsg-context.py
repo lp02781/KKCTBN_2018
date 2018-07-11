@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg;/home/mfikih15/Documents/AMV/src/whatever/msg/node_master.msg;/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg;/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg;/home/mfikih15/Documents/AMV/src/whatever/msg/image_process.msg"
+messages_str = "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg;/home/mfikih15/Documents/AMV/src/whatever/msg/node_master.msg;/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg;/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg;/home/mfikih15/Documents/AMV/src/whatever/msg/image_process.msg;/home/mfikih15/Documents/AMV/src/whatever/msg/setpoint.msg"
 services_str = ""
 pkg_name = "whatever"
 dependencies_str = "mavros_msgs;std_msgs;sensor_msgs"

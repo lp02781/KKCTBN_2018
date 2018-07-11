@@ -21,8 +21,8 @@ cv_bridge/cv_bridge.h
 -
 iostream
 -
-whatever/image_process.h
-/home/mfikih15/Documents/AMV/src/whatever/src/image/whatever/image_process.h
+whatever/setpoint.h
+/home/mfikih15/Documents/AMV/src/whatever/src/image/whatever/setpoint.h
 
 /opt/ros/kinetic/include/cv_bridge/cv_bridge.h
 sensor_msgs/Image.h

@@ -18,19 +18,12 @@ class image_process {
   constructor(initObj={}) {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
-      this.setpoint = null;
       this.state_red = null;
       this.state_green = null;
       this.count_red = null;
       this.count_green = null;
     }
     else {
-      if (initObj.hasOwnProperty('setpoint')) {
-        this.setpoint = initObj.setpoint
-      }
-      else {
-        this.setpoint = 0;
-      }
       if (initObj.hasOwnProperty('state_red')) {
         this.state_red = initObj.state_red
       }
@@ -60,8 +53,6 @@ class image_process {
 
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type image_process
-    // Serialize message field [setpoint]
-    bufferOffset = _serializer.int16(obj.setpoint, buffer, bufferOffset);
     // Serialize message field [state_red]
     bufferOffset = _serializer.int16(obj.state_red, buffer, bufferOffset);
     // Serialize message field [state_green]
@@ -77,8 +68,6 @@ class image_process {
     //deserializes a message object of type image_process
     let len;
     let data = new image_process(null);
-    // Deserialize message field [setpoint]
-    data.setpoint = _deserializer.int16(buffer, bufferOffset);
     // Deserialize message field [state_red]
     data.state_red = _deserializer.int16(buffer, bufferOffset);
     // Deserialize message field [state_green]
@@ -91,7 +80,7 @@ class image_process {
   }
 
   static getMessageSize(object) {
-    return 10;
+    return 8;
   }
 
   static datatype() {
@@ -101,13 +90,12 @@ class image_process {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '718b8e0ae302cbf8067f998190df9579';
+    return 'e5e1c278fbb5698de32e1d5d47db51b4';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    int16 setpoint
     int16 state_red
     int16 state_green
     int16 count_red
@@ -122,13 +110,6 @@ class image_process {
       msg = {};
     }
     const resolved = new image_process(null);
-    if (msg.setpoint !== undefined) {
-      resolved.setpoint = msg.setpoint;
-    }
-    else {
-      resolved.setpoint = 0
-    }
-
     if (msg.state_red !== undefined) {
       resolved.state_red = msg.state_red;
     }

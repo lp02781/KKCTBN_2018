@@ -7,6 +7,7 @@ d93eed61e032317c2fd217f0876c0310 /home/mfikih15/Documents/AMV/devel/include/what
 1c779a6d9bc67aa30fb472a5ba34af44 /home/mfikih15/Documents/AMV/devel/include/whatever/node_master.h
 04df53c2af6a5ca193dd5d1cfbd23579 /home/mfikih15/Documents/AMV/devel/include/whatever/override_motor.h
 916f57705d54c6a07a28be78034ee757 /home/mfikih15/Documents/AMV/devel/include/whatever/rc_number.h
+f4bf2d9f40787c153591417299a446cc /home/mfikih15/Documents/AMV/devel/include/whatever/setpoint.h
 0751f042f9f179f3463d6c2f32b0575b /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/pid/msg/__init__.py
 34dbb97b77423e6874ace9c1cda2b332 /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/pid/msg/_controller_msg.py
 cc38e10f395bad19fd7b651652035ab3 /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/pid/msg/_pid_const_msg.py
@@ -17,6 +18,7 @@ cc38e10f395bad19fd7b651652035ab3 /home/mfikih15/Documents/AMV/devel/lib/python2.
 333ba244a80aac84085257159e82c759 /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_node_master.py
 14856648c85937d0e325a1e37dc3332f /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_override_motor.py
 2c373361782c957bf8865eabc5c8e743 /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_rc_number.py
+62fadf3ec30c46fb7edb82a89ed01f57 /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_setpoint.py
 6ee5c936095ea73d0ab8412da7675551 /home/mfikih15/Documents/AMV/devel/share/common-lisp/ros/pid/msg/controller_msg.lisp
 13306f395308f7819b90c79ee68108d3 /home/mfikih15/Documents/AMV/devel/share/common-lisp/ros/pid/msg/pid_const_msg.lisp
 a13f54c46dd1577fc2651c7e719b2b42 /home/mfikih15/Documents/AMV/devel/share/common-lisp/ros/pid/msg/plant_msg.lisp
@@ -25,6 +27,7 @@ af36a9b6b208d304209b682c5e587e51 /home/mfikih15/Documents/AMV/devel/share/common
 8035fbd771ad5f695091db30340c7d3b /home/mfikih15/Documents/AMV/devel/share/common-lisp/ros/whatever/msg/node_master.lisp
 400ad673acaf8f280b78c58ce00f752c /home/mfikih15/Documents/AMV/devel/share/common-lisp/ros/whatever/msg/override_motor.lisp
 e3e5c0986c070fa8871c914a0dd683d8 /home/mfikih15/Documents/AMV/devel/share/common-lisp/ros/whatever/msg/rc_number.lisp
+3184fcbf9280635886e514f39a985776 /home/mfikih15/Documents/AMV/devel/share/common-lisp/ros/whatever/msg/setpoint.lisp
 8d4b51c7af7068d21ad31be31afc95d0 /home/mfikih15/Documents/AMV/devel/share/gennodejs/ros/pid/msg/controller_msg.js
 608ea1be26047b06c6d77b430733acd2 /home/mfikih15/Documents/AMV/devel/share/gennodejs/ros/pid/msg/pid_const_msg.js
 eda40363b5d61465aff13136fba3b49f /home/mfikih15/Documents/AMV/devel/share/gennodejs/ros/pid/msg/plant_msg.js
@@ -33,6 +36,7 @@ eda40363b5d61465aff13136fba3b49f /home/mfikih15/Documents/AMV/devel/share/gennod
 d5ca66c191ea4c3aa72c2a220b8a7dff /home/mfikih15/Documents/AMV/devel/share/gennodejs/ros/whatever/msg/node_master.js
 9e49bfbfda4945a6ba39324443a0efda /home/mfikih15/Documents/AMV/devel/share/gennodejs/ros/whatever/msg/override_motor.js
 80b0082e0f36bc3aaf50555e82a1958a /home/mfikih15/Documents/AMV/devel/share/gennodejs/ros/whatever/msg/rc_number.js
+89531608dd48daf3ce02995451ccaea6 /home/mfikih15/Documents/AMV/devel/share/gennodejs/ros/whatever/msg/setpoint.js
 8e11549df1c7765ba5698b28ae9ada71 /home/mfikih15/Documents/AMV/devel/share/roseus/ros/pid/manifest.l
 2860a315dff8a97c518a8ccf6235c63a /home/mfikih15/Documents/AMV/devel/share/roseus/ros/pid/msg/controller_msg.l
 2321a2e24f37df9d0ee4393448234a9d /home/mfikih15/Documents/AMV/devel/share/roseus/ros/pid/msg/pid_const_msg.l
@@ -43,6 +47,7 @@ c713ed9ee44f19b1df2197707f77bc87 /home/mfikih15/Documents/AMV/devel/share/roseus
 4bb1f1b3d2416cac8a73ff09ddaa07a9 /home/mfikih15/Documents/AMV/devel/share/roseus/ros/whatever/msg/node_master.l
 3d6be1837ba4b241237512f2a91880de /home/mfikih15/Documents/AMV/devel/share/roseus/ros/whatever/msg/override_motor.l
 e831400ed71a7671759f858ec0c5e78f /home/mfikih15/Documents/AMV/devel/share/roseus/ros/whatever/msg/rc_number.l
+9955c1649ad5470d512f10bd631080bd /home/mfikih15/Documents/AMV/devel/share/roseus/ros/whatever/msg/setpoint.l
 bd081f4c14eae201931b79ffa21b14ec CMakeFiles/clean_test_results
 822c0a1d03ee5e9fcc680c2430d6d722 pid/CMakeFiles/_pid_generate_messages_check_deps_controller_msg
 1728351808c96afd7933162b8da848b9 pid/CMakeFiles/_pid_generate_messages_check_deps_pid_const_msg
@@ -57,6 +62,7 @@ ad63f543a53696a3ea9bffa5b0603ef3 pid/CMakeFiles/pid_generate_messages_py
 80a30f607918f30393e3f5d856611ffb whatever/CMakeFiles/_whatever_generate_messages_check_deps_node_master
 08efd9e771d19add407b5c71d5cc66f9 whatever/CMakeFiles/_whatever_generate_messages_check_deps_override_motor
 67e083e89d24c8ac84dde1e434d07ccc whatever/CMakeFiles/_whatever_generate_messages_check_deps_rc_number
+587a0865358542f12891952d62d02fe9 whatever/CMakeFiles/_whatever_generate_messages_check_deps_setpoint
 6e919d634a21f78db10a51b139ce2b24 whatever/CMakeFiles/whatever_generate_messages_cpp
 6e919d634a21f78db10a51b139ce2b24 whatever/CMakeFiles/whatever_generate_messages_eus
 6e919d634a21f78db10a51b139ce2b24 whatever/CMakeFiles/whatever_generate_messages_lisp

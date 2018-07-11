@@ -14,4 +14,6 @@
     (:file "_package_override_motor" :depends-on ("_package"))
     (:file "rc_number" :depends-on ("_package_rc_number"))
     (:file "_package_rc_number" :depends-on ("_package"))
+    (:file "setpoint" :depends-on ("_package_setpoint"))
+    (:file "_package_setpoint" :depends-on ("_package"))
   ))

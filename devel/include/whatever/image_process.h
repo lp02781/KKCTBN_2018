@@ -24,15 +24,13 @@ struct image_process_
   typedef image_process_<ContainerAllocator> Type;
 
   image_process_()
-    : setpoint(0)
-    , state_red(0)
+    : state_red(0)
     , state_green(0)
     , count_red(0)
     , count_green(0)  {
     }
   image_process_(const ContainerAllocator& _alloc)
-    : setpoint(0)
-    , state_red(0)
+    : state_red(0)
     , state_green(0)
     , count_red(0)
     , count_green(0)  {
@@ -40,9 +38,6 @@ struct image_process_
     }
 
 
-
-   typedef int16_t _setpoint_type;
-  _setpoint_type setpoint;
 
    typedef int16_t _state_red_type;
   _state_red_type state_red;
@@ -134,12 +129,12 @@ struct MD5Sum< ::whatever::image_process_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "718b8e0ae302cbf8067f998190df9579";
+    return "e5e1c278fbb5698de32e1d5d47db51b4";
   }
 
   static const char* value(const ::whatever::image_process_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x718b8e0ae302cbf8ULL;
-  static const uint64_t static_value2 = 0x067f998190df9579ULL;
+  static const uint64_t static_value1 = 0xe5e1c278fbb5698dULL;
+  static const uint64_t static_value2 = 0xe32e1d5d47db51b4ULL;
 };
 
 template<class ContainerAllocator>
@@ -158,8 +153,7 @@ struct Definition< ::whatever::image_process_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "int16 setpoint\n\
-int16 state_red\n\
+    return "int16 state_red\n\
 int16 state_green\n\
 int16 count_red\n\
 int16 count_green\n\
@@ -181,7 +175,6 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.setpoint);
       stream.next(m.state_red);
       stream.next(m.state_green);
       stream.next(m.count_red);
@@ -204,8 +197,6 @@ struct Printer< ::whatever::image_process_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::whatever::image_process_<ContainerAllocator>& v)
   {
-    s << indent << "setpoint: ";
-    Printer<int16_t>::stream(s, indent + "  ", v.setpoint);
     s << indent << "state_red: ";
     Printer<int16_t>::stream(s, indent + "  ", v.state_red);
     s << indent << "state_green: ";

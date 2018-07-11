@@ -11,5 +11,7 @@
    "OVERRIDE_MOTOR"
    "<RC_NUMBER>"
    "RC_NUMBER"
+   "<SETPOINT>"
+   "SETPOINT"
   ))
 

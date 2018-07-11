@@ -4,6 +4,7 @@
 whatever/CMakeFiles/pid_controller.dir/src/main/pid_controller.cpp.o: /home/mfikih15/Documents/AMV/devel/include/whatever/image_process.h
 whatever/CMakeFiles/pid_controller.dir/src/main/pid_controller.cpp.o: /home/mfikih15/Documents/AMV/devel/include/whatever/node_master.h
 whatever/CMakeFiles/pid_controller.dir/src/main/pid_controller.cpp.o: /home/mfikih15/Documents/AMV/devel/include/whatever/override_motor.h
+whatever/CMakeFiles/pid_controller.dir/src/main/pid_controller.cpp.o: /home/mfikih15/Documents/AMV/devel/include/whatever/setpoint.h
 whatever/CMakeFiles/pid_controller.dir/src/main/pid_controller.cpp.o: /home/mfikih15/Documents/AMV/src/whatever/include/whatever/haha.hpp
 whatever/CMakeFiles/pid_controller.dir/src/main/pid_controller.cpp.o: /home/mfikih15/Documents/AMV/src/whatever/src/main/pid_controller.cpp
 whatever/CMakeFiles/pid_controller.dir/src/main/pid_controller.cpp.o: /opt/ros/kinetic/include/mavros_msgs/OverrideRCIn.h

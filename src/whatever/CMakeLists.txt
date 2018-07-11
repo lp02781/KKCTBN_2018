@@ -60,6 +60,7 @@ add_message_files(
 	rc_number.msg
 	flight_mode.msg
 	image_process.msg
+	setpoint.msg
 )
 
 ## Generate services in the 'srv' folder

@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "whatever: 5 messages, 0 services")
+message(STATUS "whatever: 6 messages, 0 services")
 
 set(MSG_I_FLAGS "-Iwhatever:/home/mfikih15/Documents/AMV/src/whatever/msg;-Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg;-Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg;-Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg")
 
@@ -17,19 +17,14 @@ add_custom_target(whatever_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg" NAME_WE)
-add_custom_target(_whatever_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "whatever" "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg" ""
-)
-
-get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg" NAME_WE)
-add_custom_target(_whatever_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "whatever" "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg" ""
-)
-
 get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/node_master.msg" NAME_WE)
 add_custom_target(_whatever_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "whatever" "/home/mfikih15/Documents/AMV/src/whatever/msg/node_master.msg" ""
+)
+
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg" NAME_WE)
+add_custom_target(_whatever_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "whatever" "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg" ""
 )
 
 get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/image_process.msg" NAME_WE)
@@ -37,9 +32,19 @@ add_custom_target(_whatever_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "whatever" "/home/mfikih15/Documents/AMV/src/whatever/msg/image_process.msg" ""
 )
 
-get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg" NAME_WE)
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg" NAME_WE)
 add_custom_target(_whatever_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "whatever" "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "whatever" "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg" ""
+)
+
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/setpoint.msg" NAME_WE)
+add_custom_target(_whatever_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "whatever" "/home/mfikih15/Documents/AMV/src/whatever/msg/setpoint.msg" ""
+)
+
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg" NAME_WE)
+add_custom_target(_whatever_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "whatever" "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg" ""
 )
 
 #
@@ -49,19 +54,13 @@ add_custom_target(_whatever_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(whatever
-  "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/whatever
-)
-_generate_msg_cpp(whatever
-  "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/whatever
-)
-_generate_msg_cpp(whatever
   "/home/mfikih15/Documents/AMV/src/whatever/msg/node_master.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/whatever
+)
+_generate_msg_cpp(whatever
+  "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/whatever
@@ -73,7 +72,19 @@ _generate_msg_cpp(whatever
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/whatever
 )
 _generate_msg_cpp(whatever
-  "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg"
+  "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/whatever
+)
+_generate_msg_cpp(whatever
+  "/home/mfikih15/Documents/AMV/src/whatever/msg/setpoint.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/whatever
+)
+_generate_msg_cpp(whatever
+  "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/whatever
@@ -93,15 +104,17 @@ add_custom_target(whatever_generate_messages_cpp
 add_dependencies(whatever_generate_messages whatever_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg" NAME_WE)
-add_dependencies(whatever_generate_messages_cpp _whatever_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg" NAME_WE)
-add_dependencies(whatever_generate_messages_cpp _whatever_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/node_master.msg" NAME_WE)
+add_dependencies(whatever_generate_messages_cpp _whatever_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg" NAME_WE)
 add_dependencies(whatever_generate_messages_cpp _whatever_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/image_process.msg" NAME_WE)
 add_dependencies(whatever_generate_messages_cpp _whatever_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg" NAME_WE)
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg" NAME_WE)
+add_dependencies(whatever_generate_messages_cpp _whatever_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/setpoint.msg" NAME_WE)
+add_dependencies(whatever_generate_messages_cpp _whatever_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg" NAME_WE)
 add_dependencies(whatever_generate_messages_cpp _whatever_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -114,19 +127,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS whatever_generate_messages_cpp)
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(whatever
-  "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/whatever
-)
-_generate_msg_eus(whatever
-  "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/whatever
-)
-_generate_msg_eus(whatever
   "/home/mfikih15/Documents/AMV/src/whatever/msg/node_master.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/whatever
+)
+_generate_msg_eus(whatever
+  "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/whatever
@@ -138,7 +145,19 @@ _generate_msg_eus(whatever
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/whatever
 )
 _generate_msg_eus(whatever
-  "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg"
+  "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/whatever
+)
+_generate_msg_eus(whatever
+  "/home/mfikih15/Documents/AMV/src/whatever/msg/setpoint.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/whatever
+)
+_generate_msg_eus(whatever
+  "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/whatever
@@ -158,15 +177,17 @@ add_custom_target(whatever_generate_messages_eus
 add_dependencies(whatever_generate_messages whatever_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg" NAME_WE)
-add_dependencies(whatever_generate_messages_eus _whatever_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg" NAME_WE)
-add_dependencies(whatever_generate_messages_eus _whatever_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/node_master.msg" NAME_WE)
+add_dependencies(whatever_generate_messages_eus _whatever_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg" NAME_WE)
 add_dependencies(whatever_generate_messages_eus _whatever_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/image_process.msg" NAME_WE)
 add_dependencies(whatever_generate_messages_eus _whatever_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg" NAME_WE)
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg" NAME_WE)
+add_dependencies(whatever_generate_messages_eus _whatever_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/setpoint.msg" NAME_WE)
+add_dependencies(whatever_generate_messages_eus _whatever_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg" NAME_WE)
 add_dependencies(whatever_generate_messages_eus _whatever_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -179,19 +200,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS whatever_generate_messages_eus)
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(whatever
-  "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/whatever
-)
-_generate_msg_lisp(whatever
-  "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/whatever
-)
-_generate_msg_lisp(whatever
   "/home/mfikih15/Documents/AMV/src/whatever/msg/node_master.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/whatever
+)
+_generate_msg_lisp(whatever
+  "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/whatever
@@ -203,7 +218,19 @@ _generate_msg_lisp(whatever
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/whatever
 )
 _generate_msg_lisp(whatever
-  "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg"
+  "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/whatever
+)
+_generate_msg_lisp(whatever
+  "/home/mfikih15/Documents/AMV/src/whatever/msg/setpoint.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/whatever
+)
+_generate_msg_lisp(whatever
+  "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/whatever
@@ -223,15 +250,17 @@ add_custom_target(whatever_generate_messages_lisp
 add_dependencies(whatever_generate_messages whatever_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg" NAME_WE)
-add_dependencies(whatever_generate_messages_lisp _whatever_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg" NAME_WE)
-add_dependencies(whatever_generate_messages_lisp _whatever_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/node_master.msg" NAME_WE)
+add_dependencies(whatever_generate_messages_lisp _whatever_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg" NAME_WE)
 add_dependencies(whatever_generate_messages_lisp _whatever_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/image_process.msg" NAME_WE)
 add_dependencies(whatever_generate_messages_lisp _whatever_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg" NAME_WE)
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg" NAME_WE)
+add_dependencies(whatever_generate_messages_lisp _whatever_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/setpoint.msg" NAME_WE)
+add_dependencies(whatever_generate_messages_lisp _whatever_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg" NAME_WE)
 add_dependencies(whatever_generate_messages_lisp _whatever_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -244,19 +273,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS whatever_generate_messages_lisp)
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(whatever
-  "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/whatever
-)
-_generate_msg_nodejs(whatever
-  "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/whatever
-)
-_generate_msg_nodejs(whatever
   "/home/mfikih15/Documents/AMV/src/whatever/msg/node_master.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/whatever
+)
+_generate_msg_nodejs(whatever
+  "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/whatever
@@ -268,7 +291,19 @@ _generate_msg_nodejs(whatever
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/whatever
 )
 _generate_msg_nodejs(whatever
-  "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg"
+  "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/whatever
+)
+_generate_msg_nodejs(whatever
+  "/home/mfikih15/Documents/AMV/src/whatever/msg/setpoint.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/whatever
+)
+_generate_msg_nodejs(whatever
+  "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/whatever
@@ -288,15 +323,17 @@ add_custom_target(whatever_generate_messages_nodejs
 add_dependencies(whatever_generate_messages whatever_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg" NAME_WE)
-add_dependencies(whatever_generate_messages_nodejs _whatever_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg" NAME_WE)
-add_dependencies(whatever_generate_messages_nodejs _whatever_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/node_master.msg" NAME_WE)
+add_dependencies(whatever_generate_messages_nodejs _whatever_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg" NAME_WE)
 add_dependencies(whatever_generate_messages_nodejs _whatever_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/image_process.msg" NAME_WE)
 add_dependencies(whatever_generate_messages_nodejs _whatever_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg" NAME_WE)
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg" NAME_WE)
+add_dependencies(whatever_generate_messages_nodejs _whatever_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/setpoint.msg" NAME_WE)
+add_dependencies(whatever_generate_messages_nodejs _whatever_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg" NAME_WE)
 add_dependencies(whatever_generate_messages_nodejs _whatever_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -309,19 +346,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS whatever_generate_messages_nodejs)
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(whatever
-  "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/whatever
-)
-_generate_msg_py(whatever
-  "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/whatever
-)
-_generate_msg_py(whatever
   "/home/mfikih15/Documents/AMV/src/whatever/msg/node_master.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/whatever
+)
+_generate_msg_py(whatever
+  "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/whatever
@@ -333,7 +364,19 @@ _generate_msg_py(whatever
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/whatever
 )
 _generate_msg_py(whatever
-  "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg"
+  "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/whatever
+)
+_generate_msg_py(whatever
+  "/home/mfikih15/Documents/AMV/src/whatever/msg/setpoint.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/whatever
+)
+_generate_msg_py(whatever
+  "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/whatever
@@ -353,15 +396,17 @@ add_custom_target(whatever_generate_messages_py
 add_dependencies(whatever_generate_messages whatever_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg" NAME_WE)
-add_dependencies(whatever_generate_messages_py _whatever_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg" NAME_WE)
-add_dependencies(whatever_generate_messages_py _whatever_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/node_master.msg" NAME_WE)
+add_dependencies(whatever_generate_messages_py _whatever_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg" NAME_WE)
 add_dependencies(whatever_generate_messages_py _whatever_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/image_process.msg" NAME_WE)
 add_dependencies(whatever_generate_messages_py _whatever_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg" NAME_WE)
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg" NAME_WE)
+add_dependencies(whatever_generate_messages_py _whatever_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/setpoint.msg" NAME_WE)
+add_dependencies(whatever_generate_messages_py _whatever_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg" NAME_WE)
 add_dependencies(whatever_generate_messages_py _whatever_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

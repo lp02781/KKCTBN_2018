@@ -14,27 +14,22 @@
 
 (defclass whatever::image_process
   :super ros::object
-  :slots (_setpoint _state_red _state_green _count_red _count_green ))
+  :slots (_state_red _state_green _count_red _count_green ))
 
 (defmethod whatever::image_process
   (:init
    (&key
-    ((:setpoint __setpoint) 0)
     ((:state_red __state_red) 0)
     ((:state_green __state_green) 0)
     ((:count_red __count_red) 0)
     ((:count_green __count_green) 0)
     )
    (send-super :init)
-   (setq _setpoint (round __setpoint))
    (setq _state_red (round __state_red))
    (setq _state_green (round __state_green))
    (setq _count_red (round __count_red))
    (setq _count_green (round __count_green))
    self)
-  (:setpoint
-   (&optional __setpoint)
-   (if __setpoint (setq _setpoint __setpoint)) _setpoint)
   (:state_red
    (&optional __state_red)
    (if __state_red (setq _state_red __state_red)) _state_red)
@@ -50,8 +45,6 @@
   (:serialization-length
    ()
    (+
-    ;; int16 _setpoint
-    2
     ;; int16 _state_red
     2
     ;; int16 _state_green
@@ -65,8 +58,6 @@
    (&optional strm)
    (let ((s (if strm strm
               (make-string-output-stream (send self :serialization-length)))))
-     ;; int16 _setpoint
-       (write-word _setpoint s)
      ;; int16 _state_red
        (write-word _state_red s)
      ;; int16 _state_green
@@ -79,8 +70,6 @@
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
-   ;; int16 _setpoint
-     (setq _setpoint (sys::peek buf ptr- :short)) (incf ptr- 2)
    ;; int16 _state_red
      (setq _state_red (sys::peek buf ptr- :short)) (incf ptr- 2)
    ;; int16 _state_green
@@ -93,11 +82,10 @@
    self)
   )
 
-(setf (get whatever::image_process :md5sum-) "718b8e0ae302cbf8067f998190df9579")
+(setf (get whatever::image_process :md5sum-) "e5e1c278fbb5698de32e1d5d47db51b4")
 (setf (get whatever::image_process :datatype-) "whatever/image_process")
 (setf (get whatever::image_process :definition-)
-      "int16 setpoint
-int16 state_red
+      "int16 state_red
 int16 state_green
 int16 count_red
 int16 count_green
@@ -106,6 +94,6 @@ int16 count_green
 
 
 
-(provide :whatever/image_process "718b8e0ae302cbf8067f998190df9579")
+(provide :whatever/image_process "e5e1c278fbb5698de32e1d5d47db51b4")
 
 

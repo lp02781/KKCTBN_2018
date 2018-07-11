@@ -113,6 +113,8 @@ whatever/flight_mode.h
 /home/mfikih15/Documents/AMV/src/whatever/src/main/whatever/flight_mode.h
 whatever/image_process.h
 /home/mfikih15/Documents/AMV/src/whatever/src/main/whatever/image_process.h
+whatever/setpoint.h
+/home/mfikih15/Documents/AMV/src/whatever/src/main/whatever/setpoint.h
 
 /opt/ros/kinetic/include/mavros_msgs/OverrideRCIn.h
 string

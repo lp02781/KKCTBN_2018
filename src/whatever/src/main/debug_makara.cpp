@@ -10,6 +10,7 @@
 #include "whatever/rc_number.h"
 #include "whatever/flight_mode.h"
 #include "whatever/image_process.h"
+#include "whatever/setpoint.h"
 
 using namespace std;
 
@@ -48,6 +49,7 @@ void override_rc_cb	(const whatever::override_motor& rc);
 void rc_number_cb (const whatever::rc_number& state);
 void flight_mode_cb (const whatever::flight_mode& state);
 void image_process_cb (const whatever::image_process& image);
+void setpoint_cb (const whatever::setpoint& point);
 
 void override_motor_cb (const mavros_msgs::OverrideRCIn& motor);
 void rc_in_cb (const mavros_msgs::RCIn& input);
@@ -63,6 +65,7 @@ int main(int argc, char **argv)
 	ros::Subscriber sub_rc_number 		= nh.subscribe("/kkctbn/rc/number", 1, rc_number_cb);
 	ros::Subscriber sub_flight_mode 	= nh.subscribe("/kkctbn/flight/mode", 1, flight_mode_cb);
 	ros::Subscriber sub_image_process 	= nh.subscribe("/kkctbn/image/process", 1, image_process_cb);
+	ros::Subscriber sub_setpoint 		= nh.subscribe("/kkctbn/image/setpoint", 1, setpoint_cb);
 	ros::Subscriber sub_override_motor 	= nh.subscribe("/mavros/rc/override", 1, override_motor_cb);
 	ros::Subscriber sub_rc_in 			= nh.subscribe("/mavros/rc/in", 1, rc_in_cb);
 	ros::Subscriber sub_state_rc 		= nh.subscribe("/mavros/state", 1, rc_state_cb);
@@ -79,9 +82,12 @@ int main(int argc, char **argv)
 		ROS_INFO("1:%s 2:%s 3:%s 4:%s 5:%s 6:%s", simple_manuver_status.c_str(), simple_speed_status.c_str(), record_manuver_status.c_str(), record_speed_status.c_str(), path_manuver_status.c_str(), path_speed_status.c_str());
 		ROS_INFO(" ");
 				
-		ROS_WARN("NC : topic override");
+		ROS_WARN("NC : topic image");
 		ROS_INFO("state_red:%d count_red:%d", state_red, count_red);
 		ROS_INFO("state_green:%d count_green:%d", state_green, count_green);
+		ROS_INFO(" ");
+		
+		ROS_WARN("NC : topic override");
 		ROS_INFO("setpoint:%d header:%s", setpoint, header.c_str());
 		ROS_INFO("steering:%d throttle:%d", steering, throttle);
 		ROS_INFO(" ");
@@ -102,13 +108,14 @@ int main(int argc, char **argv)
 		system("clear");
 	}
 }
+void setpoint_cb (const whatever::setpoint& point){
+	setpoint 	= point.setpoint;
+}
 void image_process_cb (const whatever::image_process& image){
 	state_red	= image.state_red;
 	count_red	= image.count_red;
 	state_green	= image.state_green;
 	count_green	= image.count_green;
-	setpoint 	= image.setpoint;
-
 }
 
 void rc_number_cb (const whatever::rc_number& number){

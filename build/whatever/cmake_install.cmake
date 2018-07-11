@@ -39,6 +39,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     "/home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg"
     "/home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg"
     "/home/mfikih15/Documents/AMV/src/whatever/msg/image_process.msg"
+    "/home/mfikih15/Documents/AMV/src/whatever/msg/setpoint.msg"
     )
 endif()
 

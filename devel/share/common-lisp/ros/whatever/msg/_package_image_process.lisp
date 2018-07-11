@@ -1,7 +1,5 @@
 (cl:in-package whatever-msg)
-(cl:export '(SETPOINT-VAL
-          SETPOINT
-          STATE_RED-VAL
+(cl:export '(STATE_RED-VAL
           STATE_RED
           STATE_GREEN-VAL
           STATE_GREEN

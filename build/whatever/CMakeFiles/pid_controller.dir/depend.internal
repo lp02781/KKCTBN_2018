@@ -5,6 +5,7 @@ whatever/CMakeFiles/pid_controller.dir/src/main/pid_controller.cpp.o
  /home/mfikih15/Documents/AMV/devel/include/whatever/image_process.h
  /home/mfikih15/Documents/AMV/devel/include/whatever/node_master.h
  /home/mfikih15/Documents/AMV/devel/include/whatever/override_motor.h
+ /home/mfikih15/Documents/AMV/devel/include/whatever/setpoint.h
  /home/mfikih15/Documents/AMV/src/whatever/include/whatever/haha.hpp
  /home/mfikih15/Documents/AMV/src/whatever/src/main/pid_controller.cpp
  /opt/ros/kinetic/include/mavros_msgs/OverrideRCIn.h

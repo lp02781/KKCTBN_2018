@@ -53,54 +53,62 @@ CMAKE_BINARY_DIR = /home/mfikih15/Documents/AMV/build
 # Include the progress variables for this target.
 include whatever/CMakeFiles/whatever_generate_messages_py.dir/progress.make
 
-whatever/CMakeFiles/whatever_generate_messages_py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_override_motor.py
-whatever/CMakeFiles/whatever_generate_messages_py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_flight_mode.py
 whatever/CMakeFiles/whatever_generate_messages_py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_node_master.py
-whatever/CMakeFiles/whatever_generate_messages_py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_image_process.py
 whatever/CMakeFiles/whatever_generate_messages_py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_rc_number.py
+whatever/CMakeFiles/whatever_generate_messages_py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_image_process.py
+whatever/CMakeFiles/whatever_generate_messages_py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_override_motor.py
+whatever/CMakeFiles/whatever_generate_messages_py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_setpoint.py
+whatever/CMakeFiles/whatever_generate_messages_py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_flight_mode.py
 whatever/CMakeFiles/whatever_generate_messages_py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/__init__.py
 
 
-/home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_override_motor.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_override_motor.py: /home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG whatever/override_motor"
-	cd /home/mfikih15/Documents/AMV/build/whatever && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg -Iwhatever:/home/mfikih15/Documents/AMV/src/whatever/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p whatever -o /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg
-
-/home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_flight_mode.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_flight_mode.py: /home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG whatever/flight_mode"
-	cd /home/mfikih15/Documents/AMV/build/whatever && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg -Iwhatever:/home/mfikih15/Documents/AMV/src/whatever/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p whatever -o /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg
-
 /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_node_master.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_node_master.py: /home/mfikih15/Documents/AMV/src/whatever/msg/node_master.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG whatever/node_master"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG whatever/node_master"
 	cd /home/mfikih15/Documents/AMV/build/whatever && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/mfikih15/Documents/AMV/src/whatever/msg/node_master.msg -Iwhatever:/home/mfikih15/Documents/AMV/src/whatever/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p whatever -o /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg
-
-/home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_image_process.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_image_process.py: /home/mfikih15/Documents/AMV/src/whatever/msg/image_process.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG whatever/image_process"
-	cd /home/mfikih15/Documents/AMV/build/whatever && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/mfikih15/Documents/AMV/src/whatever/msg/image_process.msg -Iwhatever:/home/mfikih15/Documents/AMV/src/whatever/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p whatever -o /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg
 
 /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_rc_number.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_rc_number.py: /home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG whatever/rc_number"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG whatever/rc_number"
 	cd /home/mfikih15/Documents/AMV/build/whatever && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/mfikih15/Documents/AMV/src/whatever/msg/rc_number.msg -Iwhatever:/home/mfikih15/Documents/AMV/src/whatever/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p whatever -o /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg
 
+/home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_image_process.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_image_process.py: /home/mfikih15/Documents/AMV/src/whatever/msg/image_process.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG whatever/image_process"
+	cd /home/mfikih15/Documents/AMV/build/whatever && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/mfikih15/Documents/AMV/src/whatever/msg/image_process.msg -Iwhatever:/home/mfikih15/Documents/AMV/src/whatever/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p whatever -o /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg
+
+/home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_override_motor.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_override_motor.py: /home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG whatever/override_motor"
+	cd /home/mfikih15/Documents/AMV/build/whatever && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/mfikih15/Documents/AMV/src/whatever/msg/override_motor.msg -Iwhatever:/home/mfikih15/Documents/AMV/src/whatever/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p whatever -o /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg
+
+/home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_setpoint.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_setpoint.py: /home/mfikih15/Documents/AMV/src/whatever/msg/setpoint.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG whatever/setpoint"
+	cd /home/mfikih15/Documents/AMV/build/whatever && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/mfikih15/Documents/AMV/src/whatever/msg/setpoint.msg -Iwhatever:/home/mfikih15/Documents/AMV/src/whatever/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p whatever -o /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg
+
+/home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_flight_mode.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_flight_mode.py: /home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python from MSG whatever/flight_mode"
+	cd /home/mfikih15/Documents/AMV/build/whatever && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/mfikih15/Documents/AMV/src/whatever/msg/flight_mode.msg -Iwhatever:/home/mfikih15/Documents/AMV/src/whatever/msg -Imavros_msgs:/opt/ros/kinetic/share/mavros_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg -p whatever -o /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg
+
 /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/__init__.py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_override_motor.py
-/home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/__init__.py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_flight_mode.py
 /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/__init__.py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_node_master.py
-/home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/__init__.py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_image_process.py
 /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/__init__.py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_rc_number.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python msg __init__.py for whatever"
+/home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/__init__.py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_image_process.py
+/home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/__init__.py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_override_motor.py
+/home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/__init__.py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_setpoint.py
+/home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/__init__.py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_flight_mode.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Python msg __init__.py for whatever"
 	cd /home/mfikih15/Documents/AMV/build/whatever && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg --initpy
 
 whatever_generate_messages_py: whatever/CMakeFiles/whatever_generate_messages_py
-whatever_generate_messages_py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_override_motor.py
-whatever_generate_messages_py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_flight_mode.py
 whatever_generate_messages_py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_node_master.py
-whatever_generate_messages_py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_image_process.py
 whatever_generate_messages_py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_rc_number.py
+whatever_generate_messages_py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_image_process.py
+whatever_generate_messages_py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_override_motor.py
+whatever_generate_messages_py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_setpoint.py
+whatever_generate_messages_py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/_flight_mode.py
 whatever_generate_messages_py: /home/mfikih15/Documents/AMV/devel/lib/python2.7/dist-packages/whatever/msg/__init__.py
 whatever_generate_messages_py: whatever/CMakeFiles/whatever_generate_messages_py.dir/build.make
 
