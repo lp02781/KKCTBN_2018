@@ -7,16 +7,20 @@ import struct
 
 
 class node_master(genpy.Message):
-  _md5sum = "3f3657994b0c8ed8f1919100c99067da"
+  _md5sum = "9783f29d89cc75e92f81094e627988e9"
   _type = "whatever/node_master"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """bool override_status
 bool pid_status
-int16 rc_number
-string flight_mode
+bool simple_manuver
+bool simple_speed
+bool record_manuver
+bool record_speed
+bool path_manuver
+bool path_speed
 """
-  __slots__ = ['override_status','pid_status','rc_number','flight_mode']
-  _slot_types = ['bool','bool','int16','string']
+  __slots__ = ['override_status','pid_status','simple_manuver','simple_speed','record_manuver','record_speed','path_manuver','path_speed']
+  _slot_types = ['bool','bool','bool','bool','bool','bool','bool','bool']
 
   def __init__(self, *args, **kwds):
     """
@@ -26,7 +30,7 @@ string flight_mode
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       override_status,pid_status,rc_number,flight_mode
+       override_status,pid_status,simple_manuver,simple_speed,record_manuver,record_speed,path_manuver,path_speed
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -39,15 +43,27 @@ string flight_mode
         self.override_status = False
       if self.pid_status is None:
         self.pid_status = False
-      if self.rc_number is None:
-        self.rc_number = 0
-      if self.flight_mode is None:
-        self.flight_mode = ''
+      if self.simple_manuver is None:
+        self.simple_manuver = False
+      if self.simple_speed is None:
+        self.simple_speed = False
+      if self.record_manuver is None:
+        self.record_manuver = False
+      if self.record_speed is None:
+        self.record_speed = False
+      if self.path_manuver is None:
+        self.path_manuver = False
+      if self.path_speed is None:
+        self.path_speed = False
     else:
       self.override_status = False
       self.pid_status = False
-      self.rc_number = 0
-      self.flight_mode = ''
+      self.simple_manuver = False
+      self.simple_speed = False
+      self.record_manuver = False
+      self.record_speed = False
+      self.path_manuver = False
+      self.path_speed = False
 
   def _get_types(self):
     """
@@ -62,13 +78,7 @@ string flight_mode
     """
     try:
       _x = self
-      buff.write(_get_struct_2Bh().pack(_x.override_status, _x.pid_status, _x.rc_number))
-      _x = self.flight_mode
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(_get_struct_8B().pack(_x.override_status, _x.pid_status, _x.simple_manuver, _x.simple_speed, _x.record_manuver, _x.record_speed, _x.path_manuver, _x.path_speed))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -81,19 +91,16 @@ string flight_mode
       end = 0
       _x = self
       start = end
-      end += 4
-      (_x.override_status, _x.pid_status, _x.rc_number,) = _get_struct_2Bh().unpack(str[start:end])
+      end += 8
+      (_x.override_status, _x.pid_status, _x.simple_manuver, _x.simple_speed, _x.record_manuver, _x.record_speed, _x.path_manuver, _x.path_speed,) = _get_struct_8B().unpack(str[start:end])
       self.override_status = bool(self.override_status)
       self.pid_status = bool(self.pid_status)
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.flight_mode = str[start:end].decode('utf-8')
-      else:
-        self.flight_mode = str[start:end]
+      self.simple_manuver = bool(self.simple_manuver)
+      self.simple_speed = bool(self.simple_speed)
+      self.record_manuver = bool(self.record_manuver)
+      self.record_speed = bool(self.record_speed)
+      self.path_manuver = bool(self.path_manuver)
+      self.path_speed = bool(self.path_speed)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -107,13 +114,7 @@ string flight_mode
     """
     try:
       _x = self
-      buff.write(_get_struct_2Bh().pack(_x.override_status, _x.pid_status, _x.rc_number))
-      _x = self.flight_mode
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(_get_struct_8B().pack(_x.override_status, _x.pid_status, _x.simple_manuver, _x.simple_speed, _x.record_manuver, _x.record_speed, _x.path_manuver, _x.path_speed))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -127,19 +128,16 @@ string flight_mode
       end = 0
       _x = self
       start = end
-      end += 4
-      (_x.override_status, _x.pid_status, _x.rc_number,) = _get_struct_2Bh().unpack(str[start:end])
+      end += 8
+      (_x.override_status, _x.pid_status, _x.simple_manuver, _x.simple_speed, _x.record_manuver, _x.record_speed, _x.path_manuver, _x.path_speed,) = _get_struct_8B().unpack(str[start:end])
       self.override_status = bool(self.override_status)
       self.pid_status = bool(self.pid_status)
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.flight_mode = str[start:end].decode('utf-8')
-      else:
-        self.flight_mode = str[start:end]
+      self.simple_manuver = bool(self.simple_manuver)
+      self.simple_speed = bool(self.simple_speed)
+      self.record_manuver = bool(self.record_manuver)
+      self.record_speed = bool(self.record_speed)
+      self.path_manuver = bool(self.path_manuver)
+      self.path_speed = bool(self.path_speed)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -148,9 +146,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_2Bh = None
-def _get_struct_2Bh():
-    global _struct_2Bh
-    if _struct_2Bh is None:
-        _struct_2Bh = struct.Struct("<2Bh")
-    return _struct_2Bh
+_struct_8B = None
+def _get_struct_8B():
+    global _struct_8B
+    if _struct_8B is None:
+        _struct_8B = struct.Struct("<8B")
+    return _struct_8B

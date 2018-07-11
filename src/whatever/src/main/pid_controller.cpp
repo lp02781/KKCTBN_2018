@@ -3,6 +3,7 @@
 #include "mavros_msgs/OverrideRCIn.h"
 #include "whatever/override_motor.h"
 #include "whatever/node_master.h"
+#include "whatever/image_process.h"
 #include <iostream>
 
 bool pid_status = false;
@@ -13,6 +14,7 @@ int throttle_pwm;
 
 void pid_status_cb(const whatever::node_master& pid_status_recv);
 void pid_input_cb(const whatever::override_motor& rc);
+void image_process_cb(const whatever::image_process& image);
 
 whatever::override_motor controller;
 ros::Publisher pub_override_rc;
@@ -24,7 +26,7 @@ int main(int argc, char **argv)
 
   pub_override_rc = n.advertise<whatever::override_motor>("/kkctbn/override/motor", 10);
   
-  ros::Subscriber sub_pid_motor 	= n.subscribe("/kkctbn/override/motor", 1, pid_input_cb);
+  ros::Subscriber sub_image_process = n.subscribe("/kkctbn/image/process", 1, image_process_cb);
   ros::Subscriber sub_pid_status 	= n.subscribe("/kkctbn/node/master", 1, pid_status_cb);
   
   ROS_WARN("NC : pid_controller.cpp active");
@@ -33,15 +35,17 @@ int main(int argc, char **argv)
   return 0;
 }
 
+void image_process_cb(const whatever::image_process& image){
+	setpoint = image.setpoint;
+	state = image.state_red;
+}
+
 void pid_status_cb(const whatever::node_master& pid_status_recv){
 	pid_status = pid_status_recv.pid_status;
 }
 
 void pid_input_cb(const whatever::override_motor& rc){
-	setpoint = rc.setpoint;
-	state = rc.state_red;
 	if(pid_status){
-		
 		if(state < setpoint){
 			controller.header = left_header;
 			steer_pwm = MIDDLE_PWM + CHANGE_STEER;

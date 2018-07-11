@@ -2,7 +2,7 @@
 #include "ros/ros.h"
 #include "mavros_msgs/OverrideRCIn.h"
 #include "mavros_msgs/RCIn.h"
-#include "whatever/node_master.h"
+#include "whatever/rc_number.h"
 #include "std_msgs/Bool.h"
 #include <string>
 #include <string.h>
@@ -16,7 +16,7 @@ int number_flight = 0;
 void rcinReceiver(const mavros_msgs::RCIn& rc_in_data);
 
 ros::Publisher pub_rc_flag;
-whatever::node_master rc_action; 
+whatever::rc_number rc_action; 
 
 using namespace std;
 
@@ -24,7 +24,7 @@ int main(int argc, char **argv){
 
 	ros::init(argc, argv, "remote_monitor");
 	ros::NodeHandle ovrd_mon;
-	pub_rc_flag 				= ovrd_mon.advertise<whatever::node_master>("/kkctbn/node/master", 1);
+	pub_rc_flag 				= ovrd_mon.advertise<whatever::rc_number>("/kkctbn/rc/number", 1);
 	ros::Subscriber rc_in_sub 	= ovrd_mon.subscribe("/mavros/rc/in", 1, rcinReceiver);
 	
 	ROS_WARN("NC : remote_monitor.cpp active");

@@ -1,7 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/whatever_generate_messages_cpp"
-  "/home/amvui/AMV/devel/include/whatever/node_master.h"
-  "/home/amvui/AMV/devel/include/whatever/override_motor.h"
+  "/home/mfikih15/Documents/AMV/devel/include/whatever/override_motor.h"
+  "/home/mfikih15/Documents/AMV/devel/include/whatever/flight_mode.h"
+  "/home/mfikih15/Documents/AMV/devel/include/whatever/node_master.h"
+  "/home/mfikih15/Documents/AMV/devel/include/whatever/image_process.h"
+  "/home/mfikih15/Documents/AMV/devel/include/whatever/rc_number.h"
 )
 
 # Per-language clean rules from dependency scanning.

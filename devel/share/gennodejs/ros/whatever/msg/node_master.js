@@ -20,8 +20,12 @@ class node_master {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.override_status = null;
       this.pid_status = null;
-      this.rc_number = null;
-      this.flight_mode = null;
+      this.simple_manuver = null;
+      this.simple_speed = null;
+      this.record_manuver = null;
+      this.record_speed = null;
+      this.path_manuver = null;
+      this.path_speed = null;
     }
     else {
       if (initObj.hasOwnProperty('override_status')) {
@@ -36,17 +40,41 @@ class node_master {
       else {
         this.pid_status = false;
       }
-      if (initObj.hasOwnProperty('rc_number')) {
-        this.rc_number = initObj.rc_number
+      if (initObj.hasOwnProperty('simple_manuver')) {
+        this.simple_manuver = initObj.simple_manuver
       }
       else {
-        this.rc_number = 0;
+        this.simple_manuver = false;
       }
-      if (initObj.hasOwnProperty('flight_mode')) {
-        this.flight_mode = initObj.flight_mode
+      if (initObj.hasOwnProperty('simple_speed')) {
+        this.simple_speed = initObj.simple_speed
       }
       else {
-        this.flight_mode = '';
+        this.simple_speed = false;
+      }
+      if (initObj.hasOwnProperty('record_manuver')) {
+        this.record_manuver = initObj.record_manuver
+      }
+      else {
+        this.record_manuver = false;
+      }
+      if (initObj.hasOwnProperty('record_speed')) {
+        this.record_speed = initObj.record_speed
+      }
+      else {
+        this.record_speed = false;
+      }
+      if (initObj.hasOwnProperty('path_manuver')) {
+        this.path_manuver = initObj.path_manuver
+      }
+      else {
+        this.path_manuver = false;
+      }
+      if (initObj.hasOwnProperty('path_speed')) {
+        this.path_speed = initObj.path_speed
+      }
+      else {
+        this.path_speed = false;
       }
     }
   }
@@ -57,10 +85,18 @@ class node_master {
     bufferOffset = _serializer.bool(obj.override_status, buffer, bufferOffset);
     // Serialize message field [pid_status]
     bufferOffset = _serializer.bool(obj.pid_status, buffer, bufferOffset);
-    // Serialize message field [rc_number]
-    bufferOffset = _serializer.int16(obj.rc_number, buffer, bufferOffset);
-    // Serialize message field [flight_mode]
-    bufferOffset = _serializer.string(obj.flight_mode, buffer, bufferOffset);
+    // Serialize message field [simple_manuver]
+    bufferOffset = _serializer.bool(obj.simple_manuver, buffer, bufferOffset);
+    // Serialize message field [simple_speed]
+    bufferOffset = _serializer.bool(obj.simple_speed, buffer, bufferOffset);
+    // Serialize message field [record_manuver]
+    bufferOffset = _serializer.bool(obj.record_manuver, buffer, bufferOffset);
+    // Serialize message field [record_speed]
+    bufferOffset = _serializer.bool(obj.record_speed, buffer, bufferOffset);
+    // Serialize message field [path_manuver]
+    bufferOffset = _serializer.bool(obj.path_manuver, buffer, bufferOffset);
+    // Serialize message field [path_speed]
+    bufferOffset = _serializer.bool(obj.path_speed, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -72,17 +108,23 @@ class node_master {
     data.override_status = _deserializer.bool(buffer, bufferOffset);
     // Deserialize message field [pid_status]
     data.pid_status = _deserializer.bool(buffer, bufferOffset);
-    // Deserialize message field [rc_number]
-    data.rc_number = _deserializer.int16(buffer, bufferOffset);
-    // Deserialize message field [flight_mode]
-    data.flight_mode = _deserializer.string(buffer, bufferOffset);
+    // Deserialize message field [simple_manuver]
+    data.simple_manuver = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [simple_speed]
+    data.simple_speed = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [record_manuver]
+    data.record_manuver = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [record_speed]
+    data.record_speed = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [path_manuver]
+    data.path_manuver = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [path_speed]
+    data.path_speed = _deserializer.bool(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    let length = 0;
-    length += object.flight_mode.length;
-    return length + 8;
+    return 8;
   }
 
   static datatype() {
@@ -92,7 +134,7 @@ class node_master {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '3f3657994b0c8ed8f1919100c99067da';
+    return '9783f29d89cc75e92f81094e627988e9';
   }
 
   static messageDefinition() {
@@ -100,8 +142,12 @@ class node_master {
     return `
     bool override_status
     bool pid_status
-    int16 rc_number
-    string flight_mode
+    bool simple_manuver
+    bool simple_speed
+    bool record_manuver
+    bool record_speed
+    bool path_manuver
+    bool path_speed
     
     `;
   }
@@ -126,18 +172,46 @@ class node_master {
       resolved.pid_status = false
     }
 
-    if (msg.rc_number !== undefined) {
-      resolved.rc_number = msg.rc_number;
+    if (msg.simple_manuver !== undefined) {
+      resolved.simple_manuver = msg.simple_manuver;
     }
     else {
-      resolved.rc_number = 0
+      resolved.simple_manuver = false
     }
 
-    if (msg.flight_mode !== undefined) {
-      resolved.flight_mode = msg.flight_mode;
+    if (msg.simple_speed !== undefined) {
+      resolved.simple_speed = msg.simple_speed;
     }
     else {
-      resolved.flight_mode = ''
+      resolved.simple_speed = false
+    }
+
+    if (msg.record_manuver !== undefined) {
+      resolved.record_manuver = msg.record_manuver;
+    }
+    else {
+      resolved.record_manuver = false
+    }
+
+    if (msg.record_speed !== undefined) {
+      resolved.record_speed = msg.record_speed;
+    }
+    else {
+      resolved.record_speed = false
+    }
+
+    if (msg.path_manuver !== undefined) {
+      resolved.path_manuver = msg.path_manuver;
+    }
+    else {
+      resolved.path_manuver = false
+    }
+
+    if (msg.path_speed !== undefined) {
+      resolved.path_speed = msg.path_speed;
+    }
+    else {
+      resolved.path_speed = false
     }
 
     return resolved;

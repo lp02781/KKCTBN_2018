@@ -57,6 +57,9 @@ add_message_files(
 	FILES
 	override_motor.msg
 	node_master.msg
+	rc_number.msg
+	flight_mode.msg
+	image_process.msg
 )
 
 ## Generate services in the 'srv' folder

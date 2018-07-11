@@ -6,7 +6,7 @@
 #include <iostream>
 #include <stdio.h>
 #include "../../include/whatever/haha.hpp"
-#include "whatever/override_motor.h"
+#include "whatever/image_process.h"
 
 using namespace std;
 using namespace cv;
@@ -29,7 +29,7 @@ int state;
 
 void imageProcessing();
 
-whatever::override_motor image;
+whatever::image_process image;
 ros::Publisher pub_state_camera;
 
 void imageCallback(const sensor_msgs::CompressedImageConstPtr& msg)
@@ -53,7 +53,7 @@ int main(int argc, char **argv){
 	
 	image_transport::ImageTransport it(nh);
 	
-	pub_state_camera 	= nh.advertise<whatever::override_motor>("/kkctbn/override/motor", 1);
+	pub_state_camera 	= nh.advertise<whatever::image_process>("/kkctbn/image/process", 1);
 	ros::Subscriber sub = nh.subscribe("camera/image/compressed", 1, imageCallback);
 
 	namedWindow("panel_green", CV_WINDOW_AUTOSIZE);

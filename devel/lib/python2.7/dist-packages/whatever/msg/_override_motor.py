@@ -7,20 +7,15 @@ import struct
 
 
 class override_motor(genpy.Message):
-  _md5sum = "c61324fa2e040eda100a19f37f751190"
+  _md5sum = "b0615c31df605e09b8a673bfb5e75c5e"
   _type = "whatever/override_motor"
   _has_header = False #flag to mark the presence of a Header object
-  _full_text = """int16 state_red
-int16 state_green
-int16 setpoint
-int16 steering
+  _full_text = """int16 steering
 int16 throttle
 int16 header
-int16 count_red
-int16 count_green
 """
-  __slots__ = ['state_red','state_green','setpoint','steering','throttle','header','count_red','count_green']
-  _slot_types = ['int16','int16','int16','int16','int16','int16','int16','int16']
+  __slots__ = ['steering','throttle','header']
+  _slot_types = ['int16','int16','int16']
 
   def __init__(self, *args, **kwds):
     """
@@ -30,7 +25,7 @@ int16 count_green
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       state_red,state_green,setpoint,steering,throttle,header,count_red,count_green
+       steering,throttle,header
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -39,31 +34,16 @@ int16 count_green
     if args or kwds:
       super(override_motor, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
-      if self.state_red is None:
-        self.state_red = 0
-      if self.state_green is None:
-        self.state_green = 0
-      if self.setpoint is None:
-        self.setpoint = 0
       if self.steering is None:
         self.steering = 0
       if self.throttle is None:
         self.throttle = 0
       if self.header is None:
         self.header = 0
-      if self.count_red is None:
-        self.count_red = 0
-      if self.count_green is None:
-        self.count_green = 0
     else:
-      self.state_red = 0
-      self.state_green = 0
-      self.setpoint = 0
       self.steering = 0
       self.throttle = 0
       self.header = 0
-      self.count_red = 0
-      self.count_green = 0
 
   def _get_types(self):
     """
@@ -78,7 +58,7 @@ int16 count_green
     """
     try:
       _x = self
-      buff.write(_get_struct_8h().pack(_x.state_red, _x.state_green, _x.setpoint, _x.steering, _x.throttle, _x.header, _x.count_red, _x.count_green))
+      buff.write(_get_struct_3h().pack(_x.steering, _x.throttle, _x.header))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -91,8 +71,8 @@ int16 count_green
       end = 0
       _x = self
       start = end
-      end += 16
-      (_x.state_red, _x.state_green, _x.setpoint, _x.steering, _x.throttle, _x.header, _x.count_red, _x.count_green,) = _get_struct_8h().unpack(str[start:end])
+      end += 6
+      (_x.steering, _x.throttle, _x.header,) = _get_struct_3h().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -106,7 +86,7 @@ int16 count_green
     """
     try:
       _x = self
-      buff.write(_get_struct_8h().pack(_x.state_red, _x.state_green, _x.setpoint, _x.steering, _x.throttle, _x.header, _x.count_red, _x.count_green))
+      buff.write(_get_struct_3h().pack(_x.steering, _x.throttle, _x.header))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -120,8 +100,8 @@ int16 count_green
       end = 0
       _x = self
       start = end
-      end += 16
-      (_x.state_red, _x.state_green, _x.setpoint, _x.steering, _x.throttle, _x.header, _x.count_red, _x.count_green,) = _get_struct_8h().unpack(str[start:end])
+      end += 6
+      (_x.steering, _x.throttle, _x.header,) = _get_struct_3h().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -130,9 +110,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_8h = None
-def _get_struct_8h():
-    global _struct_8h
-    if _struct_8h is None:
-        _struct_8h = struct.Struct("<8h")
-    return _struct_8h
+_struct_3h = None
+def _get_struct_3h():
+    global _struct_3h
+    if _struct_3h is None:
+        _struct_3h = struct.Struct("<3h")
+    return _struct_3h

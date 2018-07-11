@@ -4,12 +4,12 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <cv_bridge/cv_bridge.h>
 #include <iostream>
-#include "whatever/override_motor.h"
+#include "whatever/image_process.h"
 
 using namespace cv;
 
 ros::Publisher pub_camera_setpoint;
-whatever::override_motor camera_point;
+whatever::image_process camera_point;
 
 Mat image;
 
@@ -26,7 +26,7 @@ int main(int argc, char** argv)
 	image_transport::ImageTransport it(nh);
 	image_transport::Publisher pub = it.advertise("/camera/image", 1, true);
 	
-	pub_camera_setpoint = nh.advertise<whatever::override_motor>("/kkctbn/override/motor", 1, true);
+	pub_camera_setpoint = nh.advertise<whatever::image_process>("/kkctbn/image/process", 1, true);
 	
 	ROS_WARN("NC : image_front.cpp active");
 	

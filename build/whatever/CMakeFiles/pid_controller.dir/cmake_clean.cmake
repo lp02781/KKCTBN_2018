@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/pid_controller.dir/src/main/pid_controller.cpp.o"
-  "/home/amvui/AMV/devel/lib/whatever/pid_controller.pdb"
-  "/home/amvui/AMV/devel/lib/whatever/pid_controller"
+  "/home/mfikih15/Documents/AMV/devel/lib/whatever/pid_controller.pdb"
+  "/home/mfikih15/Documents/AMV/devel/lib/whatever/pid_controller"
 )
 
 # Per-language clean rules from dependency scanning.
