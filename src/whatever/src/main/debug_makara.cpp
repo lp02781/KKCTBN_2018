@@ -150,9 +150,11 @@ void override_rc_cb	(const whatever::override_motor& rc){
 	throttle 	= rc.throttle;
 	num_header 	= rc.header;
 	
-	if(num_header = left_header){header = "left";}
-	else if(num_header = right_header){header = "right";}
-	else if(num_header = center_header){header = "center";}
+	//ROS_ERROR("%d", num_header);
+	if(num_header == left_header){header = "left";}
+	else if(num_header == right_header){header = "right";}
+	else if(num_header == center_header){header = "center";}
+	//ROS_ERROR("%s", header.c_str());
 }
 
 void override_motor_cb (const mavros_msgs::OverrideRCIn& motor){

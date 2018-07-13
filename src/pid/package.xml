@@ -1,31 +1,38 @@
 <?xml version="1.0"?>
-<package format="2">
+<package>
   <name>pid</name>
-  <version>0.0.0</version>
-  <description>The pid package</description>
+  <version>0.0.7</version>
+  <description>Launch a PID control node.</description>
 
-  <maintainer email="mfikih15@todo.todo">mfikih15</maintainer>
+  <maintainer email="andyz@utexas.edu">Andy Zelenak</maintainer>
 
-  <license>TODO</license>
+  <license>BSD</license>
 
-  <build_export_depend>message_generation</build_export_depend> -->
-  
-  <exec_depend>message_runtime</exec_depend> -->
+ <url type="website">http://wiki.ros.org/pid</url>
+
+ <author email="andyz@utexas.edu">Andy Zelenak</author>
+
+  <!-- Use build_depend for packages you need at compile time: -->
+  <build_depend>message_generation</build_depend>
+  <!-- Use buildtool_depend for build tool packages: -->
+
+  <!-- Use run_depend for packages you need at runtime: -->
+  <run_depend>message_runtime</run_depend>
 
   <buildtool_depend>catkin</buildtool_depend>
-  
   <build_depend>roscpp</build_depend>
   <build_depend>std_msgs</build_depend>
-  
-  <build_export_depend>roscpp</build_export_depend>
-  <build_export_depend>std_msgs</build_export_depend>
-  
-  <exec_depend>roscpp</exec_depend>
-  <exec_depend>std_msgs</exec_depend>
+
+  <run_depend>roscpp</run_depend>
+  <run_depend>std_msgs</run_depend>
 
 
-  
+  <!-- The export tag contains other, unspecified, tags -->
   <export>
-	  
+    <!-- You can specify that this package is a metapackage here: -->
+    <!-- <metapackage/> -->
+
+    <!-- Other tools can request additional information be placed here -->
+
   </export>
 </package>

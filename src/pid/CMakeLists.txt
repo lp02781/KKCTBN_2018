@@ -108,16 +108,17 @@ include_directories(include ${catkin_INCLUDE_DIRS})
 ## Declare a cpp executable
 # add_executable(pid_node src/pid_node.cpp)
 
+add_executable(controller_adaptive src/controller_adaptive.cpp)
+
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(pid_node pid_generate_messages_cpp)
+add_dependencies(controller_adaptive pid_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(pid_node
 #   ${catkin_LIBRARIES}
 # )
-add_executable(controller_adaptive src/controller_adaptive.cpp)
-add_dependencies(controller_adaptive pid_generate_messages_cpp)
 target_link_libraries(controller_adaptive ${catkin_LIBRARIES})
 
 #############
@@ -135,11 +136,11 @@ target_link_libraries(controller_adaptive ${catkin_LIBRARIES})
 # )
 
 ## Mark executables and/or libraries for installation
-install(TARGETS controller_adaptive
+#install(TARGETS controller first_order_plant controller_adaptive
 #  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
+# RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+#)
 
 ## Mark cpp header files for installation
 install(DIRECTORY include/${PROJECT_NAME}/

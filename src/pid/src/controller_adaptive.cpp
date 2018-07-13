@@ -10,7 +10,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////
 void pidConstReceiver(const pid::pid_const_msg& pid_const);
 
-string pid_const_topic = "/kkctbn/pid_const";
+string pid_const_topic = "kkctbn/pid/const";
 
 int main(int argc, char **argv)
 {

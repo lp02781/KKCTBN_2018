@@ -201,12 +201,6 @@ ${catkin_LIBRARIES}
 ${OpenCV_LIBRARIES}
 )
 
-add_executable(green_hough src/image/green_hough.cpp )
-target_link_libraries(green_hough
-${catkin_LIBRARIES}
-${OpenCV_LIBRARIES}
-)
-
 #############
 ## Install ##
 #############

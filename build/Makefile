@@ -1258,19 +1258,6 @@ whatever_generate_messages_cpp/fast:
 .PHONY : whatever_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named green_hough
-
-# Build rule for target.
-green_hough: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 green_hough
-.PHONY : green_hough
-
-# fast build rule for target.
-green_hough/fast:
-	$(MAKE) -f whatever/CMakeFiles/green_hough.dir/build.make whatever/CMakeFiles/green_hough.dir/build
-.PHONY : green_hough/fast
-
-#=============================================================================
 # Target rules for targets named whatever_generate_messages_lisp
 
 # Build rule for target.
@@ -1419,7 +1406,6 @@ help:
 	@echo "... _whatever_generate_messages_check_deps_image_process"
 	@echo "... _whatever_generate_messages_check_deps_override_motor"
 	@echo "... whatever_generate_messages_cpp"
-	@echo "... green_hough"
 	@echo "... whatever_generate_messages_lisp"
 	@echo "... whatever_genlisp"
 	@echo "... _whatever_generate_messages_check_deps_flight_mode"

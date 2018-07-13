@@ -5,4 +5,4 @@ PROJECT_CATKIN_DEPENDS = "roscpp;std_msgs;message_runtime".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "pid"
 PROJECT_SPACE_DIR = "/home/mfikih15/Documents/AMV/install"
-PROJECT_VERSION = "0.0.0"
+PROJECT_VERSION = "0.0.7"

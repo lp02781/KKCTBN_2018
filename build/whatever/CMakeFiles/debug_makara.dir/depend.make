@@ -6,6 +6,7 @@ whatever/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /home/mfikih15
 whatever/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /home/mfikih15/Documents/AMV/devel/include/whatever/node_master.h
 whatever/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /home/mfikih15/Documents/AMV/devel/include/whatever/override_motor.h
 whatever/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /home/mfikih15/Documents/AMV/devel/include/whatever/rc_number.h
+whatever/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /home/mfikih15/Documents/AMV/devel/include/whatever/setpoint.h
 whatever/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /home/mfikih15/Documents/AMV/src/whatever/include/whatever/haha.hpp
 whatever/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /home/mfikih15/Documents/AMV/src/whatever/src/main/debug_makara.cpp
 whatever/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o: /opt/ros/kinetic/include/mavros_msgs/OverrideRCIn.h

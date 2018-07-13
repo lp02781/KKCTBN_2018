@@ -117,7 +117,6 @@
 /home/mfikih15/Documents/AMV/build/whatever/CMakeFiles/_whatever_generate_messages_check_deps_image_process.dir
 /home/mfikih15/Documents/AMV/build/whatever/CMakeFiles/_whatever_generate_messages_check_deps_override_motor.dir
 /home/mfikih15/Documents/AMV/build/whatever/CMakeFiles/whatever_generate_messages_cpp.dir
-/home/mfikih15/Documents/AMV/build/whatever/CMakeFiles/green_hough.dir
 /home/mfikih15/Documents/AMV/build/whatever/CMakeFiles/whatever_generate_messages_lisp.dir
 /home/mfikih15/Documents/AMV/build/whatever/CMakeFiles/whatever_genlisp.dir
 /home/mfikih15/Documents/AMV/build/whatever/CMakeFiles/_whatever_generate_messages_check_deps_flight_mode.dir

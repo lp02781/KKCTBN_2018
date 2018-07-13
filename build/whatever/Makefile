@@ -841,21 +841,6 @@ whatever_generate_messages_cpp/fast:
 .PHONY : whatever_generate_messages_cpp/fast
 
 # Convenience name for target.
-whatever/CMakeFiles/green_hough.dir/rule:
-	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/green_hough.dir/rule
-.PHONY : whatever/CMakeFiles/green_hough.dir/rule
-
-# Convenience name for target.
-green_hough: whatever/CMakeFiles/green_hough.dir/rule
-
-.PHONY : green_hough
-
-# fast build rule for target.
-green_hough/fast:
-	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/green_hough.dir/build.make whatever/CMakeFiles/green_hough.dir/build
-.PHONY : green_hough/fast
-
-# Convenience name for target.
 whatever/CMakeFiles/whatever_generate_messages_lisp.dir/rule:
 	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/whatever_generate_messages_lisp.dir/rule
 .PHONY : whatever/CMakeFiles/whatever_generate_messages_lisp.dir/rule
@@ -914,33 +899,6 @@ whatever_genpy: whatever/CMakeFiles/whatever_genpy.dir/rule
 whatever_genpy/fast:
 	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/whatever_genpy.dir/build.make whatever/CMakeFiles/whatever_genpy.dir/build
 .PHONY : whatever_genpy/fast
-
-src/image/green_hough.o: src/image/green_hough.cpp.o
-
-.PHONY : src/image/green_hough.o
-
-# target to build an object file
-src/image/green_hough.cpp.o:
-	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/green_hough.dir/build.make whatever/CMakeFiles/green_hough.dir/src/image/green_hough.cpp.o
-.PHONY : src/image/green_hough.cpp.o
-
-src/image/green_hough.i: src/image/green_hough.cpp.i
-
-.PHONY : src/image/green_hough.i
-
-# target to preprocess a source file
-src/image/green_hough.cpp.i:
-	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/green_hough.dir/build.make whatever/CMakeFiles/green_hough.dir/src/image/green_hough.cpp.i
-.PHONY : src/image/green_hough.cpp.i
-
-src/image/green_hough.s: src/image/green_hough.cpp.s
-
-.PHONY : src/image/green_hough.s
-
-# target to generate assembly for a file
-src/image/green_hough.cpp.s:
-	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/green_hough.dir/build.make whatever/CMakeFiles/green_hough.dir/src/image/green_hough.cpp.s
-.PHONY : src/image/green_hough.cpp.s
 
 src/image/image_front.o: src/image/image_front.cpp.o
 
@@ -1189,14 +1147,10 @@ help:
 	@echo "... _whatever_generate_messages_check_deps_image_process"
 	@echo "... _whatever_generate_messages_check_deps_override_motor"
 	@echo "... whatever_generate_messages_cpp"
-	@echo "... green_hough"
 	@echo "... whatever_generate_messages_lisp"
 	@echo "... whatever_genlisp"
 	@echo "... _whatever_generate_messages_check_deps_flight_mode"
 	@echo "... whatever_genpy"
-	@echo "... src/image/green_hough.o"
-	@echo "... src/image/green_hough.i"
-	@echo "... src/image/green_hough.s"
 	@echo "... src/image/image_front.o"
 	@echo "... src/image/image_front.i"
 	@echo "... src/image/image_front.s"

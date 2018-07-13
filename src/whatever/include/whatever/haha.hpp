@@ -17,6 +17,15 @@
 
 int number_camera = 0;
 
+int noise_state = 5;
+
+float kp = 1;
+float ki = 0;
+float kd = 0;
+
+float delta_t = 0.01;
+float initial_time = 0; 
+
 int zero_flag 		= 0;
 int simple_manuver 	= 1;
 int simple_speed 	= 2;
@@ -28,14 +37,14 @@ int path_speed 		= 6;
 int left_header 	= 1;
 int right_header 	= 2;
 int center_header 	= 0;
-
-int LowH_red 	= 170;
-int HighH_red 	= 179;
-int LowS_red 	= 150; 
-int HighS_red 	= 255;
-int LowV_red 	= 60;
-int HighV_red 	= 255;
-int max_radius_red 	= 1000;
+							//nuc  pc
+int LowH_red 	= 3; 		//170  3
+int HighH_red 	= 51;		//179  51
+int LowS_red 	= 65;      //150  65
+int HighS_red 	= 246;      //255  246
+int LowV_red 	= 242;		//60   242
+int HighV_red 	= 255;		//255  255
+int max_radius_red 	= 1000; 
 int min_radius_red 	= 1;
 int Noise_red 	= 5;
 

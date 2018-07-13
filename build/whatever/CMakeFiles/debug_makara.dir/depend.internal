@@ -7,6 +7,7 @@ whatever/CMakeFiles/debug_makara.dir/src/main/debug_makara.cpp.o
  /home/mfikih15/Documents/AMV/devel/include/whatever/node_master.h
  /home/mfikih15/Documents/AMV/devel/include/whatever/override_motor.h
  /home/mfikih15/Documents/AMV/devel/include/whatever/rc_number.h
+ /home/mfikih15/Documents/AMV/devel/include/whatever/setpoint.h
  /home/mfikih15/Documents/AMV/src/whatever/include/whatever/haha.hpp
  /home/mfikih15/Documents/AMV/src/whatever/src/main/debug_makara.cpp
  /opt/ros/kinetic/include/mavros_msgs/OverrideRCIn.h

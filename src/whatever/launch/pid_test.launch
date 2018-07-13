@@ -10,9 +10,6 @@
 	<arg name="topic_pid_out" default="kkctbn/pid/out" />
 	<!-- topic for kp,kd, ki /kkctbn/pid/const -->
 	
-	<node name="motor_controller" pkg="whatever" output="screen" type="motor_controller" />
-	<node name="node_controller" pkg="whatever" output="screen" type="node_controller" />
-	<node name="remote_monitor" pkg="whatever" output="screen" type="remote_monitor" />
 	<node name="debug_makara" pkg="whatever" output="screen" type="debug_makara" />
 	<node name="pid_controller" pkg="whatever" output="screen" type="pid_controller" />
 	
