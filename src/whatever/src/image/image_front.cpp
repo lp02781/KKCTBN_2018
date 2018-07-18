@@ -9,15 +9,8 @@
 using namespace cv;
 
 ros::Publisher pub_camera_setpoint;
-whatever::setpoint camera_point;
 
 Mat image;
-
-int image_width;
-int image_height;
-int setpoint;
-
-void get_setpoint();
 
 int main(int argc, char** argv)
 {
@@ -25,8 +18,6 @@ int main(int argc, char** argv)
 	ros::NodeHandle nh;
 	image_transport::ImageTransport it(nh);
 	image_transport::Publisher pub = it.advertise("/camera/image", 1, true);
-	
-	pub_camera_setpoint = nh.advertise<whatever::setpoint>("/kkctbn/image/setpoint", 1, true);
 	
 	ROS_WARN("NC : image_front.cpp active");
 	
@@ -36,10 +27,7 @@ int main(int argc, char** argv)
 		return 1;
 	}
 	while (nh.ok()) {
-		cap.read(image);
-		
-		get_setpoint();
-		
+		cap.read(image);		
 		if(!image.empty()){	
 			sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", image).toImageMsg();
 			pub.publish(msg);
@@ -47,18 +35,3 @@ int main(int argc, char** argv)
 		ros::spinOnce();
 	}
 }
-
-void get_setpoint(){
-	Size sz = image.size();
-		
-	image_width = sz.width;
-	image_height = sz.height;
-	
-	setpoint = sz.width/3;
-		
-	camera_point.setpoint = setpoint;
-	
-	pub_camera_setpoint.publish(camera_point);
-}
-
-	

@@ -329,7 +329,7 @@ gtest/gtest/preinstall:
 gtest/gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest.dir/build.make gtest/gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest.dir/build.make gtest/gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=12,13 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=14,15 "Built target gtest"
 .PHONY : gtest/gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -361,7 +361,7 @@ clean: gtest/gtest/CMakeFiles/gtest.dir/clean
 gtest/gtest/CMakeFiles/gtest_main.dir/all: gtest/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest_main.dir/build.make gtest/gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest_main.dir/build.make gtest/gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=14,15 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=16,17 "Built target gtest_main"
 .PHONY : gtest/gtest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1429,23 +1429,23 @@ clean: pid/CMakeFiles/pid_gencpp.dir/clean
 # Convenience name for "all" pass in the directory.
 whatever/all: whatever/CMakeFiles/image_front.dir/all
 whatever/all: whatever/CMakeFiles/debug_makara.dir/all
-whatever/all: whatever/CMakeFiles/pid_controller.dir/all
 whatever/all: whatever/CMakeFiles/node_controller.dir/all
 whatever/all: whatever/CMakeFiles/whatever_generate_messages.dir/all
 whatever/all: whatever/CMakeFiles/motor_controller.dir/all
 whatever/all: whatever/CMakeFiles/remote_monitor.dir/all
 whatever/all: whatever/CMakeFiles/red_hough.dir/all
+whatever/all: whatever/CMakeFiles/green_hough.dir/all
+whatever/all: whatever/CMakeFiles/simple_red_controller.dir/all
 
 .PHONY : whatever/all
 
 # Convenience name for "clean" pass in the directory.
 whatever/clean: whatever/CMakeFiles/image_front.dir/clean
+whatever/clean: whatever/CMakeFiles/debug_makara.dir/clean
 whatever/clean: whatever/CMakeFiles/mavros_msgs_generate_messages_py.dir/clean
 whatever/clean: whatever/CMakeFiles/mavros_msgs_generate_messages_eus.dir/clean
 whatever/clean: whatever/CMakeFiles/whatever_generate_messages_eus.dir/clean
 whatever/clean: whatever/CMakeFiles/whatever_geneus.dir/clean
-whatever/clean: whatever/CMakeFiles/debug_makara.dir/clean
-whatever/clean: whatever/CMakeFiles/pid_controller.dir/clean
 whatever/clean: whatever/CMakeFiles/_whatever_generate_messages_check_deps_rc_number.dir/clean
 whatever/clean: whatever/CMakeFiles/node_controller.dir/clean
 whatever/clean: whatever/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
@@ -1484,10 +1484,12 @@ whatever/clean: whatever/CMakeFiles/_whatever_generate_messages_check_deps_node_
 whatever/clean: whatever/CMakeFiles/_whatever_generate_messages_check_deps_image_process.dir/clean
 whatever/clean: whatever/CMakeFiles/_whatever_generate_messages_check_deps_override_motor.dir/clean
 whatever/clean: whatever/CMakeFiles/whatever_generate_messages_cpp.dir/clean
+whatever/clean: whatever/CMakeFiles/green_hough.dir/clean
 whatever/clean: whatever/CMakeFiles/whatever_generate_messages_lisp.dir/clean
 whatever/clean: whatever/CMakeFiles/whatever_genlisp.dir/clean
 whatever/clean: whatever/CMakeFiles/_whatever_generate_messages_check_deps_flight_mode.dir/clean
 whatever/clean: whatever/CMakeFiles/whatever_genpy.dir/clean
+whatever/clean: whatever/CMakeFiles/simple_red_controller.dir/clean
 
 .PHONY : whatever/clean
 
@@ -1503,7 +1505,7 @@ whatever/preinstall:
 whatever/CMakeFiles/image_front.dir/all:
 	$(MAKE) -f whatever/CMakeFiles/image_front.dir/build.make whatever/CMakeFiles/image_front.dir/depend
 	$(MAKE) -f whatever/CMakeFiles/image_front.dir/build.make whatever/CMakeFiles/image_front.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=16,17 "Built target image_front"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=18,19 "Built target image_front"
 .PHONY : whatever/CMakeFiles/image_front.dir/all
 
 # Include target in all.
@@ -1530,6 +1532,43 @@ whatever/CMakeFiles/image_front.dir/clean:
 
 # clean rule for target.
 clean: whatever/CMakeFiles/image_front.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target whatever/CMakeFiles/debug_makara.dir
+
+# All Build rule for target.
+whatever/CMakeFiles/debug_makara.dir/all:
+	$(MAKE) -f whatever/CMakeFiles/debug_makara.dir/build.make whatever/CMakeFiles/debug_makara.dir/depend
+	$(MAKE) -f whatever/CMakeFiles/debug_makara.dir/build.make whatever/CMakeFiles/debug_makara.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=3,4 "Built target debug_makara"
+.PHONY : whatever/CMakeFiles/debug_makara.dir/all
+
+# Include target in all.
+all: whatever/CMakeFiles/debug_makara.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+whatever/CMakeFiles/debug_makara.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AMV/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/debug_makara.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AMV/build/CMakeFiles 0
+.PHONY : whatever/CMakeFiles/debug_makara.dir/rule
+
+# Convenience name for target.
+debug_makara: whatever/CMakeFiles/debug_makara.dir/rule
+
+.PHONY : debug_makara
+
+# clean rule for target.
+whatever/CMakeFiles/debug_makara.dir/clean:
+	$(MAKE) -f whatever/CMakeFiles/debug_makara.dir/build.make whatever/CMakeFiles/debug_makara.dir/clean
+.PHONY : whatever/CMakeFiles/debug_makara.dir/clean
+
+# clean rule for target.
+clean: whatever/CMakeFiles/debug_makara.dir/clean
 
 .PHONY : clean
 
@@ -1612,7 +1651,7 @@ whatever/CMakeFiles/whatever_generate_messages_eus.dir/all: whatever/CMakeFiles/
 whatever/CMakeFiles/whatever_generate_messages_eus.dir/all: whatever/CMakeFiles/_whatever_generate_messages_check_deps_flight_mode.dir/all
 	$(MAKE) -f whatever/CMakeFiles/whatever_generate_messages_eus.dir/build.make whatever/CMakeFiles/whatever_generate_messages_eus.dir/depend
 	$(MAKE) -f whatever/CMakeFiles/whatever_generate_messages_eus.dir/build.make whatever/CMakeFiles/whatever_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=51,52,53,54,55,56,57 "Built target whatever_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=53,54,55,56,57,58,59 "Built target whatever_generate_messages_eus"
 .PHONY : whatever/CMakeFiles/whatever_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1670,80 +1709,6 @@ clean: whatever/CMakeFiles/whatever_geneus.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target whatever/CMakeFiles/debug_makara.dir
-
-# All Build rule for target.
-whatever/CMakeFiles/debug_makara.dir/all:
-	$(MAKE) -f whatever/CMakeFiles/debug_makara.dir/build.make whatever/CMakeFiles/debug_makara.dir/depend
-	$(MAKE) -f whatever/CMakeFiles/debug_makara.dir/build.make whatever/CMakeFiles/debug_makara.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=3,4 "Built target debug_makara"
-.PHONY : whatever/CMakeFiles/debug_makara.dir/all
-
-# Include target in all.
-all: whatever/CMakeFiles/debug_makara.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-whatever/CMakeFiles/debug_makara.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AMV/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/debug_makara.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AMV/build/CMakeFiles 0
-.PHONY : whatever/CMakeFiles/debug_makara.dir/rule
-
-# Convenience name for target.
-debug_makara: whatever/CMakeFiles/debug_makara.dir/rule
-
-.PHONY : debug_makara
-
-# clean rule for target.
-whatever/CMakeFiles/debug_makara.dir/clean:
-	$(MAKE) -f whatever/CMakeFiles/debug_makara.dir/build.make whatever/CMakeFiles/debug_makara.dir/clean
-.PHONY : whatever/CMakeFiles/debug_makara.dir/clean
-
-# clean rule for target.
-clean: whatever/CMakeFiles/debug_makara.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target whatever/CMakeFiles/pid_controller.dir
-
-# All Build rule for target.
-whatever/CMakeFiles/pid_controller.dir/all:
-	$(MAKE) -f whatever/CMakeFiles/pid_controller.dir/build.make whatever/CMakeFiles/pid_controller.dir/depend
-	$(MAKE) -f whatever/CMakeFiles/pid_controller.dir/build.make whatever/CMakeFiles/pid_controller.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=22,23 "Built target pid_controller"
-.PHONY : whatever/CMakeFiles/pid_controller.dir/all
-
-# Include target in all.
-all: whatever/CMakeFiles/pid_controller.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-whatever/CMakeFiles/pid_controller.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AMV/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/pid_controller.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AMV/build/CMakeFiles 0
-.PHONY : whatever/CMakeFiles/pid_controller.dir/rule
-
-# Convenience name for target.
-pid_controller: whatever/CMakeFiles/pid_controller.dir/rule
-
-.PHONY : pid_controller
-
-# clean rule for target.
-whatever/CMakeFiles/pid_controller.dir/clean:
-	$(MAKE) -f whatever/CMakeFiles/pid_controller.dir/build.make whatever/CMakeFiles/pid_controller.dir/clean
-.PHONY : whatever/CMakeFiles/pid_controller.dir/clean
-
-# clean rule for target.
-clean: whatever/CMakeFiles/pid_controller.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target whatever/CMakeFiles/_whatever_generate_messages_check_deps_rc_number.dir
 
 # All Build rule for target.
@@ -1782,7 +1747,7 @@ clean: whatever/CMakeFiles/_whatever_generate_messages_check_deps_rc_number.dir/
 whatever/CMakeFiles/node_controller.dir/all:
 	$(MAKE) -f whatever/CMakeFiles/node_controller.dir/build.make whatever/CMakeFiles/node_controller.dir/depend
 	$(MAKE) -f whatever/CMakeFiles/node_controller.dir/build.make whatever/CMakeFiles/node_controller.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=20,21 "Built target node_controller"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=22,23 "Built target node_controller"
 .PHONY : whatever/CMakeFiles/node_controller.dir/all
 
 # Include target in all.
@@ -1891,7 +1856,7 @@ whatever/CMakeFiles/whatever_generate_messages_py.dir/all: whatever/CMakeFiles/_
 whatever/CMakeFiles/whatever_generate_messages_py.dir/all: whatever/CMakeFiles/_whatever_generate_messages_check_deps_flight_mode.dir/all
 	$(MAKE) -f whatever/CMakeFiles/whatever_generate_messages_py.dir/build.make whatever/CMakeFiles/whatever_generate_messages_py.dir/depend
 	$(MAKE) -f whatever/CMakeFiles/whatever_generate_messages_py.dir/build.make whatever/CMakeFiles/whatever_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=70,71,72,73,74,75,76 "Built target whatever_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=72,73,74,75,76,77,78 "Built target whatever_generate_messages_py"
 .PHONY : whatever/CMakeFiles/whatever_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2348,7 +2313,7 @@ clean: whatever/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
 whatever/CMakeFiles/motor_controller.dir/all:
 	$(MAKE) -f whatever/CMakeFiles/motor_controller.dir/build.make whatever/CMakeFiles/motor_controller.dir/depend
 	$(MAKE) -f whatever/CMakeFiles/motor_controller.dir/build.make whatever/CMakeFiles/motor_controller.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=18,19 "Built target motor_controller"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=20,21 "Built target motor_controller"
 .PHONY : whatever/CMakeFiles/motor_controller.dir/all
 
 # Include target in all.
@@ -2489,7 +2454,7 @@ whatever/CMakeFiles/whatever_generate_messages_nodejs.dir/all: whatever/CMakeFil
 whatever/CMakeFiles/whatever_generate_messages_nodejs.dir/all: whatever/CMakeFiles/_whatever_generate_messages_check_deps_flight_mode.dir/all
 	$(MAKE) -f whatever/CMakeFiles/whatever_generate_messages_nodejs.dir/build.make whatever/CMakeFiles/whatever_generate_messages_nodejs.dir/depend
 	$(MAKE) -f whatever/CMakeFiles/whatever_generate_messages_nodejs.dir/build.make whatever/CMakeFiles/whatever_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=64,65,66,67,68,69 "Built target whatever_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=66,67,68,69,70,71 "Built target whatever_generate_messages_nodejs"
 .PHONY : whatever/CMakeFiles/whatever_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2987,7 +2952,7 @@ whatever/CMakeFiles/whatever_generate_messages_cpp.dir/all: whatever/CMakeFiles/
 whatever/CMakeFiles/whatever_generate_messages_cpp.dir/all: whatever/CMakeFiles/_whatever_generate_messages_check_deps_flight_mode.dir/all
 	$(MAKE) -f whatever/CMakeFiles/whatever_generate_messages_cpp.dir/build.make whatever/CMakeFiles/whatever_generate_messages_cpp.dir/depend
 	$(MAKE) -f whatever/CMakeFiles/whatever_generate_messages_cpp.dir/build.make whatever/CMakeFiles/whatever_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=45,46,47,48,49,50 "Built target whatever_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=47,48,49,50,51,52 "Built target whatever_generate_messages_cpp"
 .PHONY : whatever/CMakeFiles/whatever_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3013,6 +2978,43 @@ clean: whatever/CMakeFiles/whatever_generate_messages_cpp.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target whatever/CMakeFiles/green_hough.dir
+
+# All Build rule for target.
+whatever/CMakeFiles/green_hough.dir/all:
+	$(MAKE) -f whatever/CMakeFiles/green_hough.dir/build.make whatever/CMakeFiles/green_hough.dir/depend
+	$(MAKE) -f whatever/CMakeFiles/green_hough.dir/build.make whatever/CMakeFiles/green_hough.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=12,13 "Built target green_hough"
+.PHONY : whatever/CMakeFiles/green_hough.dir/all
+
+# Include target in all.
+all: whatever/CMakeFiles/green_hough.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+whatever/CMakeFiles/green_hough.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AMV/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/green_hough.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AMV/build/CMakeFiles 0
+.PHONY : whatever/CMakeFiles/green_hough.dir/rule
+
+# Convenience name for target.
+green_hough: whatever/CMakeFiles/green_hough.dir/rule
+
+.PHONY : green_hough
+
+# clean rule for target.
+whatever/CMakeFiles/green_hough.dir/clean:
+	$(MAKE) -f whatever/CMakeFiles/green_hough.dir/build.make whatever/CMakeFiles/green_hough.dir/clean
+.PHONY : whatever/CMakeFiles/green_hough.dir/clean
+
+# clean rule for target.
+clean: whatever/CMakeFiles/green_hough.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target whatever/CMakeFiles/whatever_generate_messages_lisp.dir
 
 # All Build rule for target.
@@ -3027,7 +3029,7 @@ whatever/CMakeFiles/whatever_generate_messages_lisp.dir/all: whatever/CMakeFiles
 whatever/CMakeFiles/whatever_generate_messages_lisp.dir/all: whatever/CMakeFiles/_whatever_generate_messages_check_deps_flight_mode.dir/all
 	$(MAKE) -f whatever/CMakeFiles/whatever_generate_messages_lisp.dir/build.make whatever/CMakeFiles/whatever_generate_messages_lisp.dir/depend
 	$(MAKE) -f whatever/CMakeFiles/whatever_generate_messages_lisp.dir/build.make whatever/CMakeFiles/whatever_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=58,59,60,61,62,63 "Built target whatever_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=60,61,62,63,64,65 "Built target whatever_generate_messages_lisp"
 .PHONY : whatever/CMakeFiles/whatever_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3145,6 +3147,43 @@ whatever/CMakeFiles/whatever_genpy.dir/clean:
 
 # clean rule for target.
 clean: whatever/CMakeFiles/whatever_genpy.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target whatever/CMakeFiles/simple_red_controller.dir
+
+# All Build rule for target.
+whatever/CMakeFiles/simple_red_controller.dir/all:
+	$(MAKE) -f whatever/CMakeFiles/simple_red_controller.dir/build.make whatever/CMakeFiles/simple_red_controller.dir/depend
+	$(MAKE) -f whatever/CMakeFiles/simple_red_controller.dir/build.make whatever/CMakeFiles/simple_red_controller.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=45,46 "Built target simple_red_controller"
+.PHONY : whatever/CMakeFiles/simple_red_controller.dir/all
+
+# Include target in all.
+all: whatever/CMakeFiles/simple_red_controller.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+whatever/CMakeFiles/simple_red_controller.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AMV/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/simple_red_controller.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mfikih15/Documents/AMV/build/CMakeFiles 0
+.PHONY : whatever/CMakeFiles/simple_red_controller.dir/rule
+
+# Convenience name for target.
+simple_red_controller: whatever/CMakeFiles/simple_red_controller.dir/rule
+
+.PHONY : simple_red_controller
+
+# clean rule for target.
+whatever/CMakeFiles/simple_red_controller.dir/clean:
+	$(MAKE) -f whatever/CMakeFiles/simple_red_controller.dir/build.make whatever/CMakeFiles/simple_red_controller.dir/clean
+.PHONY : whatever/CMakeFiles/simple_red_controller.dir/clean
+
+# clean rule for target.
+clean: whatever/CMakeFiles/simple_red_controller.dir/clean
 
 .PHONY : clean
 

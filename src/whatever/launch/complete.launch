@@ -10,14 +10,17 @@
 	<arg name="topic_pid_out" default="kkctbn/pid/out" />
 	<!-- topic for kp,kd, ki /kkctbn/pid/const -->
 	
-	<node name="motor_controller" pkg="whatever" output="screen" type="motor_controller" />
-	<node name="node_controller" pkg="whatever" output="screen" type="node_controller" />
-	<node name="remote_monitor" pkg="whatever" output="screen" type="remote_monitor" />
-	<node name="debug_makara" pkg="whatever" output="screen" type="debug_makara" />
-	<node name="pid_controller" pkg="whatever" output="screen" type="pid_controller" />
+	<node name="simple_red_controller" pkg="whatever" output="screen" type="simple_red_controller" />
+	<!-- node name="simple_green_controller" pkg="whatever" output="screen" type="simple_green_controller" -->
+	<!-- node name="simple_red_green_controller" pkg="whatever" output="screen" type="simple_red_green_controller" -->
 	
 	<node name="control" pkg="pid" output="screen" type="controller_adaptive" args="$(arg kp) $(arg ki) $(arg kd) $(arg pid_rate) -tfp $(arg topic_pid_in) -tfc $(arg topic_pid_out) -ul $(arg upper_limit) -ll $(arg lower_limit) -aw $(arg anti_windup)" />
 	
 	<node name="image_front" pkg="whatever" output="screen" type="image_front" />
 	<node name="red_hough" pkg="whatever" output="screen" type="red_hough" />
+	
+	<node name="motor_controller" pkg="whatever" output="screen" type="motor_controller" />
+	<node name="node_controller" pkg="whatever" output="screen" type="node_controller" />
+	<node name="remote_monitor" pkg="whatever" output="screen" type="remote_monitor" />
+	<node name="debug_makara" pkg="whatever" output="screen" type="debug_makara" />
 </launch>

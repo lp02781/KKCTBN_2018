@@ -179,8 +179,8 @@ target_link_libraries(remote_monitor
 ${catkin_LIBRARIES}
 )
 
-add_executable(pid_controller src/main/pid_controller.cpp )
-target_link_libraries(pid_controller
+add_executable(simple_red_controller src/main/simple_red_controller.cpp )
+target_link_libraries(simple_red_controller
 ${catkin_LIBRARIES}
 )
 
@@ -197,6 +197,12 @@ ${OpenCV_LIBRARIES}
 
 add_executable(red_hough src/image/red_hough.cpp )
 target_link_libraries(red_hough
+${catkin_LIBRARIES}
+${OpenCV_LIBRARIES}
+)
+
+add_executable(green_hough src/image/green_hough.cpp )
+target_link_libraries(green_hough
 ${catkin_LIBRARIES}
 ${OpenCV_LIBRARIES}
 )

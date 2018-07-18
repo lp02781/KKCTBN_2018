@@ -11,7 +11,6 @@
 #include "pid/pid_const_msg.h"
 
 bool pid_status = false;
-int setpoint;
 int state;
 int steer_pwm;
 int throttle_pwm;
@@ -19,10 +18,10 @@ int control_effort;
 
 void pid_status_cb(const whatever::node_master& pid_status_recv);
 void image_process_cb(const whatever::image_process& image);
-void setpoint_cb(const whatever::setpoint& point);
 void pid_receiver_cb(const pid::controller_msg& control);
 
 whatever::override_motor controller;
+whatever::setpoint point;
 ros::Publisher pub_override_rc;
 
 pid::plant_msg  pid_in;
@@ -36,12 +35,12 @@ int main(int argc, char **argv)
 	pub_override_rc 				= n.advertise<whatever::override_motor>("/kkctbn/override/motor", 10);
 	ros::Publisher pub_pid_in 		= n.advertise<pid::plant_msg>("/kkctbn/pid/in", 1);
 	ros::Publisher pub_pid_const 	= n.advertise<pid::pid_const_msg>("/kkctbn/pid/const", 1,true);
-	
+	ros::Publisher pub_setpoint 	= n.advertise<whatever::setpoint>("/kkctbn/image/setpoint", 1,true);
+
 	ros::Subscriber sub_pid_x_out 		= n.subscribe("/kkctbn/pid/out", 10, pid_receiver_cb );
 	ros::Subscriber sub_image_process 	= n.subscribe("/kkctbn/image/process", 1, image_process_cb);
 	ros::Subscriber sub_pid_status 		= n.subscribe("/kkctbn/node/master", 1, pid_status_cb);
-	ros::Subscriber sub_setpoint 		= n.subscribe("/kkctbn/image/setpoint", 1, setpoint_cb);
-  
+	
 	ROS_WARN("NC : pid_controller.cpp active");
 	
 	pid_const.p = kp;
@@ -50,6 +49,9 @@ int main(int argc, char **argv)
 	pub_pid_const.publish(pid_const);
 	
 	pid_in.t = initial_time;
+	
+	point.setpoint = setpoint;
+	pub_setpoint.publish(point);
 	
 	while(ros::ok()){
 		ros::spinOnce();
@@ -64,19 +66,19 @@ int main(int argc, char **argv)
 			
 			//ROS_ERROR("%d", state);
 			
-			if(state < setpoint && state >= noise_state){
+			if(state < setpoint && state >= noise_state){ //turn left
 				controller.header = left_header;
 				throttle_pwm = MIDDLE_PWM + CHANGE_THROTTLE;
 				steer_pwm = MIDDLE_PWM + control_effort;
 				//ROS_ERROR("1");
 			}
-			else if(state > setpoint && state >= noise_state){
+			else if(state > setpoint && state >= noise_state){ //turn right
 				controller.header = right_header;
 				throttle_pwm = MIDDLE_PWM + CHANGE_THROTTLE;
 				steer_pwm = MIDDLE_PWM + control_effort;
 				//ROS_ERROR("2");
 			}
-			else {
+			else {											//just go away
 				controller.header = center_header;
 				throttle_pwm = MIDDLE_PWM + CHANGE_THROTTLE;
 				steer_pwm = MIDDLE_PWM;
@@ -90,10 +92,6 @@ int main(int argc, char **argv)
 		}
 		sleep(0.2);
 	}
-}
-
-void setpoint_cb(const whatever::setpoint& point){
-	setpoint = point.setpoint;
 }
 
 void image_process_cb(const whatever::image_process& image){

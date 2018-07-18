@@ -15,6 +15,8 @@
 #define CHANGE_STEER 	200
 #define CHANGE_THROTTLE 200
 
+int setpoint = 213; //camera 640/3
+
 int number_camera = 0;
 
 int noise_state = 5;

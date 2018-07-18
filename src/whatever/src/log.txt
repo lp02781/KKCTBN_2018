@@ -8,11 +8,17 @@ selesai
 - pid_controller.cpp (gk pake kp,kd,ki dulu aja)
 - debug_makara.cpp 
 - hough circle (setpoint)
+- simple_red_controller
 
 selanjutnya
 - blob detection
-- mencoba real motor
-- banyak topic bermasalah (pecah message, ubah queue, sleep)
+- try real motor
+- conditional red_simple_controller (detect no red adn get green turn left, full red turn right)
+- simple_green_controller
+- simple_red_green_controller
+- avoid_controller
+- machine learning opencv
+- shortest path
 
 
 

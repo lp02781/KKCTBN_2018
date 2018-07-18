@@ -42,56 +42,56 @@ int main(int argc, char **argv)
 	while(ros::ok()){
 		ros::spinOnce();
 		if(rc_flag_in == simple_manuver ){
-			override_flag = true;
-			pid_status = true;
+			override_flag 			= true;
+			pid_status 				= true;
 			
 			simple_manuver_status 	= true;
-			simple_speed_status	= false;
+			simple_speed_status		= false;
 			record_manuver_status 	= false;
-			record_speed_status	= false;
-			path_manuver_status	= false;
+			record_speed_status		= false;
+			path_manuver_status		= false;
 			path_speed_status		= false;
 			
 			changeFlightMode("MANUAL");
 			//ROS_ERROR("1");
 		}
 		else if(rc_flag_in == simple_speed){
-			override_flag =  true;
-			pid_status = true;
+			override_flag 			= true;
+			pid_status 				= true;
 			
 			simple_manuver_status 	= false;
-			simple_speed_status	= true;
+			simple_speed_status		= true;
 			record_manuver_status 	= false;
-			record_speed_status	= false;
-			path_manuver_status	= false;
+			record_speed_status		= false;
+			path_manuver_status		= false;
 			path_speed_status		= false;
 			
 			changeFlightMode("MANUAL");
 			//ROS_ERROR("2");
 		}
 		else if(rc_flag_in == record_manuver){
-			override_flag =  true;
-			pid_status = true;
+			override_flag 			= true;
+			pid_status 				= true;
 			
 			simple_manuver_status	= false;
-			simple_speed_status	= false;
+			simple_speed_status		= false;
 			record_manuver_status 	= true;
-			record_speed_status	= false;
-			path_manuver_status	= false;
+			record_speed_status		= false;
+			path_manuver_status		= false;
 			path_speed_status		= false;
 			
 			changeFlightMode("MANUAL");
 			//ROS_ERROR("3");
 		}
 		else if(rc_flag_in == record_speed){
-			override_flag =  true;
-			pid_status = true;
+			override_flag 			= true;
+			pid_status 				= true;
 			
 			simple_manuver_status 	= false;
-			simple_speed_status	= false;
+			simple_speed_status		= false;
 			record_manuver_status 	= false;
-			record_speed_status	= true;
-			path_manuver_status	= false;
+			record_speed_status		= true;
+			path_manuver_status		= false;
 			path_speed_status		= false;
 			
 			changeFlightMode("MANUAL");
@@ -102,10 +102,10 @@ int main(int argc, char **argv)
 			pid_status = true;
 			
 			simple_manuver_status 	= false;
-			simple_speed_status	= false;
+			simple_speed_status		= false;
 			record_manuver_status 	= false;
-			record_speed_status	= false;
-			path_manuver_status	= true;
+			record_speed_status		= false;
+			path_manuver_status		= true;
 			path_speed_status		= false;
 			
 			changeFlightMode("MANUAL");
@@ -116,24 +116,24 @@ int main(int argc, char **argv)
 			pid_status = true;
 			
 			simple_manuver_status 	= false;
-			simple_speed_status	= false;
+			simple_speed_status		= false;
 			record_manuver_status 	= false;
-			record_speed_status	= false;
-			path_manuver_status	= false;
+			record_speed_status		= false;
+			path_manuver_status		= false;
 			path_speed_status		= true;
 			
 			changeFlightMode("MANUAL");
 			//ROS_ERROR("6");
 		}
 		else if(rc_flag_in == zero_flag){
-			override_flag = false;
-			pid_status = false;
+			override_flag 			= false;
+			pid_status 				= false;
 			
 			simple_manuver_status 	= false;
-			simple_speed_status	= false;
+			simple_speed_status		= false;
 			record_manuver_status 	= false;
-			record_speed_status	= false;
-			path_manuver_status	= false;
+			record_speed_status		= false;
+			path_manuver_status		= false;
 			path_speed_status		= false;
 			
 			changeFlightMode("MANUAL");

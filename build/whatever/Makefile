@@ -78,17 +78,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -132,6 +121,17 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -179,6 +179,21 @@ image_front: whatever/CMakeFiles/image_front.dir/rule
 image_front/fast:
 	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/image_front.dir/build.make whatever/CMakeFiles/image_front.dir/build
 .PHONY : image_front/fast
+
+# Convenience name for target.
+whatever/CMakeFiles/debug_makara.dir/rule:
+	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/debug_makara.dir/rule
+.PHONY : whatever/CMakeFiles/debug_makara.dir/rule
+
+# Convenience name for target.
+debug_makara: whatever/CMakeFiles/debug_makara.dir/rule
+
+.PHONY : debug_makara
+
+# fast build rule for target.
+debug_makara/fast:
+	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/debug_makara.dir/build.make whatever/CMakeFiles/debug_makara.dir/build
+.PHONY : debug_makara/fast
 
 # Convenience name for target.
 whatever/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule:
@@ -239,36 +254,6 @@ whatever_geneus: whatever/CMakeFiles/whatever_geneus.dir/rule
 whatever_geneus/fast:
 	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/whatever_geneus.dir/build.make whatever/CMakeFiles/whatever_geneus.dir/build
 .PHONY : whatever_geneus/fast
-
-# Convenience name for target.
-whatever/CMakeFiles/debug_makara.dir/rule:
-	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/debug_makara.dir/rule
-.PHONY : whatever/CMakeFiles/debug_makara.dir/rule
-
-# Convenience name for target.
-debug_makara: whatever/CMakeFiles/debug_makara.dir/rule
-
-.PHONY : debug_makara
-
-# fast build rule for target.
-debug_makara/fast:
-	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/debug_makara.dir/build.make whatever/CMakeFiles/debug_makara.dir/build
-.PHONY : debug_makara/fast
-
-# Convenience name for target.
-whatever/CMakeFiles/pid_controller.dir/rule:
-	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/pid_controller.dir/rule
-.PHONY : whatever/CMakeFiles/pid_controller.dir/rule
-
-# Convenience name for target.
-pid_controller: whatever/CMakeFiles/pid_controller.dir/rule
-
-.PHONY : pid_controller
-
-# fast build rule for target.
-pid_controller/fast:
-	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/pid_controller.dir/build.make whatever/CMakeFiles/pid_controller.dir/build
-.PHONY : pid_controller/fast
 
 # Convenience name for target.
 whatever/CMakeFiles/_whatever_generate_messages_check_deps_rc_number.dir/rule:
@@ -841,6 +826,21 @@ whatever_generate_messages_cpp/fast:
 .PHONY : whatever_generate_messages_cpp/fast
 
 # Convenience name for target.
+whatever/CMakeFiles/green_hough.dir/rule:
+	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/green_hough.dir/rule
+.PHONY : whatever/CMakeFiles/green_hough.dir/rule
+
+# Convenience name for target.
+green_hough: whatever/CMakeFiles/green_hough.dir/rule
+
+.PHONY : green_hough
+
+# fast build rule for target.
+green_hough/fast:
+	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/green_hough.dir/build.make whatever/CMakeFiles/green_hough.dir/build
+.PHONY : green_hough/fast
+
+# Convenience name for target.
 whatever/CMakeFiles/whatever_generate_messages_lisp.dir/rule:
 	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/whatever_generate_messages_lisp.dir/rule
 .PHONY : whatever/CMakeFiles/whatever_generate_messages_lisp.dir/rule
@@ -899,6 +899,48 @@ whatever_genpy: whatever/CMakeFiles/whatever_genpy.dir/rule
 whatever_genpy/fast:
 	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/whatever_genpy.dir/build.make whatever/CMakeFiles/whatever_genpy.dir/build
 .PHONY : whatever_genpy/fast
+
+# Convenience name for target.
+whatever/CMakeFiles/simple_red_controller.dir/rule:
+	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/simple_red_controller.dir/rule
+.PHONY : whatever/CMakeFiles/simple_red_controller.dir/rule
+
+# Convenience name for target.
+simple_red_controller: whatever/CMakeFiles/simple_red_controller.dir/rule
+
+.PHONY : simple_red_controller
+
+# fast build rule for target.
+simple_red_controller/fast:
+	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/simple_red_controller.dir/build.make whatever/CMakeFiles/simple_red_controller.dir/build
+.PHONY : simple_red_controller/fast
+
+src/image/green_hough.o: src/image/green_hough.cpp.o
+
+.PHONY : src/image/green_hough.o
+
+# target to build an object file
+src/image/green_hough.cpp.o:
+	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/green_hough.dir/build.make whatever/CMakeFiles/green_hough.dir/src/image/green_hough.cpp.o
+.PHONY : src/image/green_hough.cpp.o
+
+src/image/green_hough.i: src/image/green_hough.cpp.i
+
+.PHONY : src/image/green_hough.i
+
+# target to preprocess a source file
+src/image/green_hough.cpp.i:
+	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/green_hough.dir/build.make whatever/CMakeFiles/green_hough.dir/src/image/green_hough.cpp.i
+.PHONY : src/image/green_hough.cpp.i
+
+src/image/green_hough.s: src/image/green_hough.cpp.s
+
+.PHONY : src/image/green_hough.s
+
+# target to generate assembly for a file
+src/image/green_hough.cpp.s:
+	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/green_hough.dir/build.make whatever/CMakeFiles/green_hough.dir/src/image/green_hough.cpp.s
+.PHONY : src/image/green_hough.cpp.s
 
 src/image/image_front.o: src/image/image_front.cpp.o
 
@@ -1035,33 +1077,6 @@ src/main/node_controller.cpp.s:
 	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/node_controller.dir/build.make whatever/CMakeFiles/node_controller.dir/src/main/node_controller.cpp.s
 .PHONY : src/main/node_controller.cpp.s
 
-src/main/pid_controller.o: src/main/pid_controller.cpp.o
-
-.PHONY : src/main/pid_controller.o
-
-# target to build an object file
-src/main/pid_controller.cpp.o:
-	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/pid_controller.dir/build.make whatever/CMakeFiles/pid_controller.dir/src/main/pid_controller.cpp.o
-.PHONY : src/main/pid_controller.cpp.o
-
-src/main/pid_controller.i: src/main/pid_controller.cpp.i
-
-.PHONY : src/main/pid_controller.i
-
-# target to preprocess a source file
-src/main/pid_controller.cpp.i:
-	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/pid_controller.dir/build.make whatever/CMakeFiles/pid_controller.dir/src/main/pid_controller.cpp.i
-.PHONY : src/main/pid_controller.cpp.i
-
-src/main/pid_controller.s: src/main/pid_controller.cpp.s
-
-.PHONY : src/main/pid_controller.s
-
-# target to generate assembly for a file
-src/main/pid_controller.cpp.s:
-	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/pid_controller.dir/build.make whatever/CMakeFiles/pid_controller.dir/src/main/pid_controller.cpp.s
-.PHONY : src/main/pid_controller.cpp.s
-
 src/main/remote_monitor.o: src/main/remote_monitor.cpp.o
 
 .PHONY : src/main/remote_monitor.o
@@ -1089,6 +1104,33 @@ src/main/remote_monitor.cpp.s:
 	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/remote_monitor.dir/build.make whatever/CMakeFiles/remote_monitor.dir/src/main/remote_monitor.cpp.s
 .PHONY : src/main/remote_monitor.cpp.s
 
+src/main/simple_red_controller.o: src/main/simple_red_controller.cpp.o
+
+.PHONY : src/main/simple_red_controller.o
+
+# target to build an object file
+src/main/simple_red_controller.cpp.o:
+	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/simple_red_controller.dir/build.make whatever/CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.o
+.PHONY : src/main/simple_red_controller.cpp.o
+
+src/main/simple_red_controller.i: src/main/simple_red_controller.cpp.i
+
+.PHONY : src/main/simple_red_controller.i
+
+# target to preprocess a source file
+src/main/simple_red_controller.cpp.i:
+	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/simple_red_controller.dir/build.make whatever/CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.i
+.PHONY : src/main/simple_red_controller.cpp.i
+
+src/main/simple_red_controller.s: src/main/simple_red_controller.cpp.s
+
+.PHONY : src/main/simple_red_controller.s
+
+# target to generate assembly for a file
+src/main/simple_red_controller.cpp.s:
+	cd /home/mfikih15/Documents/AMV/build && $(MAKE) -f whatever/CMakeFiles/simple_red_controller.dir/build.make whatever/CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.s
+.PHONY : src/main/simple_red_controller.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1097,17 +1139,15 @@ help:
 	@echo "... depend"
 	@echo "... list_install_components"
 	@echo "... install"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... image_front"
+	@echo "... debug_makara"
 	@echo "... mavros_msgs_generate_messages_py"
 	@echo "... mavros_msgs_generate_messages_eus"
 	@echo "... whatever_generate_messages_eus"
 	@echo "... whatever_geneus"
-	@echo "... debug_makara"
-	@echo "... pid_controller"
 	@echo "... _whatever_generate_messages_check_deps_rc_number"
 	@echo "... node_controller"
 	@echo "... sensor_msgs_generate_messages_nodejs"
@@ -1147,10 +1187,16 @@ help:
 	@echo "... _whatever_generate_messages_check_deps_image_process"
 	@echo "... _whatever_generate_messages_check_deps_override_motor"
 	@echo "... whatever_generate_messages_cpp"
+	@echo "... green_hough"
 	@echo "... whatever_generate_messages_lisp"
 	@echo "... whatever_genlisp"
 	@echo "... _whatever_generate_messages_check_deps_flight_mode"
 	@echo "... whatever_genpy"
+	@echo "... rebuild_cache"
+	@echo "... simple_red_controller"
+	@echo "... src/image/green_hough.o"
+	@echo "... src/image/green_hough.i"
+	@echo "... src/image/green_hough.s"
 	@echo "... src/image/image_front.o"
 	@echo "... src/image/image_front.i"
 	@echo "... src/image/image_front.s"
@@ -1166,12 +1212,12 @@ help:
 	@echo "... src/main/node_controller.o"
 	@echo "... src/main/node_controller.i"
 	@echo "... src/main/node_controller.s"
-	@echo "... src/main/pid_controller.o"
-	@echo "... src/main/pid_controller.i"
-	@echo "... src/main/pid_controller.s"
 	@echo "... src/main/remote_monitor.o"
 	@echo "... src/main/remote_monitor.i"
 	@echo "... src/main/remote_monitor.s"
+	@echo "... src/main/simple_red_controller.o"
+	@echo "... src/main/simple_red_controller.i"
+	@echo "... src/main/simple_red_controller.s"
 .PHONY : help
 
 
