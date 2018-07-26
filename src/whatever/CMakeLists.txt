@@ -179,13 +179,18 @@ target_link_libraries(remote_monitor
 ${catkin_LIBRARIES}
 )
 
-add_executable(simple_red_controller src/main/simple_red_controller.cpp )
+add_executable(debug_makara src/main/debug_makara.cpp )
+target_link_libraries(debug_makara
+${catkin_LIBRARIES}
+)
+
+add_executable(simple_red_controller src/controller/simple_red_controller.cpp )
 target_link_libraries(simple_red_controller
 ${catkin_LIBRARIES}
 )
 
-add_executable(debug_makara src/main/debug_makara.cpp )
-target_link_libraries(debug_makara
+add_executable(avoid_controller src/controller/avoid_controller.cpp )
+target_link_libraries(avoid_controller
 ${catkin_LIBRARIES}
 )
 

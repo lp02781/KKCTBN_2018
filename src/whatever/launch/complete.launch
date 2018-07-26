@@ -11,13 +11,13 @@
 	<!-- topic for kp,kd, ki /kkctbn/pid/const -->
 	
 	<node name="simple_red_controller" pkg="whatever" output="screen" type="simple_red_controller" />
-	<!-- node name="simple_green_controller" pkg="whatever" output="screen" type="simple_green_controller" -->
-	<!-- node name="simple_red_green_controller" pkg="whatever" output="screen" type="simple_red_green_controller" -->
+	<node name="avoid_controller" pkg="whatever" output="screen" type="avoid_controller" />
 	
 	<node name="control" pkg="pid" output="screen" type="controller_adaptive" args="$(arg kp) $(arg ki) $(arg kd) $(arg pid_rate) -tfp $(arg topic_pid_in) -tfc $(arg topic_pid_out) -ul $(arg upper_limit) -ll $(arg lower_limit) -aw $(arg anti_windup)" />
 	
 	<node name="image_front" pkg="whatever" output="screen" type="image_front" />
 	<node name="red_hough" pkg="whatever" output="screen" type="red_hough" />
+	<node name="green_hough" pkg="whatever" output="screen" type="green_hough" />
 	
 	<node name="motor_controller" pkg="whatever" output="screen" type="motor_controller" />
 	<node name="node_controller" pkg="whatever" output="screen" type="node_controller" />

@@ -686,17 +686,17 @@ image_front/fast:
 .PHONY : image_front/fast
 
 #=============================================================================
-# Target rules for targets named debug_makara
+# Target rules for targets named simple_red_controller
 
 # Build rule for target.
-debug_makara: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 debug_makara
-.PHONY : debug_makara
+simple_red_controller: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 simple_red_controller
+.PHONY : simple_red_controller
 
 # fast build rule for target.
-debug_makara/fast:
-	$(MAKE) -f whatever/CMakeFiles/debug_makara.dir/build.make whatever/CMakeFiles/debug_makara.dir/build
-.PHONY : debug_makara/fast
+simple_red_controller/fast:
+	$(MAKE) -f whatever/CMakeFiles/simple_red_controller.dir/build.make whatever/CMakeFiles/simple_red_controller.dir/build
+.PHONY : simple_red_controller/fast
 
 #=============================================================================
 # Target rules for targets named mavros_msgs_generate_messages_py
@@ -775,6 +775,19 @@ node_controller: cmake_check_build_system
 node_controller/fast:
 	$(MAKE) -f whatever/CMakeFiles/node_controller.dir/build.make whatever/CMakeFiles/node_controller.dir/build
 .PHONY : node_controller/fast
+
+#=============================================================================
+# Target rules for targets named avoid_controller
+
+# Build rule for target.
+avoid_controller: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 avoid_controller
+.PHONY : avoid_controller
+
+# fast build rule for target.
+avoid_controller/fast:
+	$(MAKE) -f whatever/CMakeFiles/avoid_controller.dir/build.make whatever/CMakeFiles/avoid_controller.dir/build
+.PHONY : avoid_controller/fast
 
 #=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_nodejs
@@ -1089,6 +1102,19 @@ remote_monitor/fast:
 .PHONY : remote_monitor/fast
 
 #=============================================================================
+# Target rules for targets named debug_makara
+
+# Build rule for target.
+debug_makara: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 debug_makara
+.PHONY : debug_makara
+
+# fast build rule for target.
+debug_makara/fast:
+	$(MAKE) -f whatever/CMakeFiles/debug_makara.dir/build.make whatever/CMakeFiles/debug_makara.dir/build
+.PHONY : debug_makara/fast
+
+#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -1309,19 +1335,6 @@ whatever_genpy/fast:
 	$(MAKE) -f whatever/CMakeFiles/whatever_genpy.dir/build.make whatever/CMakeFiles/whatever_genpy.dir/build
 .PHONY : whatever_genpy/fast
 
-#=============================================================================
-# Target rules for targets named simple_red_controller
-
-# Build rule for target.
-simple_red_controller: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 simple_red_controller
-.PHONY : simple_red_controller
-
-# fast build rule for target.
-simple_red_controller/fast:
-	$(MAKE) -f whatever/CMakeFiles/simple_red_controller.dir/build.make whatever/CMakeFiles/simple_red_controller.dir/build
-.PHONY : simple_red_controller/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1375,13 +1388,14 @@ help:
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... pid_gencpp"
 	@echo "... image_front"
-	@echo "... debug_makara"
+	@echo "... simple_red_controller"
 	@echo "... mavros_msgs_generate_messages_py"
 	@echo "... mavros_msgs_generate_messages_eus"
 	@echo "... whatever_generate_messages_eus"
 	@echo "... whatever_geneus"
 	@echo "... _whatever_generate_messages_check_deps_rc_number"
 	@echo "... node_controller"
+	@echo "... avoid_controller"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... whatever_generate_messages_py"
@@ -1406,6 +1420,7 @@ help:
 	@echo "... geographic_msgs_generate_messages_lisp"
 	@echo "... mavros_msgs_generate_messages_nodejs"
 	@echo "... remote_monitor"
+	@echo "... debug_makara"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... uuid_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
@@ -1423,7 +1438,6 @@ help:
 	@echo "... whatever_genlisp"
 	@echo "... _whatever_generate_messages_check_deps_flight_mode"
 	@echo "... whatever_genpy"
-	@echo "... simple_red_controller"
 .PHONY : help
 
 

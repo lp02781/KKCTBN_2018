@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/mfikih15/Documents/AMV/devel/include/pid/controller_msg.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/mfikih15/Documents/AMV/devel/include/whatever/flight_mode.h
 string
 -
@@ -113,6 +129,8 @@ stdio.h
 -
 ros/ros.h
 -
+pid/controller_msg.h
+/home/mfikih15/Documents/AMV/src/whatever/src/main/pid/controller_msg.h
 mavros_msgs/State.h
 /home/mfikih15/Documents/AMV/src/whatever/src/main/mavros_msgs/State.h
 mavros_msgs/OverrideRCIn.h

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/mfikih15/Documents/AMV/src/whatever/src/main/simple_red_controller.cpp" "/home/mfikih15/Documents/AMV/build/whatever/CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.o"
+  "/home/mfikih15/Documents/AMV/src/whatever/src/controller/simple_red_controller.cpp" "/home/mfikih15/Documents/AMV/build/whatever/CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

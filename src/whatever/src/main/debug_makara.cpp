@@ -2,6 +2,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <ros/ros.h>
+#include "pid/controller_msg.h"
 #include "mavros_msgs/State.h"
 #include "mavros_msgs/OverrideRCIn.h"
 #include "mavros_msgs/RCIn.h"
@@ -25,6 +26,8 @@ string record_speed_status;
 string path_manuver_status; 	
 string path_speed_status;		
 
+int effort;
+
 int rc_flag;
 string flight_mode;
 
@@ -44,6 +47,7 @@ int in_channel[8];
 string armed;
 string mode;
 
+void pid_receiver_cb(const pid::controller_msg& control);
 void node_master_cb	(const whatever::node_master& master);
 void override_rc_cb	(const whatever::override_motor& rc);
 void rc_number_cb (const whatever::rc_number& state);
@@ -69,13 +73,12 @@ int main(int argc, char **argv)
 	ros::Subscriber sub_override_motor 	= nh.subscribe("/mavros/rc/override", 1, override_motor_cb);
 	ros::Subscriber sub_rc_in 			= nh.subscribe("/mavros/rc/in", 1, rc_in_cb);
 	ros::Subscriber sub_state_rc 		= nh.subscribe("/mavros/state", 1, rc_state_cb);
+	ros::Subscriber sub_pid_x_out 		= nh.subscribe("/kkctbn/pid/out", 10, pid_receiver_cb );
 
 	ROS_WARN("NC : debug_makara.cpp active");
 
 	while( ros::ok() ){	
 		ros::spinOnce();
-		
-		
 		
 		ROS_WARN("NC : topic master");
 		ROS_INFO("override:%s pid:%s rc:%d flight: %s", override_status.c_str(), pid_status.c_str(), rc_flag, flight_mode.c_str());
@@ -90,6 +93,7 @@ int main(int argc, char **argv)
 		ROS_WARN("NC : topic override");
 		ROS_INFO("setpoint:%d header:%s", setpoint_camera, header.c_str());
 		ROS_INFO("steering:%d throttle:%d", steering, throttle);
+		ROS_INFO("effort:%d", effort);
 		ROS_INFO(" ");
 		
 		ROS_WARN("NC : topic rc");
@@ -179,3 +183,7 @@ void rc_state_cb (const mavros_msgs::State& state){
 	mode = state.mode;	
 }
 	
+
+void pid_receiver_cb(const pid::controller_msg& control){
+	effort = control.u;
+}

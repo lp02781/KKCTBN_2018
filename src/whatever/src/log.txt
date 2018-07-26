@@ -1,4 +1,4 @@
-selesai
+done
 - motor_controller.cpp
 - image_front.cpp
 - remote_monitor.cpp
@@ -9,18 +9,11 @@ selesai
 - debug_makara.cpp 
 - hough circle (setpoint)
 - simple_red_controller
-
-selanjutnya
-- blob detection
-- try real motor
-- conditional red_simple_controller (detect no red adn get green turn left, full red turn right)
-- simple_green_controller
-- simple_red_green_controller
+- pid_controller (using kp, kd, ki)
+- conditional red_simple_controller (detect no red and get green turn left, full red turn right)
 - avoid_controller
+
+next
+- dry test
 - machine learning opencv
 - shortest path
-
-
-
-
-

@@ -57,38 +57,38 @@ include whatever/CMakeFiles/simple_red_controller.dir/progress.make
 # Include the compile flags for this target's objects.
 include whatever/CMakeFiles/simple_red_controller.dir/flags.make
 
-whatever/CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.o: whatever/CMakeFiles/simple_red_controller.dir/flags.make
-whatever/CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.o: /home/mfikih15/Documents/AMV/src/whatever/src/main/simple_red_controller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object whatever/CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.o"
-	cd /home/mfikih15/Documents/AMV/build/whatever && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.o -c /home/mfikih15/Documents/AMV/src/whatever/src/main/simple_red_controller.cpp
+whatever/CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.o: whatever/CMakeFiles/simple_red_controller.dir/flags.make
+whatever/CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.o: /home/mfikih15/Documents/AMV/src/whatever/src/controller/simple_red_controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mfikih15/Documents/AMV/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object whatever/CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.o"
+	cd /home/mfikih15/Documents/AMV/build/whatever && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.o -c /home/mfikih15/Documents/AMV/src/whatever/src/controller/simple_red_controller.cpp
 
-whatever/CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.i"
-	cd /home/mfikih15/Documents/AMV/build/whatever && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mfikih15/Documents/AMV/src/whatever/src/main/simple_red_controller.cpp > CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.i
+whatever/CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.i"
+	cd /home/mfikih15/Documents/AMV/build/whatever && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mfikih15/Documents/AMV/src/whatever/src/controller/simple_red_controller.cpp > CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.i
 
-whatever/CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.s"
-	cd /home/mfikih15/Documents/AMV/build/whatever && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mfikih15/Documents/AMV/src/whatever/src/main/simple_red_controller.cpp -o CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.s
+whatever/CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.s"
+	cd /home/mfikih15/Documents/AMV/build/whatever && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mfikih15/Documents/AMV/src/whatever/src/controller/simple_red_controller.cpp -o CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.s
 
-whatever/CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.o.requires:
+whatever/CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.o.requires:
 
-.PHONY : whatever/CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.o.requires
+.PHONY : whatever/CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.o.requires
 
-whatever/CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.o.provides: whatever/CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.o.requires
-	$(MAKE) -f whatever/CMakeFiles/simple_red_controller.dir/build.make whatever/CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.o.provides.build
-.PHONY : whatever/CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.o.provides
+whatever/CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.o.provides: whatever/CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.o.requires
+	$(MAKE) -f whatever/CMakeFiles/simple_red_controller.dir/build.make whatever/CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.o.provides.build
+.PHONY : whatever/CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.o.provides
 
-whatever/CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.o.provides.build: whatever/CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.o
+whatever/CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.o.provides.build: whatever/CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.o
 
 
 # Object files for target simple_red_controller
 simple_red_controller_OBJECTS = \
-"CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.o"
+"CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.o"
 
 # External object files for target simple_red_controller
 simple_red_controller_EXTERNAL_OBJECTS =
 
-/home/mfikih15/Documents/AMV/devel/lib/whatever/simple_red_controller: whatever/CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.o
+/home/mfikih15/Documents/AMV/devel/lib/whatever/simple_red_controller: whatever/CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.o
 /home/mfikih15/Documents/AMV/devel/lib/whatever/simple_red_controller: whatever/CMakeFiles/simple_red_controller.dir/build.make
 /home/mfikih15/Documents/AMV/devel/lib/whatever/simple_red_controller: /opt/ros/kinetic/lib/libcv_bridge.so
 /home/mfikih15/Documents/AMV/devel/lib/whatever/simple_red_controller: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1
@@ -133,7 +133,7 @@ whatever/CMakeFiles/simple_red_controller.dir/build: /home/mfikih15/Documents/AM
 
 .PHONY : whatever/CMakeFiles/simple_red_controller.dir/build
 
-whatever/CMakeFiles/simple_red_controller.dir/requires: whatever/CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.o.requires
+whatever/CMakeFiles/simple_red_controller.dir/requires: whatever/CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.o.requires
 
 .PHONY : whatever/CMakeFiles/simple_red_controller.dir/requires
 

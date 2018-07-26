@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/simple_red_controller.dir/src/main/simple_red_controller.cpp.o"
+  "CMakeFiles/simple_red_controller.dir/src/controller/simple_red_controller.cpp.o"
   "/home/mfikih15/Documents/AMV/devel/lib/whatever/simple_red_controller.pdb"
   "/home/mfikih15/Documents/AMV/devel/lib/whatever/simple_red_controller"
 )

@@ -12,10 +12,12 @@
 #define MIN_PWM 1120
 
 #define MIDDLE_PWM 		1520
+
 #define CHANGE_STEER 	200
 #define CHANGE_THROTTLE 200
 
-int setpoint = 213; //camera 640/3
+int red_setpoint = 213; //camera 640/3
+int center_setpoint = 320;
 
 int number_camera = 0;
 

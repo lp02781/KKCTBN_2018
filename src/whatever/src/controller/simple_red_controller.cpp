@@ -10,8 +10,12 @@
 #include "pid/controller_msg.h"
 #include "pid/pid_const_msg.h"
 
-bool pid_status = false;
+bool simple_status = false;
 int state;
+int red_x;
+int green_x;
+int count_red;
+int count_green;
 int steer_pwm;
 int throttle_pwm;
 int control_effort;
@@ -19,6 +23,7 @@ int control_effort;
 void pid_status_cb(const whatever::node_master& pid_status_recv);
 void image_process_cb(const whatever::image_process& image);
 void pid_receiver_cb(const pid::controller_msg& control);
+void get_state();
 
 whatever::override_motor controller;
 whatever::setpoint point;
@@ -50,34 +55,49 @@ int main(int argc, char **argv)
 	
 	pid_in.t = initial_time;
 	
-	point.setpoint = setpoint;
-	pub_setpoint.publish(point);
-	
 	while(ros::ok()){
 		ros::spinOnce();
-		if(pid_status){
-			
+	
+		get_state();
+	
+		if(simple_status){
+			point.setpoint = red_setpoint;
+			pub_setpoint.publish(point);
+		
 			pid_in.x = state;
 			pid_in.t = pid_in.t+delta_t;
-			pid_in.setpoint = setpoint;
+			pid_in.setpoint = red_setpoint;
 			pub_pid_in.publish(pid_in);
 			
 			ros::spinOnce();
 			
 			//ROS_ERROR("%d", state);
 			
-			if(state < setpoint && state >= noise_state){ //turn left
+			if(state < red_setpoint && state >= noise_state){ //turn left
 				controller.header = left_header;
 				throttle_pwm = MIDDLE_PWM + CHANGE_THROTTLE;
 				steer_pwm = MIDDLE_PWM + control_effort;
 				//ROS_ERROR("1");
 			}
-			else if(state > setpoint && state >= noise_state){ //turn right
+			else if(state > red_setpoint && state >= noise_state){ //turn right
 				controller.header = right_header;
 				throttle_pwm = MIDDLE_PWM + CHANGE_THROTTLE;
 				steer_pwm = MIDDLE_PWM + control_effort;
 				//ROS_ERROR("2");
 			}
+			
+			else if(red_x == 0 && green_x !=0){
+				controller.header = left_header;
+				throttle_pwm = MIDDLE_PWM + CHANGE_THROTTLE;
+				steer_pwm = MIDDLE_PWM - CHANGE_STEER;
+			}
+			
+			else if(red_x != 0 && green_x ==0){
+				controller.header = right_header;
+				throttle_pwm = MIDDLE_PWM + CHANGE_THROTTLE;
+				steer_pwm = MIDDLE_PWM + CHANGE_STEER;
+			}
+			
 			else {											//just go away
 				controller.header = center_header;
 				throttle_pwm = MIDDLE_PWM + CHANGE_THROTTLE;
@@ -94,12 +114,18 @@ int main(int argc, char **argv)
 	}
 }
 
+void get_state(){
+	state = red_x;
+}
 void image_process_cb(const whatever::image_process& image){
-	state = image.state_red;
+	red_x 		= image.state_red;
+	green_x 	= image.state_green;
+	count_red 	= image.count_red;
+	count_green	= image.count_green;
 }
 
 void pid_status_cb(const whatever::node_master& pid_status_recv){
-	pid_status = pid_status_recv.pid_status;
+	simple_status = pid_status_recv.simple_manuver;
 }
 
 void pid_receiver_cb(const pid::controller_msg& control){

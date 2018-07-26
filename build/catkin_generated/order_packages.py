@@ -2,4 +2,4 @@
 source_root_dir = "/home/mfikih15/Documents/AMV/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/home/mfikih15/Documents/AMV/devel;/opt/ros/kinetic".split(';') if "/home/mfikih15/Documents/AMV/devel;/opt/ros/kinetic" != "" else []
+underlay_workspaces = "/home/mfikih15/tutorial_ros/devel;/home/mfikih15/Documents/AMV/devel;/opt/ros/kinetic".split(';') if "/home/mfikih15/tutorial_ros/devel;/home/mfikih15/Documents/AMV/devel;/opt/ros/kinetic" != "" else []
