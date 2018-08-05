@@ -20,6 +20,9 @@ int steer_pwm;
 int throttle_pwm;
 int control_effort;
 
+int red_state;
+int green_state;
+
 void pid_status_cb(const whatever::node_master& pid_status_recv);
 void image_process_cb(const whatever::image_process& image);
 void pid_receiver_cb(const pid::controller_msg& control);
@@ -57,7 +60,7 @@ int main(int argc, char **argv)
 	
 	while(ros::ok()){
 		ros::spinOnce();
-		get_state();
+		//get_state();
 		if(avoid_status){
 			point.setpoint = center_setpoint;
 			pub_setpoint.publish(point);
@@ -113,7 +116,14 @@ int main(int argc, char **argv)
 }
 
 void get_state(){
-	state = ((red_x/count_red)+(green_x/count_green))/2;
+	
+	if(count_red == 0){red_state = 0;}
+	else{red_state = red_x/count_red;}
+	
+	if(count_green == 0){green_state = 0;}
+	else{green_state = red_x/count_green;}
+	
+	state = ((red_state)+(green_state))/2;
 }
 void image_process_cb(const whatever::image_process& image){
 	red_x 		= image.state_red;

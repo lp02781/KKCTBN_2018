@@ -109,7 +109,7 @@ int main(int argc, char **argv)
 		ROS_INFO(" ");
 		
 		sleep(1);
-		system("clear");
+		//system("clear");
 	}
 }
 void setpoint_cb (const whatever::setpoint& point){
