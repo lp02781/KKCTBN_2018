@@ -59,9 +59,10 @@ int main(int argc, char **argv)
 	pid_in.t = initial_time;
 	
 	while(ros::ok()){
+		sleep(0.2);
 		ros::spinOnce();
 		//get_state();
-		if(avoid_status){
+		if(avoid_status == true){
 			point.setpoint = center_setpoint;
 			pub_setpoint.publish(point);
 			
@@ -104,14 +105,11 @@ int main(int argc, char **argv)
 				throttle_pwm = MIDDLE_PWM + CHANGE_THROTTLE;
 				steer_pwm = MIDDLE_PWM;
 				//ROS_ERROR("3");
-			}
-			
-			controller.steering = steer_pwm;
-			controller.throttle = throttle_pwm;
-		
-			pub_override_rc.publish(controller);	
+			}			
 		}
-		sleep(0.2);
+		controller.steering = steer_pwm;
+		controller.throttle = throttle_pwm;
+		pub_override_rc.publish(controller);	
 	}
 }
 

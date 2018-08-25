@@ -28,8 +28,8 @@ int main(int argc, char **argv)
   ROS_WARN("NC : motor_controller.cpp active");
   
 	while(ros::ok()){
-		ros::spin();
 		sleep(0.2);
+		ros::spin();
 	}
 }
 
@@ -40,6 +40,7 @@ void override_status_cb(const whatever::node_master& override_status_recv){
 void override_input_cb(const whatever::override_motor& override_recv){
 	for(int i=0; i < 8; i++) override_out.channels[i] = 0;
 	if(override_status == true){
+		//ROS_ERROR("1");
 		if (override_recv.throttle > MAX_PWM){
 			override_out.channels[THROTTLE] = MAX_PWM;
 		}
@@ -60,7 +61,9 @@ void override_input_cb(const whatever::override_motor& override_recv){
 			override_out.channels[STEERING] = override_recv.steering;
 		}
 	}
+	
 	else{
+		//ROS_ERROR("2");
 		override_out.channels[THROTTLE] = MIDDLE_PWM;
 		override_out.channels[STEERING] = MIDDLE_PWM;
 	}
