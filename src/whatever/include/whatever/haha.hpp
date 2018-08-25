@@ -2,8 +2,8 @@
 #define THROTTLE 2
 
 #define SIMPLE_PIN 3
-#define RECORD_PIN 4
-#define PATH_PIN   5
+//#define RECORD_PIN 4
+//#define PATH_PIN   5
 
 #define PWM_UP 	1700
 #define PWM_LOW 1300

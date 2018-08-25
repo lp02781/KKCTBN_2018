@@ -39,7 +39,7 @@ void override_status_cb(const whatever::node_master& override_status_recv){
 
 void override_input_cb(const whatever::override_motor& override_recv){
 	for(int i=0; i < 8; i++) override_out.channels[i] = 0;
-	if(override_status){
+	if(override_status == true){
 		if (override_recv.throttle > MAX_PWM){
 			override_out.channels[THROTTLE] = MAX_PWM;
 		}
