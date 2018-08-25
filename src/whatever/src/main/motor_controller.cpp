@@ -61,11 +61,5 @@ void override_input_cb(const whatever::override_motor& override_recv){
 			override_out.channels[STEERING] = override_recv.steering;
 		}
 	}
-	
-	else{
-		//ROS_ERROR("2");
-		override_out.channels[THROTTLE] = MIDDLE_PWM;
-		override_out.channels[STEERING] = MIDDLE_PWM;
-	}
 	pub_override_rc.publish(override_out);
 }
