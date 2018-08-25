@@ -44,6 +44,7 @@ int main(int argc, char **argv){
 			//ROS_INFO("2");
 			number_flight = simple_speed;
 		}
+		/*
 		else if(rc_in_data_channel[RECORD_PIN] < PWM_LOW &&
 				rc_in_data_channel[SIMPLE_PIN] > PWM_LOW && rc_in_data_channel[SIMPLE_PIN] < PWM_UP	&&	
 				rc_in_data_channel[PATH_PIN] > PWM_LOW && rc_in_data_channel[PATH_PIN] < PWM_UP){
@@ -68,6 +69,7 @@ int main(int argc, char **argv){
 			//ROS_INFO ("6");
 			number_flight = path_speed;
 		}
+		*/
 		else{
 			number_flight = zero_flag;
 		}
