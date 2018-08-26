@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/mfikih15/Documents/AMV/devel/include/whatever/node_master.h
+/home/amvui/AMV/devel/include/whatever/node_master.h
 string
 -
 vector
@@ -22,7 +22,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/mfikih15/Documents/AMV/devel/include/whatever/override_motor.h
+/home/amvui/AMV/devel/include/whatever/override_motor.h
 string
 -
 vector
@@ -38,19 +38,19 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/mfikih15/Documents/AMV/src/whatever/include/whatever/haha.hpp
+/home/amvui/AMV/src/whatever/include/whatever/haha.hpp
 
-/home/mfikih15/Documents/AMV/src/whatever/src/main/motor_controller.cpp
+/home/amvui/AMV/src/whatever/src/main/motor_controller.cpp
 ../../include/whatever/haha.hpp
-/home/mfikih15/Documents/AMV/src/whatever/include/whatever/haha.hpp
+/home/amvui/AMV/src/whatever/include/whatever/haha.hpp
 ros/ros.h
-/home/mfikih15/Documents/AMV/src/whatever/src/main/ros/ros.h
+/home/amvui/AMV/src/whatever/src/main/ros/ros.h
 mavros_msgs/OverrideRCIn.h
-/home/mfikih15/Documents/AMV/src/whatever/src/main/mavros_msgs/OverrideRCIn.h
+/home/amvui/AMV/src/whatever/src/main/mavros_msgs/OverrideRCIn.h
 whatever/override_motor.h
-/home/mfikih15/Documents/AMV/src/whatever/src/main/whatever/override_motor.h
+/home/amvui/AMV/src/whatever/src/main/whatever/override_motor.h
 whatever/node_master.h
-/home/mfikih15/Documents/AMV/src/whatever/src/main/whatever/node_master.h
+/home/amvui/AMV/src/whatever/src/main/whatever/node_master.h
 iostream
 -
 

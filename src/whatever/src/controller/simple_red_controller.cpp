@@ -56,7 +56,7 @@ int main(int argc, char **argv)
 	pid_in.t = initial_time;
 	
 	while(ros::ok()){
-		sleep(0.2);
+		sleep(0.5);
 		ros::spinOnce();
 	
 		get_state();
