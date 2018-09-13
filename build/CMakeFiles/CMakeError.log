@@ -1,24 +1,24 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/amvui/AMV/build/CMakeFiles/CMakeTmp
+Change Dir: /home/mfikih15/Documents/AMV/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_bcef3/fast"
-/usr/bin/make -f CMakeFiles/cmTC_bcef3.dir/build.make CMakeFiles/cmTC_bcef3.dir/build
-make[1]: Entering directory '/home/amvui/AMV/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_bcef3.dir/CheckSymbolExists.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_bcef3.dir/CheckSymbolExists.c.o   -c /home/amvui/AMV/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_bcef3
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bcef3.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_bcef3.dir/CheckSymbolExists.c.o  -o cmTC_bcef3 -rdynamic 
-CMakeFiles/cmTC_bcef3.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:"/usr/bin/make" "cmTC_bcb8c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bcb8c.dir/build.make CMakeFiles/cmTC_bcb8c.dir/build
+make[1]: Entering directory '/home/mfikih15/Documents/AMV/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bcb8c.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_bcb8c.dir/CheckSymbolExists.c.o   -c /home/mfikih15/Documents/AMV/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_bcb8c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bcb8c.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_bcb8c.dir/CheckSymbolExists.c.o  -o cmTC_bcb8c -rdynamic 
+CMakeFiles/cmTC_bcb8c.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_bcef3.dir/build.make:97: recipe for target 'cmTC_bcef3' failed
-make[1]: *** [cmTC_bcef3] Error 1
-make[1]: Leaving directory '/home/amvui/AMV/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_bcef3/fast' failed
-make: *** [cmTC_bcef3/fast] Error 2
+CMakeFiles/cmTC_bcb8c.dir/build.make:97: recipe for target 'cmTC_bcb8c' failed
+make[1]: *** [cmTC_bcb8c] Error 1
+make[1]: Leaving directory '/home/mfikih15/Documents/AMV/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_bcb8c/fast' failed
+make: *** [cmTC_bcb8c/fast] Error 2
 
-File /home/amvui/AMV/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/mfikih15/Documents/AMV/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -34,22 +34,22 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/amvui/AMV/build/CMakeFiles/CMakeTmp
+Change Dir: /home/mfikih15/Documents/AMV/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_c707e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_c707e.dir/build.make CMakeFiles/cmTC_c707e.dir/build
-make[1]: Entering directory '/home/amvui/AMV/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_c707e.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_c707e.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_c707e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c707e.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_c707e.dir/CheckFunctionExists.c.o  -o cmTC_c707e -rdynamic -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTC_d35a4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d35a4.dir/build.make CMakeFiles/cmTC_d35a4.dir/build
+make[1]: Entering directory '/home/mfikih15/Documents/AMV/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d35a4.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_d35a4.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d35a4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d35a4.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_d35a4.dir/CheckFunctionExists.c.o  -o cmTC_d35a4 -rdynamic -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_c707e.dir/build.make:97: recipe for target 'cmTC_c707e' failed
-make[1]: *** [cmTC_c707e] Error 1
-make[1]: Leaving directory '/home/amvui/AMV/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_c707e/fast' failed
-make: *** [cmTC_c707e/fast] Error 2
+CMakeFiles/cmTC_d35a4.dir/build.make:97: recipe for target 'cmTC_d35a4' failed
+make[1]: *** [cmTC_d35a4] Error 1
+make[1]: Leaving directory '/home/mfikih15/Documents/AMV/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_d35a4/fast' failed
+make: *** [cmTC_d35a4/fast] Error 2
 
 

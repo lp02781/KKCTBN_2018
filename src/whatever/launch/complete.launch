@@ -6,8 +6,8 @@
 	<arg name="upper_limit" default="2000" />
 	<arg name="lower_limit" default="-2000" />
 	<arg name="anti_windup" default="0.1" />
-	<arg name="topic_pid_in" default="kkctbn/pid/in" />
-	<arg name="topic_pid_out" default="kkctbn/pid/out" />
+	<arg name="topic_pid_in" default="/kkctbn/pid/in" />
+	<arg name="topic_pid_out" default="/kkctbn/pid/out" />
 	<!-- topic for kp,kd, ki /kkctbn/pid/const -->
 	
 	<node name="simple_red_controller" pkg="whatever" output="screen" type="simple_red_controller" />
