@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include "../../include/whatever/haha.hpp"
 #include "whatever/image_process.h"
+#include "whatever/setpoint.h"
 
 using namespace std;
 using namespace cv;
@@ -26,8 +27,11 @@ int sum_x;
 int sum_y;
 int count_circle;
 int state;
+int setpoint_camera;
+int imageHeight;
 
 void imageProcessing();
+void setpoint_cb (const whatever::setpoint& point);
 
 whatever::image_process image;
 ros::Publisher pub_state_camera;
@@ -55,6 +59,7 @@ int main(int argc, char **argv){
 	
 	pub_state_camera 	= nh.advertise<whatever::image_process>("/kkctbn/image/process", 1);
 	ros::Subscriber sub = nh.subscribe("camera/image/compressed", 1, imageCallback);
+	ros::Subscriber sub_setpoint 		= nh.subscribe("/kkctbn/image/setpoint", 1, setpoint_cb);
 
 	namedWindow("panel_red", CV_WINDOW_AUTOSIZE);
 	
@@ -74,6 +79,10 @@ int main(int argc, char **argv){
 }
 
 void imageProcessing(){
+	
+	Size sz = Original.size();
+	imageHeight = sz.height; 
+
 	sum_x = 0;
 	sum_y = 0;
 	count_circle = 0;
@@ -118,10 +127,15 @@ void imageProcessing(){
 	else{
 		state = 0;
 	}
+	line( Original, Point( setpoint_camera, 0 ), Point( setpoint_camera, imageHeight), Scalar( 50, 50, 50 ), 2, 8 );
+	line( Original, Point( state, 0 ), Point( state, imageHeight), Scalar( 150, 150, 150 ), 2, 8 );
 	image.state_red = state;
 	image.count_red = count_circle;
 	pub_state_camera.publish(image);
 	
 	imshow("Threshold_Red", imgThresholded);
 	imshow("Original_Red", Original); 
+}
+void setpoint_cb (const whatever::setpoint& point){
+	setpoint_camera = point.setpoint;
 }

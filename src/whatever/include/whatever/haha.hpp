@@ -13,9 +13,6 @@
 
 #define MIDDLE_PWM 		1520
 
-#define CHANGE_STEER 	200
-#define CHANGE_THROTTLE 200
-
 int red_setpoint = 213; //camera 640/3
 int center_setpoint = 320;
 
@@ -42,11 +39,11 @@ int left_header 	= 1;
 int right_header 	= 2;
 int center_header 	= 0;
 							//nuc  pc
-int LowH_red 	= 3; 		//170  3
-int HighH_red 	= 51;		//179  51
-int LowS_red 	= 65;      //150  65
-int HighS_red 	= 246;      //255  246
-int LowV_red 	= 242;		//60   242
+int LowH_red 	= 37; 		//170  3
+int HighH_red 	= 255;		//179  51
+int LowS_red 	= 34;      //150  65
+int HighS_red 	= 255;      //255  246
+int LowV_red 	= 167;		//60   242
 int HighV_red 	= 255;		//255  255
 int max_radius_red 	= 1000; 
 int min_radius_red 	= 1;
@@ -57,7 +54,7 @@ int HighH_green = 81;
 int LowS_green 	= 121; 
 int HighS_green = 210;
 int LowV_green 	= 105;
-int HighV_green = 164;
+int HighV_green = 183;
 int max_radius_green = 1000;
 int min_radius_green = 1;
 int Noise_green = 5;
