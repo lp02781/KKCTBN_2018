@@ -63,6 +63,7 @@ int main(int argc, char **argv)
 	
 		if(simple_status == true){
 			point.setpoint = red_setpoint;
+			point.state=state;
 			pub_setpoint.publish(point);
 		
 			pid_in.x = state;

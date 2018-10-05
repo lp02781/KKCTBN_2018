@@ -41,6 +41,8 @@ int throttle;
 int num_header;
 string header;
 
+int state_now;
+
 int out_channel[8];
 int in_channel[8];
 
@@ -91,7 +93,7 @@ int main(int argc, char **argv)
 		ROS_INFO(" ");
 		
 		ROS_WARN("NC : topic override");
-		ROS_INFO("setpoint:%d header:%s", setpoint_camera, header.c_str());
+		ROS_INFO("setpoint:%d state:%d header:%s", setpoint_camera, state_now, header.c_str());
 		ROS_INFO("steering:%d throttle:%d", steering, throttle);
 		ROS_INFO("effort:%d", effort);
 		ROS_INFO(" ");
@@ -114,6 +116,7 @@ int main(int argc, char **argv)
 }
 void setpoint_cb (const whatever::setpoint& point){
 	setpoint_camera = point.setpoint;
+	state_now = point.state;
 }
 void image_process_cb (const whatever::image_process& image){
 	state_red	= image.state_red;

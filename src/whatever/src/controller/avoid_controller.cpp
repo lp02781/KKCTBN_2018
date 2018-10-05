@@ -61,9 +61,10 @@ int main(int argc, char **argv)
 	while(ros::ok()){
 		sleep(0.5);
 		ros::spinOnce();
-		//get_state();
+		get_state();
 		if(avoid_status == true){
 			point.setpoint = center_setpoint;
+			point.state=state;
 			pub_setpoint.publish(point);
 			
 			pid_in.x = state;

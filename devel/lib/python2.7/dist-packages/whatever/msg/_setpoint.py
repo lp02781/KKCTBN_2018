@@ -7,13 +7,14 @@ import struct
 
 
 class setpoint(genpy.Message):
-  _md5sum = "8ee399a1f7e5b4decdfc42e0ba4ab098"
+  _md5sum = "c823094da4abe0627d8c08c6c9da751e"
   _type = "whatever/setpoint"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """int16 setpoint
+int16 state
 """
-  __slots__ = ['setpoint']
-  _slot_types = ['int16']
+  __slots__ = ['setpoint','state']
+  _slot_types = ['int16','int16']
 
   def __init__(self, *args, **kwds):
     """
@@ -23,7 +24,7 @@ class setpoint(genpy.Message):
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       setpoint
+       setpoint,state
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -34,8 +35,11 @@ class setpoint(genpy.Message):
       #message fields cannot be None, assign default values for those that are
       if self.setpoint is None:
         self.setpoint = 0
+      if self.state is None:
+        self.state = 0
     else:
       self.setpoint = 0
+      self.state = 0
 
   def _get_types(self):
     """
@@ -49,7 +53,8 @@ class setpoint(genpy.Message):
     :param buff: buffer, ``StringIO``
     """
     try:
-      buff.write(_get_struct_h().pack(self.setpoint))
+      _x = self
+      buff.write(_get_struct_2h().pack(_x.setpoint, _x.state))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -60,9 +65,10 @@ class setpoint(genpy.Message):
     """
     try:
       end = 0
+      _x = self
       start = end
-      end += 2
-      (self.setpoint,) = _get_struct_h().unpack(str[start:end])
+      end += 4
+      (_x.setpoint, _x.state,) = _get_struct_2h().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -75,7 +81,8 @@ class setpoint(genpy.Message):
     :param numpy: numpy python module
     """
     try:
-      buff.write(_get_struct_h().pack(self.setpoint))
+      _x = self
+      buff.write(_get_struct_2h().pack(_x.setpoint, _x.state))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -87,9 +94,10 @@ class setpoint(genpy.Message):
     """
     try:
       end = 0
+      _x = self
       start = end
-      end += 2
-      (self.setpoint,) = _get_struct_h().unpack(str[start:end])
+      end += 4
+      (_x.setpoint, _x.state,) = _get_struct_2h().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -98,9 +106,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_h = None
-def _get_struct_h():
-    global _struct_h
-    if _struct_h is None:
-        _struct_h = struct.Struct("<h")
-    return _struct_h
+_struct_2h = None
+def _get_struct_2h():
+    global _struct_2h
+    if _struct_2h is None:
+        _struct_2h = struct.Struct("<2h")
+    return _struct_2h

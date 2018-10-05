@@ -19,6 +19,7 @@ class setpoint {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.setpoint = null;
+      this.state = null;
     }
     else {
       if (initObj.hasOwnProperty('setpoint')) {
@@ -27,6 +28,12 @@ class setpoint {
       else {
         this.setpoint = 0;
       }
+      if (initObj.hasOwnProperty('state')) {
+        this.state = initObj.state
+      }
+      else {
+        this.state = 0;
+      }
     }
   }
 
@@ -34,6 +41,8 @@ class setpoint {
     // Serializes a message object of type setpoint
     // Serialize message field [setpoint]
     bufferOffset = _serializer.int16(obj.setpoint, buffer, bufferOffset);
+    // Serialize message field [state]
+    bufferOffset = _serializer.int16(obj.state, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -43,11 +52,13 @@ class setpoint {
     let data = new setpoint(null);
     // Deserialize message field [setpoint]
     data.setpoint = _deserializer.int16(buffer, bufferOffset);
+    // Deserialize message field [state]
+    data.state = _deserializer.int16(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 2;
+    return 4;
   }
 
   static datatype() {
@@ -57,13 +68,14 @@ class setpoint {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '8ee399a1f7e5b4decdfc42e0ba4ab098';
+    return 'c823094da4abe0627d8c08c6c9da751e';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     int16 setpoint
+    int16 state
     
     `;
   }
@@ -79,6 +91,13 @@ class setpoint {
     }
     else {
       resolved.setpoint = 0
+    }
+
+    if (msg.state !== undefined) {
+      resolved.state = msg.state;
+    }
+    else {
+      resolved.state = 0
     }
 
     return resolved;

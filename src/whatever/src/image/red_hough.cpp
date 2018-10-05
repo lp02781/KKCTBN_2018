@@ -29,6 +29,7 @@ int count_circle;
 int state;
 int setpoint_camera;
 int imageHeight;
+int state_now;
 
 void imageProcessing();
 void setpoint_cb (const whatever::setpoint& point);
@@ -128,7 +129,7 @@ void imageProcessing(){
 		state = 0;
 	}
 	line( Original, Point( setpoint_camera, 0 ), Point( setpoint_camera, imageHeight), Scalar( 50, 50, 50 ), 2, 8 );
-	line( Original, Point( state, 0 ), Point( state, imageHeight), Scalar( 150, 150, 150 ), 2, 8 );
+	line( Original, Point( state_now, 0 ), Point( state, imageHeight), Scalar( 150, 150, 150 ), 2, 8 );
 	image.state_red = state;
 	image.count_red = count_circle;
 	pub_state_camera.publish(image);
@@ -138,4 +139,5 @@ void imageProcessing(){
 }
 void setpoint_cb (const whatever::setpoint& point){
 	setpoint_camera = point.setpoint;
+	state_now=point.state;
 }

@@ -24,10 +24,12 @@ struct setpoint_
   typedef setpoint_<ContainerAllocator> Type;
 
   setpoint_()
-    : setpoint(0)  {
+    : setpoint(0)
+    , state(0)  {
     }
   setpoint_(const ContainerAllocator& _alloc)
-    : setpoint(0)  {
+    : setpoint(0)
+    , state(0)  {
   (void)_alloc;
     }
 
@@ -35,6 +37,9 @@ struct setpoint_
 
    typedef int16_t _setpoint_type;
   _setpoint_type setpoint;
+
+   typedef int16_t _state_type;
+  _state_type state;
 
 
 
@@ -114,12 +119,12 @@ struct MD5Sum< ::whatever::setpoint_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "8ee399a1f7e5b4decdfc42e0ba4ab098";
+    return "c823094da4abe0627d8c08c6c9da751e";
   }
 
   static const char* value(const ::whatever::setpoint_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x8ee399a1f7e5b4deULL;
-  static const uint64_t static_value2 = 0xcdfc42e0ba4ab098ULL;
+  static const uint64_t static_value1 = 0xc823094da4abe062ULL;
+  static const uint64_t static_value2 = 0x7d8c08c6c9da751eULL;
 };
 
 template<class ContainerAllocator>
@@ -139,6 +144,7 @@ struct Definition< ::whatever::setpoint_<ContainerAllocator> >
   static const char* value()
   {
     return "int16 setpoint\n\
+int16 state\n\
 ";
   }
 
@@ -158,6 +164,7 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.setpoint);
+      stream.next(m.state);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -178,6 +185,8 @@ struct Printer< ::whatever::setpoint_<ContainerAllocator> >
   {
     s << indent << "setpoint: ";
     Printer<int16_t>::stream(s, indent + "  ", v.setpoint);
+    s << indent << "state: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.state);
   }
 };
 
