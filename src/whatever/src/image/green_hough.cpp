@@ -128,7 +128,7 @@ void imageProcessing(){
 		state = 0;
 	}
 	line( Original, Point( setpoint_camera, 0 ), Point( setpoint_camera, imageHeight), Scalar( 50, 50, 50 ), 2, 8 );
-	line( Original, Point( state_now, 0 ), Point( state, imageHeight), Scalar( 150, 150, 150 ), 2, 8 );
+	line( Original, Point( state_now, 0 ), Point( state_now, imageHeight), Scalar( 150, 150, 150 ), 2, 8 );
 	
 	image.state_green = state;
 	image.count_green = count_circle;

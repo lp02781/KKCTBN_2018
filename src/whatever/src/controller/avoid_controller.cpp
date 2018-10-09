@@ -98,7 +98,7 @@ int main(int argc, char **argv)
 			else if(red_x != 0 && green_x ==0){
 				controller.header = right_header;
 				throttle_pwm = MAX_PWM;
-				steer_pwm = MIN_PWM;
+				steer_pwm = MAX_PWM;
 			}
 			
 			else {											//just go away
