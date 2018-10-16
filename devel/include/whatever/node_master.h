@@ -28,20 +28,16 @@ struct node_master_
     , pid_status(false)
     , simple_manuver(false)
     , simple_speed(false)
-    , record_manuver(false)
-    , record_speed(false)
-    , path_manuver(false)
-    , path_speed(false)  {
+    , recorder(false)
+    , player(false)  {
     }
   node_master_(const ContainerAllocator& _alloc)
     : override_status(false)
     , pid_status(false)
     , simple_manuver(false)
     , simple_speed(false)
-    , record_manuver(false)
-    , record_speed(false)
-    , path_manuver(false)
-    , path_speed(false)  {
+    , recorder(false)
+    , player(false)  {
   (void)_alloc;
     }
 
@@ -59,17 +55,11 @@ struct node_master_
    typedef uint8_t _simple_speed_type;
   _simple_speed_type simple_speed;
 
-   typedef uint8_t _record_manuver_type;
-  _record_manuver_type record_manuver;
+   typedef uint8_t _recorder_type;
+  _recorder_type recorder;
 
-   typedef uint8_t _record_speed_type;
-  _record_speed_type record_speed;
-
-   typedef uint8_t _path_manuver_type;
-  _path_manuver_type path_manuver;
-
-   typedef uint8_t _path_speed_type;
-  _path_speed_type path_speed;
+   typedef uint8_t _player_type;
+  _player_type player;
 
 
 
@@ -149,12 +139,12 @@ struct MD5Sum< ::whatever::node_master_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "9783f29d89cc75e92f81094e627988e9";
+    return "e8dbc3cc1533c62f04e54d76742a542b";
   }
 
   static const char* value(const ::whatever::node_master_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x9783f29d89cc75e9ULL;
-  static const uint64_t static_value2 = 0x2f81094e627988e9ULL;
+  static const uint64_t static_value1 = 0xe8dbc3cc1533c62fULL;
+  static const uint64_t static_value2 = 0x04e54d76742a542bULL;
 };
 
 template<class ContainerAllocator>
@@ -177,10 +167,8 @@ struct Definition< ::whatever::node_master_<ContainerAllocator> >
 bool pid_status\n\
 bool simple_manuver\n\
 bool simple_speed\n\
-bool record_manuver\n\
-bool record_speed\n\
-bool path_manuver\n\
-bool path_speed\n\
+bool recorder\n\
+bool player\n\
 ";
   }
 
@@ -203,10 +191,8 @@ namespace serialization
       stream.next(m.pid_status);
       stream.next(m.simple_manuver);
       stream.next(m.simple_speed);
-      stream.next(m.record_manuver);
-      stream.next(m.record_speed);
-      stream.next(m.path_manuver);
-      stream.next(m.path_speed);
+      stream.next(m.recorder);
+      stream.next(m.player);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -233,14 +219,10 @@ struct Printer< ::whatever::node_master_<ContainerAllocator> >
     Printer<uint8_t>::stream(s, indent + "  ", v.simple_manuver);
     s << indent << "simple_speed: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.simple_speed);
-    s << indent << "record_manuver: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.record_manuver);
-    s << indent << "record_speed: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.record_speed);
-    s << indent << "path_manuver: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.path_manuver);
-    s << indent << "path_speed: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.path_speed);
+    s << indent << "recorder: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.recorder);
+    s << indent << "player: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.player);
   }
 };
 

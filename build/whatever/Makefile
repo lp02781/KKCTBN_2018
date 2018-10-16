@@ -166,6 +166,36 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+whatever/CMakeFiles/player.dir/rule:
+	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/player.dir/rule
+.PHONY : whatever/CMakeFiles/player.dir/rule
+
+# Convenience name for target.
+player: whatever/CMakeFiles/player.dir/rule
+
+.PHONY : player
+
+# fast build rule for target.
+player/fast:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/player.dir/build.make whatever/CMakeFiles/player.dir/build
+.PHONY : player/fast
+
+# Convenience name for target.
+whatever/CMakeFiles/recorder.dir/rule:
+	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/recorder.dir/rule
+.PHONY : whatever/CMakeFiles/recorder.dir/rule
+
+# Convenience name for target.
+recorder: whatever/CMakeFiles/recorder.dir/rule
+
+.PHONY : recorder
+
+# fast build rule for target.
+recorder/fast:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/recorder.dir/build.make whatever/CMakeFiles/recorder.dir/build
+.PHONY : recorder/fast
+
+# Convenience name for target.
 whatever/CMakeFiles/image_front.dir/rule:
 	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/image_front.dir/rule
 .PHONY : whatever/CMakeFiles/image_front.dir/rule
@@ -1173,6 +1203,60 @@ src/main/remote_monitor.cpp.s:
 	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/remote_monitor.dir/build.make whatever/CMakeFiles/remote_monitor.dir/src/main/remote_monitor.cpp.s
 .PHONY : src/main/remote_monitor.cpp.s
 
+src/record/player.o: src/record/player.cpp.o
+
+.PHONY : src/record/player.o
+
+# target to build an object file
+src/record/player.cpp.o:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/player.dir/build.make whatever/CMakeFiles/player.dir/src/record/player.cpp.o
+.PHONY : src/record/player.cpp.o
+
+src/record/player.i: src/record/player.cpp.i
+
+.PHONY : src/record/player.i
+
+# target to preprocess a source file
+src/record/player.cpp.i:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/player.dir/build.make whatever/CMakeFiles/player.dir/src/record/player.cpp.i
+.PHONY : src/record/player.cpp.i
+
+src/record/player.s: src/record/player.cpp.s
+
+.PHONY : src/record/player.s
+
+# target to generate assembly for a file
+src/record/player.cpp.s:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/player.dir/build.make whatever/CMakeFiles/player.dir/src/record/player.cpp.s
+.PHONY : src/record/player.cpp.s
+
+src/record/recorder.o: src/record/recorder.cpp.o
+
+.PHONY : src/record/recorder.o
+
+# target to build an object file
+src/record/recorder.cpp.o:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/recorder.dir/build.make whatever/CMakeFiles/recorder.dir/src/record/recorder.cpp.o
+.PHONY : src/record/recorder.cpp.o
+
+src/record/recorder.i: src/record/recorder.cpp.i
+
+.PHONY : src/record/recorder.i
+
+# target to preprocess a source file
+src/record/recorder.cpp.i:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/recorder.dir/build.make whatever/CMakeFiles/recorder.dir/src/record/recorder.cpp.i
+.PHONY : src/record/recorder.cpp.i
+
+src/record/recorder.s: src/record/recorder.cpp.s
+
+.PHONY : src/record/recorder.s
+
+# target to generate assembly for a file
+src/record/recorder.cpp.s:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/recorder.dir/build.make whatever/CMakeFiles/recorder.dir/src/record/recorder.cpp.s
+.PHONY : src/record/recorder.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1183,6 +1267,8 @@ help:
 	@echo "... install"
 	@echo "... edit_cache"
 	@echo "... install/local"
+	@echo "... player"
+	@echo "... recorder"
 	@echo "... install/strip"
 	@echo "... image_front"
 	@echo "... rebuild_cache"
@@ -1264,6 +1350,12 @@ help:
 	@echo "... src/main/remote_monitor.o"
 	@echo "... src/main/remote_monitor.i"
 	@echo "... src/main/remote_monitor.s"
+	@echo "... src/record/player.o"
+	@echo "... src/record/player.i"
+	@echo "... src/record/player.s"
+	@echo "... src/record/recorder.o"
+	@echo "... src/record/recorder.i"
+	@echo "... src/record/recorder.s"
 .PHONY : help
 
 

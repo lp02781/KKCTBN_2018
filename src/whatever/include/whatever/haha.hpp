@@ -1,9 +1,10 @@
+#include <iostream>
+#include <stdio.h>
 #define STEERING 0
 #define THROTTLE 2
 
 #define SIMPLE_PIN 3
-//#define RECORD_PIN 4
-//#define PATH_PIN   5
+#define RECORD_PIN 4
 
 #define PWM_UP 	1700
 #define PWM_LOW 1300
@@ -12,6 +13,8 @@
 #define MIN_PWM 1120
 
 #define MIDDLE_PWM 		1520
+
+float update_time=0.001;
 
 int red_setpoint = 213; //camera 640/3
 int center_setpoint = 320;
@@ -30,10 +33,9 @@ float initial_time = 0;
 int zero_flag 		= 0;
 int simple_manuver 	= 1;
 int simple_speed 	= 2;
-int record_manuver 	= 3;
-int record_speed 	= 4;
-int path_manuver 	= 5;
-int path_speed 		= 6;
+int record_flag 	= 3;
+int player_flag 	= 4;
+int zero_record		= 5;
 
 int left_header 	= 1;
 int right_header 	= 2;

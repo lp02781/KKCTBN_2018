@@ -212,6 +212,16 @@ ${catkin_LIBRARIES}
 ${OpenCV_LIBRARIES}
 )
 
+add_executable(recorder src/record/recorder.cpp )
+target_link_libraries(recorder
+${catkin_LIBRARIES}
+)
+
+add_executable(player src/record/player.cpp )
+target_link_libraries(player
+${catkin_LIBRARIES}
+)
+
 #############
 ## Install ##
 #############

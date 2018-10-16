@@ -7,13 +7,14 @@ import struct
 
 
 class rc_number(genpy.Message):
-  _md5sum = "2244ae5f9aac7ce5c8daccbb71337be0"
+  _md5sum = "864afb57b68d8c11afa6468b1766e735"
   _type = "whatever/rc_number"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """int16 rc_number
+int16 record_number
 """
-  __slots__ = ['rc_number']
-  _slot_types = ['int16']
+  __slots__ = ['rc_number','record_number']
+  _slot_types = ['int16','int16']
 
   def __init__(self, *args, **kwds):
     """
@@ -23,7 +24,7 @@ class rc_number(genpy.Message):
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       rc_number
+       rc_number,record_number
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -34,8 +35,11 @@ class rc_number(genpy.Message):
       #message fields cannot be None, assign default values for those that are
       if self.rc_number is None:
         self.rc_number = 0
+      if self.record_number is None:
+        self.record_number = 0
     else:
       self.rc_number = 0
+      self.record_number = 0
 
   def _get_types(self):
     """
@@ -49,7 +53,8 @@ class rc_number(genpy.Message):
     :param buff: buffer, ``StringIO``
     """
     try:
-      buff.write(_get_struct_h().pack(self.rc_number))
+      _x = self
+      buff.write(_get_struct_2h().pack(_x.rc_number, _x.record_number))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -60,9 +65,10 @@ class rc_number(genpy.Message):
     """
     try:
       end = 0
+      _x = self
       start = end
-      end += 2
-      (self.rc_number,) = _get_struct_h().unpack(str[start:end])
+      end += 4
+      (_x.rc_number, _x.record_number,) = _get_struct_2h().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -75,7 +81,8 @@ class rc_number(genpy.Message):
     :param numpy: numpy python module
     """
     try:
-      buff.write(_get_struct_h().pack(self.rc_number))
+      _x = self
+      buff.write(_get_struct_2h().pack(_x.rc_number, _x.record_number))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -87,9 +94,10 @@ class rc_number(genpy.Message):
     """
     try:
       end = 0
+      _x = self
       start = end
-      end += 2
-      (self.rc_number,) = _get_struct_h().unpack(str[start:end])
+      end += 4
+      (_x.rc_number, _x.record_number,) = _get_struct_2h().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -98,9 +106,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_h = None
-def _get_struct_h():
-    global _struct_h
-    if _struct_h is None:
-        _struct_h = struct.Struct("<h")
-    return _struct_h
+_struct_2h = None
+def _get_struct_2h():
+    global _struct_2h
+    if _struct_2h is None:
+        _struct_2h = struct.Struct("<2h")
+    return _struct_2h

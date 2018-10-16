@@ -673,6 +673,32 @@ pid_gencpp/fast:
 .PHONY : pid_gencpp/fast
 
 #=============================================================================
+# Target rules for targets named player
+
+# Build rule for target.
+player: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 player
+.PHONY : player
+
+# fast build rule for target.
+player/fast:
+	$(MAKE) -f whatever/CMakeFiles/player.dir/build.make whatever/CMakeFiles/player.dir/build
+.PHONY : player/fast
+
+#=============================================================================
+# Target rules for targets named recorder
+
+# Build rule for target.
+recorder: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 recorder
+.PHONY : recorder
+
+# fast build rule for target.
+recorder/fast:
+	$(MAKE) -f whatever/CMakeFiles/recorder.dir/build.make whatever/CMakeFiles/recorder.dir/build
+.PHONY : recorder/fast
+
+#=============================================================================
 # Target rules for targets named image_front
 
 # Build rule for target.
@@ -1387,6 +1413,8 @@ help:
 	@echo "... pid_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... pid_gencpp"
+	@echo "... player"
+	@echo "... recorder"
 	@echo "... image_front"
 	@echo "... simple_red_controller"
 	@echo "... mavros_msgs_generate_messages_py"

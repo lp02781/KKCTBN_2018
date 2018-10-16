@@ -1427,6 +1427,8 @@ clean: pid/CMakeFiles/pid_gencpp.dir/clean
 # Directory level rules for directory whatever
 
 # Convenience name for "all" pass in the directory.
+whatever/all: whatever/CMakeFiles/player.dir/all
+whatever/all: whatever/CMakeFiles/recorder.dir/all
 whatever/all: whatever/CMakeFiles/image_front.dir/all
 whatever/all: whatever/CMakeFiles/simple_red_controller.dir/all
 whatever/all: whatever/CMakeFiles/node_controller.dir/all
@@ -1441,6 +1443,8 @@ whatever/all: whatever/CMakeFiles/green_hough.dir/all
 .PHONY : whatever/all
 
 # Convenience name for "clean" pass in the directory.
+whatever/clean: whatever/CMakeFiles/player.dir/clean
+whatever/clean: whatever/CMakeFiles/recorder.dir/clean
 whatever/clean: whatever/CMakeFiles/image_front.dir/clean
 whatever/clean: whatever/CMakeFiles/simple_red_controller.dir/clean
 whatever/clean: whatever/CMakeFiles/mavros_msgs_generate_messages_py.dir/clean
@@ -1501,6 +1505,80 @@ whatever/preinstall:
 .PHONY : whatever/preinstall
 
 #=============================================================================
+# Target rules for target whatever/CMakeFiles/player.dir
+
+# All Build rule for target.
+whatever/CMakeFiles/player.dir/all:
+	$(MAKE) -f whatever/CMakeFiles/player.dir/build.make whatever/CMakeFiles/player.dir/depend
+	$(MAKE) -f whatever/CMakeFiles/player.dir/build.make whatever/CMakeFiles/player.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=43,44 "Built target player"
+.PHONY : whatever/CMakeFiles/player.dir/all
+
+# Include target in all.
+all: whatever/CMakeFiles/player.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+whatever/CMakeFiles/player.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amvui/AMV/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/player.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amvui/AMV/build/CMakeFiles 0
+.PHONY : whatever/CMakeFiles/player.dir/rule
+
+# Convenience name for target.
+player: whatever/CMakeFiles/player.dir/rule
+
+.PHONY : player
+
+# clean rule for target.
+whatever/CMakeFiles/player.dir/clean:
+	$(MAKE) -f whatever/CMakeFiles/player.dir/build.make whatever/CMakeFiles/player.dir/clean
+.PHONY : whatever/CMakeFiles/player.dir/clean
+
+# clean rule for target.
+clean: whatever/CMakeFiles/player.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target whatever/CMakeFiles/recorder.dir
+
+# All Build rule for target.
+whatever/CMakeFiles/recorder.dir/all:
+	$(MAKE) -f whatever/CMakeFiles/recorder.dir/build.make whatever/CMakeFiles/recorder.dir/depend
+	$(MAKE) -f whatever/CMakeFiles/recorder.dir/build.make whatever/CMakeFiles/recorder.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=45,46 "Built target recorder"
+.PHONY : whatever/CMakeFiles/recorder.dir/all
+
+# Include target in all.
+all: whatever/CMakeFiles/recorder.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+whatever/CMakeFiles/recorder.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amvui/AMV/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/recorder.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amvui/AMV/build/CMakeFiles 0
+.PHONY : whatever/CMakeFiles/recorder.dir/rule
+
+# Convenience name for target.
+recorder: whatever/CMakeFiles/recorder.dir/rule
+
+.PHONY : recorder
+
+# clean rule for target.
+whatever/CMakeFiles/recorder.dir/clean:
+	$(MAKE) -f whatever/CMakeFiles/recorder.dir/build.make whatever/CMakeFiles/recorder.dir/clean
+.PHONY : whatever/CMakeFiles/recorder.dir/clean
+
+# clean rule for target.
+clean: whatever/CMakeFiles/recorder.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target whatever/CMakeFiles/image_front.dir
 
 # All Build rule for target.
@@ -1544,7 +1622,7 @@ clean: whatever/CMakeFiles/image_front.dir/clean
 whatever/CMakeFiles/simple_red_controller.dir/all:
 	$(MAKE) -f whatever/CMakeFiles/simple_red_controller.dir/build.make whatever/CMakeFiles/simple_red_controller.dir/depend
 	$(MAKE) -f whatever/CMakeFiles/simple_red_controller.dir/build.make whatever/CMakeFiles/simple_red_controller.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=47,48 "Built target simple_red_controller"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=51,52 "Built target simple_red_controller"
 .PHONY : whatever/CMakeFiles/simple_red_controller.dir/all
 
 # Include target in all.
@@ -1653,7 +1731,7 @@ whatever/CMakeFiles/whatever_generate_messages_eus.dir/all: whatever/CMakeFiles/
 whatever/CMakeFiles/whatever_generate_messages_eus.dir/all: whatever/CMakeFiles/_whatever_generate_messages_check_deps_flight_mode.dir/all
 	$(MAKE) -f whatever/CMakeFiles/whatever_generate_messages_eus.dir/build.make whatever/CMakeFiles/whatever_generate_messages_eus.dir/depend
 	$(MAKE) -f whatever/CMakeFiles/whatever_generate_messages_eus.dir/build.make whatever/CMakeFiles/whatever_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=55,56,57,58,59,60,61 "Built target whatever_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=59,60,61,62,63,64,65 "Built target whatever_generate_messages_eus"
 .PHONY : whatever/CMakeFiles/whatever_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1895,7 +1973,7 @@ whatever/CMakeFiles/whatever_generate_messages_py.dir/all: whatever/CMakeFiles/_
 whatever/CMakeFiles/whatever_generate_messages_py.dir/all: whatever/CMakeFiles/_whatever_generate_messages_check_deps_flight_mode.dir/all
 	$(MAKE) -f whatever/CMakeFiles/whatever_generate_messages_py.dir/build.make whatever/CMakeFiles/whatever_generate_messages_py.dir/depend
 	$(MAKE) -f whatever/CMakeFiles/whatever_generate_messages_py.dir/build.make whatever/CMakeFiles/whatever_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=74,75,76,77,78,79,80 "Built target whatever_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=78,79,80,81,82,83,84 "Built target whatever_generate_messages_py"
 .PHONY : whatever/CMakeFiles/whatever_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2493,7 +2571,7 @@ whatever/CMakeFiles/whatever_generate_messages_nodejs.dir/all: whatever/CMakeFil
 whatever/CMakeFiles/whatever_generate_messages_nodejs.dir/all: whatever/CMakeFiles/_whatever_generate_messages_check_deps_flight_mode.dir/all
 	$(MAKE) -f whatever/CMakeFiles/whatever_generate_messages_nodejs.dir/build.make whatever/CMakeFiles/whatever_generate_messages_nodejs.dir/depend
 	$(MAKE) -f whatever/CMakeFiles/whatever_generate_messages_nodejs.dir/build.make whatever/CMakeFiles/whatever_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=68,69,70,71,72,73 "Built target whatever_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=72,73,74,75,76,77 "Built target whatever_generate_messages_nodejs"
 .PHONY : whatever/CMakeFiles/whatever_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2589,7 +2667,7 @@ clean: whatever/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/clean
 whatever/CMakeFiles/remote_monitor.dir/all:
 	$(MAKE) -f whatever/CMakeFiles/remote_monitor.dir/build.make whatever/CMakeFiles/remote_monitor.dir/depend
 	$(MAKE) -f whatever/CMakeFiles/remote_monitor.dir/build.make whatever/CMakeFiles/remote_monitor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=45,46 "Built target remote_monitor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=49,50 "Built target remote_monitor"
 .PHONY : whatever/CMakeFiles/remote_monitor.dir/all
 
 # Include target in all.
@@ -2823,7 +2901,7 @@ clean: whatever/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/clean
 whatever/CMakeFiles/red_hough.dir/all:
 	$(MAKE) -f whatever/CMakeFiles/red_hough.dir/build.make whatever/CMakeFiles/red_hough.dir/depend
 	$(MAKE) -f whatever/CMakeFiles/red_hough.dir/build.make whatever/CMakeFiles/red_hough.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=43,44 "Built target red_hough"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=47,48 "Built target red_hough"
 .PHONY : whatever/CMakeFiles/red_hough.dir/all
 
 # Include target in all.
@@ -3028,7 +3106,7 @@ whatever/CMakeFiles/whatever_generate_messages_cpp.dir/all: whatever/CMakeFiles/
 whatever/CMakeFiles/whatever_generate_messages_cpp.dir/all: whatever/CMakeFiles/_whatever_generate_messages_check_deps_flight_mode.dir/all
 	$(MAKE) -f whatever/CMakeFiles/whatever_generate_messages_cpp.dir/build.make whatever/CMakeFiles/whatever_generate_messages_cpp.dir/depend
 	$(MAKE) -f whatever/CMakeFiles/whatever_generate_messages_cpp.dir/build.make whatever/CMakeFiles/whatever_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=49,50,51,52,53,54 "Built target whatever_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=53,54,55,56,57,58 "Built target whatever_generate_messages_cpp"
 .PHONY : whatever/CMakeFiles/whatever_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3105,7 +3183,7 @@ whatever/CMakeFiles/whatever_generate_messages_lisp.dir/all: whatever/CMakeFiles
 whatever/CMakeFiles/whatever_generate_messages_lisp.dir/all: whatever/CMakeFiles/_whatever_generate_messages_check_deps_flight_mode.dir/all
 	$(MAKE) -f whatever/CMakeFiles/whatever_generate_messages_lisp.dir/build.make whatever/CMakeFiles/whatever_generate_messages_lisp.dir/depend
 	$(MAKE) -f whatever/CMakeFiles/whatever_generate_messages_lisp.dir/build.make whatever/CMakeFiles/whatever_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=62,63,64,65,66,67 "Built target whatever_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=66,67,68,69,70,71 "Built target whatever_generate_messages_lisp"
 .PHONY : whatever/CMakeFiles/whatever_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.

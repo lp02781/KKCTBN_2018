@@ -24,10 +24,12 @@ struct rc_number_
   typedef rc_number_<ContainerAllocator> Type;
 
   rc_number_()
-    : rc_number(0)  {
+    : rc_number(0)
+    , record_number(0)  {
     }
   rc_number_(const ContainerAllocator& _alloc)
-    : rc_number(0)  {
+    : rc_number(0)
+    , record_number(0)  {
   (void)_alloc;
     }
 
@@ -35,6 +37,9 @@ struct rc_number_
 
    typedef int16_t _rc_number_type;
   _rc_number_type rc_number;
+
+   typedef int16_t _record_number_type;
+  _record_number_type record_number;
 
 
 
@@ -114,12 +119,12 @@ struct MD5Sum< ::whatever::rc_number_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "2244ae5f9aac7ce5c8daccbb71337be0";
+    return "864afb57b68d8c11afa6468b1766e735";
   }
 
   static const char* value(const ::whatever::rc_number_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x2244ae5f9aac7ce5ULL;
-  static const uint64_t static_value2 = 0xc8daccbb71337be0ULL;
+  static const uint64_t static_value1 = 0x864afb57b68d8c11ULL;
+  static const uint64_t static_value2 = 0xafa6468b1766e735ULL;
 };
 
 template<class ContainerAllocator>
@@ -139,6 +144,7 @@ struct Definition< ::whatever::rc_number_<ContainerAllocator> >
   static const char* value()
   {
     return "int16 rc_number\n\
+int16 record_number\n\
 ";
   }
 
@@ -158,6 +164,7 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.rc_number);
+      stream.next(m.record_number);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -178,6 +185,8 @@ struct Printer< ::whatever::rc_number_<ContainerAllocator> >
   {
     s << indent << "rc_number: ";
     Printer<int16_t>::stream(s, indent + "  ", v.rc_number);
+    s << indent << "record_number: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.record_number);
   }
 };
 

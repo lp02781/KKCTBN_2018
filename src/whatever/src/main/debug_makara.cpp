@@ -18,13 +18,10 @@ using namespace std;
 string override_status;
 string pid_status;
 
-string zero_flag_status;
 string simple_manuver_status;
-string simple_speed_status; 	
-string record_manuver_status; 	
-string record_speed_status; 	
-string path_manuver_status; 	
-string path_speed_status;		
+string simple_speed_status; 
+string recorder_status;
+string player_status;
 
 int effort;
 
@@ -84,7 +81,7 @@ int main(int argc, char **argv)
 		
 		ROS_WARN("NC : topic master");
 		ROS_INFO("override:%s pid:%s rc:%d flight: %s", override_status.c_str(), pid_status.c_str(), rc_flag, flight_mode.c_str());
-		ROS_INFO("1:%s 2:%s 3:%s 4:%s 5:%s 6:%s", simple_manuver_status.c_str(), simple_speed_status.c_str(), record_manuver_status.c_str(), record_speed_status.c_str(), path_manuver_status.c_str(), path_speed_status.c_str());
+		ROS_INFO("1:%s 2:%s 3:%s 4:%s", simple_manuver_status.c_str(), simple_speed_status.c_str(), recorder_status.c_str(), player_status.c_str());
 		ROS_INFO(" ");
 				
 		ROS_WARN("NC : topic image");
@@ -142,14 +139,10 @@ void node_master_cb	(const whatever::node_master& master){
 	else{simple_manuver_status = "false";}
 	if(master.simple_speed==true){simple_speed_status = "true";}
 	else{simple_speed_status = "false";}
-	if(master.record_manuver==true){record_manuver_status = "true";}
-	else{record_manuver_status="false";}
-	if(master.record_speed==true){record_speed_status = "true";}
-	else{record_speed_status="false";}
-	if(master.path_manuver==true){path_manuver_status = "true";}
-	else{path_manuver_status = "false";}
-	if(master.path_speed==true){path_speed_status = "true";}
-	else{path_speed_status = "false";}
+	if(master.recorder==true){recorder_status = "true";}
+	else{recorder_status = "false";}
+	if(master.player==true){player_status = "true";}
+	else{player_status = "false";}
 }
 
 void override_rc_cb	(const whatever::override_motor& rc){

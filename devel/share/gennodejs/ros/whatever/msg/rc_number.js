@@ -19,6 +19,7 @@ class rc_number {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.rc_number = null;
+      this.record_number = null;
     }
     else {
       if (initObj.hasOwnProperty('rc_number')) {
@@ -27,6 +28,12 @@ class rc_number {
       else {
         this.rc_number = 0;
       }
+      if (initObj.hasOwnProperty('record_number')) {
+        this.record_number = initObj.record_number
+      }
+      else {
+        this.record_number = 0;
+      }
     }
   }
 
@@ -34,6 +41,8 @@ class rc_number {
     // Serializes a message object of type rc_number
     // Serialize message field [rc_number]
     bufferOffset = _serializer.int16(obj.rc_number, buffer, bufferOffset);
+    // Serialize message field [record_number]
+    bufferOffset = _serializer.int16(obj.record_number, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -43,11 +52,13 @@ class rc_number {
     let data = new rc_number(null);
     // Deserialize message field [rc_number]
     data.rc_number = _deserializer.int16(buffer, bufferOffset);
+    // Deserialize message field [record_number]
+    data.record_number = _deserializer.int16(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 2;
+    return 4;
   }
 
   static datatype() {
@@ -57,13 +68,14 @@ class rc_number {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '2244ae5f9aac7ce5c8daccbb71337be0';
+    return '864afb57b68d8c11afa6468b1766e735';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     int16 rc_number
+    int16 record_number
     
     `;
   }
@@ -79,6 +91,13 @@ class rc_number {
     }
     else {
       resolved.rc_number = 0
+    }
+
+    if (msg.record_number !== undefined) {
+      resolved.record_number = msg.record_number;
+    }
+    else {
+      resolved.record_number = 0
     }
 
     return resolved;

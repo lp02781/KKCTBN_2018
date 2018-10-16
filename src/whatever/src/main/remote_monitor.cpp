@@ -12,6 +12,7 @@
 
 int rc_in_data_channel[8];
 int number_flight = 0;
+int record_number = 0;
 
 void rcinReceiver(const mavros_msgs::RCIn& rc_in_data);
 
@@ -40,49 +41,23 @@ int main(int argc, char **argv){
 			//ROS_INFO("2");
 			number_flight = simple_speed;
 		}
-		/*
-		if(		rc_in_data_channel[SIMPLE_PIN] < PWM_LOW && 
-				rc_in_data_channel[RECORD_PIN] > PWM_LOW && rc_in_data_channel[RECORD_PIN] < PWM_UP	&&	
-				rc_in_data_channel[PATH_PIN] > PWM_LOW && rc_in_data_channel[PATH_PIN] < PWM_UP){
-			//ROS_INFO("1");
-			number_flight = simple_manuver;
-		}
-		else if(rc_in_data_channel[SIMPLE_PIN] > PWM_UP &&
-				rc_in_data_channel[RECORD_PIN] > PWM_LOW && rc_in_data_channel[RECORD_PIN] < PWM_UP	&&	
-				rc_in_data_channel[PATH_PIN] > PWM_LOW && rc_in_data_channel[PATH_PIN] < PWM_UP){
-			//ROS_INFO("2");
-			number_flight = simple_speed;
-		}
-		
-		else if(rc_in_data_channel[RECORD_PIN] < PWM_LOW &&
-				rc_in_data_channel[SIMPLE_PIN] > PWM_LOW && rc_in_data_channel[SIMPLE_PIN] < PWM_UP	&&	
-				rc_in_data_channel[PATH_PIN] > PWM_LOW && rc_in_data_channel[PATH_PIN] < PWM_UP){
-			//ROS_INFO ("3");
-			number_flight = record_manuver;
-		}
-		else if(rc_in_data_channel[RECORD_PIN] > PWM_UP &&
-				rc_in_data_channel[SIMPLE_PIN] > PWM_LOW && rc_in_data_channel[SIMPLE_PIN] < PWM_UP	&&	
-				rc_in_data_channel[PATH_PIN] > PWM_LOW && rc_in_data_channel[PATH_PIN] < PWM_UP){
-			//ROS_INFO ("4");
-			number_flight = record_speed;
-		}
-		else if(rc_in_data_channel[PATH_PIN] < PWM_LOW &&
-				rc_in_data_channel[SIMPLE_PIN] > PWM_LOW && rc_in_data_channel[SIMPLE_PIN] < PWM_UP	&&	
-				rc_in_data_channel[RECORD_PIN] > PWM_LOW && rc_in_data_channel[RECORD_PIN] < PWM_UP){
-			//ROS_INFO ("5");
-			number_flight = path_manuver;
-		}
-		else if(rc_in_data_channel[PATH_PIN] > PWM_UP &&
-				rc_in_data_channel[SIMPLE_PIN] > PWM_LOW && rc_in_data_channel[SIMPLE_PIN] < PWM_UP	&&	
-				rc_in_data_channel[RECORD_PIN] > PWM_LOW && rc_in_data_channel[RECORD_PIN] < PWM_UP){
-			//ROS_INFO ("6");
-			number_flight = path_speed;
-		}
-		*/
 		else{
 			number_flight = zero_flag;
 		}
+		if(rc_in_data_channel[RECORD_PIN] < PWM_LOW ){
+			//ROS_INFO("3");
+			record_number = record_flag;
+		}
+		else if(rc_in_data_channel[RECORD_PIN] > PWM_UP){
+			//ROS_INFO("4");
+			record_number = player_flag;
+		}
+		else{
+			//ROS_INFO("5");
+			record_number = zero_record;
+		}
 		rc_action.rc_number = number_flight;
+		rc_action.record_number = record_number;
 		pub_rc_flag.publish(rc_action);
 		//ROS_ERROR ("%d", number_flight);
 	}

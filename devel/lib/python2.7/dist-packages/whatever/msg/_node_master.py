@@ -7,20 +7,18 @@ import struct
 
 
 class node_master(genpy.Message):
-  _md5sum = "9783f29d89cc75e92f81094e627988e9"
+  _md5sum = "e8dbc3cc1533c62f04e54d76742a542b"
   _type = "whatever/node_master"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """bool override_status
 bool pid_status
 bool simple_manuver
 bool simple_speed
-bool record_manuver
-bool record_speed
-bool path_manuver
-bool path_speed
+bool recorder
+bool player
 """
-  __slots__ = ['override_status','pid_status','simple_manuver','simple_speed','record_manuver','record_speed','path_manuver','path_speed']
-  _slot_types = ['bool','bool','bool','bool','bool','bool','bool','bool']
+  __slots__ = ['override_status','pid_status','simple_manuver','simple_speed','recorder','player']
+  _slot_types = ['bool','bool','bool','bool','bool','bool']
 
   def __init__(self, *args, **kwds):
     """
@@ -30,7 +28,7 @@ bool path_speed
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       override_status,pid_status,simple_manuver,simple_speed,record_manuver,record_speed,path_manuver,path_speed
+       override_status,pid_status,simple_manuver,simple_speed,recorder,player
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -47,23 +45,17 @@ bool path_speed
         self.simple_manuver = False
       if self.simple_speed is None:
         self.simple_speed = False
-      if self.record_manuver is None:
-        self.record_manuver = False
-      if self.record_speed is None:
-        self.record_speed = False
-      if self.path_manuver is None:
-        self.path_manuver = False
-      if self.path_speed is None:
-        self.path_speed = False
+      if self.recorder is None:
+        self.recorder = False
+      if self.player is None:
+        self.player = False
     else:
       self.override_status = False
       self.pid_status = False
       self.simple_manuver = False
       self.simple_speed = False
-      self.record_manuver = False
-      self.record_speed = False
-      self.path_manuver = False
-      self.path_speed = False
+      self.recorder = False
+      self.player = False
 
   def _get_types(self):
     """
@@ -78,7 +70,7 @@ bool path_speed
     """
     try:
       _x = self
-      buff.write(_get_struct_8B().pack(_x.override_status, _x.pid_status, _x.simple_manuver, _x.simple_speed, _x.record_manuver, _x.record_speed, _x.path_manuver, _x.path_speed))
+      buff.write(_get_struct_6B().pack(_x.override_status, _x.pid_status, _x.simple_manuver, _x.simple_speed, _x.recorder, _x.player))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -91,16 +83,14 @@ bool path_speed
       end = 0
       _x = self
       start = end
-      end += 8
-      (_x.override_status, _x.pid_status, _x.simple_manuver, _x.simple_speed, _x.record_manuver, _x.record_speed, _x.path_manuver, _x.path_speed,) = _get_struct_8B().unpack(str[start:end])
+      end += 6
+      (_x.override_status, _x.pid_status, _x.simple_manuver, _x.simple_speed, _x.recorder, _x.player,) = _get_struct_6B().unpack(str[start:end])
       self.override_status = bool(self.override_status)
       self.pid_status = bool(self.pid_status)
       self.simple_manuver = bool(self.simple_manuver)
       self.simple_speed = bool(self.simple_speed)
-      self.record_manuver = bool(self.record_manuver)
-      self.record_speed = bool(self.record_speed)
-      self.path_manuver = bool(self.path_manuver)
-      self.path_speed = bool(self.path_speed)
+      self.recorder = bool(self.recorder)
+      self.player = bool(self.player)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -114,7 +104,7 @@ bool path_speed
     """
     try:
       _x = self
-      buff.write(_get_struct_8B().pack(_x.override_status, _x.pid_status, _x.simple_manuver, _x.simple_speed, _x.record_manuver, _x.record_speed, _x.path_manuver, _x.path_speed))
+      buff.write(_get_struct_6B().pack(_x.override_status, _x.pid_status, _x.simple_manuver, _x.simple_speed, _x.recorder, _x.player))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -128,16 +118,14 @@ bool path_speed
       end = 0
       _x = self
       start = end
-      end += 8
-      (_x.override_status, _x.pid_status, _x.simple_manuver, _x.simple_speed, _x.record_manuver, _x.record_speed, _x.path_manuver, _x.path_speed,) = _get_struct_8B().unpack(str[start:end])
+      end += 6
+      (_x.override_status, _x.pid_status, _x.simple_manuver, _x.simple_speed, _x.recorder, _x.player,) = _get_struct_6B().unpack(str[start:end])
       self.override_status = bool(self.override_status)
       self.pid_status = bool(self.pid_status)
       self.simple_manuver = bool(self.simple_manuver)
       self.simple_speed = bool(self.simple_speed)
-      self.record_manuver = bool(self.record_manuver)
-      self.record_speed = bool(self.record_speed)
-      self.path_manuver = bool(self.path_manuver)
-      self.path_speed = bool(self.path_speed)
+      self.recorder = bool(self.recorder)
+      self.player = bool(self.player)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -146,9 +134,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_8B = None
-def _get_struct_8B():
-    global _struct_8B
-    if _struct_8B is None:
-        _struct_8B = struct.Struct("<8B")
-    return _struct_8B
+_struct_6B = None
+def _get_struct_6B():
+    global _struct_6B
+    if _struct_6B is None:
+        _struct_6B = struct.Struct("<6B")
+    return _struct_6B

@@ -10,15 +10,14 @@
 
 using namespace std;
 int rc_flag_in;
+int record_flag_in;
 bool override_flag 	= false;
 bool pid_status 	= false;
 
 bool simple_manuver_status 	= false;
 bool simple_speed_status	= false;
-bool record_manuver_status 	= false;
-bool record_speed_status	= false;
-bool path_manuver_status	= false;
-bool path_speed_status		= false;
+bool recorder = false;
+bool player = false;
 
 ros::Publisher pub_node_master;
 ros::ServiceClient client_set_flightmode;
@@ -44,111 +43,53 @@ int main(int argc, char **argv)
 		if(rc_flag_in == simple_manuver ){
 			override_flag 			= true;
 			pid_status 				= true;
-			
 			simple_manuver_status 	= true;
 			simple_speed_status		= false;
-			record_manuver_status 	= false;
-			record_speed_status		= false;
-			path_manuver_status		= false;
-			path_speed_status		= false;
-			
-			changeFlightMode("MANUAL");
 			//ROS_ERROR("1");
 		}
 		else if(rc_flag_in == simple_speed){
 			override_flag 			= true;
 			pid_status 				= true;
-			
 			simple_manuver_status 	= false;
 			simple_speed_status		= true;
-			record_manuver_status 	= false;
-			record_speed_status		= false;
-			path_manuver_status		= false;
-			path_speed_status		= false;
-			
-			changeFlightMode("MANUAL");
 			//ROS_ERROR("2");
 		}
-		else if(rc_flag_in == record_manuver){
-			override_flag 			= true;
-			pid_status 				= true;
-			
-			simple_manuver_status	= false;
-			simple_speed_status		= false;
-			record_manuver_status 	= true;
-			record_speed_status		= false;
-			path_manuver_status		= false;
-			path_speed_status		= false;
-			
-			changeFlightMode("MANUAL");
-			//ROS_ERROR("3");
-		}
-		else if(rc_flag_in == record_speed){
-			override_flag 			= true;
-			pid_status 				= true;
-			
-			simple_manuver_status 	= false;
-			simple_speed_status		= false;
-			record_manuver_status 	= false;
-			record_speed_status		= true;
-			path_manuver_status		= false;
-			path_speed_status		= false;
-			
-			changeFlightMode("MANUAL");
-			//ROS_ERROR("4");
-		}
-		else if(rc_flag_in == path_manuver){
-			override_flag = true;
-			pid_status = true;
-			
-			simple_manuver_status 	= false;
-			simple_speed_status		= false;
-			record_manuver_status 	= false;
-			record_speed_status		= false;
-			path_manuver_status		= true;
-			path_speed_status		= false;
-			
-			changeFlightMode("MANUAL");
-			//ROS_ERROR("5");
-		}
-		else if(rc_flag_in == path_speed ){
-			override_flag =  true;
-			pid_status = true;
-			
-			simple_manuver_status 	= false;
-			simple_speed_status		= false;
-			record_manuver_status 	= false;
-			record_speed_status		= false;
-			path_manuver_status		= false;
-			path_speed_status		= true;
-			
-			changeFlightMode("MANUAL");
-			//ROS_ERROR("6");
-		}
+		
 		else if(rc_flag_in == zero_flag){
 			override_flag 			= false;
 			pid_status 				= false;
-			
 			simple_manuver_status 	= false;
 			simple_speed_status		= false;
-			record_manuver_status 	= false;
-			record_speed_status		= false;
-			path_manuver_status		= false;
-			path_speed_status		= false;
-			
-			changeFlightMode("MANUAL");
-			//ROS_ERROR("0");
 		}
-		//ROS_ERROR("%d", rc_flag_in);
+		
+		if(record_flag_in == record_flag  ){
+			recorder = true;
+			player = false;
+			//ROS_ERROR("1");
+		}
+		else if(record_flag_in == player_flag){
+			recorder 				= false;
+			player 					= true;
+			
+			override_flag 			= false;
+			pid_status 				= false;
+			simple_manuver_status 	= false;
+			simple_speed_status		= false;
+			//ROS_ERROR("2");
+		}
+		
+		else if(record_flag_in == zero_record){
+			recorder = false;
+			player = false;
+		}
+		
 		control.override_status = override_flag;
 		control.pid_status = pid_status;
 		
 		control.simple_manuver 	= simple_manuver_status;
 		control.simple_speed	= simple_speed_status;
-		control.record_manuver 	= record_manuver_status;
-		control.record_speed	= record_speed_status;
-		control.path_manuver	= path_manuver_status;
-		control.path_speed		= path_speed_status;
+		control.recorder		= recorder;
+		control.player			= player;
 			
 		pub_node_master.publish(control);
 	}
@@ -156,6 +97,7 @@ int main(int argc, char **argv)
 
 void rc_number_cb	(const whatever::rc_number& number){
 		rc_flag_in = number.rc_number;
+		record_flag_in = number.record_number;
 }
 
 bool changeFlightMode(const char* flight_mode){

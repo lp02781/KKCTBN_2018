@@ -69,6 +69,8 @@
 /home/amvui/AMV/build/whatever/CMakeFiles/install.dir
 /home/amvui/AMV/build/whatever/CMakeFiles/edit_cache.dir
 /home/amvui/AMV/build/whatever/CMakeFiles/install/local.dir
+/home/amvui/AMV/build/whatever/CMakeFiles/player.dir
+/home/amvui/AMV/build/whatever/CMakeFiles/recorder.dir
 /home/amvui/AMV/build/whatever/CMakeFiles/install/strip.dir
 /home/amvui/AMV/build/whatever/CMakeFiles/image_front.dir
 /home/amvui/AMV/build/whatever/CMakeFiles/rebuild_cache.dir

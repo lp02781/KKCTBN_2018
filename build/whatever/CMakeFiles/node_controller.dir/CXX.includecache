@@ -55,6 +55,10 @@ ros/message_operations.h
 -
 
 /home/amvui/AMV/src/whatever/include/whatever/haha.hpp
+iostream
+-
+stdio.h
+-
 
 /home/amvui/AMV/src/whatever/src/main/node_controller.cpp
 ../../include/whatever/haha.hpp
