@@ -6,6 +6,8 @@
 
 bool recorder_status = false;
 int out_channel[8];
+int steer;
+int throttle;
 
 void recorder_status_cb(const whatever::node_master& record);
 void override_motor_cb (const mavros_msgs::OverrideRCIn& motor);
@@ -19,9 +21,20 @@ int main(int argc, char **argv)
 	
 	ROS_WARN("NC : player.cpp active");
 	
+	FILE *steer_file;
+	FILE *throttle_file;
 	while(ros::ok()){
 		if(recorder_status){
-			ROS_INFO("HAHA");
+			steer_file = fopen("steer.txt","w");
+			throttle_file = fopen("throttle.txt","w");
+			while(recorder_status){
+				//ROS_INFO("HAHA");
+				steer=out_channel[0];
+				throttle=out_channel[2];
+				fprintf(steer_file,"%d\n",steer);
+				fprintf(throttle_file,"%d\n",throttle);
+				sleep(update_time);
+			}
 		}
 	}
 	sleep(update_time);

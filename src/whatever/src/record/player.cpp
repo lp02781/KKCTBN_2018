@@ -8,6 +8,7 @@ bool player_status = false;
 int steer;
 int throttle;
 
+mavros_msgs::OverrideRCIn override_out;
 void player_status_cb(const whatever::node_master& record);
 
 int main(int argc, char **argv)
@@ -17,11 +18,31 @@ int main(int argc, char **argv)
 
 	ros::Subscriber sub_player_status = n.subscribe("/kkctbn/node/master", 1, player_status_cb);
 	ros::Publisher pub_override_rc = n.advertise<mavros_msgs::OverrideRCIn>("/mavros/rc/override", 10);
+	
 	ROS_WARN("NC : player.cpp active");
 	
+	FILE *steer_file;
+	FILE *throttle_file;
 	while(ros::ok()){
 		if(player_status){
-			ROS_INFO("HIHI");
+			steer_file = fopen("steer.txt","r");
+			throttle_file = fopen("throttle.txt","r");
+			while(player_status){
+				if(steer_file == NULL){
+					ROS_WARN("steer error!");             
+				}
+				if(throttle_file == NULL){
+					ROS_WARN("throttle error!");             
+				}
+				fscanf(steer_file,"%d\n",&steer);
+				fscanf(throttle_file,"%d\n",&throttle);
+				ROS_WARN("%d ",steer);
+				ROS_WARN("%d\n",throttle);
+				override_out.channels[STEERING]=steer;
+				override_out.channels[THROTTLE]=throttle;
+				pub_override_rc.publish(override_out);
+				sleep(update_time);
+			}
 		}
 	}	
 	sleep(update_time);
