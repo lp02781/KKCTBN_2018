@@ -139,10 +139,12 @@ void node_master_cb	(const whatever::node_master& master){
 	else{simple_manuver_status = "false";}
 	if(master.simple_speed==true){simple_speed_status = "true";}
 	else{simple_speed_status = "false";}
+	
 	if(master.recorder==true){recorder_status = "true";}
 	else{recorder_status = "false";}
 	if(master.player==true){player_status = "true";}
 	else{player_status = "false";}
+	
 }
 
 void override_rc_cb	(const whatever::override_motor& rc){

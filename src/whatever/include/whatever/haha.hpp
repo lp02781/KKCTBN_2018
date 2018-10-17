@@ -14,7 +14,10 @@
 
 #define MIDDLE_PWM 		1520
 
-float update_time=0.001;
+FILE *steer_file;
+FILE *throttle_file;
+
+float update_time=0.1;
 
 int red_setpoint = 213; //camera 640/3
 int center_setpoint = 320;

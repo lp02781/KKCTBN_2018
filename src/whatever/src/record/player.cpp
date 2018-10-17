@@ -21,13 +21,14 @@ int main(int argc, char **argv)
 	
 	ROS_WARN("NC : player.cpp active");
 	
-	FILE *steer_file;
-	FILE *throttle_file;
+	ros::spinOnce();
 	while(ros::ok()){
+		ros::spinOnce();
 		if(player_status){
-			steer_file = fopen("steer.txt","r");
-			throttle_file = fopen("throttle.txt","r");
+			steer_file = fopen("../steer.txt","r");
+			throttle_file = fopen("../throttle.txt","r");
 			while(player_status){
+				//ROS_WARN("HIHI");
 				if(steer_file == NULL){
 					ROS_WARN("steer error!");             
 				}
@@ -36,16 +37,16 @@ int main(int argc, char **argv)
 				}
 				fscanf(steer_file,"%d\n",&steer);
 				fscanf(throttle_file,"%d\n",&throttle);
-				ROS_WARN("%d ",steer);
-				ROS_WARN("%d\n",throttle);
+				//ROS_WARN("%d ",steer);
+				//ROS_WARN("%d\n",throttle);
 				override_out.channels[STEERING]=steer;
 				override_out.channels[THROTTLE]=throttle;
 				pub_override_rc.publish(override_out);
 				sleep(update_time);
+				ros::spinOnce();
 			}
 		}
-	}	
-	sleep(update_time);
+	}
 }
 void player_status_cb(const whatever::node_master& record){
 	player_status=record.player;

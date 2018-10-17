@@ -33,14 +33,14 @@ stdio.h
 /home/amvui/AMV/src/whatever/include/whatever/haha.hpp
 ros/ros.h
 /home/amvui/AMV/src/whatever/src/record/ros/ros.h
-mavros_msgs/OverrideRCIn.h
-/home/amvui/AMV/src/whatever/src/record/mavros_msgs/OverrideRCIn.h
+mavros_msgs/RCIn.h
+/home/amvui/AMV/src/whatever/src/record/mavros_msgs/RCIn.h
 whatever/node_master.h
 /home/amvui/AMV/src/whatever/src/record/whatever/node_master.h
 iostream
 -
 
-/opt/ros/kinetic/include/mavros_msgs/OverrideRCIn.h
+/opt/ros/kinetic/include/mavros_msgs/RCIn.h
 string
 -
 vector
@@ -54,6 +54,8 @@ ros/serialization.h
 ros/builtin_message_traits.h
 -
 ros/message_operations.h
+-
+std_msgs/Header.h
 -
 
 /opt/ros/kinetic/include/ros/advertise_options.h
@@ -701,6 +703,22 @@ ros/forwards.h
 /opt/ros/kinetic/include/ros/ros/forwards.h
 
 /opt/ros/kinetic/include/rosconsole/macros_generated.h
+
+/opt/ros/kinetic/include/std_msgs/Header.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
 
 /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 ros/macros.h
