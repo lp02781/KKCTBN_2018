@@ -699,6 +699,19 @@ recorder/fast:
 .PHONY : recorder/fast
 
 #=============================================================================
+# Target rules for targets named yolo_green
+
+# Build rule for target.
+yolo_green: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 yolo_green
+.PHONY : yolo_green
+
+# fast build rule for target.
+yolo_green/fast:
+	$(MAKE) -f whatever/CMakeFiles/yolo_green.dir/build.make whatever/CMakeFiles/yolo_green.dir/build
+.PHONY : yolo_green/fast
+
+#=============================================================================
 # Target rules for targets named image_front
 
 # Build rule for target.
@@ -749,6 +762,19 @@ mavros_msgs_generate_messages_eus: cmake_check_build_system
 mavros_msgs_generate_messages_eus/fast:
 	$(MAKE) -f whatever/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build.make whatever/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build
 .PHONY : mavros_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named yolo_red
+
+# Build rule for target.
+yolo_red: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 yolo_red
+.PHONY : yolo_red
+
+# fast build rule for target.
+yolo_red/fast:
+	$(MAKE) -f whatever/CMakeFiles/yolo_red.dir/build.make whatever/CMakeFiles/yolo_red.dir/build
+.PHONY : yolo_red/fast
 
 #=============================================================================
 # Target rules for targets named whatever_generate_messages_eus
@@ -1415,10 +1441,12 @@ help:
 	@echo "... pid_gencpp"
 	@echo "... player"
 	@echo "... recorder"
+	@echo "... yolo_green"
 	@echo "... image_front"
 	@echo "... simple_red_controller"
 	@echo "... mavros_msgs_generate_messages_py"
 	@echo "... mavros_msgs_generate_messages_eus"
+	@echo "... yolo_red"
 	@echo "... whatever_generate_messages_eus"
 	@echo "... whatever_geneus"
 	@echo "... _whatever_generate_messages_check_deps_rc_number"

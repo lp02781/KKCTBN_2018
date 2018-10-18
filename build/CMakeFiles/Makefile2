@@ -1429,8 +1429,10 @@ clean: pid/CMakeFiles/pid_gencpp.dir/clean
 # Convenience name for "all" pass in the directory.
 whatever/all: whatever/CMakeFiles/player.dir/all
 whatever/all: whatever/CMakeFiles/recorder.dir/all
+whatever/all: whatever/CMakeFiles/yolo_green.dir/all
 whatever/all: whatever/CMakeFiles/image_front.dir/all
 whatever/all: whatever/CMakeFiles/simple_red_controller.dir/all
+whatever/all: whatever/CMakeFiles/yolo_red.dir/all
 whatever/all: whatever/CMakeFiles/node_controller.dir/all
 whatever/all: whatever/CMakeFiles/avoid_controller.dir/all
 whatever/all: whatever/CMakeFiles/whatever_generate_messages.dir/all
@@ -1445,10 +1447,12 @@ whatever/all: whatever/CMakeFiles/green_hough.dir/all
 # Convenience name for "clean" pass in the directory.
 whatever/clean: whatever/CMakeFiles/player.dir/clean
 whatever/clean: whatever/CMakeFiles/recorder.dir/clean
+whatever/clean: whatever/CMakeFiles/yolo_green.dir/clean
 whatever/clean: whatever/CMakeFiles/image_front.dir/clean
 whatever/clean: whatever/CMakeFiles/simple_red_controller.dir/clean
 whatever/clean: whatever/CMakeFiles/mavros_msgs_generate_messages_py.dir/clean
 whatever/clean: whatever/CMakeFiles/mavros_msgs_generate_messages_eus.dir/clean
+whatever/clean: whatever/CMakeFiles/yolo_red.dir/clean
 whatever/clean: whatever/CMakeFiles/whatever_generate_messages_eus.dir/clean
 whatever/clean: whatever/CMakeFiles/whatever_geneus.dir/clean
 whatever/clean: whatever/CMakeFiles/_whatever_generate_messages_check_deps_rc_number.dir/clean
@@ -1575,6 +1579,43 @@ whatever/CMakeFiles/recorder.dir/clean:
 
 # clean rule for target.
 clean: whatever/CMakeFiles/recorder.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target whatever/CMakeFiles/yolo_green.dir
+
+# All Build rule for target.
+whatever/CMakeFiles/yolo_green.dir/all:
+	$(MAKE) -f whatever/CMakeFiles/yolo_green.dir/build.make whatever/CMakeFiles/yolo_green.dir/depend
+	$(MAKE) -f whatever/CMakeFiles/yolo_green.dir/build.make whatever/CMakeFiles/yolo_green.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=85,86 "Built target yolo_green"
+.PHONY : whatever/CMakeFiles/yolo_green.dir/all
+
+# Include target in all.
+all: whatever/CMakeFiles/yolo_green.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+whatever/CMakeFiles/yolo_green.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amvui/AMV/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/yolo_green.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amvui/AMV/build/CMakeFiles 0
+.PHONY : whatever/CMakeFiles/yolo_green.dir/rule
+
+# Convenience name for target.
+yolo_green: whatever/CMakeFiles/yolo_green.dir/rule
+
+.PHONY : yolo_green
+
+# clean rule for target.
+whatever/CMakeFiles/yolo_green.dir/clean:
+	$(MAKE) -f whatever/CMakeFiles/yolo_green.dir/build.make whatever/CMakeFiles/yolo_green.dir/clean
+.PHONY : whatever/CMakeFiles/yolo_green.dir/clean
+
+# clean rule for target.
+clean: whatever/CMakeFiles/yolo_green.dir/clean
 
 .PHONY : clean
 
@@ -1713,6 +1754,43 @@ whatever/CMakeFiles/mavros_msgs_generate_messages_eus.dir/clean:
 
 # clean rule for target.
 clean: whatever/CMakeFiles/mavros_msgs_generate_messages_eus.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target whatever/CMakeFiles/yolo_red.dir
+
+# All Build rule for target.
+whatever/CMakeFiles/yolo_red.dir/all:
+	$(MAKE) -f whatever/CMakeFiles/yolo_red.dir/build.make whatever/CMakeFiles/yolo_red.dir/depend
+	$(MAKE) -f whatever/CMakeFiles/yolo_red.dir/build.make whatever/CMakeFiles/yolo_red.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amvui/AMV/build/CMakeFiles --progress-num=87,88 "Built target yolo_red"
+.PHONY : whatever/CMakeFiles/yolo_red.dir/all
+
+# Include target in all.
+all: whatever/CMakeFiles/yolo_red.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+whatever/CMakeFiles/yolo_red.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amvui/AMV/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/yolo_red.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amvui/AMV/build/CMakeFiles 0
+.PHONY : whatever/CMakeFiles/yolo_red.dir/rule
+
+# Convenience name for target.
+yolo_red: whatever/CMakeFiles/yolo_red.dir/rule
+
+.PHONY : yolo_red
+
+# clean rule for target.
+whatever/CMakeFiles/yolo_red.dir/clean:
+	$(MAKE) -f whatever/CMakeFiles/yolo_red.dir/build.make whatever/CMakeFiles/yolo_red.dir/clean
+.PHONY : whatever/CMakeFiles/yolo_red.dir/clean
+
+# clean rule for target.
+clean: whatever/CMakeFiles/yolo_red.dir/clean
 
 .PHONY : clean
 

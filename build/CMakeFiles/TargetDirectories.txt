@@ -71,12 +71,14 @@
 /home/amvui/AMV/build/whatever/CMakeFiles/install/local.dir
 /home/amvui/AMV/build/whatever/CMakeFiles/player.dir
 /home/amvui/AMV/build/whatever/CMakeFiles/recorder.dir
+/home/amvui/AMV/build/whatever/CMakeFiles/yolo_green.dir
 /home/amvui/AMV/build/whatever/CMakeFiles/install/strip.dir
 /home/amvui/AMV/build/whatever/CMakeFiles/image_front.dir
 /home/amvui/AMV/build/whatever/CMakeFiles/rebuild_cache.dir
 /home/amvui/AMV/build/whatever/CMakeFiles/simple_red_controller.dir
 /home/amvui/AMV/build/whatever/CMakeFiles/mavros_msgs_generate_messages_py.dir
 /home/amvui/AMV/build/whatever/CMakeFiles/mavros_msgs_generate_messages_eus.dir
+/home/amvui/AMV/build/whatever/CMakeFiles/yolo_red.dir
 /home/amvui/AMV/build/whatever/CMakeFiles/whatever_generate_messages_eus.dir
 /home/amvui/AMV/build/whatever/CMakeFiles/whatever_geneus.dir
 /home/amvui/AMV/build/whatever/CMakeFiles/_whatever_generate_messages_check_deps_rc_number.dir

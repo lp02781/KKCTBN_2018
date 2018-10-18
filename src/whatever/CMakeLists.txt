@@ -212,6 +212,18 @@ ${catkin_LIBRARIES}
 ${OpenCV_LIBRARIES}
 )
 
+add_executable(yolo_green src/image/yolo_green.cpp )
+target_link_libraries(yolo_green
+${catkin_LIBRARIES}
+${OpenCV_LIBRARIES}
+)
+
+add_executable(yolo_red src/image/yolo_red.cpp )
+target_link_libraries(yolo_red
+${catkin_LIBRARIES}
+${OpenCV_LIBRARIES}
+)
+
 add_executable(recorder src/record/recorder.cpp )
 target_link_libraries(recorder
 ${catkin_LIBRARIES}

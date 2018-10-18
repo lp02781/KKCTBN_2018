@@ -18,6 +18,8 @@
 	<node name="image_front" pkg="whatever" output="screen" type="image_front" />
 	<node name="red_hough" pkg="whatever" output="screen" type="red_hough" />
 	<node name="green_hough" pkg="whatever" output="screen" type="green_hough" />
+	<node name="yolo_red" pkg="whatever" output="screen" type="yolo_red" />
+	<node name="yolo_green" pkg="whatever" output="screen" type="yolo_green" />
 	
 	<node name="motor_controller" pkg="whatever" output="screen" type="motor_controller" />
 	<node name="node_controller" pkg="whatever" output="screen" type="node_controller" />

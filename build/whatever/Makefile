@@ -196,6 +196,21 @@ recorder/fast:
 .PHONY : recorder/fast
 
 # Convenience name for target.
+whatever/CMakeFiles/yolo_green.dir/rule:
+	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/yolo_green.dir/rule
+.PHONY : whatever/CMakeFiles/yolo_green.dir/rule
+
+# Convenience name for target.
+yolo_green: whatever/CMakeFiles/yolo_green.dir/rule
+
+.PHONY : yolo_green
+
+# fast build rule for target.
+yolo_green/fast:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/yolo_green.dir/build.make whatever/CMakeFiles/yolo_green.dir/build
+.PHONY : yolo_green/fast
+
+# Convenience name for target.
 whatever/CMakeFiles/image_front.dir/rule:
 	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/image_front.dir/rule
 .PHONY : whatever/CMakeFiles/image_front.dir/rule
@@ -254,6 +269,21 @@ mavros_msgs_generate_messages_eus: whatever/CMakeFiles/mavros_msgs_generate_mess
 mavros_msgs_generate_messages_eus/fast:
 	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build.make whatever/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build
 .PHONY : mavros_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+whatever/CMakeFiles/yolo_red.dir/rule:
+	cd /home/amvui/AMV/build && $(MAKE) -f CMakeFiles/Makefile2 whatever/CMakeFiles/yolo_red.dir/rule
+.PHONY : whatever/CMakeFiles/yolo_red.dir/rule
+
+# Convenience name for target.
+yolo_red: whatever/CMakeFiles/yolo_red.dir/rule
+
+.PHONY : yolo_red
+
+# fast build rule for target.
+yolo_red/fast:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/yolo_red.dir/build.make whatever/CMakeFiles/yolo_red.dir/build
+.PHONY : yolo_red/fast
 
 # Convenience name for target.
 whatever/CMakeFiles/whatever_generate_messages_eus.dir/rule:
@@ -1095,6 +1125,60 @@ src/image/red_hough.cpp.s:
 	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/red_hough.dir/build.make whatever/CMakeFiles/red_hough.dir/src/image/red_hough.cpp.s
 .PHONY : src/image/red_hough.cpp.s
 
+src/image/yolo_green.o: src/image/yolo_green.cpp.o
+
+.PHONY : src/image/yolo_green.o
+
+# target to build an object file
+src/image/yolo_green.cpp.o:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/yolo_green.dir/build.make whatever/CMakeFiles/yolo_green.dir/src/image/yolo_green.cpp.o
+.PHONY : src/image/yolo_green.cpp.o
+
+src/image/yolo_green.i: src/image/yolo_green.cpp.i
+
+.PHONY : src/image/yolo_green.i
+
+# target to preprocess a source file
+src/image/yolo_green.cpp.i:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/yolo_green.dir/build.make whatever/CMakeFiles/yolo_green.dir/src/image/yolo_green.cpp.i
+.PHONY : src/image/yolo_green.cpp.i
+
+src/image/yolo_green.s: src/image/yolo_green.cpp.s
+
+.PHONY : src/image/yolo_green.s
+
+# target to generate assembly for a file
+src/image/yolo_green.cpp.s:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/yolo_green.dir/build.make whatever/CMakeFiles/yolo_green.dir/src/image/yolo_green.cpp.s
+.PHONY : src/image/yolo_green.cpp.s
+
+src/image/yolo_red.o: src/image/yolo_red.cpp.o
+
+.PHONY : src/image/yolo_red.o
+
+# target to build an object file
+src/image/yolo_red.cpp.o:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/yolo_red.dir/build.make whatever/CMakeFiles/yolo_red.dir/src/image/yolo_red.cpp.o
+.PHONY : src/image/yolo_red.cpp.o
+
+src/image/yolo_red.i: src/image/yolo_red.cpp.i
+
+.PHONY : src/image/yolo_red.i
+
+# target to preprocess a source file
+src/image/yolo_red.cpp.i:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/yolo_red.dir/build.make whatever/CMakeFiles/yolo_red.dir/src/image/yolo_red.cpp.i
+.PHONY : src/image/yolo_red.cpp.i
+
+src/image/yolo_red.s: src/image/yolo_red.cpp.s
+
+.PHONY : src/image/yolo_red.s
+
+# target to generate assembly for a file
+src/image/yolo_red.cpp.s:
+	cd /home/amvui/AMV/build && $(MAKE) -f whatever/CMakeFiles/yolo_red.dir/build.make whatever/CMakeFiles/yolo_red.dir/src/image/yolo_red.cpp.s
+.PHONY : src/image/yolo_red.cpp.s
+
 src/main/debug_makara.o: src/main/debug_makara.cpp.o
 
 .PHONY : src/main/debug_makara.o
@@ -1269,12 +1353,14 @@ help:
 	@echo "... install/local"
 	@echo "... player"
 	@echo "... recorder"
+	@echo "... yolo_green"
 	@echo "... install/strip"
 	@echo "... image_front"
 	@echo "... rebuild_cache"
 	@echo "... simple_red_controller"
 	@echo "... mavros_msgs_generate_messages_py"
 	@echo "... mavros_msgs_generate_messages_eus"
+	@echo "... yolo_red"
 	@echo "... whatever_generate_messages_eus"
 	@echo "... whatever_geneus"
 	@echo "... _whatever_generate_messages_check_deps_rc_number"
@@ -1338,6 +1424,12 @@ help:
 	@echo "... src/image/red_hough.o"
 	@echo "... src/image/red_hough.i"
 	@echo "... src/image/red_hough.s"
+	@echo "... src/image/yolo_green.o"
+	@echo "... src/image/yolo_green.i"
+	@echo "... src/image/yolo_green.s"
+	@echo "... src/image/yolo_red.o"
+	@echo "... src/image/yolo_red.i"
+	@echo "... src/image/yolo_red.s"
 	@echo "... src/main/debug_makara.o"
 	@echo "... src/main/debug_makara.i"
 	@echo "... src/main/debug_makara.s"
