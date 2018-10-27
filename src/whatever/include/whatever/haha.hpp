@@ -9,8 +9,8 @@
 #define PWM_UP 	1700
 #define PWM_LOW 1300
 
-#define MAX_PWM 1920
-#define MIN_PWM 1120
+#define MAX_PWM 1600
+#define MIN_PWM 1400
 
 #define MIDDLE_PWM 		1520
 

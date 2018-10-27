@@ -78,13 +78,13 @@ int main(int argc, char **argv)
 			if(state < red_setpoint && state >= noise_state){ //turn left
 				controller.header = left_header;
 				throttle_pwm = MAX_PWM;
-				steer_pwm = MIDDLE_PWM + control_effort;
+				steer_pwm = MIDDLE_PWM - control_effort;
 				//ROS_ERROR("1");
 			}
 			else if(state > red_setpoint && state >= noise_state){ //turn right
 				controller.header = right_header;
 				throttle_pwm = MAX_PWM;
-				steer_pwm = MIDDLE_PWM + control_effort;
+				steer_pwm = MIDDLE_PWM - control_effort;
 				//ROS_ERROR("2");
 			}
 			
