@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/amvui/AMV/devel/include/whatever/flight_mode.h
+/home/mfikih15/Documents/AMV/devel/include/whatever/flight_mode.h
 string
 -
 vector
@@ -22,7 +22,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/amvui/AMV/devel/include/whatever/node_master.h
+/home/mfikih15/Documents/AMV/devel/include/whatever/node_master.h
 string
 -
 vector
@@ -38,7 +38,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/amvui/AMV/devel/include/whatever/rc_number.h
+/home/mfikih15/Documents/AMV/devel/include/whatever/rc_number.h
 string
 -
 vector
@@ -54,15 +54,15 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/amvui/AMV/src/whatever/include/whatever/haha.hpp
+/home/mfikih15/Documents/AMV/src/whatever/include/whatever/haha.hpp
 iostream
 -
 stdio.h
 -
 
-/home/amvui/AMV/src/whatever/src/main/node_controller.cpp
+/home/mfikih15/Documents/AMV/src/whatever/src/main/node_controller.cpp
 ../../include/whatever/haha.hpp
-/home/amvui/AMV/src/whatever/include/whatever/haha.hpp
+/home/mfikih15/Documents/AMV/src/whatever/include/whatever/haha.hpp
 ros/ros.h
 -
 iostream
@@ -70,15 +70,15 @@ iostream
 stdio.h
 -
 mavros_msgs/SetMode.h
-/home/amvui/AMV/src/whatever/src/main/mavros_msgs/SetMode.h
+/home/mfikih15/Documents/AMV/src/whatever/src/main/mavros_msgs/SetMode.h
 mavros_msgs/State.h
-/home/amvui/AMV/src/whatever/src/main/mavros_msgs/State.h
+/home/mfikih15/Documents/AMV/src/whatever/src/main/mavros_msgs/State.h
 whatever/node_master.h
-/home/amvui/AMV/src/whatever/src/main/whatever/node_master.h
+/home/mfikih15/Documents/AMV/src/whatever/src/main/whatever/node_master.h
 whatever/rc_number.h
-/home/amvui/AMV/src/whatever/src/main/whatever/rc_number.h
+/home/mfikih15/Documents/AMV/src/whatever/src/main/whatever/rc_number.h
 whatever/flight_mode.h
-/home/amvui/AMV/src/whatever/src/main/whatever/flight_mode.h
+/home/mfikih15/Documents/AMV/src/whatever/src/main/whatever/flight_mode.h
 
 /opt/ros/kinetic/include/mavros_msgs/SetMode.h
 ros/service_traits.h

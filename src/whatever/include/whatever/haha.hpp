@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdio.h>
+
 #define STEERING 0
 #define THROTTLE 2
 
@@ -9,8 +10,11 @@
 #define PWM_UP 	1700
 #define PWM_LOW 1300
 
-#define MAX_PWM 1600
-#define MIN_PWM 1400
+#define MAX_THROTTLE 1600
+#define MIN_THROTTLE 1400
+
+#define MAX_STEERING 1900
+#define MIN_STEERING 1100
 
 #define MIDDLE_PWM 		1520
 
@@ -43,6 +47,11 @@ int zero_record		= 5;
 int left_header 	= 1;
 int right_header 	= 2;
 int center_header 	= 0;
+
+int x_init=0;
+int y_init=300;
+int width=640;
+int height=180;
 							//nuc  pc
 int LowH_red 	= 125; 		//170  3
 int HighH_red 	= 181;		//179  51

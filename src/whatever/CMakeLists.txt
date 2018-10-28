@@ -212,14 +212,14 @@ ${catkin_LIBRARIES}
 ${OpenCV_LIBRARIES}
 )
 
-add_executable(yolo_green src/image/yolo_green.cpp )
-target_link_libraries(yolo_green
+add_executable(simple_red src/image/simple_red.cpp )
+target_link_libraries(simple_red
 ${catkin_LIBRARIES}
 ${OpenCV_LIBRARIES}
 )
 
-add_executable(yolo_red src/image/yolo_red.cpp )
-target_link_libraries(yolo_red
+add_executable(simple_green src/image/simple_green.cpp )
+target_link_libraries(simple_green
 ${catkin_LIBRARIES}
 ${OpenCV_LIBRARIES}
 )

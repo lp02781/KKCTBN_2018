@@ -78,32 +78,32 @@ int main(int argc, char **argv)
 			
 			if(state < center_setpoint && state >= noise_state){ //turn left
 				controller.header = left_header;
-				throttle_pwm = MAX_PWM;
+				throttle_pwm = MAX_THROTTLE;
 				steer_pwm = MIDDLE_PWM - control_effort;
 				//ROS_ERROR("1");
 			}
 			else if(state > center_setpoint && state >= noise_state){ //turn right
 				controller.header = right_header;
-				throttle_pwm = MAX_PWM;
+				throttle_pwm = MAX_THROTTLE;
 				steer_pwm = MIDDLE_PWM - control_effort;
 				//ROS_ERROR("2");
 			}
 			
-			else if(red_x == 0 && green_x !=0){
+			else if(red_x == 0 && green_x !=0){//turn left
 				controller.header = left_header;
-				throttle_pwm = MAX_PWM;
-				steer_pwm = MIN_PWM;
+				throttle_pwm = MAX_THROTTLE;
+				steer_pwm = MIN_STEERING;
 			}
 			
-			else if(red_x != 0 && green_x ==0){
+			else if(red_x != 0 && green_x ==0){//turn right
 				controller.header = right_header;
-				throttle_pwm = MAX_PWM;
-				steer_pwm = MAX_PWM;
+				throttle_pwm = MAX_THROTTLE;
+				steer_pwm = MAX_STEERING;
 			}
 			
 			else {											//just go away
 				controller.header = center_header;
-				throttle_pwm = MAX_PWM;
+				throttle_pwm = MAX_THROTTLE;
 				steer_pwm = MIDDLE_PWM;
 				//ROS_ERROR("3");
 			}			
@@ -115,14 +115,7 @@ int main(int argc, char **argv)
 }
 
 void get_state(){
-	
-	if(count_red == 0){red_state = 0;}
-	else{red_state = red_x/count_red;}
-	
-	if(count_green == 0){green_state = 0;}
-	else{green_state = red_x/count_green;}
-	
-	state = ((red_state)+(green_state))/2;
+	state = ((red_x)+(green_x))/2;
 }
 void image_process_cb(const whatever::image_process& image){
 	red_x 		= image.state_red;

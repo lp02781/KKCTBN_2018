@@ -20,18 +20,16 @@ namespace patch{
     }
 }
 
-Mat Original;
-Mat imgOriginal, imgHSV, imgThresholded, imgErode, imgDilate;
+Mat receive_image;
 
 int sum_x;
 int sum_y;
 int count_circle;
 int state;
 int setpoint_camera;
-int imageHeight;
 int state_now;
 
-void imageProcessing();
+void imageProcessing(Mat input_image);
 void setpoint_cb (const whatever::setpoint& point);
 
 whatever::image_process image;
@@ -41,9 +39,9 @@ void imageCallback(const sensor_msgs::CompressedImageConstPtr& msg)
 {
   try
   {
-    Original = cv::imdecode(cv::Mat(msg->data),1);//convert compressed image data to cv::Mat
+    receive_image = cv::imdecode(cv::Mat(msg->data),1);//convert compressed image data to cv::Mat
     waitKey(10);
-    imageProcessing();
+    imageProcessing(receive_image);
   }
   catch (cv_bridge::Exception& e)
   {
@@ -70,6 +68,10 @@ int main(int argc, char **argv){
 	createTrackbar("HighS", "panel_red", &HighS_red, 255);
 	createTrackbar("LowV", "panel_red", &LowV_red, 255);
 	createTrackbar("HighV", "panel_red", &HighV_red, 255);
+	createTrackbar("x", "panel_red", &x_init, 700); //Hue (0 - 255)
+	createTrackbar("y", "panel_red", &y_init, 700);
+	createTrackbar("width", "panel_red", &width, 700); //Saturation (0 - 255)
+	createTrackbar("hight", "panel_red", &height, 700);
 	createTrackbar("MaxRadius", "panel_red", &max_radius_red, 1000);
 	createTrackbar("MinRadius", "panel_red", &min_radius_red, 1000);
 	createTrackbar("noise", "panel_red", &Noise_red, 255);
@@ -79,11 +81,29 @@ int main(int argc, char **argv){
 	}
 }
 
-void imageProcessing(){
+void imageProcessing(Mat input_image){
+	Mat imgOriginal, imgHSV, imgThresholded, imgErode, imgDilate, imgDebug;
+	
+	imgDebug = input_image.clone();
+	medianBlur(imgDebug, imgDebug, 5);
+	cvtColor(imgDebug, imgDebug, COLOR_BGR2HSV);
+	inRange(imgDebug, Scalar(LowH_red, LowS_red, LowV_red), Scalar(HighH_red, HighS_red, HighV_red), imgDebug);//range threshold
+	erode(imgDebug, imgDebug, getStructuringElement(MORPH_ELLIPSE, Size(Noise_red, Noise_red)) );
+	dilate( imgDebug, imgDebug, getStructuringElement(MORPH_ELLIPSE, Size(Noise_red, Noise_red)) ); 
+	dilate(imgDebug, imgDebug, getStructuringElement(MORPH_ELLIPSE, Size(Noise_red, Noise_red)) ); 
+	erode(imgDebug, imgDebug, getStructuringElement(MORPH_ELLIPSE, Size(Noise_red, Noise_red)) ); 
+	
+	Rect region_of_interest = Rect(x_init, y_init, width, height);
+	Mat Original = input_image(region_of_interest);
 	
 	Size sz = Original.size();
-	imageHeight = sz.height; 
-
+	int original_height = sz.height; 
+	int original_width	= sz.width;
+	
+	Size sx = input_image.size();
+	int input_height = sx.height;
+	int input_width = sx.width; 
+	
 	sum_x = 0;
 	sum_y = 0;
 	count_circle = 0;
@@ -109,13 +129,13 @@ void imageProcessing(){
 		
 	for (size_t i = 0; i < circles.size(); i++ ){
 		int x = round(circles[i][0]);
-		int y = round(circles[i][1]);
+		int y = round(circles[i][1])+y_init;
 		Point center(x, y);
 		int radius = round(circles[i][2]);
-		circle(Original, center, radius, Scalar(255,0,255), 3, LINE_AA);
+		circle(input_image, center, radius, Scalar(255,0,255), 3, LINE_AA);
 		string strX = patch::to_string(x);
 		string strY = patch::to_string(y);
-		putText(Original, strX + " , " + strY, Point(x-radius/2, y), 
+		putText(input_image, strX + " , " + strY, Point(x-radius/2, y), 
 				FONT_HERSHEY_SIMPLEX, 0.3, Scalar(50, 255, 100), 1);
 		sum_x = sum_x + x;
 		sum_y = sum_y + y;
@@ -128,14 +148,24 @@ void imageProcessing(){
 	else{
 		state = 0;
 	}
-	line( Original, Point( setpoint_camera, 0 ), Point( setpoint_camera, imageHeight), Scalar( 50, 50, 50 ), 2, 8 );
-	line( Original, Point( state_now, 0 ), Point( state_now, imageHeight), Scalar( 150, 150, 150 ), 2, 8 );
+	line( Original, Point( setpoint_camera, 0 ), Point( setpoint_camera, original_height), Scalar( 50, 50, 50 ), 2, 8 );
+	line( Original, Point( state_now, 0 ), Point( state_now, original_height), Scalar( 150, 150, 150 ), 2, 8 );
+	line( input_image, Point( setpoint_camera, 0 ), Point( setpoint_camera, input_height), Scalar( 50, 50, 50 ), 2, 8 );
+	line( input_image, Point( state_now, 0 ), Point( state_now, input_height), Scalar( 150, 150, 150 ), 2, 8 );
+	
+	line( input_image, Point( x_init, y_init ), Point( x_init+original_width, y_init), Scalar( 100, 100, 100 ), 2, 8 );
+	line( input_image, Point( x_init, y_init+original_height ), Point( x_init+original_width, y_init+original_height), Scalar( 100, 100, 100 ), 2, 8 );	
+	line( input_image, Point( x_init, y_init ), Point( x_init, y_init+original_height), Scalar( 100, 100, 100 ), 2, 8 );
+	line( input_image, Point( x_init+original_width, y_init ), Point( x_init+original_width, y_init+original_height), Scalar( 100, 100, 100 ), 2, 8 );
+	
 	image.state_red = state;
 	image.count_red = count_circle;
 	pub_state_camera.publish(image);
 	
 	imshow("Threshold_Red", imgThresholded);
-	imshow("Original_Red", Original); 
+	imshow("Input_Red", input_image);
+	//imshow("Roi_Red", Original);
+	//imshow("All_Red", imgDebug);
 }
 void setpoint_cb (const whatever::setpoint& point){
 	setpoint_camera = point.setpoint;

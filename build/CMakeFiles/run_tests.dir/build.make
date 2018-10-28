@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amvui/AMV/src
+CMAKE_SOURCE_DIR = /home/mfikih15/Documents/AMV/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amvui/AMV/build
+CMAKE_BINARY_DIR = /home/mfikih15/Documents/AMV/build
 
 # Utility rule file for run_tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/run_tests.dir/clean:
 .PHONY : CMakeFiles/run_tests.dir/clean
 
 CMakeFiles/run_tests.dir/depend:
-	cd /home/amvui/AMV/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amvui/AMV/src /home/amvui/AMV/src /home/amvui/AMV/build /home/amvui/AMV/build /home/amvui/AMV/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mfikih15/Documents/AMV/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mfikih15/Documents/AMV/src /home/mfikih15/Documents/AMV/src /home/mfikih15/Documents/AMV/build /home/mfikih15/Documents/AMV/build /home/mfikih15/Documents/AMV/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/run_tests.dir/depend
 

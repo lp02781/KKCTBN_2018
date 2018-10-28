@@ -41,21 +41,21 @@ void override_input_cb(const whatever::override_motor& override_recv){
 	for(int i=0; i < 8; i++) override_out.channels[i] = 0;
 	if(override_status == true){
 		//ROS_ERROR("1");
-		if (override_recv.throttle > MAX_PWM){
-			override_out.channels[THROTTLE] = MAX_PWM;
+		if (override_recv.throttle > MAX_THROTTLE){
+			override_out.channels[THROTTLE] = MAX_THROTTLE;
 		}
-		else if (override_recv.throttle < MIN_PWM){
-			override_out.channels[THROTTLE] = MIN_PWM;
+		else if (override_recv.throttle < MIN_THROTTLE){
+			override_out.channels[THROTTLE] = MIN_THROTTLE;
 		}
 		else {
 			override_out.channels[THROTTLE] = override_recv.throttle;
 		}
 
-		if (override_recv.steering > MAX_PWM){
-			override_out.channels[STEERING] = MAX_PWM;
+		if (override_recv.steering > MAX_STEERING){
+			override_out.channels[STEERING] = MAX_STEERING;
 		}
-		else if (override_recv.steering < MIN_PWM){
-			override_out.channels[STEERING] = MIN_PWM;
+		else if (override_recv.steering < MIN_STEERING){
+			override_out.channels[STEERING] = MIN_STEERING;
 		}
 		else {
 			override_out.channels[STEERING] = override_recv.steering;

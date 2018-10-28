@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amvui/AMV/src
+CMAKE_SOURCE_DIR = /home/mfikih15/Documents/AMV/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amvui/AMV/build
+CMAKE_BINARY_DIR = /home/mfikih15/Documents/AMV/build
 
 # Utility rule file for mavros_msgs_generate_messages_lisp.
 
@@ -63,10 +63,10 @@ whatever/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/build: mavros_msgs_ge
 .PHONY : whatever/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/build
 
 whatever/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/clean:
-	cd /home/amvui/AMV/build/whatever && $(CMAKE_COMMAND) -P CMakeFiles/mavros_msgs_generate_messages_lisp.dir/cmake_clean.cmake
+	cd /home/mfikih15/Documents/AMV/build/whatever && $(CMAKE_COMMAND) -P CMakeFiles/mavros_msgs_generate_messages_lisp.dir/cmake_clean.cmake
 .PHONY : whatever/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/clean
 
 whatever/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/depend:
-	cd /home/amvui/AMV/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amvui/AMV/src /home/amvui/AMV/src/whatever /home/amvui/AMV/build /home/amvui/AMV/build/whatever /home/amvui/AMV/build/whatever/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mfikih15/Documents/AMV/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mfikih15/Documents/AMV/src /home/mfikih15/Documents/AMV/src/whatever /home/mfikih15/Documents/AMV/build /home/mfikih15/Documents/AMV/build/whatever /home/mfikih15/Documents/AMV/build/whatever/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : whatever/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/depend
 

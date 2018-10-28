@@ -77,39 +77,39 @@ int main(int argc, char **argv)
 			
 			if(state < red_setpoint && state >= noise_state){ //turn left
 				controller.header = left_header;
-				throttle_pwm = MAX_PWM;
+				throttle_pwm = MAX_THROTTLE;
 				steer_pwm = MIDDLE_PWM - control_effort;
 				//ROS_ERROR("1");
 			}
 			else if(state > red_setpoint && state >= noise_state){ //turn right
 				controller.header = right_header;
-				throttle_pwm = MAX_PWM;
+				throttle_pwm = MAX_THROTTLE;
 				steer_pwm = MIDDLE_PWM - control_effort;
 				//ROS_ERROR("2");
 			}
 			
-			else if(red_x == 0 && green_x !=0){
+			else if(red_x == 0 && green_x !=0){//turn left
 				controller.header = left_header;
-				throttle_pwm = MAX_PWM;
-				steer_pwm = MIN_PWM;
+				throttle_pwm = MAX_THROTTLE;
+				steer_pwm = MIN_STEERING;
 			}
 			
-			else if(red_x != 0 && green_x == 0){
+			else if(red_x != 0 && green_x == 0){//turn right
 				controller.header = right_header;
-				throttle_pwm = MAX_PWM;
-				steer_pwm = MAX_PWM;
+				throttle_pwm = MAX_THROTTLE;
+				steer_pwm = MAX_STEERING;
 			}
 			
 			else {											//just go away
 				controller.header = center_header;
-				throttle_pwm = MAX_PWM;
+				throttle_pwm = MAX_THROTTLE;
 				steer_pwm = MIDDLE_PWM;
 				//ROS_ERROR("3");
 			}
+			controller.steering = steer_pwm;
+			controller.throttle = throttle_pwm;
+			pub_override_rc.publish(controller);	
 		}
-		controller.steering = steer_pwm;
-		controller.throttle = throttle_pwm;
-		pub_override_rc.publish(controller);	
 	}
 }
 
