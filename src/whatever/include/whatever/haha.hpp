@@ -30,9 +30,9 @@ int number_camera = 0;
 
 int noise_state = 5;
 
-float kp = 3;
-float ki = 1;
-float kd = 0.5;
+float kp = 1;
+float ki = 0;
+float kd = 0;
 
 float delta_t = 0.01;
 float initial_time = 0; 
