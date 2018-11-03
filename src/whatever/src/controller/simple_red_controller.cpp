@@ -60,8 +60,9 @@ int main(int argc, char **argv)
 		ros::spinOnce();
 	
 		get_state();
-	
-		if(simple_status == true){
+		steer_pwm=0;
+		throttle_pwm=0;
+		while(simple_status == true){
 			point.setpoint = red_setpoint;
 			point.state=state;
 			pub_setpoint.publish(point);
@@ -88,24 +89,20 @@ int main(int argc, char **argv)
 				//ROS_ERROR("2");
 			}
 			
-			else if(red_x == 0 && green_x !=0){//turn left
+			else if(red_x == 0){//turn left
 				controller.header = left_header;
 				throttle_pwm = MAX_THROTTLE;
 				steer_pwm = MIN_STEERING;
-			}
-			
-			else if(red_x != 0 && green_x == 0){//turn right
-				controller.header = right_header;
-				throttle_pwm = MAX_THROTTLE;
-				steer_pwm = MAX_STEERING;
+				//ROS_ERROR("3");
 			}
 			
 			else {											//just go away
 				controller.header = center_header;
 				throttle_pwm = MAX_THROTTLE;
 				steer_pwm = MIDDLE_PWM;
-				//ROS_ERROR("3");
+				//ROS_ERROR("5");
 			}
+			
 			controller.steering = steer_pwm;
 			controller.throttle = throttle_pwm;
 			pub_override_rc.publish(controller);	

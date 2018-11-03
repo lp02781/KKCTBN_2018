@@ -16,8 +16,8 @@ int main(int argc, char **argv)
 	ros::init(argc, argv, "recorder");
 	ros::NodeHandle n;
 
-	ros::Subscriber sub_recorder_status = n.subscribe("/kkctbn/node/master", 1, recorder_status_cb);
-	ros::Subscriber sub_rc_in 			= n.subscribe("/mavros/rc/in", 1, rc_in_cb);
+	ros::Subscriber sub_recorder_status = n.subscribe("/kkctbn/node/master", 8, recorder_status_cb);
+	ros::Subscriber sub_rc_in 			= n.subscribe("/mavros/rc/in", 8, rc_in_cb);
 
 	ROS_WARN("NC : player.cpp active");
 	
@@ -25,6 +25,7 @@ int main(int argc, char **argv)
 	while(ros::ok()){
 		ros::spinOnce();
 		if(recorder_status){
+			sleep(0.5);
 			//ROS_INFO("HOHO");
 			
 			steer_file = fopen("../steer.txt","w");

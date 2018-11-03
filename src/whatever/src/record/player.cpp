@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 	ros::init(argc, argv, "recorder");
 	ros::NodeHandle n;
 
-	ros::Subscriber sub_player_status = n.subscribe("/kkctbn/node/master", 1, player_status_cb);
+	ros::Subscriber sub_player_status = n.subscribe("/kkctbn/node/master", 8, player_status_cb);
 	ros::Publisher pub_override_rc = n.advertise<mavros_msgs::OverrideRCIn>("/mavros/rc/override", 10);
 	
 	ROS_WARN("NC : player.cpp active");
@@ -25,6 +25,7 @@ int main(int argc, char **argv)
 	while(ros::ok()){
 		ros::spinOnce();
 		if(player_status){
+			sleep(0.5);
 			steer_file = fopen("../steer.txt","r");
 			throttle_file = fopen("../throttle.txt","r");
 			while(player_status){

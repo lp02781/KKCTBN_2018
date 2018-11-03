@@ -49,7 +49,7 @@ int right_header 	= 2;
 int center_header 	= 0;
 
 int x_init=0;
-int y_init=300;
+int y_init=160;
 int width=640;
 int height=180;
 							//nuc  pc

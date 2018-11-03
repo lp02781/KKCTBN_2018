@@ -10,8 +10,8 @@
 	<arg name="topic_pid_out" default="/kkctbn/pid/out" />
 	<!-- topic for kp,kd, ki /kkctbn/pid/const -->
 	
-	<node name="simple_red_controller" pkg="whatever" output="screen" type="simple_red_controller" />
-	<node name="avoid_controller" pkg="whatever" output="screen" type="avoid_controller" />
+	<node name="simple_red_controller" pkg="whatever" output="screen" type="simple_red_controller"/>
+	<node name="avoid_controller" pkg="whatever" output="screen" type="avoid_controller"/>
 	
 	<node name="control" pkg="pid" output="screen" type="controller_adaptive" args="$(arg kp) $(arg ki) $(arg kd) $(arg pid_rate) -tfp $(arg topic_pid_in) -tfc $(arg topic_pid_out) -ul $(arg upper_limit) -ll $(arg lower_limit) -aw $(arg anti_windup)" />
 	
@@ -23,11 +23,11 @@
 	<!--node name="simple_red" pkg="whatever" output="screen" type="simple_red" -->
 	<!--node name="simple_green" pkg="whatever" output="screen" type="simple_green" -->
 	
-	<node name="motor_controller" pkg="whatever" output="screen" type="motor_controller" />
+	<node name="motor_controller" pkg="whatever" output="screen" type="motor_controller"/>
 	<node name="node_controller" pkg="whatever" output="screen" type="node_controller" />
 	<node name="remote_monitor" pkg="whatever" output="screen" type="remote_monitor" />
 	<node name="debug_makara" pkg="whatever" output="screen" type="debug_makara" />
 	
-	<node name="recorder" pkg="whatever" output="screen" type="recorder" />
-	<node name="player" pkg="whatever" output="screen" type="player" />
+	<node name="recorder" pkg="whatever" output="screen" type="recorder"/>
+	<node name="player" pkg="whatever" output="screen" type="player"/>
 </launch>

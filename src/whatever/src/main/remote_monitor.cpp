@@ -25,14 +25,14 @@ int main(int argc, char **argv){
 
 	ros::init(argc, argv, "remote_monitor");
 	ros::NodeHandle ovrd_mon;
-	pub_rc_flag 				= ovrd_mon.advertise<whatever::rc_number>("/kkctbn/rc/number", 1);
-	ros::Subscriber rc_in_sub 	= ovrd_mon.subscribe("/mavros/rc/in", 1, rcinReceiver);
+	pub_rc_flag 				= ovrd_mon.advertise<whatever::rc_number>("/kkctbn/rc/number", 8);
+	ros::Subscriber rc_in_sub 	= ovrd_mon.subscribe("/mavros/rc/in", 8, rcinReceiver);
 	
 	ROS_WARN("NC : remote_monitor.cpp active");
 	
 	while(ros::ok()){
 		ros::spinOnce();
-		
+		//ROS_ERROR("%d", rc_in_data_channel[SIMPLE_PIN]);
 		if(rc_in_data_channel[SIMPLE_PIN] < PWM_LOW ){
 			//ROS_INFO("1");
 			number_flight = simple_manuver;
@@ -42,6 +42,7 @@ int main(int argc, char **argv){
 			number_flight = simple_speed;
 		}
 		else{
+			//ROS_INFO("0");
 			number_flight = zero_flag;
 		}
 		if(rc_in_data_channel[RECORD_PIN] < PWM_LOW ){
@@ -56,6 +57,7 @@ int main(int argc, char **argv){
 			//ROS_INFO("5");
 			record_number = zero_record;
 		}
+		sleep(0.5);
 		rc_action.rc_number = number_flight;
 		rc_action.record_number = record_number;
 		pub_rc_flag.publish(rc_action);
@@ -65,7 +67,7 @@ int main(int argc, char **argv){
 
 void rcinReceiver(const mavros_msgs::RCIn& rc_in_data){
 	int x;
-	for (x = 0; x<8;x++){
+	for (x=0; x<8;x++){
 		rc_in_data_channel[x] = rc_in_data.channels[x];
 	}
 }

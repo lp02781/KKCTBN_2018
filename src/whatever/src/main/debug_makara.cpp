@@ -63,15 +63,15 @@ int main(int argc, char **argv)
 	ros::init(argc, argv, "debug_makara");
 	ros::NodeHandle nh;
 	
-	ros::Subscriber sub_node_master 	= nh.subscribe("/kkctbn/node/master", 1, node_master_cb);
-	ros::Subscriber sub_override_rc 	= nh.subscribe("/kkctbn/override/motor", 1, override_rc_cb);
-	ros::Subscriber sub_rc_number 		= nh.subscribe("/kkctbn/rc/number", 1, rc_number_cb);
-	ros::Subscriber sub_flight_mode 	= nh.subscribe("/kkctbn/flight/mode", 1, flight_mode_cb);
-	ros::Subscriber sub_image_process 	= nh.subscribe("/kkctbn/image/process", 1, image_process_cb);
-	ros::Subscriber sub_setpoint 		= nh.subscribe("/kkctbn/image/setpoint", 1, setpoint_cb);
-	ros::Subscriber sub_override_motor 	= nh.subscribe("/mavros/rc/override", 1, override_motor_cb);
-	ros::Subscriber sub_rc_in 			= nh.subscribe("/mavros/rc/in", 1, rc_in_cb);
-	ros::Subscriber sub_state_rc 		= nh.subscribe("/mavros/state", 1, rc_state_cb);
+	ros::Subscriber sub_node_master 	= nh.subscribe("/kkctbn/node/master", 8, node_master_cb);
+	ros::Subscriber sub_override_rc 	= nh.subscribe("/kkctbn/override/motor", 8, override_rc_cb);
+	ros::Subscriber sub_rc_number 		= nh.subscribe("/kkctbn/rc/number", 8, rc_number_cb);
+	ros::Subscriber sub_flight_mode 	= nh.subscribe("/kkctbn/flight/mode", 8, flight_mode_cb);
+	ros::Subscriber sub_image_process 	= nh.subscribe("/kkctbn/image/process", 8, image_process_cb);
+	ros::Subscriber sub_setpoint 		= nh.subscribe("/kkctbn/image/setpoint", 8, setpoint_cb);
+	ros::Subscriber sub_override_motor 	= nh.subscribe("/mavros/rc/override", 8, override_motor_cb);
+	ros::Subscriber sub_rc_in 			= nh.subscribe("/mavros/rc/in", 8, rc_in_cb);
+	ros::Subscriber sub_state_rc 		= nh.subscribe("/mavros/state", 8, rc_state_cb);
 	ros::Subscriber sub_pid_x_out 		= nh.subscribe("/kkctbn/pid/out", 10, pid_receiver_cb );
 
 	ROS_WARN("NC : debug_makara.cpp active");

@@ -22,8 +22,8 @@ int main(int argc, char **argv)
 
   pub_override_rc = n.advertise<mavros_msgs::OverrideRCIn>("/mavros/rc/override", 10);
   
-  ros::Subscriber sub_override_motor = n.subscribe("/kkctbn/override/motor", 1, override_input_cb);
-  ros::Subscriber sub_override_status = n.subscribe("/kkctbn/node/master", 1, override_status_cb);
+  ros::Subscriber sub_override_motor = n.subscribe("/kkctbn/override/motor", 8, override_input_cb);
+  ros::Subscriber sub_override_status = n.subscribe("/kkctbn/node/master", 8, override_status_cb);
   
   ROS_WARN("NC : motor_controller.cpp active");
   

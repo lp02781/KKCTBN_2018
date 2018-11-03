@@ -62,7 +62,9 @@ int main(int argc, char **argv)
 		sleep(0.5);
 		ros::spinOnce();
 		get_state();
-		if(avoid_status == true){
+		steer_pwm=0;
+		throttle_pwm=0;
+		while(avoid_status == true){
 			point.setpoint = center_setpoint;
 			point.state=state;
 			pub_setpoint.publish(point);
@@ -80,32 +82,34 @@ int main(int argc, char **argv)
 				controller.header = left_header;
 				throttle_pwm = MAX_THROTTLE;
 				steer_pwm = MIDDLE_PWM - control_effort;
-				//ROS_ERROR("1");
+				//ROS_ERROR("6");
 			}
 			else if(state > center_setpoint && state >= noise_state){ //turn right
 				controller.header = right_header;
 				throttle_pwm = MAX_THROTTLE;
 				steer_pwm = MIDDLE_PWM - control_effort;
-				//ROS_ERROR("2");
+				//ROS_ERROR("7");
 			}
 			
 			else if(red_x == 0 && green_x !=0){//turn left
 				controller.header = left_header;
 				throttle_pwm = MAX_THROTTLE;
 				steer_pwm = MIN_STEERING;
+				//ROS_ERROR("8");
 			}
 			
 			else if(red_x != 0 && green_x ==0){//turn right
 				controller.header = right_header;
 				throttle_pwm = MAX_THROTTLE;
 				steer_pwm = MAX_STEERING;
+				//ROS_ERROR("9");
 			}
 			
 			else {											//just go away
 				controller.header = center_header;
 				throttle_pwm = MAX_THROTTLE;
 				steer_pwm = MIDDLE_PWM;
-				//ROS_ERROR("3");
+				//ROS_ERROR("10");
 			}			
 			controller.steering = steer_pwm;
 			controller.throttle = throttle_pwm;

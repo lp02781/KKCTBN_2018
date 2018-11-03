@@ -32,14 +32,15 @@ int main(int argc, char **argv)
 	ros::init(argc, argv, "node_controller");
 	ros::NodeHandle nh;
 	
-	pub_node_master = nh.advertise<whatever::node_master>("/kkctbn/node/master", 1, true);
-	ros::Subscriber sub_rc_number = nh.subscribe("/kkctbn/rc/number", 1, rc_number_cb);
+	pub_node_master = nh.advertise<whatever::node_master>("/kkctbn/node/master", 8, true);
+	ros::Subscriber sub_rc_number = nh.subscribe("/kkctbn/rc/number", 8, rc_number_cb);
 	client_set_flightmode = nh.serviceClient<mavros_msgs::SetMode>("/mavros/set_mode");
 	
 	ROS_WARN("NC : node_controller.cpp active");
 	
 	while(ros::ok()){
 		ros::spinOnce();
+		sleep(0.5);
 		if(rc_flag_in == simple_manuver ){
 			override_flag 			= true;
 			pid_status 				= true;
@@ -60,12 +61,13 @@ int main(int argc, char **argv)
 			pid_status 				= false;
 			simple_manuver_status 	= false;
 			simple_speed_status		= false;
+			//ROS_ERROR("3");
 		}
 		
 		if(record_flag_in == record_flag  ){
 			recorder = true;
 			player = false;
-			//ROS_ERROR("1");
+			//ROS_ERROR("4");
 		}
 		else if(record_flag_in == player_flag){
 			recorder 				= false;
@@ -75,12 +77,13 @@ int main(int argc, char **argv)
 			pid_status 				= false;
 			simple_manuver_status 	= false;
 			simple_speed_status		= false;
-			//ROS_ERROR("2");
+			//ROS_ERROR("5");
 		}
 		
 		else if(record_flag_in == zero_record){
 			recorder = false;
 			player = false;
+			//ROS_ERROR("6");
 		}
 		
 		control.override_status = override_flag;
