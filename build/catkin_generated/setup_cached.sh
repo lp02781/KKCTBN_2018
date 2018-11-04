@@ -7,4 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/home/mfikih15/Documents/AMV/build"
+export PWD="/home/amvui/AMV/build"

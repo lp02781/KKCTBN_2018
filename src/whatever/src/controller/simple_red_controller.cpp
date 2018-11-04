@@ -59,10 +59,12 @@ int main(int argc, char **argv)
 		sleep(0.5);
 		ros::spinOnce();
 	
-		get_state();
 		steer_pwm=0;
 		throttle_pwm=0;
 		while(simple_status == true){
+			
+			state=red_x;
+			
 			point.setpoint = red_setpoint;
 			point.state=state;
 			pub_setpoint.publish(point);
@@ -73,9 +75,11 @@ int main(int argc, char **argv)
 			pub_pid_in.publish(pid_in);
 			
 			ros::spinOnce();
+			throttle_pwm = MAX_THROTTLE;
+			steer_pwm = MIDDLE_PWM - control_effort;
 			
 			//ROS_ERROR("%d", state);
-			
+			/*
 			if(state < red_setpoint && state >= noise_state){ //turn left
 				controller.header = left_header;
 				throttle_pwm = MAX_THROTTLE;
@@ -102,7 +106,7 @@ int main(int argc, char **argv)
 				steer_pwm = MIDDLE_PWM;
 				//ROS_ERROR("5");
 			}
-			
+			*/
 			controller.steering = steer_pwm;
 			controller.throttle = throttle_pwm;
 			pub_override_rc.publish(controller);	
@@ -110,9 +114,6 @@ int main(int argc, char **argv)
 	}
 }
 
-void get_state(){
-	state = red_x;
-}
 void image_process_cb(const whatever::image_process& image){
 	red_x 		= image.state_red;
 	green_x 	= image.state_green;

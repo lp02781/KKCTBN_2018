@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mfikih15/Documents/AMV/src
+CMAKE_SOURCE_DIR = /home/amvui/AMV/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mfikih15/Documents/AMV/build
+CMAKE_BINARY_DIR = /home/amvui/AMV/build
 
 # Utility rule file for pid_gennodejs.
 
@@ -63,10 +63,10 @@ pid/CMakeFiles/pid_gennodejs.dir/build: pid_gennodejs
 .PHONY : pid/CMakeFiles/pid_gennodejs.dir/build
 
 pid/CMakeFiles/pid_gennodejs.dir/clean:
-	cd /home/mfikih15/Documents/AMV/build/pid && $(CMAKE_COMMAND) -P CMakeFiles/pid_gennodejs.dir/cmake_clean.cmake
+	cd /home/amvui/AMV/build/pid && $(CMAKE_COMMAND) -P CMakeFiles/pid_gennodejs.dir/cmake_clean.cmake
 .PHONY : pid/CMakeFiles/pid_gennodejs.dir/clean
 
 pid/CMakeFiles/pid_gennodejs.dir/depend:
-	cd /home/mfikih15/Documents/AMV/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mfikih15/Documents/AMV/src /home/mfikih15/Documents/AMV/src/pid /home/mfikih15/Documents/AMV/build /home/mfikih15/Documents/AMV/build/pid /home/mfikih15/Documents/AMV/build/pid/CMakeFiles/pid_gennodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/amvui/AMV/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amvui/AMV/src /home/amvui/AMV/src/pid /home/amvui/AMV/build /home/amvui/AMV/build/pid /home/amvui/AMV/build/pid/CMakeFiles/pid_gennodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : pid/CMakeFiles/pid_gennodejs.dir/depend
 

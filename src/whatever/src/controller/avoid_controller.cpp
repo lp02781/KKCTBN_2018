@@ -61,10 +61,12 @@ int main(int argc, char **argv)
 	while(ros::ok()){
 		sleep(0.5);
 		ros::spinOnce();
-		get_state();
+
 		steer_pwm=0;
 		throttle_pwm=0;
 		while(avoid_status == true){
+			state = ((red_x)+(green_x))/2;
+			
 			point.setpoint = center_setpoint;
 			point.state=state;
 			pub_setpoint.publish(point);
@@ -118,9 +120,6 @@ int main(int argc, char **argv)
 	}
 }
 
-void get_state(){
-	state = ((red_x)+(green_x))/2;
-}
 void image_process_cb(const whatever::image_process& image){
 	red_x 		= image.state_red;
 	green_x 	= image.state_green;

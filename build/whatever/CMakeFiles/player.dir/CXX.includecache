@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/mfikih15/Documents/AMV/devel/include/whatever/node_master.h
+/home/amvui/AMV/devel/include/whatever/node_master.h
 string
 -
 vector
@@ -22,21 +22,21 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/mfikih15/Documents/AMV/src/whatever/include/whatever/haha.hpp
+/home/amvui/AMV/src/whatever/include/whatever/haha.hpp
 iostream
 -
 stdio.h
 -
 
-/home/mfikih15/Documents/AMV/src/whatever/src/record/player.cpp
+/home/amvui/AMV/src/whatever/src/record/player.cpp
 ../../include/whatever/haha.hpp
-/home/mfikih15/Documents/AMV/src/whatever/include/whatever/haha.hpp
+/home/amvui/AMV/src/whatever/include/whatever/haha.hpp
 ros/ros.h
-/home/mfikih15/Documents/AMV/src/whatever/src/record/ros/ros.h
+/home/amvui/AMV/src/whatever/src/record/ros/ros.h
 mavros_msgs/OverrideRCIn.h
-/home/mfikih15/Documents/AMV/src/whatever/src/record/mavros_msgs/OverrideRCIn.h
+/home/amvui/AMV/src/whatever/src/record/mavros_msgs/OverrideRCIn.h
 whatever/node_master.h
-/home/mfikih15/Documents/AMV/src/whatever/src/record/whatever/node_master.h
+/home/amvui/AMV/src/whatever/src/record/whatever/node_master.h
 iostream
 -
 

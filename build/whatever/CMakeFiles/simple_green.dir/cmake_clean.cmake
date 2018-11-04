@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/simple_green.dir/src/image/simple_green.cpp.o"
-  "/home/mfikih15/Documents/AMV/devel/lib/whatever/simple_green.pdb"
-  "/home/mfikih15/Documents/AMV/devel/lib/whatever/simple_green"
+  "/home/amvui/AMV/devel/lib/whatever/simple_green.pdb"
+  "/home/amvui/AMV/devel/lib/whatever/simple_green"
 )
 
 # Per-language clean rules from dependency scanning.

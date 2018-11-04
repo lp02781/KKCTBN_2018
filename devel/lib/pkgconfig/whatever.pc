@@ -1,8 +1,8 @@
-prefix=/home/mfikih15/Documents/AMV/devel
+prefix=/home/amvui/AMV/devel
 
 Name: whatever
 Description: Description of whatever
 Version: 0.0.0
-Cflags: -I/home/mfikih15/Documents/AMV/devel/include
-Libs: -L/home/mfikih15/Documents/AMV/devel/lib 
+Cflags: -I/home/amvui/AMV/devel/include
+Libs: -L/home/amvui/AMV/devel/lib 
 Requires: message_runtime
