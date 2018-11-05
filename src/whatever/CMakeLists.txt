@@ -233,7 +233,6 @@ add_executable(player src/record/player.cpp )
 target_link_libraries(player
 ${catkin_LIBRARIES}
 )
-
 #############
 ## Install ##
 #############

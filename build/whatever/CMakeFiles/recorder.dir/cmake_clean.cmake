@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/recorder.dir/src/record/recorder.cpp.o"
-  "/home/amvui/AMV/devel/lib/whatever/recorder.pdb"
-  "/home/amvui/AMV/devel/lib/whatever/recorder"
+  "/home/mfikih15/Documents/AMV/devel/lib/whatever/recorder.pdb"
+  "/home/mfikih15/Documents/AMV/devel/lib/whatever/recorder"
 )
 
 # Per-language clean rules from dependency scanning.

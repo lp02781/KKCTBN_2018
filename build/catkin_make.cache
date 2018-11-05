@@ -1,2 +1,2 @@
 pid:whatever
--DCATKIN_DEVEL_PREFIX=/home/amvui/AMV/devel -DCMAKE_INSTALL_PREFIX=/home/amvui/AMV/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/mfikih15/Documents/AMV/devel -DCMAKE_INSTALL_PREFIX=/home/mfikih15/Documents/AMV/install -G Unix Makefiles

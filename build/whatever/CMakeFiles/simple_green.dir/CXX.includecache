@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/amvui/AMV/devel/include/whatever/image_process.h
+/home/mfikih15/Documents/AMV/devel/include/whatever/image_process.h
 string
 -
 vector
@@ -22,7 +22,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/amvui/AMV/devel/include/whatever/setpoint.h
+/home/mfikih15/Documents/AMV/devel/include/whatever/setpoint.h
 string
 -
 vector
@@ -38,13 +38,13 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/amvui/AMV/src/whatever/include/whatever/haha.hpp
+/home/mfikih15/Documents/AMV/src/whatever/include/whatever/haha.hpp
 iostream
 -
 stdio.h
 -
 
-/home/amvui/AMV/src/whatever/src/image/simple_green.cpp
+/home/mfikih15/Documents/AMV/src/whatever/src/image/simple_green.cpp
 ros/ros.h
 -
 image_transport/image_transport.h
@@ -52,7 +52,7 @@ image_transport/image_transport.h
 opencv2/highgui/highgui.hpp
 -
 opencv2/imgproc/imgproc.hpp
-/home/amvui/AMV/src/whatever/src/image/opencv2/imgproc/imgproc.hpp
+/home/mfikih15/Documents/AMV/src/whatever/src/image/opencv2/imgproc/imgproc.hpp
 cv_bridge/cv_bridge.h
 -
 iostream
@@ -60,11 +60,11 @@ iostream
 stdio.h
 -
 ../../include/whatever/haha.hpp
-/home/amvui/AMV/src/whatever/include/whatever/haha.hpp
+/home/mfikih15/Documents/AMV/src/whatever/include/whatever/haha.hpp
 whatever/image_process.h
-/home/amvui/AMV/src/whatever/src/image/whatever/image_process.h
+/home/mfikih15/Documents/AMV/src/whatever/src/image/whatever/image_process.h
 whatever/setpoint.h
-/home/amvui/AMV/src/whatever/src/image/whatever/setpoint.h
+/home/mfikih15/Documents/AMV/src/whatever/src/image/whatever/setpoint.h
 
 /opt/ros/kinetic/include/cv_bridge/cv_bridge.h
 sensor_msgs/Image.h
