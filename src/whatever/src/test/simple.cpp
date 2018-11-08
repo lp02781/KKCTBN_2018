@@ -52,7 +52,7 @@ int main(int argc, char **argv){
 
     
 	while(true){
-		Mat img = imread("haha.jpg", CV_LOAD_IMAGE_UNCHANGED); //read the image data in the file "MyPic.JPG" and store it in 'img'
+		Mat img = imread("hihi.jpg", CV_LOAD_IMAGE_UNCHANGED); //read the image data in the file "MyPic.JPG" and store it in 'img'
 		if (img.empty()) //check whether the image is loaded or not
 		{
 			cout << "Error : Image cannot be loaded..!!" << endl;

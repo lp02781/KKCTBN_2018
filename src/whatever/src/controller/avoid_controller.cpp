@@ -27,10 +27,15 @@ void pid_status_cb(const whatever::node_master& pid_status_recv);
 void image_process_cb(const whatever::image_process& image);
 void pid_receiver_cb(const pid::controller_msg& control);
 void get_state();
+void control(int get_setpoint, int get_state);
 
 whatever::override_motor controller;
 whatever::setpoint point;
+
 ros::Publisher pub_override_rc;
+ros::Publisher pub_pid_in;
+ros::Publisher pub_pid_const;
+ros::Publisher pub_setpoint;
 
 pid::plant_msg  pid_in;
 pid::pid_const_msg pid_const;
@@ -40,10 +45,10 @@ int main(int argc, char **argv)
 	ros::init(argc, argv, "pid_controller");
 	ros::NodeHandle n;
 
-	pub_override_rc 				= n.advertise<whatever::override_motor>("/kkctbn/override/motor", 10);
-	ros::Publisher pub_pid_in 		= n.advertise<pid::plant_msg>("/kkctbn/pid/in", 1);
-	ros::Publisher pub_pid_const 	= n.advertise<pid::pid_const_msg>("/kkctbn/pid/const", 1,true);
-	ros::Publisher pub_setpoint 	= n.advertise<whatever::setpoint>("/kkctbn/image/setpoint", 1,true);
+	pub_override_rc = n.advertise<whatever::override_motor>("/kkctbn/override/motor", 10);
+	pub_pid_in 		= n.advertise<pid::plant_msg>("/kkctbn/pid/in", 1);
+	pub_pid_const 	= n.advertise<pid::pid_const_msg>("/kkctbn/pid/const", 1,true);
+	pub_setpoint 	= n.advertise<whatever::setpoint>("/kkctbn/image/setpoint", 1,true);
 
 	ros::Subscriber sub_pid_x_out 		= n.subscribe("/kkctbn/pid/out", 10, pid_receiver_cb );
 	ros::Subscriber sub_image_process 	= n.subscribe("/kkctbn/image/process", 1, image_process_cb);
@@ -65,45 +70,26 @@ int main(int argc, char **argv)
 		steer_pwm=0;
 		throttle_pwm=0;
 		while(avoid_status == true){
-			state = ((red_x)+(green_x))/2;
-			
-			point.setpoint = center_setpoint;
-			point.state=state;
-			pub_setpoint.publish(point);
-			
-			pid_in.x = state;
-			pid_in.t = pid_in.t+delta_t;
-			pid_in.setpoint = center_setpoint;
-			pub_pid_in.publish(pid_in);
-			
-			ros::spinOnce();
-			
-			//ROS_ERROR("%d", state);
-			
-			if(state < center_setpoint && state >= noise_state){ //turn left
-				controller.header = left_header;
-				throttle_pwm = MAX_THROTTLE;
-				steer_pwm = MIDDLE_PWM - control_effort;
+			if(red_x !=0 && green_x==0){ //turn left
+				state = red_x;
+				control(red_setpoint,state);
 				//ROS_ERROR("6");
 			}
-			else if(state > center_setpoint && state >= noise_state){ //turn right
-				controller.header = right_header;
-				throttle_pwm = MAX_THROTTLE;
-				steer_pwm = MIDDLE_PWM - control_effort;
+			else if(red_x ==0 && green_x!=0){ //turn right
+				state = green_x;
+				control(green_setpoint,state);				
 				//ROS_ERROR("7");
 			}
 			
-			else if(red_x == 0 && green_x !=0){//turn left
-				controller.header = left_header;
-				throttle_pwm = MAX_THROTTLE;
-				steer_pwm = MIN_STEERING;
+			else if(red_x != 0 && green_x !=0){//center
+				state = (green_x+red_x)/2;
+				control(center_setpoint,state);
 				//ROS_ERROR("8");
 			}
 			
-			else if(red_x != 0 && green_x ==0){//turn right
-				controller.header = right_header;
+			else if(red_x == 0 && green_x ==0){//whatever
 				throttle_pwm = MAX_THROTTLE;
-				steer_pwm = MAX_STEERING;
+				steer_pwm = MIDDLE_PWM;
 				//ROS_ERROR("9");
 			}
 			
@@ -118,6 +104,22 @@ int main(int argc, char **argv)
 			pub_override_rc.publish(controller);
 		}	
 	}
+}
+
+void control(int get_setpoint, int get_state){
+	point.setpoint = get_setpoint;
+	point.state=get_state;
+	pub_setpoint.publish(point);
+			
+	pid_in.x = get_state;
+	pid_in.t = pid_in.t+delta_t;
+	pid_in.setpoint = get_setpoint;
+	pub_pid_in.publish(pid_in);
+			
+	ros::spinOnce();
+				
+	throttle_pwm = MAX_THROTTLE;
+	steer_pwm = MIDDLE_PWM - control_effort;
 }
 
 void image_process_cb(const whatever::image_process& image){

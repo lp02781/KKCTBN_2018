@@ -78,6 +78,10 @@ int main(int argc, char **argv)
 			throttle_pwm = MAX_THROTTLE;
 			steer_pwm = MIDDLE_PWM - control_effort;
 			
+			if(state==0){
+				steer_pwm = PWM_NO_RED;
+			}
+			
 			//ROS_ERROR("%d", state);
 			/*
 			if(state < red_setpoint && state >= noise_state){ //turn left
