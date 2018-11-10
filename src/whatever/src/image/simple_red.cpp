@@ -136,7 +136,7 @@ void imageProcessing(Mat input_image){
 	imshow("Threshold_Red", imgThresholded);
 	imshow("Input_Red", input_image);
 	//imshow("Roi_Red", Original);
-	//imshow("All_Red", imgDebug);
+	imshow("All_Red", imgDebug);
 }
 void setpoint_cb (const whatever::setpoint& point){
 	setpoint_camera = point.setpoint;

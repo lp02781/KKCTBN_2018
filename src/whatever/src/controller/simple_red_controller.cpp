@@ -78,7 +78,7 @@ int main(int argc, char **argv)
 			throttle_pwm = MAX_THROTTLE;
 			steer_pwm = MIDDLE_PWM - control_effort;
 			
-			if(state==0){
+			if(red_x==0){
 				steer_pwm = PWM_NO_RED;
 			}
 			

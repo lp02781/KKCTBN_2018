@@ -70,27 +70,39 @@ int main(int argc, char **argv)
 		steer_pwm=0;
 		throttle_pwm=0;
 		while(avoid_status == true){
+			
+			ros::spinOnce();
 			if(red_x !=0 && green_x==0){ //turn left
-				state = red_x;
-				control(red_setpoint,state);
+				throttle_pwm = MAX_THROTTLE;
+				steer_pwm = MIDDLE_PWM - PWM_NO_GREEN;
+				
 				//ROS_ERROR("6");
 			}
 			else if(red_x ==0 && green_x!=0){ //turn right
-				state = green_x;
-				control(green_setpoint,state);				
+				throttle_pwm = MAX_THROTTLE;
+				steer_pwm = MIDDLE_PWM - PWM_NO_RED;
+				
 				//ROS_ERROR("7");
 			}
 			
-			else if(red_x != 0 && green_x !=0){//center
+			else if(red_x != 0 && green_x !=0){//PID
 				state = (green_x+red_x)/2;
-				control(center_setpoint,state);
-				//ROS_ERROR("8");
-			}
+				
+				point.setpoint = center_setpoint;
+				point.state=state;
+				pub_setpoint.publish(point);
 			
-			else if(red_x == 0 && green_x ==0){//whatever
+				pid_in.x = state;
+				pid_in.t = pid_in.t+delta_t;
+				pid_in.setpoint = center_setpoint;
+				pub_pid_in.publish(pid_in);
+			
+				ros::spinOnce();
+				
 				throttle_pwm = MAX_THROTTLE;
-				steer_pwm = MIDDLE_PWM;
-				//ROS_ERROR("9");
+				steer_pwm = MIDDLE_PWM - control_effort;
+				
+				//ROS_ERROR("8");
 			}
 			
 			else {											//just go away
@@ -104,22 +116,6 @@ int main(int argc, char **argv)
 			pub_override_rc.publish(controller);
 		}	
 	}
-}
-
-void control(int get_setpoint, int get_state){
-	point.setpoint = get_setpoint;
-	point.state=get_state;
-	pub_setpoint.publish(point);
-			
-	pid_in.x = get_state;
-	pid_in.t = pid_in.t+delta_t;
-	pid_in.setpoint = get_setpoint;
-	pub_pid_in.publish(pid_in);
-			
-	ros::spinOnce();
-				
-	throttle_pwm = MAX_THROTTLE;
-	steer_pwm = MIDDLE_PWM - control_effort;
 }
 
 void image_process_cb(const whatever::image_process& image){

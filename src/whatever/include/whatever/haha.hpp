@@ -4,41 +4,43 @@
 #define PWM_NO_RED 1400
 #define PWM_NO_GREEN 1600
 
-#define MAX_THROTTLE 1650
+#define MAX_THROTTLE 1700
 #define MIN_THROTTLE 1400
 
 #define MAX_STEERING 1900
 #define MIN_STEERING 1100
 
-int red_setpoint = 80; //camera 640/3
+int red_setpoint = 50; //camera 640/3
 int green_setpoint = 560;
 int center_setpoint = 320;
 
-float kp = 2;
-float ki = 0.1;
-float kd = 0.2;
+float update_time=0.01;
+
+float kp = 1.5;
+float ki = 1;
+float kd = 0.5;
 
 int x_init=0;
-int y_init=300;
-int width=640;
-int height=100;
+int y_init=180;
+int width=400; //width 400 for simple
+int height=150;
 							//nuc  pc
 int LowH_red 	= 0; 		//170  3
-int HighH_red 	= 223;		//179  51
-int LowS_red 	= 70;      //150  65
-int HighS_red 	= 211;      //255  246
-int LowV_red 	= 140;		//60   242
+int HighH_red 	= 198;		//179  51
+int LowS_red 	= 38;      //150  65
+int HighS_red 	= 208;      //255  246
+int LowV_red 	= 153;		//60   242
 int HighV_red 	= 255;		//255  255
 int max_radius_red 	= 1000; 
 int min_radius_red 	= 30;
 int Noise_red 	= 15;
 
-int LowH_green	= 23;
-int HighH_green = 82;
-int LowS_green 	= 0; 
-int HighS_green = 141;
-int LowV_green 	= 11;
-int HighV_green = 228;
+int LowH_green	= 30;
+int HighH_green = 228;
+int LowS_green 	= 30; 
+int HighS_green = 255;
+int LowV_green 	= 111;
+int HighV_green = 192;
 int max_radius_green = 1000;
 int min_radius_green = 30;
 int Noise_green = 15;
@@ -56,8 +58,6 @@ int Noise_green = 15;
 
 FILE *steer_file;
 FILE *throttle_file;
-
-float update_time=0.1;
 
 int number_camera = 0;
 
