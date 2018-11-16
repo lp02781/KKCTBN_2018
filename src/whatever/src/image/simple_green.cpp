@@ -135,7 +135,7 @@ void imageProcessing(Mat input_image){
 	imshow("Threshold_Green", imgThresholded);
 	imshow("Input_Green", input_image); 
 	//imshow("Roi_Green", Original);
-	//imshow("All_Green", imgDebug);
+	imshow("All_Green", imgDebug);
 }
 void setpoint_cb (const whatever::setpoint& point){
 	setpoint_camera = point.setpoint;

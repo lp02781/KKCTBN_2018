@@ -79,7 +79,7 @@ int main(int argc, char **argv)
 			steer_pwm = MIDDLE_PWM - control_effort;
 			
 			if(red_x==0){
-				steer_pwm = PWM_NO_RED;
+				steer_pwm = PWM_SIMPLE;
 			}
 			
 			//ROS_ERROR("%d", state);
