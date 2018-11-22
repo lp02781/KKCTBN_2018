@@ -1,9 +1,9 @@
 #include <iostream>
 #include <stdio.h>
 
-#define PWM_NO_RED 1400
+#define PWM_NO_RED 	1380
 #define PWM_NO_GREEN 1600
-#define PWM_SIMPLE 1400
+#define PWM_SIMPLE 1370
 
 #define MAX_THROTTLE 1800//1750
 #define MIN_THROTTLE 1400
@@ -17,21 +17,21 @@ int center_setpoint = 320;
 
 float update_time=0.01;
 
-float kp = 1.5;//1.5
+float kp = 1.65;//1.5
 float ki = 1;//1
 float kd = 0.5;//0.5
 
 int x_init=0;
 int y_init=180;
-int width=370; //width 400 for simple
-int height=150;
+int width=280; //width 400 for simple
+int height=180;
 							//nuc  pc
-int LowH_red 	= 0; 		//170  3
-int HighH_red 	= 208;		//179  51
-int LowS_red 	= 71;      //150  65
-int HighS_red 	= 174;      //255  246
-int LowV_red 	= 133;		//60   242
-int HighV_red 	= 255;		//255  255
+int LowH_red 	= 0; 		//0  
+int HighH_red 	= 184;		//184 
+int LowS_red 	= 130;      //130  65
+int HighS_red 	= 248;      //248  246
+int LowV_red 	= 49;		//49   242
+int HighV_red 	= 230;		//230  255
 int max_radius_red 	= 1000; 
 int min_radius_red 	= 30;
 int Noise_red 	= 15;

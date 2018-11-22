@@ -11,19 +11,20 @@ int red_setpoint = 100; //camera 640/3
 int center_setpoint = 320;
 int number_camera = 0;
 int x_init=0;
-int y_init=300;
-int width=640;
-int height=100;
+int y_init=180;
+int width=280; //width 400 for simple
+int height=180;
 							//nuc  pc
-int LowH_red 	= 0; 		//170  3
-int HighH_red 	= 223;		//179  51
-int LowS_red 	= 70;      //150  65
-int HighS_red 	= 211;      //255  246
-int LowV_red 	= 140;		//60   242
-int HighV_red 	= 255;		//255  255
+int LowH_red 	= 0; 		//0  
+int HighH_red 	= 184;		//184 
+int LowS_red 	= 130;      //130  65
+int HighS_red 	= 248;      //248  246
+int LowV_red 	= 49;		//49   242
+int HighV_red 	= 230;		//230  255
 int max_radius_red 	= 1000; 
 int min_radius_red 	= 30;
 int Noise_red 	= 15;
+
 
 int sum_x;
 int sum_y;
@@ -52,7 +53,7 @@ int main(int argc, char **argv){
 
     
 	while(true){
-		Mat img = imread("hihi.jpg", CV_LOAD_IMAGE_UNCHANGED); //read the image data in the file "MyPic.JPG" and store it in 'img'
+		Mat img = imread("1.jpg", CV_LOAD_IMAGE_UNCHANGED); //read the image data in the file "MyPic.JPG" and store it in 'img'
 		if (img.empty()) //check whether the image is loaded or not
 		{
 			cout << "Error : Image cannot be loaded..!!" << endl;
