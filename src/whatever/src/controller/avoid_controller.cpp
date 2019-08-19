@@ -72,17 +72,43 @@ int main(int argc, char **argv)
 		while(avoid_status == true){
 			
 			ros::spinOnce();
-			if(red_x !=0 && green_x==0){ //turn left
-				throttle_pwm = MAX_THROTTLE;
-				steer_pwm = MIDDLE_PWM - PWM_NO_GREEN;
+			if(red_x !=0 && green_x==0){ //red
+				state = red_x;
 				
-				//ROS_ERROR("6");
+				point.setpoint = red_setpoint;
+				point.state=state;
+				pub_setpoint.publish(point);
+			
+				pid_in.x = state;
+				pid_in.t = pid_in.t+delta_t;
+				pid_in.setpoint = red_setpoint;
+				pub_pid_in.publish(pid_in);
+			
+				ros::spinOnce();
+				
+				throttle_pwm = MAX_THROTTLE;
+				steer_pwm = MIDDLE_PWM - control_effort;
+				
+				//ROS_ERROR("8");
 			}
-			else if(red_x ==0 && green_x!=0){ //turn right
-				throttle_pwm = MAX_THROTTLE;
-				steer_pwm = MIDDLE_PWM - PWM_NO_RED;
+			else if(red_x ==0 && green_x!=0){ //green
+				state = green_x;
 				
-				//ROS_ERROR("7");
+				point.setpoint = green_setpoint;
+				point.state=state;
+				pub_setpoint.publish(point);
+			
+				pid_in.x = state;
+				pid_in.t = pid_in.t+delta_t;
+				pid_in.setpoint = green_setpoint;
+				pub_pid_in.publish(pid_in);
+			
+				ros::spinOnce();
+				
+				throttle_pwm = MAX_THROTTLE;
+				steer_pwm = MIDDLE_PWM - control_effort;
+				
+				//ROS_ERROR("8");
 			}
 			
 			else if(red_x != 0 && green_x !=0){//PID

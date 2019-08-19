@@ -42,6 +42,5 @@
   <exec_depend>opencv2</exec_depend>
 
   <export>
-
   </export>
 </package>

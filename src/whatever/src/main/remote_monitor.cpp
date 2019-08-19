@@ -32,7 +32,15 @@ int main(int argc, char **argv){
 	
 	while(ros::ok()){
 		ros::spinOnce();
-		//ROS_ERROR("%d", rc_in_data_channel[SIMPLE_PIN]);
+	}
+}
+
+void rcinReceiver(const mavros_msgs::RCIn& rc_in_data){
+	int x;
+	for (x=0; x<8;x++){
+		rc_in_data_channel[x] = rc_in_data.channels[x];
+	}
+	//ROS_ERROR("%d", rc_in_data_channel[SIMPLE_PIN]);
 		if(rc_in_data_channel[SIMPLE_PIN] < PWM_LOW ){
 			//ROS_INFO("1");
 			number_flight = simple_manuver;
@@ -62,12 +70,4 @@ int main(int argc, char **argv){
 		rc_action.record_number = record_number;
 		pub_rc_flag.publish(rc_action);
 		//ROS_ERROR ("%d", number_flight);
-	}
-}
-
-void rcinReceiver(const mavros_msgs::RCIn& rc_in_data){
-	int x;
-	for (x=0; x<8;x++){
-		rc_in_data_channel[x] = rc_in_data.channels[x];
-	}
 }

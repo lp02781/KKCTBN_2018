@@ -11,7 +11,7 @@
 #define MAX_STEERING 1900
 #define MIN_STEERING 1100
 
-int red_setpoint = 50; //camera 640/3
+int red_setpoint = 50; 
 int green_setpoint = 560;
 int center_setpoint = 320;
 
@@ -21,10 +21,11 @@ float kp = 1.65;//1.5
 float ki = 1;//1
 float kd = 0.5;//0.5
 
-int x_init=0;
-int y_init=180;
-int width=280; //width 400 for simple
-int height=180;
+int x_init_red=0;
+int y_init_red=180;
+
+int x_init_green=360;
+int y_init_green=180;
 							//nuc  pc
 int LowH_red 	= 0; 		//0  
 int HighH_red 	= 184;		//184 

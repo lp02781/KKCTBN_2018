@@ -41,6 +41,13 @@ int main(int argc, char **argv)
 	while(ros::ok()){
 		ros::spinOnce();
 		sleep(0.5);
+	}
+}
+
+void rc_number_cb	(const whatever::rc_number& number){
+		rc_flag_in = number.rc_number;
+		record_flag_in = number.record_number;
+		
 		if(rc_flag_in == simple_manuver ){
 			override_flag 			= true;
 			pid_status 				= true;
@@ -95,12 +102,6 @@ int main(int argc, char **argv)
 		control.player			= player;
 			
 		pub_node_master.publish(control);
-	}
-}
-
-void rc_number_cb	(const whatever::rc_number& number){
-		rc_flag_in = number.rc_number;
-		record_flag_in = number.record_number;
 }
 
 bool changeFlightMode(const char* flight_mode){

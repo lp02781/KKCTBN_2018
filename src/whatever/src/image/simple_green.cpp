@@ -60,8 +60,8 @@ int main(int argc, char **argv){
 	createTrackbar("HighS", "panel_green", &HighS_green, 255);
 	createTrackbar("LowV", "panel_green", &LowV_green, 255);
 	createTrackbar("HighV", "panel_green", &HighV_green, 255);
-	createTrackbar("x", "panel_green", &x_init, 700); //Hue (0 - 255)
-	createTrackbar("y", "panel_green", &y_init, 700);
+	createTrackbar("x", "panel_green", &x_init_green, 700); //Hue (0 - 255)
+	createTrackbar("y", "panel_green", &y_init_green, 700);
 	createTrackbar("width", "panel_green", &width, 700); //Saturation (0 - 255)
 	createTrackbar("hight", "panel_green", &height, 700);
 	createTrackbar("noise", "panel_green", &Noise_green, 255);
@@ -83,7 +83,7 @@ void imageProcessing(Mat input_image){
 	dilate(imgDebug, imgDebug, getStructuringElement(MORPH_ELLIPSE, Size(Noise_green, Noise_green)) ); 
 	erode(imgDebug, imgDebug, getStructuringElement(MORPH_ELLIPSE, Size(Noise_green, Noise_green)) ); 
 	
-	Rect region_of_interest = Rect(x_init, y_init, width, height);
+	Rect region_of_interest = Rect(x_init_green, y_init_green, width, height);
 	Mat Original = input_image(region_of_interest);
 	
 	Size sz = Original.size();
@@ -123,10 +123,10 @@ void imageProcessing(Mat input_image){
 	line( input_image, Point( setpoint_camera, 0 ), Point( setpoint_camera, input_height), Scalar( 50, 50, 50 ), 2, 8 );
 	line( input_image, Point( state_now, 0 ), Point( state_now, input_height), Scalar( 150, 150, 150 ), 2, 8 );
 	
-	line( input_image, Point( x_init, y_init ), Point( x_init+original_width, y_init), Scalar( 100, 100, 100 ), 2, 8 );
-	line( input_image, Point( x_init, y_init+original_height ), Point( x_init+original_width, y_init+original_height), Scalar( 100, 100, 100 ), 2, 8 );	
-	line( input_image, Point( x_init, y_init ), Point( x_init, y_init+original_height), Scalar( 100, 100, 100 ), 2, 8 );
-	line( input_image, Point( x_init+original_width, y_init ), Point( x_init+original_width, y_init+original_height), Scalar( 100, 100, 100 ), 2, 8 );
+	line( input_image, Point( x_init_green, y_init_green ), Point( x_init_green+original_width, y_init), Scalar( 100, 100, 100 ), 2, 8 );
+	line( input_image, Point( x_init_green, y_init_green+original_height ), Point( x_init_green+original_width, y_init_green+original_height), Scalar( 100, 100, 100 ), 2, 8 );	
+	line( input_image, Point( x_init_green, y_init_green ), Point( x_init_green, y_init_green+original_height), Scalar( 100, 100, 100 ), 2, 8 );
+	line( input_image, Point( x_init_green+original_width, y_init_green ), Point( x_init_green+original_width, y_init_green+original_height), Scalar( 100, 100, 100 ), 2, 8 );
 	
 	image.state_green = state;
 	image.count_green = count_circle;
