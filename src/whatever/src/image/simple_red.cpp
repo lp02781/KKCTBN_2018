@@ -44,7 +44,7 @@ void imageCallback(const sensor_msgs::CompressedImageConstPtr& msg)
 int main(int argc, char **argv){
 	ros::init(argc, argv, "videoRec");
 	ros::NodeHandle nh;
-	cv::startWindowThread();
+	//cv::startWindowThread();
 	
 	image_transport::ImageTransport it(nh);
 	

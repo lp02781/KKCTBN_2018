@@ -67,14 +67,14 @@ set(pid_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(pid_SOURCE_PREFIX /home/mfikih15/Documents/AMV/src/pid)
-  set(pid_DEVEL_PREFIX /home/mfikih15/Documents/AMV/devel)
+  set(pid_SOURCE_PREFIX /home/mfikih15/KKCTBN_2018/src/pid)
+  set(pid_DEVEL_PREFIX /home/mfikih15/KKCTBN_2018/devel)
   set(pid_INSTALL_PREFIX "")
   set(pid_PREFIX ${pid_DEVEL_PREFIX})
 else()
   set(pid_SOURCE_PREFIX "")
   set(pid_DEVEL_PREFIX "")
-  set(pid_INSTALL_PREFIX /home/mfikih15/Documents/AMV/install)
+  set(pid_INSTALL_PREFIX /home/mfikih15/KKCTBN_2018/install)
   set(pid_PREFIX ${pid_INSTALL_PREFIX})
 endif()
 
@@ -110,7 +110,7 @@ if(NOT "include " STREQUAL " ")
         message(FATAL_ERROR "Project 'pid' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'pid' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/mfikih15/Documents/AMV/install/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'pid' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '\${prefix}/${idir}'.  ${_report}")
     endif()
     _list_append_unique(pid_INCLUDE_DIRS ${include})
   endforeach()
@@ -121,6 +121,31 @@ foreach(library ${libraries})
   # keep build configuration keywords, target names and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
     list(APPEND pid_LIBRARIES ${library})
+  elseif(${library} MATCHES "^-l")
+    list(APPEND pid_LIBRARIES ${library})
+  elseif(${library} MATCHES "^-")
+    # This is a linker flag/option (like -pthread)
+    # There's no standard variable for these, so create an interface library to hold it
+    if(NOT pid_NUM_DUMMY_TARGETS)
+      set(pid_NUM_DUMMY_TARGETS 0)
+    endif()
+    # Make sure the target name is unique
+    set(interface_target_name "catkin::pid::wrapped-linker-option${pid_NUM_DUMMY_TARGETS}")
+    while(TARGET "${interface_target_name}")
+      math(EXPR pid_NUM_DUMMY_TARGETS "${pid_NUM_DUMMY_TARGETS}+1")
+      set(interface_target_name "catkin::pid::wrapped-linker-option${pid_NUM_DUMMY_TARGETS}")
+    endwhile()
+    add_library("${interface_target_name}" INTERFACE IMPORTED)
+    if("${CMAKE_VERSION}" VERSION_LESS "3.13.0")
+      set_property(
+        TARGET
+        "${interface_target_name}"
+        APPEND PROPERTY
+        INTERFACE_LINK_LIBRARIES "${library}")
+    else()
+      target_link_options("${interface_target_name}" INTERFACE "${library}")
+    endif()
+    list(APPEND pid_LIBRARIES "${interface_target_name}")
   elseif(TARGET ${library})
     list(APPEND pid_LIBRARIES ${library})
   elseif(IS_ABSOLUTE ${library})
@@ -129,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/mfikih15/Documents/AMV/install/lib;/home/mfikih15/Documents/obslam_car/devel/lib;/home/mfikih15/Documents/Mekatron/devel/lib;/home/mfikih15/Documents/ROV/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/mfikih15/KKCTBN_2018/install/lib;/home/mfikih15/rover_robotics/devel/lib;/home/mfikih15/obslam_vehicle/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

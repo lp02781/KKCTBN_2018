@@ -21,7 +21,6 @@
 	<!--node name="green_hough" pkg="whatever" output="screen" type="green_hough"-->
 	
 	<node name="simple_red" pkg="whatever" output="screen" type="simple_red"/>
-	<node name="simple_green" pkg="whatever" output="screen" type="simple_green"/>
 	
 	<node name="motor_controller" pkg="whatever" output="screen" type="motor_controller"/>
 	<node name="node_controller" pkg="whatever" output="screen" type="node_controller" />

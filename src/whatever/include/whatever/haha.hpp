@@ -11,6 +11,11 @@
 #define MAX_STEERING 1900
 #define MIN_STEERING 1100
 
+int width = 640;
+int height = 200;
+int x_init = 0;
+int y_init =200;
+
 int red_setpoint = 50; 
 int green_setpoint = 560;
 int center_setpoint = 320;
